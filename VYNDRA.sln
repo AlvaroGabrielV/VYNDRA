@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35818.85 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VYNDRA", "VYNDRA\VYNDRA.csproj", "{683CA64E-5CAF-499B-9C78-BBE9698EEEA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{683CA64E-5CAF-499B-9C78-BBE9698EEEA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{683CA64E-5CAF-499B-9C78-BBE9698EEEA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{683CA64E-5CAF-499B-9C78-BBE9698EEEA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{683CA64E-5CAF-499B-9C78-BBE9698EEEA4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2083E158-218A-415B-8F7C-0D94B13B34DD}
+	EndGlobalSection
+EndGlobal
