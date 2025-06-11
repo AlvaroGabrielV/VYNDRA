@@ -18,7 +18,7 @@ namespace VYNDRA
         private async void InicializarSignalR()
         {
             connection = new HubConnectionBuilder()
-                .WithUrl("http://localhost:5054/chatHub")
+                .WithUrl("http://15.228.232.243:80/chatHub")
                 .WithAutomaticReconnect()
                 .Build();
 
@@ -45,7 +45,8 @@ namespace VYNDRA
         {
             if (connection.State == HubConnectionState.Connected)
             {
-                string usuario = txtUsuario.Text.Trim();
+                string usuario = "Alvaro" +
+                    "";
                 string mensagem = txtMensagem.Text.Trim();
 
                 if (!string.IsNullOrEmpty(usuario) && !string.IsNullOrEmpty(mensagem))
