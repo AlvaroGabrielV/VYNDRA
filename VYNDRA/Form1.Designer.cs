@@ -32,21 +32,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            lstMensagens = new ListBox();
             btnEnviar = new Guna.UI2.WinForms.Guna2Button();
             txtMensagem = new Guna.UI2.WinForms.Guna2TextBox();
+            msg_flow = new FlowLayoutPanel();
             SuspendLayout();
-            // 
-            // lstMensagens
-            // 
-            lstMensagens.FormattingEnabled = true;
-            lstMensagens.ItemHeight = 15;
-            lstMensagens.Location = new Point(440, 42);
-            lstMensagens.Margin = new Padding(2, 2, 2, 2);
-            lstMensagens.Name = "lstMensagens";
-            lstMensagens.Size = new Size(616, 394);
-            lstMensagens.TabIndex = 0;
-            lstMensagens.UseWaitCursor = true;
             // 
             // btnEnviar
             // 
@@ -57,18 +46,19 @@
             btnEnviar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnEnviar.Font = new Font("Segoe UI", 9F);
             btnEnviar.ForeColor = Color.White;
-            btnEnviar.Location = new Point(79, 172);
-            btnEnviar.Margin = new Padding(2, 2, 2, 2);
+            btnEnviar.Location = new Point(1268, 687);
             btnEnviar.Name = "btnEnviar";
             btnEnviar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnEnviar.Size = new Size(214, 42);
+            btnEnviar.Size = new Size(229, 54);
             btnEnviar.TabIndex = 1;
-            btnEnviar.Text = "guna2Button1";
+            btnEnviar.Text = "ENVIAR";
             btnEnviar.UseWaitCursor = true;
             btnEnviar.Click += btnEnviar_Click;
             // 
             // txtMensagem
             // 
+            txtMensagem.BackColor = Color.Transparent;
+            txtMensagem.BorderRadius = 25;
             txtMensagem.CustomizableEdges = customizableEdges3;
             txtMensagem.DefaultText = "";
             txtMensagem.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
@@ -78,37 +68,47 @@
             txtMensagem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMensagem.Font = new Font("Segoe UI", 9F);
             txtMensagem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMensagem.Location = new Point(79, 87);
+            txtMensagem.Location = new Point(283, 686);
+            txtMensagem.Margin = new Padding(6, 8, 6, 8);
             txtMensagem.Name = "txtMensagem";
             txtMensagem.PlaceholderText = "";
             txtMensagem.SelectedText = "";
             txtMensagem.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txtMensagem.Size = new Size(251, 36);
+            txtMensagem.Size = new Size(976, 55);
             txtMensagem.TabIndex = 2;
             txtMensagem.UseWaitCursor = true;
+            txtMensagem.KeyDown += txtMensagem_KeyDown;
+            // 
+            // msg_flow
+            // 
+            msg_flow.AutoScroll = true;
+            msg_flow.Location = new Point(283, 12);
+            msg_flow.Name = "msg_flow";
+            msg_flow.Size = new Size(1224, 663);
+            msg_flow.TabIndex = 3;
+            msg_flow.UseWaitCursor = true;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.bg_vyndra;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1063, 449);
-            Controls.Add(txtMensagem);
+            ClientSize = new Size(1519, 748);
             Controls.Add(btnEnviar);
-            Controls.Add(lstMensagens);
-            Margin = new Padding(2, 2, 2, 2);
+            Controls.Add(txtMensagem);
+            Controls.Add(msg_flow);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "VYNDRA";
             UseWaitCursor = true;
+            Load += Form1_Load;
             ResumeLayout(false);
         }
 
         #endregion
-
-        private ListBox lstMensagens;
         private Guna.UI2.WinForms.Guna2Button btnEnviar;
         private Guna.UI2.WinForms.Guna2TextBox txtMensagem;
+        private FlowLayoutPanel msg_flow;
     }
 }

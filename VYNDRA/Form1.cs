@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.SignalR.Client;
 using System;
 using System.Windows.Forms;
+using static Guna.UI2.Native.WinApi;
 
 namespace VYNDRA
 {
@@ -26,14 +27,14 @@ namespace VYNDRA
             {
                 this.Invoke((Action)(() =>
                 {
-                    lstMensagens.Items.Add($"{usuario}: {mensagem}");
+                    criarCard(usuario, mensagem);
                 }));
             });
 
             try
             {
                 await connection.StartAsync();
-                lstMensagens.Items.Add("Conectado ao servidor!");
+                criarCard("Sistema", "Conectado com sucesso!");
             }
             catch (Exception ex)
             {
@@ -58,7 +59,30 @@ namespace VYNDRA
             else
             {
                 MessageBox.Show("Não conectado ao servidor.");
+                InicializarSignalR();
             }
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        public void criarCard(string usuario, string mensagem)
+        {
+            MessageCard msg = new MessageCard();
+            msg.SetDados("https://cdn3.emoji.gg/emojis/7636-steve.png", usuario, mensagem);
+
+            msg_flow.Controls.Add(msg);
+        }
+
+        private void txtMensagem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+                btnEnviar.PerformClick();
+            }
+        }   
     }
 }
