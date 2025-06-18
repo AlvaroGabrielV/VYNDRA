@@ -23,18 +23,18 @@ namespace VYNDRA
                 .WithAutomaticReconnect()
                 .Build();
 
-            connection.On<string, string>("ReceberMensagem", (usuario, mensagem) =>
+            connection.On<string, string, string>("ReceberMensagem", (imagem, usuario, mensagem) =>
             {
                 this.Invoke((Action)(() =>
                 {
-                    criarCard(usuario, mensagem);
+                    criarCard(imagem, usuario, mensagem);
                 }));
             });
 
             try
             {
                 await connection.StartAsync();
-                criarCard("Sistema", "Conectado com sucesso!");
+                criarCard("https://icons.veryicon.com/png/o/miscellaneous/logo-design-of-lingzhuyun/icon-correct-24-1.png", "Sistema", "Conectado com sucesso!");
             }
             catch (Exception ex)
             {
@@ -50,9 +50,11 @@ namespace VYNDRA
                     "";
                 string mensagem = txtMensagem.Text.Trim();
 
+                string user_image = "https://i.pinimg.com/originals/a9/a4/ec/a9a4ec03fa9afc407028ca40c20ed774.jpg";
+
                 if (!string.IsNullOrEmpty(usuario) && !string.IsNullOrEmpty(mensagem))
                 {
-                    await connection.InvokeAsync("EnviarMensagem", usuario, mensagem);
+                    await connection.InvokeAsync("EnviarMensagem",user_image, usuario, mensagem);
                     txtMensagem.Clear();
                 }
             }
@@ -68,10 +70,10 @@ namespace VYNDRA
 
         }
 
-        public void criarCard(string usuario, string mensagem)
+        public void criarCard(string imagem, string usuario, string mensagem)
         {
             MessageCard msg = new MessageCard();
-            msg.SetDados("https://cdn3.emoji.gg/emojis/7636-steve.png", usuario, mensagem);
+            msg.SetDados(imagem, usuario, mensagem);
 
             msg_flow.Controls.Add(msg);
         }
