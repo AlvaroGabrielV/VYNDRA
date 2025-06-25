@@ -19,7 +19,7 @@ namespace VYNDRA
         private async void InicializarSignalR()
         {
             connection = new HubConnectionBuilder()
-                .WithUrl("http://15.228.232.243:80/chatHub")
+                .WithUrl("http://18.228.153.48:80/chatHub")
                 .WithAutomaticReconnect()
                 .Build();
 
