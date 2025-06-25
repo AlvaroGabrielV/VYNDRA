@@ -34,49 +34,43 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             linkLabel1 = new LinkLabel();
             linkLabel2 = new LinkLabel();
             label4 = new Label();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btnEntrar = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            btnMinimizar = new Guna.UI2.WinForms.Guna2Button();
+            btnFechar = new Guna.UI2.WinForms.Guna2Button();
+            txtLogin = new TextBox();
+            guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
+            txtSenha = new TextBox();
+            guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
+            btnOcultarSenha = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(80, 80, 80);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(411, 235);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(292, 39);
-            textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            textBox2.BackColor = Color.FromArgb(80, 80, 80);
-            textBox2.BorderStyle = BorderStyle.None;
-            textBox2.Location = new Point(411, 319);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(292, 39);
-            textBox2.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label1.Font = new Font("Bahnschrift", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Bahnschrift", 11F, FontStyle.Bold);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(411, 219);
+            label1.Location = new Point(410, 192);
             label1.Name = "label1";
-            label1.Size = new Size(98, 13);
+            label1.Size = new Size(130, 18);
             label1.TabIndex = 2;
             label1.Text = "E-mail ou usuário:";
             // 
@@ -84,11 +78,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label2.Font = new Font("Bahnschrift", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Bahnschrift", 11F, FontStyle.Bold);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(411, 303);
+            label2.Location = new Point(410, 292);
             label2.Name = "label2";
-            label2.Size = new Size(40, 13);
+            label2.Size = new Size(52, 18);
             label2.TabIndex = 3;
             label2.Text = "Senha:";
             // 
@@ -98,7 +92,7 @@
             label3.BackColor = Color.FromArgb(0, 4, 40, 242);
             label3.Font = new Font("Bahnschrift", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(410, 277);
+            label3.Location = new Point(409, 264);
             label3.Name = "label3";
             label3.Size = new Size(102, 13);
             label3.TabIndex = 4;
@@ -110,12 +104,13 @@
             linkLabel1.BackColor = Color.FromArgb(0, 4, 40, 242);
             linkLabel1.Font = new Font("Bahnschrift", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             linkLabel1.LinkColor = Color.DodgerBlue;
-            linkLabel1.Location = new Point(508, 277);
+            linkLabel1.Location = new Point(507, 264);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(70, 13);
             linkLabel1.TabIndex = 5;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Cadastre-se";
+            linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
             // linkLabel2
             // 
@@ -123,7 +118,7 @@
             linkLabel2.BackColor = Color.FromArgb(0, 4, 40, 242);
             linkLabel2.Font = new Font("Bahnschrift", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             linkLabel2.LinkColor = Color.DodgerBlue;
-            linkLabel2.Location = new Point(509, 361);
+            linkLabel2.Location = new Point(508, 361);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(58, 13);
             linkLabel2.TabIndex = 7;
@@ -136,29 +131,30 @@
             label4.BackColor = Color.FromArgb(0, 4, 40, 242);
             label4.Font = new Font("Bahnschrift", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
-            label4.Location = new Point(411, 361);
+            label4.Location = new Point(410, 361);
             label4.Name = "label4";
             label4.Size = new Size(103, 13);
             label4.TabIndex = 6;
             label4.Text = "Esqueceu a Senha?";
             // 
-            // guna2Button1
+            // btnEntrar
             // 
-            guna2Button1.BackColor = Color.Transparent;
-            guna2Button1.BorderRadius = 15;
-            guna2Button1.CustomizableEdges = customizableEdges1;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(497, 393);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button1.Size = new Size(134, 36);
-            guna2Button1.TabIndex = 8;
-            guna2Button1.Text = "Entrar";
+            btnEntrar.BackColor = Color.Transparent;
+            btnEntrar.BorderRadius = 15;
+            btnEntrar.CustomizableEdges = customizableEdges1;
+            btnEntrar.DisabledState.BorderColor = Color.DarkGray;
+            btnEntrar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEntrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEntrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEntrar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEntrar.ForeColor = Color.White;
+            btnEntrar.Location = new Point(497, 393);
+            btnEntrar.Name = "btnEntrar";
+            btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnEntrar.Size = new Size(134, 36);
+            btnEntrar.TabIndex = 8;
+            btnEntrar.Text = "Entrar";
+            btnEntrar.Click += btnEntrar_Click;
             // 
             // guna2Button2
             // 
@@ -198,6 +194,138 @@
             guna2Button3.Size = new Size(39, 39);
             guna2Button3.TabIndex = 10;
             // 
+            // btnMinimizar
+            // 
+            btnMinimizar.BackColor = Color.Transparent;
+            btnMinimizar.BorderColor = Color.Transparent;
+            btnMinimizar.CustomizableEdges = customizableEdges7;
+            btnMinimizar.DisabledState.BorderColor = Color.DarkGray;
+            btnMinimizar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnMinimizar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnMinimizar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnMinimizar.FillColor = Color.Transparent;
+            btnMinimizar.Font = new Font("Segoe UI", 9F);
+            btnMinimizar.ForeColor = Color.White;
+            btnMinimizar.Image = Properties.Resources.minimizar;
+            btnMinimizar.ImageSize = new Size(11, 11);
+            btnMinimizar.Location = new Point(1071, 0);
+            btnMinimizar.Name = "btnMinimizar";
+            btnMinimizar.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnMinimizar.Size = new Size(20, 20);
+            btnMinimizar.TabIndex = 17;
+            btnMinimizar.Click += btnMinimizar_Click;
+            // 
+            // btnFechar
+            // 
+            btnFechar.BackColor = Color.Transparent;
+            btnFechar.BorderColor = Color.Transparent;
+            btnFechar.CustomizableEdges = customizableEdges9;
+            btnFechar.DisabledState.BorderColor = Color.DarkGray;
+            btnFechar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnFechar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnFechar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnFechar.FillColor = Color.Transparent;
+            btnFechar.Font = new Font("Segoe UI", 9F);
+            btnFechar.ForeColor = Color.White;
+            btnFechar.Image = Properties.Resources.xCorreto;
+            btnFechar.ImageSize = new Size(11, 11);
+            btnFechar.Location = new Point(1097, 0);
+            btnFechar.Name = "btnFechar";
+            btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnFechar.Size = new Size(20, 20);
+            btnFechar.TabIndex = 16;
+            btnFechar.Click += btnFechar_Click;
+            // 
+            // txtLogin
+            // 
+            txtLogin.BackColor = Color.FromArgb(80, 80, 80);
+            txtLogin.BorderStyle = BorderStyle.None;
+            txtLogin.Font = new Font("Segoe UI", 10F);
+            txtLogin.ForeColor = Color.White;
+            txtLogin.Location = new Point(419, 230);
+            txtLogin.Name = "txtLogin";
+            txtLogin.Size = new Size(269, 18);
+            txtLogin.TabIndex = 18;
+            // 
+            // guna2Button4
+            // 
+            guna2Button4.BackColor = Color.Transparent;
+            guna2Button4.BorderRadius = 20;
+            guna2Button4.CustomizableEdges = customizableEdges11;
+            guna2Button4.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button4.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button4.FillColor = Color.FromArgb(80, 80, 80);
+            guna2Button4.Font = new Font("Segoe UI", 9F);
+            guna2Button4.ForeColor = Color.FromArgb(80, 80, 80);
+            guna2Button4.HoverState.BorderColor = Color.Black;
+            guna2Button4.HoverState.CustomBorderColor = Color.FromArgb(80, 80, 80);
+            guna2Button4.HoverState.FillColor = Color.FromArgb(80, 80, 80);
+            guna2Button4.HoverState.ForeColor = Color.FromArgb(80, 80, 80);
+            guna2Button4.Location = new Point(408, 216);
+            guna2Button4.Name = "guna2Button4";
+            guna2Button4.PressedColor = Color.FromArgb(80, 80, 80);
+            guna2Button4.PressedDepth = 0;
+            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Button4.Size = new Size(292, 45);
+            guna2Button4.TabIndex = 19;
+            // 
+            // txtSenha
+            // 
+            txtSenha.BackColor = Color.FromArgb(80, 80, 80);
+            txtSenha.BorderStyle = BorderStyle.None;
+            txtSenha.Font = new Font("Segoe UI", 10F);
+            txtSenha.ForeColor = Color.White;
+            txtSenha.Location = new Point(419, 327);
+            txtSenha.Name = "txtSenha";
+            txtSenha.Size = new Size(269, 18);
+            txtSenha.TabIndex = 20;
+            txtSenha.UseSystemPasswordChar = true;
+            // 
+            // guna2Button5
+            // 
+            guna2Button5.BackColor = Color.Transparent;
+            guna2Button5.BorderRadius = 20;
+            guna2Button5.CustomizableEdges = customizableEdges13;
+            guna2Button5.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button5.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button5.FillColor = Color.FromArgb(80, 80, 80);
+            guna2Button5.Font = new Font("Segoe UI", 9F);
+            guna2Button5.ForeColor = Color.FromArgb(80, 80, 80);
+            guna2Button5.HoverState.BorderColor = Color.Black;
+            guna2Button5.HoverState.CustomBorderColor = Color.FromArgb(80, 80, 80);
+            guna2Button5.HoverState.FillColor = Color.FromArgb(80, 80, 80);
+            guna2Button5.HoverState.ForeColor = Color.FromArgb(80, 80, 80);
+            guna2Button5.Location = new Point(408, 313);
+            guna2Button5.Name = "guna2Button5";
+            guna2Button5.PressedColor = Color.FromArgb(80, 80, 80);
+            guna2Button5.PressedDepth = 0;
+            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2Button5.Size = new Size(292, 45);
+            guna2Button5.TabIndex = 21;
+            // 
+            // btnOcultarSenha
+            // 
+            btnOcultarSenha.BackColor = Color.FromArgb(80, 80, 80);
+            btnOcultarSenha.CustomizableEdges = customizableEdges15;
+            btnOcultarSenha.DisabledState.BorderColor = Color.DarkGray;
+            btnOcultarSenha.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnOcultarSenha.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnOcultarSenha.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnOcultarSenha.FillColor = Color.FromArgb(80, 80, 80);
+            btnOcultarSenha.Font = new Font("Segoe UI", 9F);
+            btnOcultarSenha.ForeColor = Color.White;
+            btnOcultarSenha.Image = Properties.Resources.eye_slash;
+            btnOcultarSenha.Location = new Point(663, 327);
+            btnOcultarSenha.Name = "btnOcultarSenha";
+            btnOcultarSenha.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            btnOcultarSenha.Size = new Size(25, 18);
+            btnOcultarSenha.TabIndex = 26;
+            btnOcultarSenha.Click += btnOcultarSenha_Click;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -206,39 +334,47 @@
             BackgroundImage = Properties.Resources.fundo_vyndra__2_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 654);
+            Controls.Add(btnOcultarSenha);
+            Controls.Add(txtSenha);
+            Controls.Add(guna2Button5);
+            Controls.Add(txtLogin);
+            Controls.Add(guna2Button4);
+            Controls.Add(btnMinimizar);
+            Controls.Add(btnFechar);
             Controls.Add(guna2Button3);
             Controls.Add(guna2Button2);
-            Controls.Add(guna2Button1);
+            Controls.Add(btnEntrar);
             Controls.Add(linkLabel2);
             Controls.Add(label4);
             Controls.Add(linkLabel1);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
-            Load += Login_Load;
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private TextBox textBox1;
-        private TextBox textBox2;
         private Label label1;
         private Label label2;
         private Label label3;
         private LinkLabel linkLabel1;
         private LinkLabel linkLabel2;
         private Label label4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnEntrar;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Button guna2Button3;
+        private Guna.UI2.WinForms.Guna2Button btnMinimizar;
+        private Guna.UI2.WinForms.Guna2Button btnFechar;
+        private TextBox txtLogin;
+        private Guna.UI2.WinForms.Guna2Button guna2Button4;
+        private TextBox txtSenha;
+        private Guna.UI2.WinForms.Guna2Button guna2Button5;
+        private Guna.UI2.WinForms.Guna2Button btnOcultarSenha;
     }
 }
