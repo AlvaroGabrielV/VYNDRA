@@ -53,12 +53,11 @@ namespace VYNDRA
                 {
                     MessageBox.Show("Login realizado com sucesso!", "Sucesso - Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    Users usuario = new Users();
-                    Sessao.IdUsuario = usuario.Id;
-                    Sessao.NomeExibicao = usuario.NomeExibicao;
-                    Sessao.Email = usuario.Email;
-                    Sessao.UsuarioLogin = usuario.Usuario;
-                    Sessao.DataNascimento = usuario.DataNascimento;
+                    Sessao.IdUsuario = usuarioLogado.Id;
+                    Sessao.NomeExibicao = usuarioLogado.NomeExibicao;
+                    Sessao.Email = usuarioLogado.Email;
+                    Sessao.UsuarioLogin = usuarioLogado.Usuario;
+                    Sessao.DataNascimento = usuarioLogado.DataNascimento;
 
                     Menu menu = new Menu(Sessao.IdUsuario);
                     menu.Show();
@@ -88,6 +87,12 @@ namespace VYNDRA
         private void btnOcultarSenha_Click(object sender, EventArgs e)
         {
             txtSenha.UseSystemPasswordChar = !txtSenha.UseSystemPasswordChar;
+        }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            EsqueciSenha esq = new EsqueciSenha();
+            esq.ShowDialog();
         }
     }
 }

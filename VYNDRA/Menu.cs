@@ -23,5 +23,33 @@ namespace VYNDRA
         {
 
         }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void btnRelatorios_Click(object sender, EventArgs e)
+        {
+            Sessao.IdUsuario = idUsuario;
+            Relatorios rel = new Relatorios(idUsuario);
+            rel.Show();
+            this.Close();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void Menu_Load(object sender, EventArgs e)
+        {
+        }
     }
 }
