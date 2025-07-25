@@ -195,6 +195,7 @@
             Name = "EsqueciSenha";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EsqueciSenha";
+            MouseDown += EsqueciSenha_MouseDown;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -46,7 +46,7 @@ namespace VYNDRA
         {
             int totalTarefas = FlowPanelConteudo.Controls.OfType<CardTarefas>().Count();
 
-            if (totalTarefas >= 7) 
+            if (totalTarefas >= 7)
             {
                 MessageBox.Show("O espaço máximo de anotações foi atingido.", "Limite atingido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
@@ -107,7 +107,7 @@ namespace VYNDRA
                     MessageBox.Show("Relatório excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show("Não foi possível excluir tarefa", "Erro - Exclusão", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -122,5 +122,13 @@ namespace VYNDRA
         {
             this.WindowState = FormWindowState.Minimized;
         }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {  
+            Menu menu = new Menu(IdUsuario);
+            menu.Show();
+            this.Close();
+        }
+
     }
 }

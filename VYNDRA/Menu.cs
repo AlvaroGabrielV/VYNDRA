@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,17 +19,6 @@ namespace VYNDRA
             InitializeComponent();
             this.idUsuario = idUsuario;
         }
-
-        private void guna2Button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
 
         private void btnRelatorios_Click(object sender, EventArgs e)
         {
@@ -48,8 +38,11 @@ namespace VYNDRA
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void Menu_Load(object sender, EventArgs e)
+        private void btnPerfil_Click(object sender, EventArgs e)
         {
+            Perfil perfil = new Perfil(idUsuario);
+            perfil.Show();
+            this.Close();
         }
     }
 }

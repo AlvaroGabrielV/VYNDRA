@@ -169,6 +169,7 @@
             Name = "CodigoEmail";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CodigoEmail";
+            MouseDown += CodigoEmail_MouseDown;
             ResumeLayout(false);
             PerformLayout();
         }

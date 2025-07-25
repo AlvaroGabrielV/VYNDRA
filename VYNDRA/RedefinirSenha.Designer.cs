@@ -50,7 +50,7 @@
             txtSenha = new TextBox();
             guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             label2 = new Label();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            btnOcultarSenha1 = new Guna.UI2.WinForms.Guna2Button();
             txtConfirmarSenha = new TextBox();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             label3 = new Label();
@@ -146,6 +146,7 @@
             btnOcultarSenha.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnOcultarSenha.Size = new Size(25, 18);
             btnOcultarSenha.TabIndex = 38;
+            btnOcultarSenha.Click += btnOcultarSenha_Click;
             // 
             // txtSenha
             // 
@@ -157,7 +158,7 @@
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(269, 18);
             txtSenha.TabIndex = 36;
-            txtSenha.Text = "Criar uma Nova Senha";
+            txtSenha.UseSystemPasswordChar = true;
             // 
             // guna2Button5
             // 
@@ -195,23 +196,24 @@
             label2.TabIndex = 35;
             label2.Text = "Senha:";
             // 
-            // guna2Button1
+            // btnOcultarSenha1
             // 
-            guna2Button1.BackColor = Color.FromArgb(80, 80, 80);
-            guna2Button1.CustomizableEdges = customizableEdges11;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.FromArgb(80, 80, 80);
-            guna2Button1.Font = new Font("Segoe UI", 9F);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Image = Properties.Resources.eye_slash;
-            guna2Button1.Location = new Point(386, 210);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            guna2Button1.Size = new Size(25, 18);
-            guna2Button1.TabIndex = 42;
+            btnOcultarSenha1.BackColor = Color.FromArgb(80, 80, 80);
+            btnOcultarSenha1.CustomizableEdges = customizableEdges11;
+            btnOcultarSenha1.DisabledState.BorderColor = Color.DarkGray;
+            btnOcultarSenha1.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnOcultarSenha1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnOcultarSenha1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnOcultarSenha1.FillColor = Color.FromArgb(80, 80, 80);
+            btnOcultarSenha1.Font = new Font("Segoe UI", 9F);
+            btnOcultarSenha1.ForeColor = Color.White;
+            btnOcultarSenha1.Image = Properties.Resources.eye_slash;
+            btnOcultarSenha1.Location = new Point(386, 210);
+            btnOcultarSenha1.Name = "btnOcultarSenha1";
+            btnOcultarSenha1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnOcultarSenha1.Size = new Size(25, 18);
+            btnOcultarSenha1.TabIndex = 42;
+            btnOcultarSenha1.Click += btnOcultarSenha1_Click;
             // 
             // txtConfirmarSenha
             // 
@@ -223,7 +225,7 @@
             txtConfirmarSenha.Name = "txtConfirmarSenha";
             txtConfirmarSenha.Size = new Size(269, 18);
             txtConfirmarSenha.TabIndex = 40;
-            txtConfirmarSenha.Text = "Confirmar";
+            txtConfirmarSenha.UseSystemPasswordChar = true;
             // 
             // guna2Button2
             // 
@@ -257,9 +259,9 @@
             label3.ForeColor = Color.White;
             label3.Location = new Point(133, 175);
             label3.Name = "label3";
-            label3.Size = new Size(52, 18);
+            label3.Size = new Size(123, 18);
             label3.TabIndex = 39;
-            label3.Text = "Senha:";
+            label3.Text = "Confirmar Senha:";
             // 
             // RedefinirSenha
             // 
@@ -267,7 +269,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 23, 34);
             ClientSize = new Size(566, 347);
-            Controls.Add(guna2Button1);
+            Controls.Add(btnOcultarSenha1);
             Controls.Add(txtConfirmarSenha);
             Controls.Add(guna2Button2);
             Controls.Add(label3);
@@ -283,6 +285,7 @@
             Name = "RedefinirSenha";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RedefinirSenha";
+            MouseDown += RedefinirSenha_MouseDown;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -297,7 +300,7 @@
         private TextBox txtSenha;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Label label2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button btnOcultarSenha1;
         private TextBox txtConfirmarSenha;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Label label3;

@@ -44,6 +44,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -60,6 +62,7 @@
             txtSenha = new TextBox();
             guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             btnOcultarSenha = new Guna.UI2.WinForms.Guna2Button();
+            PanelTopo = new Guna.UI2.WinForms.Guna2Panel();
             SuspendLayout();
             // 
             // label1
@@ -327,6 +330,18 @@
             btnOcultarSenha.TabIndex = 26;
             btnOcultarSenha.Click += btnOcultarSenha_Click;
             // 
+            // PanelTopo
+            // 
+            PanelTopo.BackColor = Color.Transparent;
+            PanelTopo.CustomizableEdges = customizableEdges17;
+            PanelTopo.Dock = DockStyle.Top;
+            PanelTopo.Location = new Point(0, 0);
+            PanelTopo.Name = "PanelTopo";
+            PanelTopo.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            PanelTopo.Size = new Size(1119, 20);
+            PanelTopo.TabIndex = 27;
+            PanelTopo.MouseDown += PanelTopo_MouseDown;
+            // 
             // Login
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -351,6 +366,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(PanelTopo);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
             Name = "Login";
@@ -377,5 +393,6 @@
         private TextBox txtSenha;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Guna.UI2.WinForms.Guna2Button btnOcultarSenha;
+        private Guna.UI2.WinForms.Guna2Panel PanelTopo;
     }
 }

@@ -93,6 +93,16 @@ namespace VYNDRA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap botao_de_inicio {
+            get {
+                object obj = ResourceManager.GetObject("botao-de-inicio", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cadastro {
             get {
                 object obj = ResourceManager.GetObject("cadastro", resourceCulture);
@@ -173,6 +183,16 @@ namespace VYNDRA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ferramenta_lapis {
+            get {
+                object obj = ResourceManager.GetObject("ferramenta-lapis", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap fundo_vyndra__1_ {
             get {
                 object obj = ResourceManager.GetObject("fundo vyndra (1)", resourceCulture);
@@ -243,6 +263,36 @@ namespace VYNDRA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap instagram {
+            get {
+                object obj = ResourceManager.GetObject("instagram", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap linkedin {
+            get {
+                object obj = ResourceManager.GetObject("linkedin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap menos {
+            get {
+                object obj = ResourceManager.GetObject("menos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap minimizar {
             get {
                 object obj = ResourceManager.GetObject("minimizar", resourceCulture);
@@ -276,6 +326,16 @@ namespace VYNDRA.Properties {
         internal static System.Drawing.Bitmap voltar {
             get {
                 object obj = ResourceManager.GetObject("voltar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap whatsapp {
+            get {
+                object obj = ResourceManager.GetObject("whatsapp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

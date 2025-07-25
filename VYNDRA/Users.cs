@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using BCrypt.Net;
 using MySql.Data.MySqlClient;
 using System.CodeDom;
+using System.Data;
 
 namespace VYNDRA
 {
@@ -19,7 +20,32 @@ namespace VYNDRA
         private string usuario;
         private string nomeexibicao;
         private DateTime datanascimento;
+        private string telefone;
+        private string instagram;
+        private string linkedin;
+        private Byte fotoperfil;
 
+        public Byte FotoPerfil
+        {
+            get { return fotoperfil; }
+            set { fotoperfil = value; }
+        }
+
+        public string Telefone
+        {
+            get { return telefone; }
+            set { telefone = value; }
+        }
+        public string Instagram
+        {
+            get { return instagram; }
+            set { instagram = value; }
+        }
+        public string Linkedin
+        {
+            get { return linkedin; }
+            set { linkedin = value; }
+        }
         public int Id
         {
             get { return id; }
@@ -78,6 +104,7 @@ namespace VYNDRA
                                     Id = reader.GetInt32("id"),
                                     NomeExibicao = reader.GetString("nomeexibicao"),
                                     SenhaHash = senhaHash,
+                                    datanascimento = reader.GetDateTime("datanascimento"),
                                     Email = reader.GetString("email"),
                                     Usuario = reader.GetString("usuario")
                                 };
@@ -123,6 +150,138 @@ namespace VYNDRA
             }
         }
 
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
+
+        public void CarregarFotodePerfil(byte[] fotoemBytes)
+        {
+            try
+            {
+                using (MySqlConnection conexao = new ConexaoBD().Conectar())
+                {
+                    string query = "UPDATE usuarios SET fotoperfil = @fotoperfil WHERE id = @id";
+                    MySqlCommand cmd = new MySqlCommand(query, conexao);
+
+                    cmd.Parameters.AddWithValue("@fotoperfil", fotoemBytes);
+                    cmd.Parameters.AddWithValue("@id", this.Id);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível adicionar a foto -> Método" + ex.Message, "Erro - Adicionar Foto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
+        public static Users CarregarRedesSociaiseFotodePerfil(int id)
+        {
+            using (MySqlConnection conexao = new ConexaoBD().Conectar())
+            {
+                string select = "SELECT * FROM usuarios WHERE id = @id";
+                MySqlCommand cmd = new MySqlCommand(select, conexao);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        Users usuario = new Users
+                        {
+                            Id = reader.GetInt32("id"),
+                            Linkedin = reader.IsDBNull(reader.GetOrdinal("linkedin")) ? "" : reader.GetString("linkedin"),
+                            Instagram = reader.IsDBNull(reader.GetOrdinal("instagram")) ? "" : reader.GetString("instagram"),
+                            Telefone = reader.IsDBNull(reader.GetOrdinal("telefone")) ? "" : reader.GetString("telefone"),
+                            FotoPerfil = reader.GetByte("fotoperfil")
+                        };
+
+                        
+                        
+
+                        return usuario;
+                    }
+                }
+
+            }
+                return null;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
+        public void InserirLinkedin(string linkedin)
+        {
+            try
+            {
+                using (MySqlConnection conexao = new ConexaoBD().Conectar())
+                {
+                    string update = "UPDATE usuarios set linkedin = @linkedin WHERE id = @id";
+                    MySqlCommand updatecmd = new MySqlCommand(update, conexao);
+
+                    updatecmd.Parameters.AddWithValue("@linkedin", linkedin);
+                    updatecmd.Parameters.AddWithValue("@id", Id);
+                    updatecmd.ExecuteNonQuery();
+                   
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível adicionar a foto -> Método" + ex.Message, "Erro - Adicionar Foto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
+
+        public bool InserirInstagram()
+        {
+            try
+            {
+                using (MySqlConnection conexao = new ConexaoBD().Conectar())
+                {
+                    string query = "UPDATE usuarios set instagram = @instagram WHERE id = @id";
+                    MySqlCommand cmd = new MySqlCommand(query, conexao);
+
+                    cmd.Parameters.AddWithValue("@instagram", Instagram);
+                    cmd.Parameters.AddWithValue("@id", Id);
+
+                    int resultado = cmd.ExecuteNonQuery();
+
+                    if (resultado>0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível adicionar a foto -> Método" + ex.Message, "Erro - Adicionar Foto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
+
+        public void InserirWhatsapp(string telefone)
+        {
+            try
+            {
+                using (MySqlConnection conexao = new ConexaoBD().Conectar())
+                {
+                    string query = "UPDATE usuarios set telefone = @telefone WHERE id = @id";
+                    MySqlCommand cmd = new MySqlCommand(query, conexao);
+
+                    cmd.Parameters.AddWithValue("@telefone", telefone);
+                    cmd.Parameters.AddWithValue("@id", this.Id);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível adicionar a foto -> Método" + ex.Message, "Erro - Adicionar Foto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
         //-------------------------------------------------------------------------------------------------------------------------------------------------//
         public void DefinirSenha(string senhaPura)
         {
