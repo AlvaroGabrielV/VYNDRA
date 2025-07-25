@@ -12,7 +12,10 @@ CREATE TABLE usuarios(
     senha VARCHAR(255) NOT NULL,
     datanascimento DATE not NULL,
     telefone VARCHAR(20) NULL,
-	 datacadastro DATETIME DEFAULT CURRENT_TIMESTAMP
+	 datacadastro DATETIME DEFAULT CURRENT_TIMESTAMP,
+	 fotoperfil LONGBLOB,
+	 instagram VARCHAR(30),
+	 linkedin VARCHAR(30)	
 ) DEFAULT CHARSET = utf8mb4
   DEFAULT COLLATE = utf8mb4_unicode_ci;
 
@@ -36,4 +39,11 @@ CREATE TABLE IF NOT EXISTS relatorios (
 	  FOREIGN KEY (id_usuario) REFERENCES usuarios(id) ON DELETE CASCADE	
 )DEFAULT CHARSET = UTF8MB4
  DEFAULT COLLATE = utf8mb4_unicode_ci;
+ 
+ALTER TABLE usuarios
+ADD COLUMN fotoperfil LONGBLOB,
+ADD COLUMN instagram VARCHAR(30),
+ADD COLUMN linkedin VARCHAR(30);
+
+
 
