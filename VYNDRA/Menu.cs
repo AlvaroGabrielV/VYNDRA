@@ -8,6 +8,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VYNDRA.Classes;
 
 namespace VYNDRA
 {
@@ -42,6 +43,14 @@ namespace VYNDRA
         {
             Perfil perfil = new Perfil(idUsuario);
             perfil.Show();
+            this.Close();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            
+            TelaPrincipal telaPrincipal = new TelaPrincipal();
+            telaPrincipal.Show();
             this.Close();
         }
     }

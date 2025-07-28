@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BCrypt.Net;
 
-namespace VYNDRA
+namespace VYNDRA.Classes
 {
     class CodigosRecuperacao
     {
@@ -18,6 +18,7 @@ namespace VYNDRA
         private DateTime criado_em;
         private DateTime expiracao;
         private bool usado;
+        private static string bd_location = "Server=bd-vyndra.clay4aqaqt45.sa-east-1.rds.amazonaws.com;Database=vyndra_bd;Uid=admin_vyndra;Pwd=vyndrabd;";
 
         public int Id
         {
@@ -56,12 +57,13 @@ namespace VYNDRA
             return random.Next(100000, 999999).ToString();
         }
 
+
         public static int BuscarIdPorEmail(string email)
         {
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=TCC;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection(bd_location))
             {
                 conn.Open();
-                string query = "SELECT id FROM usuarios WHERE email = @Email";
+                string query = "SELECT id_usuario FROM usuarios WHERE email = @Email";
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Email", email);
@@ -73,7 +75,7 @@ namespace VYNDRA
 
         public static void SalvarNoBanco(int idUsuario, string codigo)
         {
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=TCC;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection(bd_location))
             {
                 conn.Open();
                 string query = @"INSERT INTO codigos_recuperacao (id_usuario, codigo, expiracao)
@@ -112,7 +114,7 @@ namespace VYNDRA
 
         public static bool VerificarCodigo(int idUsuario, string codigo)
         {
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=TCC;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection(bd_location))
             {
                 conn.Open();
                 string query = @"SELECT COUNT(*) FROM codigos_recuperacao 
@@ -129,10 +131,10 @@ namespace VYNDRA
         }
         public static bool AtualizarSenha(int idUsuario, string novaSenha)
         {
-            using (MySqlConnection conn = new MySqlConnection("Server=localhost;Database=TCC;Uid=root;Pwd=;"))
+            using (MySqlConnection conn = new MySqlConnection(bd_location))
             {
                 conn.Open();
-                string query = "UPDATE usuarios SET senha = @senha WHERE id = @id";
+                string query = "UPDATE usuarios SET senha = @senha WHERE id_usuario = @id";
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@senha", novaSenha);

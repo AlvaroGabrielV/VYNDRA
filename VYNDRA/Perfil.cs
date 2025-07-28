@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data;
 using MySql.Data.MySqlClient;
+using VYNDRA.Classes;
 
 namespace VYNDRA
 {

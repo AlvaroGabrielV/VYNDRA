@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace VYNDRA
+namespace VYNDRA.Classes
 {
     class RelatoriosClasse
     {
@@ -23,13 +23,13 @@ namespace VYNDRA
 
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string query = "INSERT INTO relatorios (id_usuario, titulo, descricao, datacriacao) VALUES (@id_usuario, @titulo, @descricao, @datacriacao)";
+                    string query = "INSERT INTO relatorios (id_usuario, titulo, descricao, data_criacao) VALUES (@id_usuario, @titulo, @descricao, @data_criacao)";
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
 
                     cmd.Parameters.AddWithValue("@id_usuario", IdUsuario);
                     cmd.Parameters.AddWithValue("@titulo", Titulo);
                     cmd.Parameters.AddWithValue("@descricao", Descricao);
-                    cmd.Parameters.AddWithValue("@datacriacao", DataCriacao);
+                    cmd.Parameters.AddWithValue("@data_criacao", DataCriacao);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -57,11 +57,11 @@ namespace VYNDRA
                     {
                         lista.Add(new RelatoriosClasse
                         {
-                            IdRelatorio = reader.GetInt32("id"),
+                            IdRelatorio = reader.GetInt32("id_relatorio"),
                             IdUsuario = reader.GetInt32("id_usuario"),
                             Titulo = reader.GetString("titulo"),
                             Descricao = reader.GetString("descricao"),
-                            DataCriacao = reader.GetDateTime("datacriacao")
+                            DataCriacao = reader.GetDateTime("data_criacao")
 
                         });
 
@@ -77,12 +77,12 @@ namespace VYNDRA
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string query = "UPDATE relatorios SET titulo=@titulo, descricao=@descricao WHERE id=@id AND id_usuario=@id_usuario";
+                    string query = "UPDATE relatorios SET titulo=@titulo, descricao=@descricao WHERE id_relatorio=@id_relatorio AND id_usuario=@id_usuario";
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
-                    cmd.Parameters.AddWithValue("@titulo", this.Titulo);
-                    cmd.Parameters.AddWithValue("@descricao", this.Descricao);
-                    cmd.Parameters.AddWithValue("@id", this.IdRelatorio);
-                    cmd.Parameters.AddWithValue("@id_usuario", this.IdUsuario);
+                    cmd.Parameters.AddWithValue("@titulo", Titulo);
+                    cmd.Parameters.AddWithValue("@descricao", Descricao);
+                    cmd.Parameters.AddWithValue("@id_relatorio", IdRelatorio);
+                    cmd.Parameters.AddWithValue("@id_usuario", IdUsuario);
                     return cmd.ExecuteNonQuery() > 0;
                 }
             }
@@ -100,10 +100,10 @@ namespace VYNDRA
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string query = "DELETE FROM relatorios WHERE id=@id and id_usuario=@id_usuario";
+                    string query = "DELETE FROM relatorios WHERE id_relatorio= @id_relatorio and id_usuario=@id_usuario";
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
-                    cmd.Parameters.AddWithValue("@id", idRelatorio);
-                    cmd.Parameters.AddWithValue("@id_usuario", this.IdUsuario);
+                    cmd.Parameters.AddWithValue("@id_relatorio", idRelatorio);
+                    cmd.Parameters.AddWithValue("@id_usuario", IdUsuario);
                     int resultado = cmd.ExecuteNonQuery();
 
                     if (resultado>0)

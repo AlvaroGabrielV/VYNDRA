@@ -1,4 +1,4 @@
-namespace VYNDRA
+namespace VYNDRA.Classes
 {
     internal static class Program
     {

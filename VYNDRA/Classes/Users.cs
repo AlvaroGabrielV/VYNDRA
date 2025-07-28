@@ -10,7 +10,7 @@ using MySql.Data.MySqlClient;
 using System.CodeDom;
 using System.Data;
 
-namespace VYNDRA
+namespace VYNDRA.Classes
 {
     class Users
     {
@@ -23,9 +23,9 @@ namespace VYNDRA
         private string telefone;
         private string instagram;
         private string linkedin;
-        private Byte fotoperfil;
+        private byte fotoperfil;
 
-        public Byte FotoPerfil
+        public byte FotoPerfil
         {
             get { return fotoperfil; }
             set { fotoperfil = value; }
@@ -87,7 +87,7 @@ namespace VYNDRA
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string query = "SELECT id, nomeexibicao, telefone, datanascimento, email, usuario, senha FROM usuarios WHERE email = @Login OR usuario = @Login";
+                    string query = "SELECT id_usuario,nomeexibicao, telefone, datanascimento, email, usuario, senha FROM usuarios WHERE email = @Login OR usuario = @Login";
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
                     cmd.Parameters.AddWithValue("@Login", Login);
 
@@ -101,7 +101,7 @@ namespace VYNDRA
                             {
                                 return new Users
                                 {
-                                    Id = reader.GetInt32("id"),
+                                    Id = reader.GetInt32("id_usuario"),
                                     NomeExibicao = reader.GetString("nomeexibicao"),
                                     SenhaHash = senhaHash,
                                     datanascimento = reader.GetDateTime("datanascimento"),
@@ -162,7 +162,7 @@ namespace VYNDRA
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
 
                     cmd.Parameters.AddWithValue("@fotoperfil", fotoemBytes);
-                    cmd.Parameters.AddWithValue("@id", this.Id);
+                    cmd.Parameters.AddWithValue("@id", Id);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -272,7 +272,7 @@ namespace VYNDRA
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
 
                     cmd.Parameters.AddWithValue("@telefone", telefone);
-                    cmd.Parameters.AddWithValue("@id", this.Id);
+                    cmd.Parameters.AddWithValue("@id", Id);
 
                     cmd.ExecuteNonQuery();
                 }

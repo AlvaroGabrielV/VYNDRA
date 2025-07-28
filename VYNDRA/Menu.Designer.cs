@@ -75,16 +75,17 @@
             guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges2;
             guna2Button1.Size = new Size(344, 188);
             guna2Button1.TabIndex = 0;
+            guna2Button1.Click += guna2Button1_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(75, 75, 75);
-            label1.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.ControlText;
             label1.Location = new Point(328, 235);
             label1.Name = "label1";
-            label1.Size = new Size(85, 23);
+            label1.Size = new Size(99, 24);
             label1.TabIndex = 1;
             label1.Text = "Conversas";
             // 
@@ -92,11 +93,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(75, 75, 75);
-            label2.Font = new Font("Arial Narrow", 14.25F);
+            label2.Font = new Font("Microsoft Sans Serif", 14.25F);
             label2.ForeColor = SystemColors.ControlText;
             label2.Location = new Point(1037, 235);
             label2.Name = "label2";
-            label2.Size = new Size(79, 23);
+            label2.Size = new Size(93, 24);
             label2.TabIndex = 3;
             label2.Text = "Relatórios";
             // 
@@ -124,11 +125,11 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.FromArgb(75, 75, 75);
-            label3.Font = new Font("Arial Narrow", 14.25F);
+            label3.Font = new Font("Microsoft Sans Serif", 14.25F);
             label3.ForeColor = SystemColors.ControlText;
             label3.Location = new Point(313, 577);
             label3.Name = "label3";
-            label3.Size = new Size(111, 23);
+            label3.Size = new Size(132, 24);
             label3.TabIndex = 5;
             label3.Text = "Configurações";
             // 
@@ -155,11 +156,11 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.FromArgb(75, 75, 75);
-            label5.Font = new Font("Arial Narrow", 14.25F);
+            label5.Font = new Font("Microsoft Sans Serif", 14.25F);
             label5.ForeColor = SystemColors.ControlText;
             label5.Location = new Point(1060, 577);
             label5.Name = "label5";
-            label5.Size = new Size(43, 23);
+            label5.Size = new Size(51, 24);
             label5.TabIndex = 9;
             label5.Text = "Perfil";
             // 
