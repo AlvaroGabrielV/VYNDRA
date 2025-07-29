@@ -269,7 +269,6 @@
             Name = "Menu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
-            WindowState = FormWindowState.Maximized;
             PanelTopo.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();

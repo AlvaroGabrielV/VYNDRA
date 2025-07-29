@@ -9,11 +9,16 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using VYNDRA.Classes;
+using Microsoft.AspNetCore.SignalR.Client;
 
 namespace VYNDRA
 {
-    public partial class Login : Form
+    public partial class Login : Form   
     {
+        HubConnection connectionr = new HubConnectionBuilder()
+            .WithUrl("http://localhost:5000/ChatHub")
+            .WithAutomaticReconnect()
+            .Build();
         public Login()
         {
             InitializeComponent();
@@ -36,7 +41,7 @@ namespace VYNDRA
             this.Hide();
         }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
+        private async void btnEntrar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -64,6 +69,13 @@ namespace VYNDRA
                     Menu menu = new Menu(Sessao.IdUsuario);
                     menu.Show();
                     this.Hide();
+
+                    MessageBox.Show(Sessao.IdUsuario.ToString());
+
+                    await connectionr.StartAsync();
+                    await connectionr.InvokeAsync("RegistrarUsuario", Sessao.IdUsuario.ToString());
+
+
 
                 }
 

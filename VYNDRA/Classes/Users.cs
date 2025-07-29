@@ -295,5 +295,21 @@ namespace VYNDRA.Classes
             Regex regex = new Regex(emailValido);
             return regex.IsMatch(email);
         }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
+        public void verificarUsuario(string usuario)
+        {
+            MySqlCommand cmd = new MySqlCommand("SELECT COUNT(*) FROM usuarios WHERE usuario = @usuario");
+            cmd.Parameters.AddWithValue("@usuario", usuario);
+            using (MySqlConnection conexao = new ConexaoBD().Conectar())
+            {
+                cmd.Connection = conexao;
+                int count = Convert.ToInt32(cmd.ExecuteScalar());
+                if (count > 0)
+                {
+                    throw new Exception("Usuário já existe!");
+                }
+            }
+        }
     }
 }

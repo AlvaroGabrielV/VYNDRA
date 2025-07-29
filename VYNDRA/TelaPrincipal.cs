@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using VYNDRA.Cards;
 
 namespace VYNDRA
 {
@@ -40,6 +41,29 @@ namespace VYNDRA
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void chat_panel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void flowLayoutPanel1_VisibleChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void contatos_layout_VisibleChanged(object sender, EventArgs e)
+        {
+            if (contatos_panel.Visible)
+            {
+                BuscarContato buscarContato = new BuscarContato();
+                contatos_layout.Controls.Add(buscarContato);
+            }
+            else
+            {
+                contatos_layout.Controls.Clear();
+            }
         }
     }
 }
