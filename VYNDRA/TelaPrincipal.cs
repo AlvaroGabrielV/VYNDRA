@@ -58,11 +58,10 @@ namespace VYNDRA
             if (contatos_panel.Visible)
             {
                 BuscarContato buscarContato = new BuscarContato();
-                contatos_layout.Controls.Add(buscarContato);
-            }
-            else
-            {
                 contatos_layout.Controls.Clear();
+                contatos_layout.Controls.Add(buscarContato);
+
+
             }
         }
     }
