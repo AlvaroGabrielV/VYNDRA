@@ -35,16 +35,16 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             busca_panel = new Guna.UI2.WinForms.Guna2Panel();
-            guna2CircleButton1 = new Guna.UI2.WinForms.Guna2CircleButton();
+            search_btn = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2CircleButton2 = new Guna.UI2.WinForms.Guna2CircleButton();
+            add_btn = new Guna.UI2.WinForms.Guna2CircleButton();
             busca_panel.SuspendLayout();
             SuspendLayout();
             // 
             // busca_panel
             // 
             busca_panel.BackColor = Color.Transparent;
-            busca_panel.Controls.Add(guna2CircleButton1);
+            busca_panel.Controls.Add(search_btn);
             busca_panel.Controls.Add(guna2TextBox1);
             busca_panel.CustomizableEdges = customizableEdges4;
             busca_panel.Location = new Point(3, 3);
@@ -55,25 +55,25 @@
             busca_panel.TabIndex = 0;
             busca_panel.UseTransparentBackground = true;
             // 
-            // guna2CircleButton1
+            // search_btn
             // 
-            guna2CircleButton1.BackColor = Color.Transparent;
-            guna2CircleButton1.DisabledState.BorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2CircleButton1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2CircleButton1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2CircleButton1.FillColor = Color.Transparent;
-            guna2CircleButton1.Font = new Font("Segoe UI", 9F);
-            guna2CircleButton1.ForeColor = Color.White;
-            guna2CircleButton1.Image = Properties.Resources.search;
-            guna2CircleButton1.Location = new Point(180, 16);
-            guna2CircleButton1.Name = "guna2CircleButton1";
-            guna2CircleButton1.ShadowDecoration.CustomizableEdges = customizableEdges1;
-            guna2CircleButton1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton1.Size = new Size(30, 30);
-            guna2CircleButton1.TabIndex = 1;
-            guna2CircleButton1.UseTransparentBackground = true;
-            guna2CircleButton1.Click += guna2CircleButton1_Click;
+            search_btn.BackColor = Color.Transparent;
+            search_btn.DisabledState.BorderColor = Color.DarkGray;
+            search_btn.DisabledState.CustomBorderColor = Color.DarkGray;
+            search_btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            search_btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            search_btn.FillColor = Color.Transparent;
+            search_btn.Font = new Font("Segoe UI", 9F);
+            search_btn.ForeColor = Color.White;
+            search_btn.Image = Properties.Resources.search;
+            search_btn.Location = new Point(180, 16);
+            search_btn.Name = "search_btn";
+            search_btn.ShadowDecoration.CustomizableEdges = customizableEdges1;
+            search_btn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            search_btn.Size = new Size(30, 30);
+            search_btn.TabIndex = 1;
+            search_btn.UseTransparentBackground = true;
+            search_btn.Click += guna2CircleButton1_Click;
             // 
             // guna2TextBox1
             // 
@@ -98,31 +98,32 @@
             guna2TextBox1.Size = new Size(214, 44);
             guna2TextBox1.TabIndex = 0;
             // 
-            // guna2CircleButton2
+            // add_btn
             // 
-            guna2CircleButton2.BackColor = Color.Transparent;
-            guna2CircleButton2.DisabledState.BorderColor = Color.DarkGray;
-            guna2CircleButton2.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2CircleButton2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2CircleButton2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2CircleButton2.FillColor = Color.Transparent;
-            guna2CircleButton2.Font = new Font("Segoe UI", 9F);
-            guna2CircleButton2.ForeColor = Color.White;
-            guna2CircleButton2.Image = Properties.Resources.add_user;
-            guna2CircleButton2.ImageSize = new Size(25, 25);
-            guna2CircleButton2.Location = new Point(236, 21);
-            guna2CircleButton2.Name = "guna2CircleButton2";
-            guna2CircleButton2.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2CircleButton2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CircleButton2.Size = new Size(28, 30);
-            guna2CircleButton2.TabIndex = 2;
-            guna2CircleButton2.UseTransparentBackground = true;
+            add_btn.BackColor = Color.Transparent;
+            add_btn.DisabledState.BorderColor = Color.DarkGray;
+            add_btn.DisabledState.CustomBorderColor = Color.DarkGray;
+            add_btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            add_btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            add_btn.FillColor = Color.Transparent;
+            add_btn.Font = new Font("Segoe UI", 9F);
+            add_btn.ForeColor = Color.White;
+            add_btn.Image = Properties.Resources.add_user;
+            add_btn.ImageSize = new Size(25, 25);
+            add_btn.Location = new Point(236, 21);
+            add_btn.Name = "add_btn";
+            add_btn.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            add_btn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            add_btn.Size = new Size(28, 30);
+            add_btn.TabIndex = 2;
+            add_btn.UseTransparentBackground = true;
+            add_btn.Click += add_btn_Click;
             // 
             // BuscarContato
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(guna2CircleButton2);
+            Controls.Add(add_btn);
             Controls.Add(busca_panel);
             Name = "BuscarContato";
             Size = new Size(270, 66);
@@ -134,7 +135,7 @@
 
         private Guna.UI2.WinForms.Guna2Panel busca_panel;
         private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton1;
-        private Guna.UI2.WinForms.Guna2CircleButton guna2CircleButton2;
+        private Guna.UI2.WinForms.Guna2CircleButton search_btn;
+        private Guna.UI2.WinForms.Guna2CircleButton add_btn;
     }
 }

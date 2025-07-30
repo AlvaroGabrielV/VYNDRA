@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VYNDRA.Classes
 {
-    class Sessao
+    public class Sessao
     {
             public static int IdUsuario { get; set; }
             public static string NomeExibicao { get; set; }

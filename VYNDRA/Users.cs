@@ -12,7 +12,7 @@ using System.Data;
 
 namespace VYNDRA.Classes
 {
-    class Users
+    public class Users
     {
         private int id;
         private string email;
@@ -83,38 +83,38 @@ namespace VYNDRA.Classes
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------//
-            public static Users LoginUser(string Login, string senhaDigitada)
+        public static Users LoginUser(string Login, string senhaDigitada)
+        {
+            using (MySqlConnection conexao = new ConexaoBD().Conectar())
             {
-                using (MySqlConnection conexao = new ConexaoBD().Conectar())
+                string query = "SELECT id_usuario,nomeexibicao, telefone, datanascimento, email, usuario, senha FROM usuarios WHERE email = @Login OR usuario = @Login";
+                MySqlCommand cmd = new MySqlCommand(query, conexao);
+                cmd.Parameters.AddWithValue("@Login", Login);
+
+                using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
-                    string query = "SELECT id_usuario,nomeexibicao, telefone, datanascimento, email, usuario, senha FROM usuarios WHERE email = @Login OR usuario = @Login";
-                    MySqlCommand cmd = new MySqlCommand(query, conexao);
-                    cmd.Parameters.AddWithValue("@Login", Login);
-
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    if (reader.Read())
                     {
-                        if (reader.Read())
-                        {
-                            string senhaHash = reader.GetString("senha");
+                        string senhaHash = reader.GetString("senha");
 
-                            if (BCrypt.Net.BCrypt.Verify(senhaDigitada, senhaHash))
+                        if (BCrypt.Net.BCrypt.Verify(senhaDigitada, senhaHash))
+                        {
+                            return new Users
                             {
-                                return new Users
-                                {
-                                    Id = reader.GetInt32("id_usuario"),
-                                    NomeExibicao = reader.GetString("nomeexibicao"),
-                                    SenhaHash = senhaHash,
-                                    datanascimento = reader.GetDateTime("datanascimento"),
-                                    Email = reader.GetString("email"),
-                                    Usuario = reader.GetString("usuario")
-                                };
-                            }
+                                Id = reader.GetInt32("id_usuario"),
+                                NomeExibicao = reader.GetString("nomeexibicao"),
+                                SenhaHash = senhaHash,
+                                datanascimento = reader.GetDateTime("datanascimento"),
+                                Email = reader.GetString("email"),
+                                Usuario = reader.GetString("usuario")
+                            };
                         }
                     }
                 }
-
-                return null; // usuário não encontrado
             }
+
+            return null; // usuário não encontrado
+        }
         //-------------------------------------------------------------------------------------------------------------------------------------------------//
         public bool CadastrarUsuario()
         {
@@ -195,15 +195,15 @@ namespace VYNDRA.Classes
                             FotoPerfil = reader.GetByte("fotoperfil")
                         };
 
-                        
-                        
+
+
 
                         return usuario;
                     }
                 }
 
             }
-                return null;
+            return null;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -219,7 +219,7 @@ namespace VYNDRA.Classes
                     updatecmd.Parameters.AddWithValue("@linkedin", linkedin);
                     updatecmd.Parameters.AddWithValue("@id", Id);
                     updatecmd.ExecuteNonQuery();
-                   
+
                 }
             }
             catch (Exception ex)
@@ -244,7 +244,7 @@ namespace VYNDRA.Classes
 
                     int resultado = cmd.ExecuteNonQuery();
 
-                    if (resultado>0)
+                    if (resultado > 0)
                     {
                         return true;
                     }
@@ -311,5 +311,32 @@ namespace VYNDRA.Classes
                 }
             }
         }
+
+        public static Users BuscarPorLogin(string login)
+        {
+            using (MySqlConnection conn = new MySqlConnection(SuaStringConexao))
+            {
+                string query = "SELECT * FROM Users WHERE Usuario = @login";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@login", login);
+
+                conn.Open();
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    return new Users
+                    {
+                        Id = reader["Id"].ToString(),
+                        Usuario = reader["Usuario"].ToString(),
+                        NomeExibicao = reader["NomeExibicao"].ToString()
+                        
+                    };
+                }
+            }
+
+            return null;
+        }
+
     }
 }

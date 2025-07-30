@@ -21,5 +21,12 @@ namespace VYNDRA.Cards
         {
 
         }
+
+        private void add_btn_Click(object sender, EventArgs e)
+        {
+            PedidosDeAmizade pedidosDeAmizade = new PedidosDeAmizade();
+            pedidosDeAmizade.Show();
+            pedidosDeAmizade.BringToFront();
+        }
     }
 }

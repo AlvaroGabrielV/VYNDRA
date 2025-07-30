@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace VYNDRA.Classes
 {
-    class RelatoriosClasse
+    public class RelatoriosClasse
     {
         public int IdRelatorio { get; set; }
         public int IdUsuario { get; set; }

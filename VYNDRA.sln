@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35818.85 d17.13
+VisualStudioVersion = 17.13.35818.85
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VYNDRA", "VYNDRA\VYNDRA.csproj", "{683CA64E-5CAF-499B-9C78-BBE9698EEEA4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatServer", "..\ChatServer\ChatServer\ChatServer.csproj", "{169466D5-35CA-870E-C7A8-EF6A81875757}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vyndra.Shared", "Vyndra.Shared\Vyndra.Shared.csproj", "{A40F8D40-588E-4C10-8069-80AD7120E935}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{683CA64E-5CAF-499B-9C78-BBE9698EEEA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{683CA64E-5CAF-499B-9C78-BBE9698EEEA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{683CA64E-5CAF-499B-9C78-BBE9698EEEA4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{169466D5-35CA-870E-C7A8-EF6A81875757}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{169466D5-35CA-870E-C7A8-EF6A81875757}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{169466D5-35CA-870E-C7A8-EF6A81875757}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{169466D5-35CA-870E-C7A8-EF6A81875757}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A40F8D40-588E-4C10-8069-80AD7120E935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A40F8D40-588E-4C10-8069-80AD7120E935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A40F8D40-588E-4C10-8069-80AD7120E935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A40F8D40-588E-4C10-8069-80AD7120E935}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
