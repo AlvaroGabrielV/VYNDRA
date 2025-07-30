@@ -52,11 +52,7 @@ namespace VYNDRA
             relatorios.Show();
             this.Close();
         }
-        private void btnAlterarSenha_Click(object sender, EventArgs e)
-        {
-            EsqueciSenha esqueci = new EsqueciSenha();
-            esqueci.ShowDialog();
-        }
+
 
         private void Perfil_Load(object sender, EventArgs e)
         {
@@ -80,7 +76,7 @@ namespace VYNDRA
             //CpFotodePerfil.Image = Image.FromStream(ms);
         }
 
-  
+
 
         private void txtLinkedin_KeyDown(object sender, KeyEventArgs e)
         {
@@ -148,6 +144,17 @@ namespace VYNDRA
 
         private void txtInstagram_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+
 
         }
     }
