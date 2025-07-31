@@ -21,5 +21,10 @@ namespace VYNDRA.Cards
         {
 
         }
+
+        private void lb_mensagem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

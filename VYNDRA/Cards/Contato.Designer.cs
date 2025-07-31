@@ -53,33 +53,34 @@
             // lb_mensagem
             // 
             lb_mensagem.BackColor = Color.Transparent;
-            lb_mensagem.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lb_mensagem.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lb_mensagem.ForeColor = Color.DarkGray;
-            lb_mensagem.Location = new Point(94, 25);
+            lb_mensagem.Location = new Point(101, 32);
             lb_mensagem.Name = "lb_mensagem";
-            lb_mensagem.Size = new Size(60, 39);
+            lb_mensagem.Size = new Size(60, 15);
             lb_mensagem.TabIndex = 3;
             lb_mensagem.Text = "mensagem";
+            lb_mensagem.Click += lb_mensagem_Click;
             // 
             // lb_quemescreveuporultimo
             // 
             lb_quemescreveuporultimo.BackColor = Color.Transparent;
-            lb_quemescreveuporultimo.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lb_quemescreveuporultimo.Font = new Font("Sans Serif Collection", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lb_quemescreveuporultimo.ForeColor = Color.DarkGray;
             lb_quemescreveuporultimo.Location = new Point(59, 25);
             lb_quemescreveuporultimo.Name = "lb_quemescreveuporultimo";
-            lb_quemescreveuporultimo.Size = new Size(36, 39);
+            lb_quemescreveuporultimo.Size = new Size(41, 39);
             lb_quemescreveuporultimo.TabIndex = 2;
             lb_quemescreveuporultimo.Text = "nome:";
             // 
             // lb_nomedocontato
             // 
             lb_nomedocontato.BackColor = Color.Transparent;
-            lb_nomedocontato.Font = new Font("MS Reference Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lb_nomedocontato.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lb_nomedocontato.ForeColor = Color.DarkGray;
             lb_nomedocontato.Location = new Point(59, 2);
             lb_nomedocontato.Name = "lb_nomedocontato";
-            lb_nomedocontato.Size = new Size(38, 18);
+            lb_nomedocontato.Size = new Size(38, 19);
             lb_nomedocontato.TabIndex = 1;
             lb_nomedocontato.Text = "nome";
             lb_nomedocontato.Click += guna2HtmlLabel1_Click;
