@@ -16,8 +16,18 @@ namespace VYNDRA.Classes
             public static DateTime DataNascimento { get; set; }
             public static string Telefone { get; set; } 
 
-            public static void Limpar()
+            public static string Instagram { get; set; }
+            public static string Linkedin { get; set; }
+
+            public static byte[] FotoPerfil { get; set; }
+            public static byte[] MiniFotoPerfil { get; set; }
+
+
+        public static void Limpar()
             {
+                MiniFotoPerfil = null;
+                Linkedin = null;
+                Instagram = null;
                 IdUsuario = 0;
                 NomeExibicao = null;
                 Email = null;
@@ -25,6 +35,7 @@ namespace VYNDRA.Classes
                 SenhaHash = null;
                 DataNascimento = DateTime.MinValue;
                 Telefone = null;
+                FotoPerfil = null;
             }
         }
 }

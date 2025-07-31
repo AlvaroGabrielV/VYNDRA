@@ -13,11 +13,10 @@ namespace VYNDRA
 {
     public partial class Relatorios : Form
     {
-        private int IdUsuario;
         public Relatorios(int IdUsuario)
         {
             InitializeComponent();
-            this.IdUsuario = IdUsuario;
+            IdUsuario = Sessao.IdUsuario;
         }
 
         private void Relatorios_Load(object sender, EventArgs e)
@@ -26,7 +25,7 @@ namespace VYNDRA
             botaoAdicionar.BotaoClicado += BotaoAdicionar_Click;
             FlowPanelConteudo.Controls.Add(botaoAdicionar);
 
-            List<RelatoriosClasse> relatorios = RelatoriosClasse.ListarPorUsuario(IdUsuario);
+            List<RelatoriosClasse> relatorios = RelatoriosClasse.ListarPorUsuario(Sessao.IdUsuario);
 
             foreach (var rel in relatorios)
             {
@@ -41,6 +40,34 @@ namespace VYNDRA
                 FlowPanelConteudo.Controls.Add(card);
                 FlowPanelConteudo.Controls.SetChildIndex(card, FlowPanelConteudo.Controls.Count - 1);
             }
+
+            if (Sessao.MiniFotoPerfil != null && Sessao.MiniFotoPerfil.Length > 0)
+            {
+                using (MemoryStream ms = new MemoryStream(Sessao.MiniFotoPerfil))
+                {
+                    miniFotoPerfil.Image = Image.FromStream(ms);
+                }
+            }
+            else
+            {
+                // Caso queira, carregue diretamente do banco caso a sessão esteja vazia
+                Users usuario = new Users();
+                usuario.Id = Sessao.IdUsuario;
+                if (usuario.CarregarRedesSociais() && usuario.MiniFotoPerfil != null && usuario.MiniFotoPerfil.Length > 0)
+                {
+                    using (MemoryStream ms = new MemoryStream(usuario.MiniFotoPerfil))
+                    {
+                        miniFotoPerfil.Image = Image.FromStream(ms);
+                    }
+                    // Atualiza sessão para evitar carregar novamente
+                    Sessao.MiniFotoPerfil = usuario.MiniFotoPerfil;
+                }
+                else
+                {
+                    miniFotoPerfil.Image = null; // Ou uma imagem padrão
+                }
+            }
+
         }
 
         private void BotaoAdicionar_Click(object sender, EventArgs e)
@@ -61,7 +88,7 @@ namespace VYNDRA
 
             RelatoriosClasse novoRelatorio = new RelatoriosClasse
             {
-                IdUsuario = IdUsuario,
+                IdUsuario = Sessao.IdUsuario,
                 Titulo = novaTarefa.Titulo,
                 Descricao = novaTarefa.Descricao,
                 DataCriacao = novaTarefa.DataCriacao
@@ -81,7 +108,7 @@ namespace VYNDRA
                 IdRelatorio = card.IdRelatorio,
                 Titulo = card.Titulo,
                 Descricao = card.Descricao,
-                IdUsuario = IdUsuario
+                IdUsuario = Sessao.IdUsuario
             };
 
             if (relatorioAtualizado.Atualizar())
@@ -100,7 +127,7 @@ namespace VYNDRA
             try
             {
                 RelatoriosClasse relatorios = new RelatoriosClasse();
-                relatorios.IdUsuario = IdUsuario;
+                relatorios.IdUsuario = Sessao.IdUsuario;
 
                 if (relatorios.Excluir(e))
                 {
@@ -126,7 +153,7 @@ namespace VYNDRA
 
         private void btnHome_Click(object sender, EventArgs e)
         {  
-            Menu menu = new Menu(IdUsuario);
+            Menu menu = new Menu(Sessao.IdUsuario);
             menu.Show();
             this.Close();
         }
