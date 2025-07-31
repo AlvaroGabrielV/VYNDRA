@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             lb_mensagem = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lb_quemescreveuporultimo = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -76,11 +76,11 @@
             // lb_nomedocontato
             // 
             lb_nomedocontato.BackColor = Color.Transparent;
-            lb_nomedocontato.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lb_nomedocontato.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lb_nomedocontato.ForeColor = Color.DarkGray;
-            lb_nomedocontato.Location = new Point(59, 2);
+            lb_nomedocontato.Location = new Point(59, 6);
             lb_nomedocontato.Name = "lb_nomedocontato";
-            lb_nomedocontato.Size = new Size(38, 19);
+            lb_nomedocontato.Size = new Size(43, 22);
             lb_nomedocontato.TabIndex = 1;
             lb_nomedocontato.Text = "nome";
             lb_nomedocontato.Click += guna2HtmlLabel1_Click;
@@ -96,7 +96,7 @@
             guna2CirclePictureBox1.InitialImage = null;
             guna2CirclePictureBox1.Location = new Point(7, 7);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges1;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox1.Size = new Size(47, 47);
             guna2CirclePictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;

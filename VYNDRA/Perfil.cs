@@ -59,7 +59,6 @@ namespace VYNDRA
             txtEmail.Text = Sessao.Email;
             txtNomeExibicao.Text = Sessao.NomeExibicao;
             txtUsuario.Text = Sessao.UsuarioLogin;
-            lblDataDeNascimento.Text = Sessao.DataNascimento.ToString("dd/MM/yyyy");
 
             // Users usuario = Users.CarregarRedesSociaiseFotodePerfil(this.IdUsuario);
 
@@ -155,6 +154,16 @@ namespace VYNDRA
         private void guna2Button5_Click(object sender, EventArgs e)
         {
 
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

@@ -52,12 +52,6 @@ namespace VYNDRA
         {
             this.Close();
         }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         // Permite mover a janela clicando e arrastando um painel
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
