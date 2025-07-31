@@ -58,7 +58,7 @@
             user_txt.BackColor = Color.Transparent;
             user_txt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             user_txt.ForeColor = Color.White;
-            user_txt.Location = new Point(59, 19);
+            user_txt.Location = new Point(61, 19);
             user_txt.Name = "user_txt";
             user_txt.Size = new Size(57, 23);
             user_txt.TabIndex = 1;
@@ -131,11 +131,10 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2CirclePictureBox foto_user;
-        private Guna.UI2.WinForms.Guna2HtmlLabel user_txt;
-        private Guna.UI2.WinForms.Guna2CircleButton aceitar_btn;
-        private Guna.UI2.WinForms.Guna2CircleButton recusar_btn;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        public Guna.UI2.WinForms.Guna2CirclePictureBox foto_user;
+        public Guna.UI2.WinForms.Guna2HtmlLabel user_txt;
+        public Guna.UI2.WinForms.Guna2CircleButton aceitar_btn;
+        public Guna.UI2.WinForms.Guna2CircleButton recusar_btn;
     }
 }

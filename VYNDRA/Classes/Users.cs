@@ -314,20 +314,19 @@ namespace VYNDRA.Classes
 
         public static Users BuscarPorLogin(string login)
         {
-            using (MySqlConnection conn = new MySqlConnection(SuaStringConexao))
+            using (MySqlConnection conn = new ConexaoBD().Conectar())
             {
-                string query = "SELECT * FROM Users WHERE Usuario = @login";
+                string query = "SELECT * FROM usuarios WHERE usuario = @login";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@login", login);
 
-                conn.Open();
                 MySqlDataReader reader = cmd.ExecuteReader();
 
                 if (reader.Read())
                 {
                     return new Users
                     {
-                        Id = reader["Id"].ToString(),
+                        Id = Convert.ToInt32(reader["id_usuario"]),
                         Usuario = reader["Usuario"].ToString(),
                         NomeExibicao = reader["NomeExibicao"].ToString()
                         

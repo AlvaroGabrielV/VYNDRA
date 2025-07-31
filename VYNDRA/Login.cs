@@ -15,10 +15,6 @@ namespace VYNDRA
 {
     public partial class Login : Form   
     {
-        HubConnection connectionr = new HubConnectionBuilder()
-            .WithUrl("http://localhost:5000/ChatHub")
-            .WithAutomaticReconnect()
-            .Build();
         public Login()
         {
             InitializeComponent();
@@ -72,10 +68,8 @@ namespace VYNDRA
 
                     MessageBox.Show(Sessao.IdUsuario.ToString());
 
-                    await connectionr.StartAsync();
-                    await connectionr.InvokeAsync("RegistrarUsuario", Sessao.IdUsuario.ToString());
-
-
+                    await SignalRService.IniciarAsync(Sessao.IdUsuario.ToString());
+                    
 
                 }
 

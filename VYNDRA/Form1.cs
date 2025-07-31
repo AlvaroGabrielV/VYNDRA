@@ -2,49 +2,22 @@
 using Microsoft.AspNetCore.SignalR.Client;
 using System;
 using System.Windows.Forms;
+using VYNDRA.Classes;
 using static Guna.UI2.Native.WinApi;
 
 namespace VYNDRA
 {
     public partial class Form1 : Form
     {
-        HubConnection connection;
 
         public Form1()
         {
             InitializeComponent();
-            InicializarSignalR();
-        }
-
-        private async void InicializarSignalR()
-        {
-            connection = new HubConnectionBuilder()
-                .WithUrl("http://18.228.153.48:80/chatHub")
-                .WithAutomaticReconnect()
-                .Build();
-
-            connection.On<string, string, string>("ReceberMensagem", (imagem, usuario, mensagem) =>
-            {
-                this.Invoke((Action)(() =>
-                {
-                    criarCard(imagem, usuario, mensagem);
-                }));
-            });
-
-            try
-            {
-                await connection.StartAsync();
-                criarCard("https://icons.veryicon.com/png/o/miscellaneous/logo-design-of-lingzhuyun/icon-correct-24-1.png", "Sistema", "Conectado com sucesso!");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao conectar: " + ex.Message);
-            }
         }
 
         private async void btnEnviar_Click(object sender, EventArgs e)
         {
-            if (connection.State == HubConnectionState.Connected)
+            if (SignalRService.Connection.State == HubConnectionState.Connected)
             {
                 string usuario = "Alvaro" +
                     "";
@@ -54,14 +27,13 @@ namespace VYNDRA
 
                 if (!string.IsNullOrEmpty(usuario) && !string.IsNullOrEmpty(mensagem))
                 {
-                    await connection.InvokeAsync("EnviarMensagem",user_image, usuario, mensagem);
+                    await SignalRService.Connection.InvokeAsync("EnviarMensagem",user_image, usuario, mensagem);
                     txtMensagem.Clear();
                 }
             }
             else
             {
                 MessageBox.Show("Não conectado ao servidor.");
-                InicializarSignalR();
             }
         }
 

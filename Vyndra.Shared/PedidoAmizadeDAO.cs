@@ -11,7 +11,7 @@ namespace VYNDRA.Classes
 {
     public class PedidoAmizadeDAO
     {
-        private string connString = "server=SEU_SERVIDOR;user=SEU_USUARIO;password=SUA_SENHA;database=SEU_BANCO";
+        private string connString = "server=bd-vyndra.clay4aqaqt45.sa-east-1.rds.amazonaws.com;user=admin_vyndra;password=vyndrabd;database=vyndra_bd";
 
         public void SalvarPedido(PedidoAmizade pedido)
         {
@@ -51,17 +51,63 @@ namespace VYNDRA.Classes
             return pedidos;
         }
 
-        public void AceitarPedido(int id)
+        public async Task AceitarPedido(int id)
         {
             using (var conn = new MySqlConnection(connString))
             {
                 conn.Open();
-                string sql = "UPDATE PedidosAmizade SET Status = 'aceito' WHERE Id = @id";
+                string sql = "UPDATE PedidosAmizade SET Status = 'aceito' WHERE ParaUsuario = @id_destino AND DeUsuario = @id_usuario";
                 var cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id", id);
+                cmd.Parameters.AddWithValue("@id_destino", id);
+                cmd.Parameters.AddWithValue("@id_usuario", Sessao.IdUsuario);
                 cmd.ExecuteNonQuery();
             }
         }
-    }
 
+        public async Task RemoverPedido(int deIdUsuario, int paraIdUsuario)
+        {
+            using (MySqlConnection conn = new ConexaoBD().Conectar())
+            {
+                string query = "DELETE FROM pedidosamizade WHERE de_id = @de AND para_id = @para";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@de", deIdUsuario);
+                cmd.Parameters.AddWithValue("@para", paraIdUsuario);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public List<PedidoAmizade> ListarPendentes(int idUsuario)
+        {
+            var pedidos = new List<PedidoAmizade>();
+
+            using (var conn = new ConexaoBD().Conectar())
+            { 
+
+                string query = "SELECT DeUsuario, ParaUsuario FROM PedidosAmizade WHERE ParaUsuario = @idUsuario AND status = 'pendente'";
+
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            var pedido = new PedidoAmizade
+                            {
+                                DeUsuario = reader.GetInt32("DeUsuario").ToString(),
+                                ParaUsuario = reader.GetInt32("ParaUsuario").ToString()
+                            };
+
+                            pedidos.Add(pedido);
+                        }
+                    }
+                }
+            }
+
+            return pedidos;
+        }
+
+    }
 }
