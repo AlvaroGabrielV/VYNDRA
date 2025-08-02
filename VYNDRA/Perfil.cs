@@ -44,7 +44,7 @@ namespace VYNDRA
                     Users usuario = new Users();
                     usuario.Id = Sessao.IdUsuario;
                     usuario.FotoPerfil = imagemBytes;
-                    usuario.MiniFotoPerfil = imagemBytes;
+                    
 
                     if (usuario.SalvarFotoPerfil())
                     {
@@ -76,7 +76,7 @@ namespace VYNDRA
                 txtLinkedin.Text = usuario.Linkedin;
                 txtWhatsapp.Text = usuario.Telefone;
 
-                if (usuario.FotoPerfil != null && usuario.FotoPerfil.Length > 0 || usuario.MiniFotoPerfil != null && usuario.FotoPerfil.Length > 0)
+                if (usuario.FotoPerfil != null && usuario.FotoPerfil.Length > 0)
                 {
                     using (MemoryStream ms = new MemoryStream(usuario.FotoPerfil))
                     {

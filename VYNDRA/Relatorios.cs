@@ -50,21 +50,21 @@ namespace VYNDRA
             }
             else
             {
-                // Caso queira, carregue diretamente do banco caso a sessão esteja vazia
+                
                 Users usuario = new Users();
                 usuario.Id = Sessao.IdUsuario;
-                if (usuario.CarregarRedesSociais() && usuario.MiniFotoPerfil != null && usuario.MiniFotoPerfil.Length > 0)
+                if (usuario.CarregarRedesSociais() && usuario.FotoPerfil != null && usuario.FotoPerfil.Length > 0)
                 {
-                    using (MemoryStream ms = new MemoryStream(usuario.MiniFotoPerfil))
+                    using (MemoryStream ms = new MemoryStream(usuario.FotoPerfil))
                     {
                         miniFotoPerfil.Image = Image.FromStream(ms);
                     }
-                    // Atualiza sessão para evitar carregar novamente
-                    Sessao.MiniFotoPerfil = usuario.MiniFotoPerfil;
+                    
+                    Sessao.MiniFotoPerfil = usuario.FotoPerfil;
                 }
                 else
                 {
-                    miniFotoPerfil.Image = null; // Ou uma imagem padrão
+                    miniFotoPerfil.Image = null;
                 }
             }
 

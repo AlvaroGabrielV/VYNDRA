@@ -30,11 +30,11 @@ namespace VYNDRA.Classes
             get { return fotoperfil; }
             set { fotoperfil = value; }
         }
-        public byte[] MiniFotoPerfil
+        /*public byte[] MiniFotoPerfil
         {
             get { return minifotoperfil; }
             set { minifotoperfil = value; }
-        }
+        }*/
         public string Telefone
         {
             get { return telefone; }
@@ -91,7 +91,7 @@ namespace VYNDRA.Classes
         {
             using (MySqlConnection conexao = new ConexaoBD().Conectar())
             {
-                string select = "SELECT id,nomeexibicao, telefone, datanascimento, email, usuario, senha FROM usuarios WHERE email = @Login OR usuario = @Login";
+                string select = "SELECT id_usuario,nomeexibicao, telefone, datanascimento, email, usuario, senha FROM usuarios WHERE email = @Login OR usuario = @Login";
                 MySqlCommand cmd = new MySqlCommand(select, conexao);
                 cmd.Parameters.AddWithValue("@Login", Login);
 
@@ -105,7 +105,7 @@ namespace VYNDRA.Classes
                         {
                             return new Users
                             {
-                                Id = reader.GetInt32("id"),
+                                Id = reader.GetInt32("id_usuario"),
                                 NomeExibicao = reader.GetString("nomeexibicao"),
                                 SenhaHash = senhaHash,
                                 datanascimento = reader.GetDateTime("datanascimento"),
@@ -161,7 +161,7 @@ namespace VYNDRA.Classes
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string update = "UPDATE usuarios SET linkedin = @linkedin WHERE id = @id";
+                    string update = "UPDATE usuarios SET linkedin = @linkedin WHERE id_usuario = @id";
                     MySqlCommand cmd = new MySqlCommand(update, conexao);
 
                     cmd.Parameters.AddWithValue("@id", Id);
@@ -193,7 +193,7 @@ namespace VYNDRA.Classes
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string update = "UPDATE usuarios SET instagram = @instagram WHERE id = @id";
+                    string update = "UPDATE usuarios SET instagram = @instagram WHERE id_usuario = @id";
                     MySqlCommand cmd = new MySqlCommand(update, conexao);
 
                     cmd.Parameters.AddWithValue("@id", this.Id);
@@ -226,7 +226,7 @@ namespace VYNDRA.Classes
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string update = "UPDATE usuarios SET telefone = @telefone WHERE id = @id";
+                    string update = "UPDATE usuarios SET telefone = @telefone WHERE id_usuario = @id";
                     MySqlCommand cmd = new MySqlCommand(update, conexao);
 
                     cmd.Parameters.AddWithValue("@id", this.Id);
@@ -258,7 +258,7 @@ namespace VYNDRA.Classes
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string query = "SELECT instagram, linkedin, telefone, fotoperfil, minifotoperfil FROM usuarios WHERE id = @id";
+                    string query = "SELECT instagram, linkedin, telefone, fotoperfil FROM usuarios WHERE id_usuario = @id";
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
                     cmd.Parameters.AddWithValue("@id", this.Id);
 
@@ -279,14 +279,14 @@ namespace VYNDRA.Classes
                                 this.FotoPerfil = null;
                             }
 
-                            if (reader["minifotoperfil"] != DBNull.Value)
+                            /*if (reader["minifotoperfil"] != DBNull.Value)
                             {
                                 this.MiniFotoPerfil = (byte[])reader["minifotoperfil"];
                             }
                             else
                             {
                                 this.MiniFotoPerfil = null;
-                            }
+                            }*/
                             return true;
                         }
                     }
@@ -307,10 +307,10 @@ namespace VYNDRA.Classes
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string query = "UPDATE usuarios SET fotoperfil = @fotoperfil, minifotoperfil = @minifotoperfil WHERE id = @id";
+                    string query = "UPDATE usuarios SET fotoperfil = @fotoperfil WHERE id_usuario = @id";
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
                     cmd.Parameters.Add("@fotoperfil", MySqlDbType.Blob).Value = FotoPerfil;
-                    cmd.Parameters.Add("@minifotoperfil", MySqlDbType.Blob).Value = MiniFotoPerfil;
+                    /*cmd.Parameters.Add("@minifotoperfil", MySqlDbType.Blob).Value = MiniFotoPerfil;*/
                     cmd.Parameters.AddWithValue("@id", Id);
 
                     return cmd.ExecuteNonQuery() > 0;
