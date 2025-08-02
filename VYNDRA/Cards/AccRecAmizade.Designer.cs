@@ -34,10 +34,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             foto_user = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            user_txt = new Guna.UI2.WinForms.Guna2HtmlLabel();
             aceitar_btn = new Guna.UI2.WinForms.Guna2CircleButton();
             recusar_btn = new Guna.UI2.WinForms.Guna2CircleButton();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            user_txt = new Guna.UI2.WinForms.Guna2HtmlLabel();
             ((System.ComponentModel.ISupportInitialize)foto_user).BeginInit();
             guna2Panel1.SuspendLayout();
             SuspendLayout();
@@ -52,17 +52,6 @@
             foto_user.Size = new Size(45, 45);
             foto_user.TabIndex = 0;
             foto_user.TabStop = false;
-            // 
-            // user_txt
-            // 
-            user_txt.BackColor = Color.Transparent;
-            user_txt.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            user_txt.ForeColor = Color.White;
-            user_txt.Location = new Point(61, 19);
-            user_txt.Name = "user_txt";
-            user_txt.Size = new Size(57, 23);
-            user_txt.TabIndex = 1;
-            user_txt.Text = "Usuario";
             // 
             // aceitar_btn
             // 
@@ -103,9 +92,9 @@
             // guna2Panel1
             // 
             guna2Panel1.BorderRadius = 25;
+            guna2Panel1.Controls.Add(user_txt);
             guna2Panel1.Controls.Add(recusar_btn);
             guna2Panel1.Controls.Add(aceitar_btn);
-            guna2Panel1.Controls.Add(user_txt);
             guna2Panel1.Controls.Add(foto_user);
             guna2Panel1.CustomizableEdges = customizableEdges4;
             guna2Panel1.Dock = DockStyle.Fill;
@@ -115,6 +104,17 @@
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges5;
             guna2Panel1.Size = new Size(284, 65);
             guna2Panel1.TabIndex = 3;
+            // 
+            // user_txt
+            // 
+            user_txt.BackColor = Color.Transparent;
+            user_txt.Font = new Font("Segoe UI", 12F);
+            user_txt.ForeColor = Color.White;
+            user_txt.Location = new Point(61, 31);
+            user_txt.Name = "user_txt";
+            user_txt.Size = new Size(37, 23);
+            user_txt.TabIndex = 3;
+            user_txt.Text = "nada";
             // 
             // AccRecAmizade
             // 
@@ -133,8 +133,8 @@
         #endregion
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         public Guna.UI2.WinForms.Guna2CirclePictureBox foto_user;
-        public Guna.UI2.WinForms.Guna2HtmlLabel user_txt;
         public Guna.UI2.WinForms.Guna2CircleButton aceitar_btn;
         public Guna.UI2.WinForms.Guna2CircleButton recusar_btn;
+        private Guna.UI2.WinForms.Guna2HtmlLabel user_txt;
     }
 }

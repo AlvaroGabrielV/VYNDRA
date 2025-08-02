@@ -65,22 +65,25 @@ namespace VYNDRA
             txtUsuario.Text = Sessao.UsuarioLogin;
             lblDataDeNascimento.Text = Sessao.DataNascimento.ToString("dd/MM/yyyy");
 
-            // Users usuario = Users.CarregarRedesSociaiseFotodePerfil(this.IdUsuario);
+            Users usuario = Users.CarregarRedesSociaiseFotodePerfil(this.IdUsuario);
 
-            // if (usuario != null)
-            // {
-            // txtInstagram.Text = usuario.Instagram;
-            // txtLinkedin.Text = usuario.Linkedin;
-            // txtWhatsapp.Text = usuario.Telefone;
+            if (usuario != null)
+            {
+                txtInstagram.Text = usuario.Instagram;
+                txtLinkedin.Text = usuario.Linkedin;
+                txtWhatsapp.Text = usuario.Telefone;
 
-            // if (usuario.FotoPerfil != null)
-            // {
-            //  using (MemoryStream ms = new MemoryStream(usuario.FotoPerfil))
-            // {
-            //CpFotodePerfil.Image = Image.FromStream(ms);
+                if (usuario.FotoPerfil != null)
+                {
+                    using (MemoryStream ms = new MemoryStream(usuario.FotoPerfil))
+                    {
+                        CpFotodePerfil.Image = Image.FromStream(ms);
+                    }
+                }
+            }
         }
 
-  
+
 
         private void txtLinkedin_KeyDown(object sender, KeyEventArgs e)
         {

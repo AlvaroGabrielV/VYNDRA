@@ -12,11 +12,27 @@ namespace VYNDRA.Cards
 {
     public partial class AccRecAmizade : UserControl
     {
+        public AccRecAmizade()
+        {
+            InitializeComponent();
+        }
         public string Username
         {
-            get { return user_txt.Text; }
+            get
+            {
+                if (user_txt != null)
+                {
+                    return user_txt.Text;
+                }
+                else
+                {
+                    MessageBox.Show("Controle user_txt não está inicializado corretamente.");
+                    return string.Empty;
+                }
+            }
             set { user_txt.Text = value; }
         }
+
 
         public Image UserPhoto
         {
@@ -29,10 +45,7 @@ namespace VYNDRA.Cards
 
         public Guna.UI2.WinForms.Guna2CircleButton BtnAceitar => aceitar_btn;
         public Guna.UI2.WinForms.Guna2CircleButton BtnRecusar => recusar_btn;
-        public AccRecAmizade()
-        {
-            InitializeComponent();
-        }
+        
 
         private void recusar_btn_Click(object sender, EventArgs e)
         {

@@ -1,14 +1,15 @@
-﻿using Org.BouncyCastle.Crypto.Generators;
+﻿using BCrypt.Net;
+using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto.Generators;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using BCrypt.Net;
-using MySql.Data.MySqlClient;
-using System.CodeDom;
-using System.Data;
 
 namespace VYNDRA.Classes
 {
@@ -17,15 +18,15 @@ namespace VYNDRA.Classes
         private int id;
         private string email;
         private string senha;
-        private string usuario;
+        private string usuario_field;
         private string nomeexibicao;
         private DateTime datanascimento;
         private string telefone;
         private string instagram;
         private string linkedin;
-        private byte fotoperfil;
+        private byte[] fotoperfil;
 
-        public byte FotoPerfil
+        public byte[] FotoPerfil
         {
             get { return fotoperfil; }
             set { fotoperfil = value; }
@@ -68,8 +69,8 @@ namespace VYNDRA.Classes
         }
         public string Usuario
         {
-            get { return usuario; }
-            set { usuario = value; }
+            get { return usuario_field; }
+            set { usuario_field = value; }
         }
         public string NomeExibicao
         {
@@ -158,11 +159,11 @@ namespace VYNDRA.Classes
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string query = "UPDATE usuarios SET fotoperfil = @fotoperfil WHERE id = @id";
+                    string query = "UPDATE usuarios SET fotoperfil = @fotoperfil WHERE id_usuario = @id";
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
 
                     cmd.Parameters.AddWithValue("@fotoperfil", fotoemBytes);
-                    cmd.Parameters.AddWithValue("@id", Id);
+                    cmd.Parameters.AddWithValue("@id", Sessao.IdUsuario);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -174,11 +175,11 @@ namespace VYNDRA.Classes
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------//
-        public static Users CarregarRedesSociaiseFotodePerfil(int id)
+        public static Users? CarregarRedesSociaiseFotodePerfil(int id)
         {
             using (MySqlConnection conexao = new ConexaoBD().Conectar())
             {
-                string select = "SELECT * FROM usuarios WHERE id = @id";
+                string select = "SELECT * FROM usuarios WHERE id_usuario = @id";
                 MySqlCommand cmd = new MySqlCommand(select, conexao);
                 cmd.Parameters.AddWithValue("@id", id);
 
@@ -186,24 +187,43 @@ namespace VYNDRA.Classes
                 {
                     if (reader.Read())
                     {
-                        Users usuario = new Users
+                        if (reader.Read())
                         {
-                            Id = reader.GetInt32("id"),
-                            Linkedin = reader.IsDBNull(reader.GetOrdinal("linkedin")) ? "" : reader.GetString("linkedin"),
-                            Instagram = reader.IsDBNull(reader.GetOrdinal("instagram")) ? "" : reader.GetString("instagram"),
-                            Telefone = reader.IsDBNull(reader.GetOrdinal("telefone")) ? "" : reader.GetString("telefone"),
-                            FotoPerfil = reader.GetByte("fotoperfil")
-                        };
+                            byte[] fotoPerfil = null;
+
+                            // Verifica se o campo fotoperfil não é nulo
+                            if (!reader.IsDBNull(reader.GetOrdinal("fotoperfil")))
+                            {
+                                // Lê o Stream do BLOB e converte para byte[]
+                                using (var stream = reader.GetStream("fotoperfil"))
+                                {
+                                    using (var ms = new MemoryStream())
+                                    {
+                                        stream.CopyTo(ms);  // Copia o Stream para o MemoryStream
+                                        fotoPerfil = ms.ToArray();  // Converte para byte[]
+                                    }
+                                }
+                            }
+
+                            Users usuario = new Users
+                            {
+                                Id = reader.GetInt32("id"),
+                                Linkedin = reader.IsDBNull(reader.GetOrdinal("linkedin")) ? "" : reader.GetString("linkedin"),
+                                Instagram = reader.IsDBNull(reader.GetOrdinal("instagram")) ? "" : reader.GetString("instagram"),
+                                Telefone = reader.IsDBNull(reader.GetOrdinal("telefone")) ? "" : reader.GetString("telefone"),
+                                FotoPerfil = fotoPerfil,
+                            };
 
 
 
 
-                        return usuario;
+                            return usuario;
+                        }
                     }
-                }
 
+                }
+                return null;
             }
-            return null;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -213,7 +233,7 @@ namespace VYNDRA.Classes
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string update = "UPDATE usuarios set linkedin = @linkedin WHERE id = @id";
+                    string update = "UPDATE usuarios set linkedin = @linkedin WHERE id_usuario = @id";
                     MySqlCommand updatecmd = new MySqlCommand(update, conexao);
 
                     updatecmd.Parameters.AddWithValue("@linkedin", linkedin);
@@ -236,7 +256,7 @@ namespace VYNDRA.Classes
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string query = "UPDATE usuarios set instagram = @instagram WHERE id = @id";
+                    string query = "UPDATE usuarios set instagram = @instagram WHERE id_usuario = @id";
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
 
                     cmd.Parameters.AddWithValue("@instagram", Instagram);
@@ -268,7 +288,7 @@ namespace VYNDRA.Classes
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string query = "UPDATE usuarios set telefone = @telefone WHERE id = @id";
+                    string query = "UPDATE usuarios set telefone = @telefone WHERE id_usuario = @id";
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
 
                     cmd.Parameters.AddWithValue("@telefone", telefone);
@@ -327,8 +347,8 @@ namespace VYNDRA.Classes
                     return new Users
                     {
                         Id = Convert.ToInt32(reader["id_usuario"]),
-                        Usuario = reader["Usuario"].ToString(),
-                        NomeExibicao = reader["NomeExibicao"].ToString()
+                        Usuario = reader["usuario"].ToString(),
+                        NomeExibicao = reader["nomeexibicao"].ToString()
                         
                     };
                 }
@@ -336,6 +356,68 @@ namespace VYNDRA.Classes
 
             return null;
         }
+
+        public static Users BuscarPorId(int id)
+        {
+            using (MySqlConnection conn = new ConexaoBD().Conectar())
+            {
+                string query = "SELECT * FROM usuarios WHERE id_usuario = @id";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                try
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // Adiciona os dados ao UsuarioSession
+                            string usuario = reader["usuario"].ToString();
+                            UsuarioSession.AdicionarUsuario(id, usuario);
+
+
+                            byte[] fotoPerfil = null;
+
+                            // Verifica se o campo fotoperfil não é nulo
+                            if (!reader.IsDBNull(reader.GetOrdinal("fotoperfil")))
+                            {
+                                // Lê o Stream do BLOB e converte para byte[]
+                                using (var stream = reader.GetStream("fotoperfil"))
+                                {
+                                    using (var ms = new MemoryStream())
+                                    {
+                                        stream.CopyTo(ms);  // Copia o Stream para o MemoryStream
+                                        fotoPerfil = ms.ToArray();  // Converte para byte[]
+                                    }
+                                }
+                            }
+
+                            return new Users
+                            {
+                                Id = Convert.ToInt32(reader["id_usuario"]),
+                                Usuario = usuario,
+                                NomeExibicao = reader["nomeexibicao"].ToString(),
+                                FotoPerfil = fotoPerfil
+                            };
+
+                        }
+                        else
+                        {
+                            Debug.WriteLine($"[BuscarPorId] Nenhum usuário encontrado para o ID: {id}");
+                        }
+                    }
+                }
+                
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"[BuscarPorId] Erro ao buscar usuário: {ex.Message}");
+                }
+            }
+
+            return null;
+        }
+
+
 
     }
 }

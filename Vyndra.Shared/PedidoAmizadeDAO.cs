@@ -41,8 +41,8 @@ namespace VYNDRA.Classes
                     pedidos.Add(new PedidoAmizade
                     {
                         Id = Convert.ToInt32(reader["Id"]),
-                        DeUsuario = reader["DeUsuario"].ToString(),
-                        ParaUsuario = reader["ParaUsuario"].ToString(),
+                        DeUsuario = reader.GetInt32("DeUsuario"),
+                        ParaUsuario = reader.GetInt32("ParaUsuario"),
                         Status = reader["Status"].ToString(),
                         DataSolicitacao = Convert.ToDateTime(reader["DataSolicitacao"])
                     });
@@ -56,10 +56,10 @@ namespace VYNDRA.Classes
             using (var conn = new MySqlConnection(connString))
             {
                 conn.Open();
-                string sql = "UPDATE PedidosAmizade SET Status = 'aceito' WHERE ParaUsuario = @id_destino AND DeUsuario = @id_usuario";
+                string sql = "UPDATE PedidosAmizade SET Status = 'aceito' WHERE ParaUsuario = @id_aprovante AND DeUsuario = @id_solicitante";
                 var cmd = new MySqlCommand(sql, conn);
-                cmd.Parameters.AddWithValue("@id_destino", id);
-                cmd.Parameters.AddWithValue("@id_usuario", Sessao.IdUsuario);
+                cmd.Parameters.AddWithValue("@id_aprovante", Sessao.IdUsuario);
+                cmd.Parameters.AddWithValue("@id_solicitante",id);
                 cmd.ExecuteNonQuery();
             }
         }
@@ -68,7 +68,7 @@ namespace VYNDRA.Classes
         {
             using (MySqlConnection conn = new ConexaoBD().Conectar())
             {
-                string query = "DELETE FROM pedidosamizade WHERE de_id = @de AND para_id = @para";
+                string query = "DELETE FROM PedidosAmizade WHERE de_id = @de AND para_id = @para";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@de", deIdUsuario);
                 cmd.Parameters.AddWithValue("@para", paraIdUsuario);
@@ -96,8 +96,8 @@ namespace VYNDRA.Classes
                         {
                             var pedido = new PedidoAmizade
                             {
-                                DeUsuario = reader.GetInt32("DeUsuario").ToString(),
-                                ParaUsuario = reader.GetInt32("ParaUsuario").ToString()
+                                DeUsuario = reader.GetInt32("DeUsuario"),
+                                ParaUsuario = reader.GetInt32("ParaUsuario"),
                             };
 
                             pedidos.Add(pedido);

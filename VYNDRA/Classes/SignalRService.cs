@@ -5,10 +5,10 @@ using VYNDRA;
 public static class SignalRService
 {
     public static HubConnection Connection { get; private set; }
-    private static string _idUsuario;
+    private static int _idUsuario;
     private static bool _iniciado = false;
 
-    public static async Task IniciarAsync(string idUsuario)
+    public static async Task IniciarAsync(int idUsuario)
     {
         _idUsuario = idUsuario;
         if (_iniciado) return;
@@ -49,7 +49,7 @@ public static class SignalRService
         {
             await Connection.StartAsync();
             Debug.WriteLine($"[SignalR] Conectado: {Connection.ConnectionId}");
-            if (!string.IsNullOrEmpty(_idUsuario))
+            if (_idUsuario != null)
             {
                 await Connection.InvokeAsync("RegistrarUsuario", _idUsuario);
                 Debug.WriteLine($"[SignalR] Registrado: {_idUsuario}");

@@ -9,8 +9,8 @@ namespace VYNDRA.Classes
     public class PedidoAmizade
     {
         public int Id { get; set; }
-        public string DeUsuario { get; set; }
-        public string ParaUsuario { get; set; }
+        public int DeUsuario { get; set; }
+        public int ParaUsuario { get; set; }
         public string Status { get; set; }
         public DateTime DataSolicitacao { get; set; }
     }

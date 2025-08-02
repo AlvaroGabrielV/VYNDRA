@@ -68,7 +68,7 @@ namespace VYNDRA
 
                     MessageBox.Show(Sessao.IdUsuario.ToString());
 
-                    await SignalRService.IniciarAsync(Sessao.IdUsuario.ToString());
+                    await SignalRService.IniciarAsync(Sessao.IdUsuario);
                     
 
                 }

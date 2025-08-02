@@ -33,11 +33,34 @@ namespace VYNDRA
 
             foreach (var solicitacao in solicitacoesPendentes)
             {
-                var usuario = Users.BuscarPorLogin(solicitacao.DeUsuario);
-                var cartao = CriarCartaoSolicitacao(usuario);
+                // Verifica se a solicitação contém o DeUsuario
+                int deUsuarioId = solicitacao.ParaUsuario;
+                Debug.WriteLine("Tentando buscar o usuário com id: " + deUsuarioId);
+
+                var usuario = Users.BuscarPorId(deUsuarioId);
+
+                
+                if (usuario == null)
+                {
+                    MessageBox.Show("Não foi possível encontrar o usuário com ID: " + deUsuarioId);
+                    Debug.WriteLine("Erro: Usuário com ID " + deUsuarioId + " não encontrado.");
+                    continue;
+                }
+                else
+                {
+                    Debug.WriteLine("Usuário encontrado: " + usuario.NomeExibicao);
+                }
+
+                // Verifica se a foto não é nula antes de tentar criar o MemoryStream
+                byte[] fotoBytes = usuario.FotoPerfil ?? new byte[0];
+                MemoryStream fotoStream = new MemoryStream(fotoBytes);
+
+                // Cria o cartão de solicitação
+                var cartao = CriarCartaoSolicitacao(usuario.Id, usuario.Usuario, fotoStream);
                 lista_layout.Controls.Add(cartao);
             }
         }
+
 
 
         private void voltar_btn_Click(object sender, EventArgs e)
@@ -63,8 +86,8 @@ namespace VYNDRA
                     return;
                 }
 
-                string meuId = Sessao.IdUsuario.ToString();
-                string idDestino = usuarioDestino.Id.ToString();
+                int meuId = Sessao.IdUsuario;
+                int idDestino = usuarioDestino.Id;
 
                 await SignalRService.VerificarConexaoAsync();
                 Debug.WriteLine("[SignalR] Antes do InvokeAsync com estado: " + SignalRService.Connection.State);
@@ -80,48 +103,92 @@ namespace VYNDRA
 
         private void PedidosDeAmizade_NovaSolicitacaoRecebida(object sender, string deIdUsuario)
         {
+            Debug.WriteLine("Evento NovaSolicitacaoRecebida disparado com id: " + deIdUsuario);
+
             if (this.IsHandleCreated)
             {
                 this.Invoke((MethodInvoker)(() =>
                 {
-                    var usuario = Users.BuscarPorLogin(Sessao.UsuarioLogin);
-                    var cardsolicitacao = CriarCartaoSolicitacao(usuario);
-                    lista_layout.Controls.Add(cardsolicitacao);
+                    int id;
+                    try
+                    {
+                        id = int.Parse(deIdUsuario);
+                        Debug.WriteLine("Id convertido: " + id);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro ao converter id de usuário: " + ex.Message);
+                        return;
+                    }
+
+                    var usuario = Users.BuscarPorId(id);
+                    Debug.WriteLine(usuario == null ? "Usuário não encontrado." : "Usuário encontrado: " + usuario.NomeExibicao);
+
+                    try
+                    {
+                        if (usuario != null)
+                        {
+                            var FotoStream = new MemoryStream(usuario.FotoPerfil ?? new byte[0]);
+                            var cardsolicitacao = CriarCartaoSolicitacao(usuario.Id,usuario.Usuario, FotoStream);
+                            lista_layout.Controls.Add(cardsolicitacao);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não foi possível encontrar o usuário que enviou a solicitação.");
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Erro ao criar cartão de solicitação: " + ex.Message);
+                        Debug.WriteLine("Erro ao criar cartão de solicitação: " + ex);
+                    }
                 }));
+            }
+
+            else
+            {
+                MessageBox.Show("Evento nao disparado!");
             }
         }
 
-        public Control CriarCartaoSolicitacao(Users usuario)
-        {
 
+        public Control CriarCartaoSolicitacao(int UsuarioID,string usuario, Stream FotoUsuario)
+        {
             var cartao = new AccRecAmizade();
 
-            
-            cartao.Username = usuario.NomeExibicao;
+            byte[] fotoBytes;
 
-            
-            if (usuario.FotoPerfil != null)
+            if (FotoUsuario != null)
             {
-                using (var ms = new MemoryStream(usuario.FotoPerfil))
+                using (var memoryStream = new MemoryStream())
                 {
-                    cartao.UserPhoto = Image.FromStream(ms); 
+                    FotoUsuario.CopyTo(memoryStream);
+                    fotoBytes = memoryStream.ToArray();
                 }
             }
             else
             {
-                
-                cartao.foto_user.Image = Properties.Resources.danger;
+                fotoBytes = Array.Empty<byte>();
             }
 
-            // Guarda o ID do usuário no Tag para referência
-            cartao.Tag = usuario.Id;
+            cartao.Username = usuario;
+            if (fotoBytes.Length > 0)
+            {
+                using (MemoryStream ms = new MemoryStream(fotoBytes))
+                {
+                    cartao.UserPhoto = Bitmap.FromStream(ms);
+                }
+            }
+
+            cartao.UsuarioId = UsuarioID;
 
             cartao.BtnAceitar.Click += async (s, e) =>
             {
                 try
                 {
                     var dao = new PedidoAmizadeDAO();
-                    await dao.AceitarPedido(usuario.Id);
+                    Debug.WriteLine("Aceitando pedido de amizade para usuário ID: " + cartao.UsuarioId);
+                    await dao.AceitarPedido(cartao.UsuarioId);
 
                     lista_layout.Controls.Remove(cartao);
 
@@ -138,7 +205,7 @@ namespace VYNDRA
                 try
                 {
                     var dao = new PedidoAmizadeDAO();
-                    await dao.RemoverPedido(Sessao.IdUsuario, usuario.Id);
+                    await dao.RemoverPedido(Sessao.IdUsuario, cartao.UsuarioId);
 
                     lista_layout.Controls.Remove(cartao);
 
