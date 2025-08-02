@@ -15,7 +15,7 @@ namespace VYNDRA
 {
     public partial class Cadastro : Form
     {
-        
+
         public Cadastro()
         {
             InitializeComponent();
@@ -117,5 +117,14 @@ namespace VYNDRA
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
         }
 
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cadastro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

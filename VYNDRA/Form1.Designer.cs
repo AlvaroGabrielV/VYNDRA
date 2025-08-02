@@ -47,7 +47,7 @@
             btnEnviar.Font = new Font("Segoe UI", 9F);
             btnEnviar.ForeColor = Color.White;
             btnEnviar.Location = new Point(888, 412);
-            btnEnviar.Margin = new Padding(2, 2, 2, 2);
+            btnEnviar.Margin = new Padding(2);
             btnEnviar.Name = "btnEnviar";
             btnEnviar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnEnviar.Size = new Size(160, 32);
@@ -84,7 +84,7 @@
             // 
             msg_flow.AutoScroll = true;
             msg_flow.Location = new Point(198, 7);
-            msg_flow.Margin = new Padding(2, 2, 2, 2);
+            msg_flow.Margin = new Padding(2);
             msg_flow.Name = "msg_flow";
             msg_flow.Size = new Size(857, 398);
             msg_flow.TabIndex = 3;
@@ -96,11 +96,11 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.bg_vyndra;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1063, 449);
+            ClientSize = new Size(1103, 615);
             Controls.Add(btnEnviar);
             Controls.Add(txtMensagem);
             Controls.Add(msg_flow);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "VYNDRA";

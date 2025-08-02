@@ -91,5 +91,15 @@ namespace VYNDRA
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtNomeExibicao_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

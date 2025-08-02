@@ -246,7 +246,7 @@
             PanelTopo.Location = new Point(0, 0);
             PanelTopo.Name = "PanelTopo";
             PanelTopo.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            PanelTopo.Size = new Size(1378, 20);
+            PanelTopo.Size = new Size(1119, 20);
             PanelTopo.TabIndex = 29;
             // 
             // Menu
@@ -254,7 +254,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 23, 34);
-            ClientSize = new Size(1378, 788);
+            ClientSize = new Size(1119, 654);
             Controls.Add(label4);
             Controls.Add(label5);
             Controls.Add(btnPerfil);
