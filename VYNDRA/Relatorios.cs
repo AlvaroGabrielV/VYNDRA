@@ -16,11 +16,27 @@ namespace VYNDRA
         public Relatorios(int IdUsuario)
         {
             InitializeComponent();
-            IdUsuario = Sessao.IdUsuario;
+            Sessao.IdUsuario = IdUsuario;
         }
 
         private void Relatorios_Load(object sender, EventArgs e)
         {
+            miniFotoPerfil.SizeMode = PictureBoxSizeMode.Zoom;
+
+            Users usuario = new Users();
+
+            if (usuario.CarregarRedesSociais(Sessao.IdUsuario) && Sessao.FotoPerfil != null && Sessao.FotoPerfil.Length > 0)
+{
+                using (MemoryStream ms = new MemoryStream(Sessao.FotoPerfil))
+                {
+                    miniFotoPerfil.Image = Image.FromStream(ms);
+                }
+            }
+            else
+            {
+                miniFotoPerfil.Image = null;
+            }
+
             CardAdicionarTarefa botaoAdicionar = new CardAdicionarTarefa();
             botaoAdicionar.BotaoClicado += BotaoAdicionar_Click;
             FlowPanelConteudo.Controls.Add(botaoAdicionar);
@@ -40,34 +56,6 @@ namespace VYNDRA
                 FlowPanelConteudo.Controls.Add(card);
                 FlowPanelConteudo.Controls.SetChildIndex(card, FlowPanelConteudo.Controls.Count - 1);
             }
-
-            if (Sessao.MiniFotoPerfil != null && Sessao.MiniFotoPerfil.Length > 0)
-            {
-                using (MemoryStream ms = new MemoryStream(Sessao.MiniFotoPerfil))
-                {
-                    miniFotoPerfil.Image = Image.FromStream(ms);
-                }
-            }
-            else
-            {
-                
-                Users usuario = new Users();
-                usuario.Id = Sessao.IdUsuario;
-                if (usuario.CarregarRedesSociais() && usuario.FotoPerfil != null && usuario.FotoPerfil.Length > 0)
-                {
-                    using (MemoryStream ms = new MemoryStream(usuario.FotoPerfil))
-                    {
-                        miniFotoPerfil.Image = Image.FromStream(ms);
-                    }
-                    
-                    Sessao.MiniFotoPerfil = usuario.FotoPerfil;
-                }
-                else
-                {
-                    miniFotoPerfil.Image = null;
-                }
-            }
-
         }
 
         private void BotaoAdicionar_Click(object sender, EventArgs e)
@@ -79,25 +67,37 @@ namespace VYNDRA
                 MessageBox.Show("O espaço máximo de anotações foi atingido.", "Limite atingido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            CardTarefas novaTarefa = new CardTarefas();
-            novaTarefa.Titulo = "Nova Tarefa";
-            novaTarefa.Descricao = "Digite a descrição..";
-            novaTarefa.DataCriacao = DateTime.Now;
-            novaTarefa.ExlcuirTarefasClicado += NovaTarefa_ExlcuirTarefasClicado;
-            novaTarefa.EditarTarefaClicada += NovaTarefa_EditarTarefaClicada;
 
-            RelatoriosClasse novoRelatorio = new RelatoriosClasse
+            BlocodeNotas bloco = new BlocodeNotas();
+            bloco.ShowDialog();
+
+            if (bloco.SalvoComSucesso)
             {
-                IdUsuario = Sessao.IdUsuario,
-                Titulo = novaTarefa.Titulo,
-                Descricao = novaTarefa.Descricao,
-                DataCriacao = novaTarefa.DataCriacao
-            };
-            novoRelatorio.Inserir();
+                RelatoriosClasse novoRelatorio = new RelatoriosClasse
+                {
+                    IdUsuario = Sessao.IdUsuario,
+                    Titulo = bloco.Titulo,
+                    Descricao = bloco.Descricao,
+                    DataCriacao = DateTime.Now
+                };
+                novoRelatorio.Inserir();
 
-            int indexBotaoMais = FlowPanelConteudo.Controls.IndexOf((Control)sender);
-            FlowPanelConteudo.Controls.Add(novaTarefa);
-            FlowPanelConteudo.Controls.SetChildIndex(novaTarefa, indexBotaoMais);
+                CardTarefas novaTarefa = new CardTarefas
+                {
+                    Titulo = bloco.Titulo,
+                    Descricao = bloco.Descricao,
+                    DataCriacao = DateTime.Now
+                };
+
+                
+
+                novaTarefa.ExlcuirTarefasClicado += NovaTarefa_ExlcuirTarefasClicado;
+                novaTarefa.EditarTarefaClicada += NovaTarefa_EditarTarefaClicada;
+
+                int indexBotaoMais = FlowPanelConteudo.Controls.IndexOf((Control)sender);
+                FlowPanelConteudo.Controls.Add(novaTarefa);
+                FlowPanelConteudo.Controls.SetChildIndex(novaTarefa, indexBotaoMais);
+            }
         }
         private void NovaTarefa_EditarTarefaClicada(object? sender, EventArgs e)
         {
@@ -152,11 +152,17 @@ namespace VYNDRA
         }
 
         private void btnHome_Click(object sender, EventArgs e)
-        {  
+        {
             Menu menu = new Menu(Sessao.IdUsuario);
             menu.Show();
             this.Close();
         }
 
+        private void miniFotoPerfil_Click(object sender, EventArgs e)
+        {
+            Perfil perfil = new Perfil(Sessao.IdUsuario);
+            perfil.Show();
+            this.Close();
+        }
     }
 }

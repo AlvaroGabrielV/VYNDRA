@@ -44,13 +44,11 @@ namespace VYNDRA
                     Users usuario = new Users();
                     usuario.Id = Sessao.IdUsuario;
                     usuario.FotoPerfil = imagemBytes;
-                    
+                    Sessao.FotoPerfil = imagemBytes;
 
                     if (usuario.SalvarFotoPerfil())
                     {
-                        MessageBox.Show("Foto de perfil salva com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        Sessao.FotoPerfil = imagemBytes;
-                        Sessao.MiniFotoPerfil = imagemBytes;
+                        MessageBox.Show("Foto de perfil salva com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);        
                     }
                     else
                     {
@@ -68,9 +66,8 @@ namespace VYNDRA
             lblDataDeNascimento.Text = Sessao.DataNascimento.ToString("dd/MM/yyyy");
 
             Users usuario = new Users();
-            usuario.Id = Sessao.IdUsuario;
 
-            if (usuario.CarregarRedesSociais())
+            if (usuario.CarregarRedesSociais(Sessao.IdUsuario))
             {
                 txtInstagram.Text = usuario.Instagram;
                 txtLinkedin.Text = usuario.Linkedin;
@@ -78,6 +75,8 @@ namespace VYNDRA
 
                 if (usuario.FotoPerfil != null && usuario.FotoPerfil.Length > 0)
                 {
+                    Sessao.FotoPerfil = usuario.FotoPerfil;
+
                     using (MemoryStream ms = new MemoryStream(usuario.FotoPerfil))
                     {
                         CpFotodePerfil.Image = Image.FromStream(ms);
@@ -87,7 +86,7 @@ namespace VYNDRA
                 else
                 {
                     CpFotodePerfil.Image = null;
-                    miniFotoPerfil.Image = null;
+                    Sessao.FotoPerfil = null;
                 }
             }
         }
@@ -173,6 +172,17 @@ namespace VYNDRA
             {
                 MessageBox.Show("Erro ao salvar: " + ex.Message, "Erro - Redes Sociais", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAlterarSenha_Click(object sender, EventArgs e)
+        {
+            EsqueciSenha esqueci = new EsqueciSenha();
+            esqueci.ShowDialog();
         }
     }
 }

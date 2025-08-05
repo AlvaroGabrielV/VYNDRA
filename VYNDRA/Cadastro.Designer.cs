@@ -74,7 +74,6 @@
             btnOcultarSenha = new Guna.UI2.WinForms.Guna2Button();
             PanelTopo = new Guna.UI2.WinForms.Guna2Panel();
             DataNascimentoPicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
-            textBox1 = new TextBox();
             SuspendLayout();
             // 
             // label1
@@ -447,18 +446,6 @@
             DataNascimentoPicker.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
             DataNascimentoPicker.Value = new DateTime(2025, 7, 8, 18, 4, 26, 836);
             // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(80, 80, 80);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 10F);
-            textBox1.ForeColor = Color.White;
-            textBox1.Location = new Point(425, 318);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(269, 18);
-            textBox1.TabIndex = 29;
-            textBox1.UseSystemPasswordChar = true;
-            // 
             // Cadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -466,7 +453,6 @@
             BackgroundImage = Properties.Resources.fundo_vyndra__3_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 654);
-            Controls.Add(textBox1);
             Controls.Add(btnOcultarSenha);
             Controls.Add(txtNomeExibicao);
             Controls.Add(guna2Button5);
@@ -520,6 +506,5 @@
         private Guna.UI2.WinForms.Guna2Button btnOcultarSenha;
         private Guna.UI2.WinForms.Guna2Panel PanelTopo;
         private Guna.UI2.WinForms.Guna2DateTimePicker DataNascimentoPicker;
-        private TextBox textBox1;
     }
 }

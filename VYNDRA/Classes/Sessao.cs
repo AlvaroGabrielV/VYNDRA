@@ -20,12 +20,10 @@ namespace VYNDRA.Classes
             public static string Linkedin { get; set; }
 
             public static byte[] FotoPerfil { get; set; }
-            public static byte[] MiniFotoPerfil { get; set; }
 
 
         public static void Limpar()
             {
-                MiniFotoPerfil = null;
                 Linkedin = null;
                 Instagram = null;
                 IdUsuario = 0;
