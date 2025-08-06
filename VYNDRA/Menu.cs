@@ -52,6 +52,7 @@ namespace VYNDRA
             TelaPrincipal telaPrincipal = new TelaPrincipal();
             telaPrincipal.Show();
             this.Close();
+            
         }
     }
 }

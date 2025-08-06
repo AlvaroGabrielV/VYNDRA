@@ -17,9 +17,45 @@ namespace VYNDRA.Cards
             InitializeComponent();
         }
 
-        private void guna2HtmlLabel1_Click(object sender, EventArgs e)
-        {
+        public int idContato;
+        public string nomeContato;
+        public Image fotoContato;
 
+        public int IdContato
+        {
+            get { return idContato; }
+            set
+            {
+                idContato = value;
+                fotocontato_box.Tag = value;
+            }
         }
+        public string NomeContato
+        {
+            get { return nomeContato; }
+            set
+            {
+                nomeContato = value;
+                lb_nomedocontato.Text = value;
+            }
+        }
+
+        public Image FotoContato
+        {
+            get { return fotoContato; }
+            set
+            {
+                fotoContato = value;
+                fotocontato_box.Image = value;
+            }
+        }
+
+        public event EventHandler<int> ContatoSelecionado;
+        private void clicar_contato_Click(object sender, EventArgs e)
+        {
+            ContatoSelecionado?.Invoke(this, idContato);
+        }
+
+
     }
 }

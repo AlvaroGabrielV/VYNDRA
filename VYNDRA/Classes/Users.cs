@@ -371,23 +371,22 @@ namespace VYNDRA.Classes
                     {
                         if (reader.Read())
                         {
-                            // Adiciona os dados ao UsuarioSession
+                            
                             string usuario = reader["usuario"].ToString();
                             UsuarioSession.AdicionarUsuario(id, usuario);
 
 
                             byte[] fotoPerfil = null;
 
-                            // Verifica se o campo fotoperfil não é nulo
                             if (!reader.IsDBNull(reader.GetOrdinal("fotoperfil")))
                             {
-                                // Lê o Stream do BLOB e converte para byte[]
+                                
                                 using (var stream = reader.GetStream("fotoperfil"))
                                 {
                                     using (var ms = new MemoryStream())
                                     {
-                                        stream.CopyTo(ms);  // Copia o Stream para o MemoryStream
-                                        fotoPerfil = ms.ToArray();  // Converte para byte[]
+                                        stream.CopyTo(ms); 
+                                        fotoPerfil = ms.ToArray();  
                                     }
                                 }
                             }
@@ -417,7 +416,81 @@ namespace VYNDRA.Classes
             return null;
         }
 
+        public static void SincronizarAmizadesAceitas()
+        {
+            using (var conexao = new ConexaoBD().Conectar())
+            {
+                var cmd = conexao.CreateCommand();
+                cmd.CommandText = @"
+            INSERT INTO Amigos (Usuario1, Usuario2)
+            SELECT 
+                CASE 
+                    WHEN DeUsuario < ParaUsuario THEN DeUsuario 
+                    ELSE ParaUsuario 
+                END AS Usuario1,
+                CASE 
+                    WHEN DeUsuario > ParaUsuario THEN DeUsuario 
+                    ELSE ParaUsuario 
+                END AS Usuario2
+            FROM PedidosAmizade
+            WHERE Status = 'aceito'
+            AND NOT EXISTS (
+                SELECT 1 FROM Amigos a
+                WHERE 
+                    (a.Usuario1 = CASE WHEN DeUsuario < ParaUsuario THEN DeUsuario ELSE ParaUsuario END AND
+                     a.Usuario2 = CASE WHEN DeUsuario > ParaUsuario THEN DeUsuario ELSE ParaUsuario END)
+            );
+        ";
 
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public static List<(int Id, string Nome, byte[] FotoPerfil)> CarregarChats()
+        {
+            var amigos = new List<(int, string, byte[])>();
+
+            using (var conexao = new ConexaoBD().Conectar())
+            {
+                string sql = @"
+            SELECT u.id_usuario, u.nomeexibicao, u.fotoperfil
+            FROM Amigos a
+            JOIN usuarios u ON 
+                (u.id_usuario = a.Usuario1 AND a.Usuario2 = @idUsuario) OR
+                (u.id_usuario = a.Usuario2 AND a.Usuario1 = @idUsuario)
+        ";
+
+                using (var cmd = new MySqlCommand(sql, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@idUsuario", Sessao.IdUsuario);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32("id_usuario");
+                            string nome = reader.GetString("nomeexibicao");
+
+                            byte[] fotoPerfil = null;
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("fotoperfil")))
+                            {
+                                using (var stream = reader.GetStream("fotoperfil"))
+                                using (var ms = new MemoryStream())
+                                {
+                                    stream.CopyTo(ms);
+                                    fotoPerfil = ms.ToArray();
+                                }
+                            }
+
+                            amigos.Add((id, nome, fotoPerfil));
+                        }
+                    }
+                }
+            }
+
+            return amigos;
+        }
 
     }
 }

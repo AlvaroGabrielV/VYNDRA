@@ -21,10 +21,10 @@ public static class SignalRService
     {
         Connection.On<string>("ReceberSolicitacaoAmizade", (deIdUsuario) =>
         {
-            // Exemplo básico com MessageBox
+            
             MessageBox.Show($"Nova solicitação de amizade de {deIdUsuario}");
 
-            // Opcional: notificar seu formulário com evento ou atualizar controle estático
+            
             PedidosDeAmizade.NovaSolicitacaoRecebida?.Invoke(null, deIdUsuario);
         });
     }

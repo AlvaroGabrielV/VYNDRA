@@ -33,8 +33,8 @@ namespace VYNDRA
 
             foreach (var solicitacao in solicitacoesPendentes)
             {
-                // Verifica se a solicitação contém o DeUsuario
-                int deUsuarioId = solicitacao.ParaUsuario;
+                
+                int deUsuarioId = solicitacao.DeUsuario;
                 Debug.WriteLine("Tentando buscar o usuário com id: " + deUsuarioId);
 
                 var usuario = Users.BuscarPorId(deUsuarioId);
@@ -51,11 +51,11 @@ namespace VYNDRA
                     Debug.WriteLine("Usuário encontrado: " + usuario.NomeExibicao);
                 }
 
-                // Verifica se a foto não é nula antes de tentar criar o MemoryStream
+                
                 byte[] fotoBytes = usuario.FotoPerfil ?? new byte[0];
                 MemoryStream fotoStream = new MemoryStream(fotoBytes);
 
-                // Cria o cartão de solicitação
+               
                 var cartao = CriarCartaoSolicitacao(usuario.Id, usuario.Usuario, fotoStream);
                 lista_layout.Controls.Add(cartao);
             }
@@ -171,7 +171,6 @@ namespace VYNDRA
                 fotoBytes = Array.Empty<byte>();
             }
 
-            cartao.Username = usuario;
             if (fotoBytes.Length > 0)
             {
                 using (MemoryStream ms = new MemoryStream(fotoBytes))
@@ -179,6 +178,8 @@ namespace VYNDRA
                     cartao.UserPhoto = Bitmap.FromStream(ms);
                 }
             }
+
+            cartao.Username = usuario;
 
             cartao.UsuarioId = UsuarioID;
 

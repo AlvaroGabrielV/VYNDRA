@@ -203,6 +203,7 @@
             Padding = new Padding(5);
             StartPosition = FormStartPosition.CenterScreen;
             Text = "PedidosDeAmizade";
+            TransparencyKey = Color.FromArgb(53, 53, 53);
             Load += PedidosDeAmizade_Load;
             add_panel.ResumeLayout(false);
             guna2Panel2.ResumeLayout(false);

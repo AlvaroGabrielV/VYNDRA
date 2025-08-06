@@ -50,6 +50,7 @@
             foto_user.ShadowDecoration.CustomizableEdges = customizableEdges1;
             foto_user.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             foto_user.Size = new Size(45, 45);
+            foto_user.SizeMode = PictureBoxSizeMode.Zoom;
             foto_user.TabIndex = 0;
             foto_user.TabStop = false;
             // 
@@ -110,7 +111,7 @@
             user_txt.BackColor = Color.Transparent;
             user_txt.Font = new Font("Segoe UI", 12F);
             user_txt.ForeColor = Color.White;
-            user_txt.Location = new Point(61, 31);
+            user_txt.Location = new Point(60, 20);
             user_txt.Name = "user_txt";
             user_txt.Size = new Size(37, 23);
             user_txt.TabIndex = 3;

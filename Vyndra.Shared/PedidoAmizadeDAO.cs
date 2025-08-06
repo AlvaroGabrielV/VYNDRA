@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using MySql.Data.MySqlClient;
+using System.Diagnostics;
 
 namespace VYNDRA.Classes
 {
@@ -32,7 +33,7 @@ namespace VYNDRA.Classes
             using (var conn = new MySqlConnection(connString))
             {
                 conn.Open();
-                string sql = "SELECT * FROM PedidosAmizade WHERE ParaUsuario = @para AND Status = 'pendente'";
+                string sql = "SELECT DeUsuario, ParaUsuario FROM PedidosAmizade WHERE ParaUsuario = @idUsuario AND status = 'pendente'";
                 var cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@para", paraUsuario);
                 var reader = cmd.ExecuteReader();
@@ -55,12 +56,16 @@ namespace VYNDRA.Classes
         {
             using (var conn = new MySqlConnection(connString))
             {
+                
                 conn.Open();
                 string sql = "UPDATE PedidosAmizade SET Status = 'aceito' WHERE ParaUsuario = @id_aprovante AND DeUsuario = @id_solicitante";
                 var cmd = new MySqlCommand(sql, conn);
                 cmd.Parameters.AddWithValue("@id_aprovante", Sessao.IdUsuario);
                 cmd.Parameters.AddWithValue("@id_solicitante",id);
                 cmd.ExecuteNonQuery();
+
+                Debug.WriteLine("Aceitando pedido de amizade do ID:" + id);
+
             }
         }
 
@@ -68,7 +73,7 @@ namespace VYNDRA.Classes
         {
             using (MySqlConnection conn = new ConexaoBD().Conectar())
             {
-                string query = "DELETE FROM PedidosAmizade WHERE de_id = @de AND para_id = @para";
+                string query = "DELETE FROM PedidosAmizade WHERE DeUsuario = @de AND ParaUsuario = @para";
                 MySqlCommand cmd = new MySqlCommand(query, conn);
                 cmd.Parameters.AddWithValue("@de", deIdUsuario);
                 cmd.Parameters.AddWithValue("@para", paraIdUsuario);
