@@ -93,6 +93,16 @@ namespace VYNDRA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap balao_de_fala_com_linhas_de_texto {
+            get {
+                object obj = ResourceManager.GetObject("balao-de-fala-com-linhas-de-texto", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bg_vyndra {
             get {
                 object obj = ResourceManager.GetObject("bg_vyndra", resourceCulture);
@@ -216,6 +226,16 @@ namespace VYNDRA.Properties {
         internal static System.Drawing.Bitmap configuracoes {
             get {
                 object obj = ResourceManager.GetObject("configuracoes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap conversacao {
+            get {
+                object obj = ResourceManager.GetObject("conversacao", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

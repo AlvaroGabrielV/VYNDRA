@@ -135,5 +135,10 @@ namespace VYNDRA
         {
 
         }
+
+        private void guna2CirclePictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

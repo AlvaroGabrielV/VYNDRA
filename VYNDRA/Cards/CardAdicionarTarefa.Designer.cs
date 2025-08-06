@@ -30,18 +30,13 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnAdicionar = new Guna.UI2.WinForms.Guna2Button();
-            guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Panel2.SuspendLayout();
             SuspendLayout();
             // 
             // btnAdicionar
             // 
+            btnAdicionar.BackColor = Color.FromArgb(22, 39, 50);
+            btnAdicionar.BorderRadius = 20;
             btnAdicionar.CustomizableEdges = customizableEdges1;
             btnAdicionar.DisabledState.BorderColor = Color.DarkGray;
             btnAdicionar.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -56,31 +51,8 @@
             btnAdicionar.Location = new Point(0, 0);
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnAdicionar.Size = new Size(284, 168);
+            btnAdicionar.Size = new Size(284, 220);
             btnAdicionar.TabIndex = 7;
-            // 
-            // guna2Panel3
-            // 
-            guna2Panel3.CustomizableEdges = customizableEdges3;
-            guna2Panel3.FillColor = Color.FromArgb(75, 75, 75);
-            guna2Panel3.Location = new Point(0, 0);
-            guna2Panel3.Name = "guna2Panel3";
-            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel3.Size = new Size(372, 31);
-            guna2Panel3.TabIndex = 6;
-            // 
-            // guna2Panel2
-            // 
-            guna2Panel2.BorderRadius = 20;
-            guna2Panel2.Controls.Add(guna2Panel3);
-            guna2Panel2.CustomizableEdges = customizableEdges5;
-            guna2Panel2.Dock = DockStyle.Bottom;
-            guna2Panel2.FillColor = Color.FromArgb(75, 75, 75);
-            guna2Panel2.Location = new Point(0, 168);
-            guna2Panel2.Name = "guna2Panel2";
-            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            guna2Panel2.Size = new Size(284, 52);
-            guna2Panel2.TabIndex = 5;
             // 
             // CardAdicionarTarefa
             // 
@@ -88,17 +60,13 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Transparent;
             Controls.Add(btnAdicionar);
-            Controls.Add(guna2Panel2);
             Name = "CardAdicionarTarefa";
             Size = new Size(284, 220);
-            guna2Panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2Button btnAdicionar;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
     }
 }

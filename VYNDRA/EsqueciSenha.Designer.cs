@@ -42,7 +42,6 @@
             bntFechar = new Guna.UI2.WinForms.Guna2Button();
             guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
             label2 = new Label();
-            guna2ShadowPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // txtEmailRecuperacao
@@ -145,9 +144,7 @@
             // 
             // guna2ShadowPanel1
             // 
-            guna2ShadowPanel1.BackColor = Color.Transparent;
-            guna2ShadowPanel1.BackgroundImage = Properties.Resources.Inserir_um_título__2_3;
-            guna2ShadowPanel1.Controls.Add(label2);
+            guna2ShadowPanel1.BackColor = Color.FromArgb(39, 38, 38);
             guna2ShadowPanel1.Dock = DockStyle.Fill;
             guna2ShadowPanel1.FillColor = Color.FromArgb(39, 38, 38);
             guna2ShadowPanel1.Location = new Point(0, 0);
@@ -174,7 +171,6 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 23, 34);
-            BackgroundImage = Properties.Resources.Inserir_um_título__2_2;
             ClientSize = new Size(582, 386);
             Controls.Add(bntFechar);
             Controls.Add(label3);
@@ -188,7 +184,6 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = " ";
             MouseDown += EsqueciSenha_MouseDown;
-            guna2ShadowPanel1.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
         }

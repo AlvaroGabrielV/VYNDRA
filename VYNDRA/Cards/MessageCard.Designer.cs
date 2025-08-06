@@ -50,7 +50,7 @@
             guna2Panel1.Controls.Add(lblUser);
             guna2Panel1.Controls.Add(user_picture);
             guna2Panel1.CustomizableEdges = customizableEdges2;
-            guna2Panel1.FillColor = Color.Silver;
+            guna2Panel1.FillColor = Color.FromArgb(29, 52, 66);
             guna2Panel1.Location = new Point(14, 8);
             guna2Panel1.Margin = new Padding(10, 9, 10, 9);
             guna2Panel1.MaximumSize = new Size(643, 0);
@@ -62,19 +62,23 @@
             // lblMessage
             // 
             lblMessage.BackColor = Color.Transparent;
+            lblMessage.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblMessage.ForeColor = Color.White;
             lblMessage.Location = new Point(88, 34);
             lblMessage.Margin = new Padding(2, 2, 2, 15);
             lblMessage.MaximumSize = new Size(546, 0);
             lblMessage.Name = "lblMessage";
-            lblMessage.Size = new Size(56, 17);
+            lblMessage.Size = new Size(57, 17);
             lblMessage.TabIndex = 2;
             lblMessage.Text = "mensagm";
             // 
             // lblHoras
             // 
             lblHoras.BackColor = Color.Transparent;
+            lblHoras.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblHoras.ForeColor = Color.White;
             lblHoras.Location = new Point(561, 7);
-            lblHoras.Margin = new Padding(2, 2, 2, 2);
+            lblHoras.Margin = new Padding(2);
             lblHoras.Name = "lblHoras";
             lblHoras.Size = new Size(34, 17);
             lblHoras.TabIndex = 1;
@@ -83,10 +87,12 @@
             // lblUser
             // 
             lblUser.BackColor = Color.Transparent;
-            lblUser.Location = new Point(88, 7);
-            lblUser.Margin = new Padding(2, 2, 2, 2);
+            lblUser.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblUser.ForeColor = Color.White;
+            lblUser.Location = new Point(88, 9);
+            lblUser.Margin = new Padding(2);
             lblUser.Name = "lblUser";
-            lblUser.Size = new Size(43, 17);
+            lblUser.Size = new Size(45, 17);
             lblUser.TabIndex = 1;
             lblUser.Text = "Usuario";
             // 
@@ -94,7 +100,7 @@
             // 
             user_picture.ImageRotate = 0F;
             user_picture.Location = new Point(11, 5);
-            user_picture.Margin = new Padding(2, 2, 2, 2);
+            user_picture.Margin = new Padding(2);
             user_picture.Name = "user_picture";
             user_picture.ShadowDecoration.CustomizableEdges = customizableEdges1;
             user_picture.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
@@ -108,8 +114,9 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
+            BackColor = Color.FromArgb(22, 39, 50);
             Controls.Add(guna2Panel1);
-            Margin = new Padding(2, 2, 2, 2);
+            Margin = new Padding(2);
             Name = "MessageCard";
             Size = new Size(672, 83);
             guna2Panel1.ResumeLayout(false);
