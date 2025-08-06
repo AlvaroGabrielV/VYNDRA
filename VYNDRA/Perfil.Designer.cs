@@ -68,7 +68,7 @@
             label2 = new Label();
             label4 = new Label();
             label3 = new Label();
-            btnCadastrar = new Guna.UI2.WinForms.Guna2Button();
+            btnAlterarUsuario = new Guna.UI2.WinForms.Guna2Button();
             txtNomeExibicao = new TextBox();
             txtUsuario = new TextBox();
             btnSalvarRedesSociais = new Guna.UI2.WinForms.Guna2Button();
@@ -171,7 +171,7 @@
             guna2Panel2.Controls.Add(label2);
             guna2Panel2.Controls.Add(label4);
             guna2Panel2.Controls.Add(label3);
-            guna2Panel2.Controls.Add(btnCadastrar);
+            guna2Panel2.Controls.Add(btnAlterarUsuario);
             guna2Panel2.Controls.Add(txtNomeExibicao);
             guna2Panel2.Controls.Add(txtUsuario);
             guna2Panel2.Controls.Add(btnSalvarRedesSociais);
@@ -318,7 +318,6 @@
             label2.Size = new Size(57, 20);
             label2.TabIndex = 27;
             label2.Text = "E-mail:";
-            label2.Click += label2_Click;
             // 
             // label4
             // 
@@ -344,23 +343,24 @@
             label3.TabIndex = 28;
             label3.Text = "Usuário:";
             // 
-            // btnCadastrar
+            // btnAlterarUsuario
             // 
-            btnCadastrar.BackColor = Color.FromArgb(17, 23, 34);
-            btnCadastrar.BorderRadius = 15;
-            btnCadastrar.CustomizableEdges = customizableEdges12;
-            btnCadastrar.DisabledState.BorderColor = Color.DarkGray;
-            btnCadastrar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnCadastrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnCadastrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnCadastrar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnCadastrar.ForeColor = Color.White;
-            btnCadastrar.Location = new Point(219, 576);
-            btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            btnCadastrar.Size = new Size(161, 37);
-            btnCadastrar.TabIndex = 32;
-            btnCadastrar.Text = "Alterar";
+            btnAlterarUsuario.BackColor = Color.FromArgb(17, 23, 34);
+            btnAlterarUsuario.BorderRadius = 15;
+            btnAlterarUsuario.CustomizableEdges = customizableEdges12;
+            btnAlterarUsuario.DisabledState.BorderColor = Color.DarkGray;
+            btnAlterarUsuario.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAlterarUsuario.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAlterarUsuario.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAlterarUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAlterarUsuario.ForeColor = Color.White;
+            btnAlterarUsuario.Location = new Point(211, 570);
+            btnAlterarUsuario.Name = "btnAlterarUsuario";
+            btnAlterarUsuario.ShadowDecoration.CustomizableEdges = customizableEdges13;
+            btnAlterarUsuario.Size = new Size(165, 41);
+            btnAlterarUsuario.TabIndex = 32;
+            btnAlterarUsuario.Text = "Alterar Usuário e Nome";
+            btnAlterarUsuario.Click += btnAlterarUsuario_Click;
             // 
             // txtNomeExibicao
             // 
@@ -512,7 +512,7 @@
             btnMinimizar.ForeColor = Color.White;
             btnMinimizar.Image = Properties.Resources.minimizar;
             btnMinimizar.ImageSize = new Size(11, 11);
-            btnMinimizar.Location = new Point(1027, 0);
+            btnMinimizar.Location = new Point(1101, 0);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.ShadowDecoration.CustomizableEdges = customizableEdges19;
             btnMinimizar.Size = new Size(20, 20);
@@ -533,7 +533,7 @@
             btnFechar.ForeColor = Color.White;
             btnFechar.Image = Properties.Resources.xCorreto;
             btnFechar.ImageSize = new Size(11, 11);
-            btnFechar.Location = new Point(1053, 0);
+            btnFechar.Location = new Point(1127, 0);
             btnFechar.Name = "btnFechar";
             btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges21;
             btnFechar.Size = new Size(20, 20);
@@ -580,7 +580,7 @@
         private Label label2;
         private Label label3;
         private Label label4;
-        private Guna.UI2.WinForms.Guna2Button btnCadastrar;
+        private Guna.UI2.WinForms.Guna2Button btnAlterarUsuario;
         private Guna.UI2.WinForms.Guna2CircleButton BtnMudarFoto;
         private PictureBox pictureBox1;
         private TextBox txtInstagram;

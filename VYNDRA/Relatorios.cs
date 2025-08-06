@@ -37,9 +37,11 @@ namespace VYNDRA
                 miniFotoPerfil.Image = null;
             }
 
+            FlowPanelConteudo.Controls.Clear();
             CardAdicionarTarefa botaoAdicionar = new CardAdicionarTarefa();
             botaoAdicionar.BotaoClicado += BotaoAdicionar_Click;
             FlowPanelConteudo.Controls.Add(botaoAdicionar);
+
 
             List<RelatoriosClasse> relatorios = RelatoriosClasse.ListarPorUsuario(Sessao.IdUsuario);
 
@@ -99,25 +101,37 @@ namespace VYNDRA
                 FlowPanelConteudo.Controls.SetChildIndex(novaTarefa, indexBotaoMais);
             }
         }
+
         private void NovaTarefa_EditarTarefaClicada(object? sender, EventArgs e)
         {
-            CardTarefas card = sender as CardTarefas;
+            CardTarefas tarefaSelecionada = sender as CardTarefas;
 
-            RelatoriosClasse relatorioAtualizado = new RelatoriosClasse
+            if (tarefaSelecionada == null)
+                return;
+
+            BlocodeNotas bloco = new BlocodeNotas
             {
-                IdRelatorio = card.IdRelatorio,
-                Titulo = card.Titulo,
-                Descricao = card.Descricao,
-                IdUsuario = Sessao.IdUsuario
+                Titulo = tarefaSelecionada.Titulo,
+                Descricao = tarefaSelecionada.Descricao
             };
 
-            if (relatorioAtualizado.Atualizar())
+            bloco.ShowDialog();
+
+            if (bloco.SalvoComSucesso)
             {
-                MessageBox.Show("Tarefa atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Erro ao atualizar tarefa!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tarefaSelecionada.Titulo = bloco.Titulo;
+                tarefaSelecionada.Descricao = bloco.Descricao;;
+
+                RelatoriosClasse atualizar = new RelatoriosClasse
+                {
+                    IdRelatorio = tarefaSelecionada.IdRelatorio,
+                    Titulo = bloco.Titulo,
+                    Descricao = bloco.Descricao,
+                    DataCriacao = tarefaSelecionada.DataCriacao,
+                    IdUsuario = Sessao.IdUsuario
+                };
+
+                atualizar.Atualizar();
             }
         }
 
@@ -133,6 +147,7 @@ namespace VYNDRA
                 {
                     FlowPanelConteudo.Controls.Remove((CardTarefas)sender);
                     MessageBox.Show("Relatório excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Relatorios_Load()
                 }
             }
             catch (Exception ex)

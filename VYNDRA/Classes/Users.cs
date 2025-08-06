@@ -52,12 +52,8 @@ namespace VYNDRA.Classes
         public string Email
         {
             get { return email; }
-            set
-            {
-                if (!verificarEmail(value))
-                    throw new Exception("Email inválido");
-                email = value;
-            }
+            set { email = value; }
+      
         }
         public string SenhaHash
         {
@@ -155,10 +151,10 @@ namespace VYNDRA.Classes
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string update = "UPDATE usuarios SET linkedin = @linkedin WHERE id_usuario = @id";
+                    string update = "UPDATE usuarios SET linkedin = @linkedin WHERE id_usuario = @id_usuario";
                     MySqlCommand cmd = new MySqlCommand(update, conexao);
 
-                    cmd.Parameters.AddWithValue("@id", Id);
+                    cmd.Parameters.AddWithValue("@id_usuario", Id);
                     cmd.Parameters.AddWithValue("@linkedin", Linkedin);
 
                     int resultado = cmd.ExecuteNonQuery();
@@ -187,10 +183,10 @@ namespace VYNDRA.Classes
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string update = "UPDATE usuarios SET instagram = @instagram WHERE id_usuario = @id";
+                    string update = "UPDATE usuarios SET instagram = @instagram WHERE id_usuario = @id_usuario";
                     MySqlCommand cmd = new MySqlCommand(update, conexao);
 
-                    cmd.Parameters.AddWithValue("@id", this.Id);
+                    cmd.Parameters.AddWithValue("@id_usuario", this.Id);
                     cmd.Parameters.AddWithValue("@instagram", Instagram);
 
                     int resultado = cmd.ExecuteNonQuery();
@@ -220,10 +216,10 @@ namespace VYNDRA.Classes
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string update = "UPDATE usuarios SET telefone = @telefone WHERE id_usuario = @id";
+                    string update = "UPDATE usuarios SET telefone = @telefone WHERE id_usuario = @id_usuario";
                     MySqlCommand cmd = new MySqlCommand(update, conexao);
 
-                    cmd.Parameters.AddWithValue("@id", this.Id);
+                    cmd.Parameters.AddWithValue("@id_usuario", this.Id);
                     cmd.Parameters.AddWithValue("@telefone", Telefone);
 
                     int resultado = cmd.ExecuteNonQuery();
@@ -292,10 +288,10 @@ namespace VYNDRA.Classes
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string query = "UPDATE usuarios SET fotoperfil = @fotoperfil WHERE id_usuario = @id";
+                    string query = "UPDATE usuarios SET fotoperfil = @fotoperfil WHERE id_usuario = @id_usuario";
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
                     cmd.Parameters.Add("@fotoperfil", MySqlDbType.Blob).Value = FotoPerfil;
-                    cmd.Parameters.AddWithValue("@id", Id);
+                    cmd.Parameters.AddWithValue("@id_usuario", Id);
 
                     return cmd.ExecuteNonQuery() > 0;
                 }
@@ -307,13 +303,75 @@ namespace VYNDRA.Classes
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------//
+        public bool AtualizarNomeExibicao()
+        {
+            try
+            {
+                using (MySqlConnection conexao = new ConexaoBD().Conectar())
+                {
+                    string update = "UPDATE usuarios SET nomeexibicao = @nomeexibicao WHERE id_usuario = @id_usuario";
+                    MySqlCommand cmd = new MySqlCommand(update, conexao);
+
+                    cmd.Parameters.AddWithValue("@id_usuario", this.Id);
+                    cmd.Parameters.AddWithValue("@nomeexibicao", NomeExibicao);
+
+                    int resultado = cmd.ExecuteNonQuery();
+
+                    if (resultado > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível realizar cadastro -> Método" + ex.Message, "Erro - Cadastrar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
+        public bool AtualizarUsuario()
+        {
+            try
+            {
+                using (MySqlConnection conexao = new ConexaoBD().Conectar())
+                {
+                    string update = "UPDATE usuarios SET usuario = @usuario WHERE id_usuario = @id_usuario";
+                    MySqlCommand cmd = new MySqlCommand(update, conexao);
+
+                    cmd.Parameters.AddWithValue("@id_usuario", this.Id);
+                    cmd.Parameters.AddWithValue("@usuario", Usuario);
+
+                    int resultado = cmd.ExecuteNonQuery();
+
+                    if (resultado > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível realizar cadastro -> Método" + ex.Message, "Erro - Cadastrar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
         public void DefinirSenha(string senhaPura)
         {
             SenhaHash = BCrypt.Net.BCrypt.HashPassword(senhaPura);
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------//
-        public static bool verificarEmail(string email)
+        public bool verificarEmail(string email)
         {
             string emailValido = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
             Regex regex = new Regex(emailValido);

@@ -17,8 +17,8 @@ namespace VYNDRA
             InitializeComponent();
         }
 
-        public string Titulo { get; private set; }
-        public string Descricao { get; private set; }
+        public string Titulo { get; set; }
+        public string Descricao { get; set; }
         public bool SalvoComSucesso { get; private set; } = false;
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -27,6 +27,17 @@ namespace VYNDRA
             Descricao = txtDescricao.Text;
 
             SalvoComSucesso = true;
+            this.Close();
+        }
+
+        private void BlocodeNotas_Load(object sender, EventArgs e)
+        {
+            txtTitulo.Text = Titulo;
+            txtDescricao.Text = Descricao;
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }

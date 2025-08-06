@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtTitulo = new Guna.UI2.WinForms.Guna2TextBox();
             txtDescricao = new Guna.UI2.WinForms.Guna2TextBox();
             btnSalvar = new Guna.UI2.WinForms.Guna2Button();
+            btnFechar = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
             // 
             // txtTitulo
             // 
-            txtTitulo.CustomizableEdges = customizableEdges7;
+            txtTitulo.CustomizableEdges = customizableEdges1;
             txtTitulo.DefaultText = "Título";
             txtTitulo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtTitulo.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -57,13 +60,13 @@
             txtTitulo.Name = "txtTitulo";
             txtTitulo.PlaceholderText = "";
             txtTitulo.SelectedText = "";
-            txtTitulo.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            txtTitulo.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txtTitulo.Size = new Size(800, 50);
             txtTitulo.TabIndex = 0;
             // 
             // txtDescricao
             // 
-            txtDescricao.CustomizableEdges = customizableEdges9;
+            txtDescricao.CustomizableEdges = customizableEdges3;
             txtDescricao.DefaultText = "Texto...";
             txtDescricao.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtDescricao.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -80,7 +83,7 @@
             txtDescricao.Name = "txtDescricao";
             txtDescricao.PlaceholderText = "";
             txtDescricao.SelectedText = "";
-            txtDescricao.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            txtDescricao.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtDescricao.Size = new Size(800, 325);
             txtDescricao.TabIndex = 1;
             // 
@@ -88,7 +91,7 @@
             // 
             btnSalvar.BackColor = Color.Transparent;
             btnSalvar.BorderRadius = 15;
-            btnSalvar.CustomizableEdges = customizableEdges11;
+            btnSalvar.CustomizableEdges = customizableEdges5;
             btnSalvar.DisabledState.BorderColor = Color.DarkGray;
             btnSalvar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnSalvar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -97,11 +100,32 @@
             btnSalvar.ForeColor = Color.White;
             btnSalvar.Location = new Point(302, 396);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnSalvar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnSalvar.Size = new Size(161, 37);
             btnSalvar.TabIndex = 13;
             btnSalvar.Text = "Salvar";
             btnSalvar.Click += btnSalvar_Click;
+            // 
+            // btnFechar
+            // 
+            btnFechar.BackColor = Color.Transparent;
+            btnFechar.BorderColor = Color.Transparent;
+            btnFechar.CustomizableEdges = customizableEdges7;
+            btnFechar.DisabledState.BorderColor = Color.DarkGray;
+            btnFechar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnFechar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnFechar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnFechar.FillColor = Color.Transparent;
+            btnFechar.Font = new Font("Segoe UI", 9F);
+            btnFechar.ForeColor = Color.White;
+            btnFechar.Image = Properties.Resources.xCorreto;
+            btnFechar.ImageSize = new Size(11, 11);
+            btnFechar.Location = new Point(780, 4);
+            btnFechar.Name = "btnFechar";
+            btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnFechar.Size = new Size(20, 20);
+            btnFechar.TabIndex = 21;
+            btnFechar.Click += btnFechar_Click;
             // 
             // BlocodeNotas
             // 
@@ -109,6 +133,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(11, 17, 30);
             ClientSize = new Size(800, 450);
+            Controls.Add(btnFechar);
             Controls.Add(btnSalvar);
             Controls.Add(txtDescricao);
             Controls.Add(txtTitulo);
@@ -117,6 +142,7 @@
             Name = "BlocodeNotas";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "BlocodeNotas";
+            Load += BlocodeNotas_Load;
             ResumeLayout(false);
         }
 
@@ -124,5 +150,6 @@
         private Guna.UI2.WinForms.Guna2TextBox txtTitulo;
         private Guna.UI2.WinForms.Guna2TextBox txtDescricao;
         private Guna.UI2.WinForms.Guna2Button btnSalvar;
+        private Guna.UI2.WinForms.Guna2Button btnFechar;
     }
 }

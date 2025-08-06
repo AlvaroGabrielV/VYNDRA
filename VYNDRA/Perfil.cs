@@ -48,7 +48,7 @@ namespace VYNDRA
 
                     if (usuario.SalvarFotoPerfil())
                     {
-                        MessageBox.Show("Foto de perfil salva com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);        
+                        MessageBox.Show("Foto de perfil salva com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                     {
@@ -174,15 +174,19 @@ namespace VYNDRA
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnAlterarSenha_Click(object sender, EventArgs e)
         {
             EsqueciSenha esqueci = new EsqueciSenha();
             esqueci.ShowDialog();
+        }
+
+        private void btnAlterarUsuario_Click(object sender, EventArgs e)
+        {
+            AlterarUsuario alteraruser = new AlterarUsuario();
+            alteraruser.ShowDialog();
+
+            Perfil_Load(this, EventArgs.Empty);
         }
     }
 }
