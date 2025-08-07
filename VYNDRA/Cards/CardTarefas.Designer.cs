@@ -63,7 +63,7 @@
             guna2Panel3.Controls.Add(btnExcluir);
             guna2Panel3.Controls.Add(btnEditar);
             guna2Panel3.CustomizableEdges = customizableEdges7;
-            guna2Panel3.FillColor = Color.FromArgb(75, 75, 75);
+            guna2Panel3.FillColor = Color.FromArgb(29, 52, 66);
             guna2Panel3.Location = new Point(0, 160);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges8;
@@ -80,19 +80,19 @@
             TxtTitulo.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
             TxtTitulo.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
             TxtTitulo.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            TxtTitulo.FillColor = Color.FromArgb(75, 75, 75);
+            TxtTitulo.FillColor = Color.FromArgb(29, 52, 66);
             TxtTitulo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            TxtTitulo.Font = new Font("Arial Narrow", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            TxtTitulo.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             TxtTitulo.ForeColor = Color.White;
             TxtTitulo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TxtTitulo.Location = new Point(4, 3);
-            TxtTitulo.Margin = new Padding(4, 5, 4, 5);
+            TxtTitulo.Location = new Point(6, 4);
+            TxtTitulo.Margin = new Padding(6, 8, 6, 8);
             TxtTitulo.Name = "TxtTitulo";
             TxtTitulo.PlaceholderText = "";
             TxtTitulo.ReadOnly = true;
             TxtTitulo.SelectedText = "";
             TxtTitulo.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            TxtTitulo.Size = new Size(181, 23);
+            TxtTitulo.Size = new Size(72, 26);
             TxtTitulo.TabIndex = 4;
             TxtTitulo.TextChanged += TxtTitulo_TextChanged;
             TxtTitulo.DoubleClick += TxtTitulo_DoubleClick;
@@ -109,7 +109,7 @@
             btnExcluir.Font = new Font("Segoe UI", 9F);
             btnExcluir.ForeColor = Color.White;
             btnExcluir.Image = Properties.Resources.excluir;
-            btnExcluir.Location = new Point(228, 0);
+            btnExcluir.Location = new Point(249, 2);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnExcluir.Size = new Size(30, 30);
@@ -127,7 +127,7 @@
             btnEditar.Font = new Font("Segoe UI", 9F);
             btnEditar.ForeColor = Color.White;
             btnEditar.Image = Properties.Resources.editar;
-            btnEditar.Location = new Point(192, 0);
+            btnEditar.Location = new Point(216, 2);
             btnEditar.Name = "btnEditar";
             btnEditar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnEditar.Size = new Size(30, 30);
@@ -142,7 +142,7 @@
             guna2Panel2.Controls.Add(label2);
             guna2Panel2.CustomizableEdges = customizableEdges9;
             guna2Panel2.Dock = DockStyle.Bottom;
-            guna2Panel2.FillColor = Color.FromArgb(75, 75, 75);
+            guna2Panel2.FillColor = Color.FromArgb(29, 52, 66);
             guna2Panel2.Location = new Point(0, 168);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges10;
@@ -152,34 +152,34 @@
             // lblDataCriacao
             // 
             lblDataCriacao.AutoSize = true;
-            lblDataCriacao.Font = new Font("Arial Narrow", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblDataCriacao.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDataCriacao.ForeColor = Color.White;
-            lblDataCriacao.Location = new Point(62, 27);
+            lblDataCriacao.Location = new Point(69, 28);
             lblDataCriacao.Name = "lblDataCriacao";
-            lblDataCriacao.Size = new Size(25, 15);
+            lblDataCriacao.Size = new Size(42, 13);
             lblDataCriacao.TabIndex = 6;
-            lblDataCriacao.Text = "Data";
+            lblDataCriacao.Text = "Tempo";
             // 
             // LblData
             // 
             LblData.AutoSize = true;
-            LblData.Font = new Font("Arial Narrow", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LblData.Font = new Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LblData.ForeColor = Color.White;
             LblData.Location = new Point(72, 27);
             LblData.Name = "LblData";
-            LblData.Size = new Size(0, 15);
+            LblData.Size = new Size(0, 13);
             LblData.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Arial Narrow", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(13, 27);
+            label2.Location = new Point(13, 28);
             label2.Name = "label2";
-            label2.Size = new Size(53, 15);
+            label2.Size = new Size(50, 13);
             label2.TabIndex = 4;
-            label2.Text = "Criado em ";
+            label2.Text = "Criado á";
             // 
             // txtDescricao
             // 
@@ -193,18 +193,18 @@
             txtDescricao.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
             txtDescricao.FillColor = Color.FromArgb(11, 17, 30);
             txtDescricao.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDescricao.Font = new Font("Arial Narrow", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtDescricao.Font = new Font("Segoe UI", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtDescricao.ForeColor = Color.White;
             txtDescricao.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDescricao.Location = new Point(1, 0);
-            txtDescricao.Margin = new Padding(3, 5, 3, 5);
+            txtDescricao.Location = new Point(13, 4);
+            txtDescricao.Margin = new Padding(3, 4, 3, 4);
             txtDescricao.Multiline = true;
             txtDescricao.Name = "txtDescricao";
             txtDescricao.PlaceholderText = "";
             txtDescricao.ReadOnly = true;
             txtDescricao.SelectedText = "";
             txtDescricao.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txtDescricao.Size = new Size(280, 124);
+            txtDescricao.Size = new Size(254, 151);
             txtDescricao.TabIndex = 5;
             txtDescricao.DoubleClick += txtDescricao_DoubleClick;
             txtDescricao.Leave += txtDescricao_Leave;

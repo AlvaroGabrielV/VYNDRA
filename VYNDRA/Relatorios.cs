@@ -125,11 +125,20 @@ namespace VYNDRA
         }
 
         private void btnHome_Click(object sender, EventArgs e)
-        {  
+        {
             Menu menu = new Menu(IdUsuario);
             menu.Show();
             this.Close();
         }
 
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2CirclePictureBox3_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

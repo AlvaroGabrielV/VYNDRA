@@ -63,9 +63,25 @@ namespace VYNDRA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap add_user {
             get {
                 object obj = ResourceManager.GetObject("add-user", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap adicionar_grupo {
+            get {
+                object obj = ResourceManager.GetObject("adicionar-grupo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap adicionar_grupo1 {
+            get {
+                object obj = ResourceManager.GetObject("adicionar-grupo1", resourceCulture);
+>>>>>>> 13f7adbbca1df4a99c3f2065578f22ef31759b92
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -76,6 +92,16 @@ namespace VYNDRA.Properties {
         internal static System.Drawing.Bitmap area_de_login {
             get {
                 object obj = ResourceManager.GetObject("area de login", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap balao_de_fala_com_linhas_de_texto {
+            get {
+                object obj = ResourceManager.GetObject("balao-de-fala-com-linhas-de-texto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,6 +129,46 @@ namespace VYNDRA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bloco_de_anotacoes__1_ {
+            get {
+                object obj = ResourceManager.GetObject("bloco-de-anotacoes (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bloco_de_anotacoes1 {
+            get {
+                object obj = ResourceManager.GetObject("bloco-de-anotacoes1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bloco_de_anotacoes2 {
+            get {
+                object obj = ResourceManager.GetObject("bloco-de-anotacoes2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bloco_de_anotacoes3 {
+            get {
+                object obj = ResourceManager.GetObject("bloco-de-anotacoes3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap botao_de_inicio {
             get {
                 object obj = ResourceManager.GetObject("botao-de-inicio", resourceCulture);
@@ -123,9 +189,15 @@ namespace VYNDRA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap check {
             get {
                 object obj = ResourceManager.GetObject("check", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap casa {
+            get {
+                object obj = ResourceManager.GetObject("casa", resourceCulture);
+>>>>>>> 13f7adbbca1df4a99c3f2065578f22ef31759b92
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +205,25 @@ namespace VYNDRA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap casa1 {
+            get {
+                object obj = ResourceManager.GetObject("casa1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap casa2 {
+            get {
+                object obj = ResourceManager.GetObject("casa2", resourceCulture);
+>>>>>>> 13f7adbbca1df4a99c3f2065578f22ef31759b92
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,9 +251,15 @@ namespace VYNDRA.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+<<<<<<< HEAD
         internal static System.Drawing.Bitmap danger {
             get {
                 object obj = ResourceManager.GetObject("danger", resourceCulture);
+=======
+        internal static System.Drawing.Bitmap conversacao {
+            get {
+                object obj = ResourceManager.GetObject("conversacao", resourceCulture);
+>>>>>>> 13f7adbbca1df4a99c3f2065578f22ef31759b92
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -176,6 +270,46 @@ namespace VYNDRA.Properties {
         internal static System.Drawing.Bitmap do_utilizador {
             get {
                 object obj = ResourceManager.GetObject("do-utilizador", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap do_utilizador__1_ {
+            get {
+                object obj = ResourceManager.GetObject("do-utilizador (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap do_utilizador__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("do-utilizador (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap do_utilizador__1_2 {
+            get {
+                object obj = ResourceManager.GetObject("do-utilizador (1)2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dragao {
+            get {
+                object obj = ResourceManager.GetObject("dragao", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -296,6 +430,46 @@ namespace VYNDRA.Properties {
         internal static System.Drawing.Bitmap Inserir_um_título__1_ {
             get {
                 object obj = ResourceManager.GetObject("Inserir um título (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inserir_um_título__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Inserir um título (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inserir_um_título__2_1 {
+            get {
+                object obj = ResourceManager.GetObject("Inserir um título (2)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inserir_um_título__2_2 {
+            get {
+                object obj = ResourceManager.GetObject("Inserir um título (2)2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Inserir_um_título__2_3 {
+            get {
+                object obj = ResourceManager.GetObject("Inserir um título (2)3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

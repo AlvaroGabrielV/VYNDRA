@@ -121,6 +121,10 @@
     <value>17, 17</value>
   </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+<<<<<<< HEAD
     <value>118</value>
+=======
+    <value>25</value>
+>>>>>>> 13f7adbbca1df4a99c3f2065578f22ef31759b92
   </metadata>
 </root>

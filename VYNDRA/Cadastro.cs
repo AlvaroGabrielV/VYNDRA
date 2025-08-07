@@ -15,6 +15,7 @@ namespace VYNDRA
 {
     public partial class Cadastro : Form
     {
+
         public Cadastro()
         {
             InitializeComponent();
@@ -54,7 +55,7 @@ namespace VYNDRA
                 usuario.Email = txtEmail.Text;
                 usuario.Usuario = txtUsuario.Text;
                 usuario.DefinirSenha(txtSenha.Text);
-                DateTime dataNascimento = DataNascimentoPicker.Value.Date;
+                DateTime dataNascimento = Convert.ToDateTime(DataNascimento.Text);
                 DateTime hoje = DateTime.Today;
                 DateTime dataMinima = hoje.AddYears(-18);
 
@@ -65,7 +66,7 @@ namespace VYNDRA
                 }
                 else
                 {
-                    usuario.DataNascimento = DataNascimentoPicker.Value.Date;
+                    usuario.DataNascimento = Convert.ToDateTime(DataNascimento.Text);
                 }
 
                 if (usuario.CadastrarUsuario())
@@ -92,7 +93,7 @@ namespace VYNDRA
             txtSenha.Clear();
             txtUsuario.Clear();
             txtNomeExibicao.Clear();
-            DataNascimentoPicker.ResetText();
+            DataNascimento.ResetText();
         }
 
         private void btnOcultarSenha_Click(object sender, EventArgs e)
@@ -114,6 +115,16 @@ namespace VYNDRA
         {
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Cadastro_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

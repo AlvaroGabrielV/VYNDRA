@@ -53,17 +53,6 @@ namespace VYNDRA
                 MessageBox.Show("Código inválido ou expirado.");
             }
         }
-
-        private void btnFechar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
         // Permite mover a janela clicando e arrastando um painel
         [DllImport("user32.dll")]
         public static extern bool ReleaseCapture();
@@ -78,6 +67,11 @@ namespace VYNDRA
         {
             ReleaseCapture();
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
+        }
+
+        private void guna2Button3_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

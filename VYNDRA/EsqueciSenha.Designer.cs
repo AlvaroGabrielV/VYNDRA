@@ -34,46 +34,44 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             txtEmailRecuperacao = new TextBox();
             label1 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             btnEnviar = new Guna.UI2.WinForms.Guna2Button();
             label3 = new Label();
-            label4 = new Label();
-            btnMinimizar = new Guna.UI2.WinForms.Guna2Button();
-            btnFechar = new Guna.UI2.WinForms.Guna2Button();
+            bntFechar = new Guna.UI2.WinForms.Guna2Button();
+            guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            label2 = new Label();
             SuspendLayout();
             // 
             // txtEmailRecuperacao
             // 
             txtEmailRecuperacao.BackColor = Color.FromArgb(80, 80, 80);
             txtEmailRecuperacao.BorderStyle = BorderStyle.None;
-            txtEmailRecuperacao.Font = new Font("Segoe UI", 10F);
+            txtEmailRecuperacao.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtEmailRecuperacao.ForeColor = Color.White;
             txtEmailRecuperacao.Location = new Point(148, 181);
             txtEmailRecuperacao.Name = "txtEmailRecuperacao";
             txtEmailRecuperacao.Size = new Size(269, 18);
             txtEmailRecuperacao.TabIndex = 18;
-            txtEmailRecuperacao.Text = "Ex: seuemail@exemplo.com";
+            txtEmailRecuperacao.Text = "Ex: seuemail@gmail.com";
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label1.Font = new Font("Bahnschrift", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.BackColor = Color.FromArgb(39, 38, 38);
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(22, 22);
+            label1.Location = new Point(90, 62);
             label1.Name = "label1";
-            label1.Size = new Size(296, 25);
+            label1.Size = new Size(184, 25);
             label1.TabIndex = 19;
-            label1.Text = "Digite o Email de Recuperação";
+            label1.Text = "Informe seu E-mail:";
             // 
             // guna2Button1
             // 
-            guna2Button1.BackColor = Color.Transparent;
-            guna2Button1.BorderRadius = 20;
+            guna2Button1.BackColor = Color.FromArgb(39, 38, 38);
+            guna2Button1.BorderRadius = 5;
             guna2Button1.CustomizableEdges = customizableEdges1;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -96,16 +94,16 @@
             // 
             // btnEnviar
             // 
-            btnEnviar.BackColor = Color.Transparent;
+            btnEnviar.BackColor = Color.FromArgb(39, 38, 38);
             btnEnviar.BorderRadius = 15;
             btnEnviar.CustomizableEdges = customizableEdges3;
             btnEnviar.DisabledState.BorderColor = Color.DarkGray;
             btnEnviar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEnviar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnEnviar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnEnviar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEnviar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEnviar.ForeColor = Color.White;
-            btnEnviar.Location = new Point(213, 236);
+            btnEnviar.Location = new Point(213, 266);
             btnEnviar.Name = "btnEnviar";
             btnEnviar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnEnviar.Size = new Size(134, 36);
@@ -115,67 +113,58 @@
             // 
             // label3
             // 
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 10F);
+            label3.BackColor = Color.FromArgb(39, 38, 38);
+            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(42, 70);
+            label3.Location = new Point(90, 96);
             label3.Name = "label3";
-            label3.Size = new Size(599, 19);
+            label3.Size = new Size(380, 19);
             label3.TabIndex = 23;
-            label3.Text = "Informe o e-mail que você usou ao se cadastrar. Enviaremos um código para ";
+            label3.Text = "Enviaremos um código para para redefinir sua senha.";
             // 
-            // label4
+            // bntFechar
             // 
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI", 10F);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(42, 89);
-            label4.Name = "label4";
-            label4.Size = new Size(599, 19);
-            label4.TabIndex = 24;
-            label4.Text = "redefinir sua senha.";
+            bntFechar.BackColor = Color.FromArgb(39, 38, 38);
+            bntFechar.CustomizableEdges = customizableEdges5;
+            bntFechar.DisabledState.BorderColor = Color.DarkGray;
+            bntFechar.DisabledState.CustomBorderColor = Color.DarkGray;
+            bntFechar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            bntFechar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            bntFechar.FillColor = Color.Transparent;
+            bntFechar.Font = new Font("Segoe UI", 9F);
+            bntFechar.ForeColor = Color.Transparent;
+            bntFechar.Image = Properties.Resources.Inserir_um_título__1_;
+            bntFechar.ImageSize = new Size(30, 30);
+            bntFechar.Location = new Point(6, 6);
+            bntFechar.Name = "bntFechar";
+            bntFechar.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            bntFechar.Size = new Size(39, 39);
+            bntFechar.TabIndex = 46;
+            bntFechar.TextAlign = HorizontalAlignment.Right;
             // 
-            // btnMinimizar
+            // guna2ShadowPanel1
             // 
-            btnMinimizar.BackColor = Color.Transparent;
-            btnMinimizar.BorderColor = Color.Transparent;
-            btnMinimizar.CustomizableEdges = customizableEdges5;
-            btnMinimizar.DisabledState.BorderColor = Color.DarkGray;
-            btnMinimizar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnMinimizar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnMinimizar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnMinimizar.FillColor = Color.Transparent;
-            btnMinimizar.Font = new Font("Segoe UI", 9F);
-            btnMinimizar.ForeColor = Color.White;
-            btnMinimizar.Image = Properties.Resources.minimizar;
-            btnMinimizar.ImageSize = new Size(11, 11);
-            btnMinimizar.Location = new Point(536, 1);
-            btnMinimizar.Name = "btnMinimizar";
-            btnMinimizar.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnMinimizar.Size = new Size(20, 20);
-            btnMinimizar.TabIndex = 26;
-            btnMinimizar.Click += btnMinimizar_Click;
+            guna2ShadowPanel1.BackColor = Color.FromArgb(39, 38, 38);
+            guna2ShadowPanel1.Dock = DockStyle.Fill;
+            guna2ShadowPanel1.FillColor = Color.FromArgb(39, 38, 38);
+            guna2ShadowPanel1.Location = new Point(0, 0);
+            guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            guna2ShadowPanel1.Radius = 15;
+            guna2ShadowPanel1.ShadowColor = Color.Black;
+            guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped;
+            guna2ShadowPanel1.Size = new Size(582, 386);
+            guna2ShadowPanel1.TabIndex = 47;
             // 
-            // btnFechar
+            // label2
             // 
-            btnFechar.BackColor = Color.Transparent;
-            btnFechar.BorderColor = Color.Transparent;
-            btnFechar.CustomizableEdges = customizableEdges7;
-            btnFechar.DisabledState.BorderColor = Color.DarkGray;
-            btnFechar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnFechar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnFechar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnFechar.FillColor = Color.Transparent;
-            btnFechar.Font = new Font("Segoe UI", 9F);
-            btnFechar.ForeColor = Color.White;
-            btnFechar.Image = Properties.Resources.xCorreto;
-            btnFechar.ImageSize = new Size(11, 11);
-            btnFechar.Location = new Point(562, 1);
-            btnFechar.Name = "btnFechar";
-            btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnFechar.Size = new Size(20, 20);
-            btnFechar.TabIndex = 25;
-            btnFechar.Click += btnFechar_Click;
+            label2.BackColor = Color.FromArgb(39, 38, 38);
+            label2.Font = new Font("Segoe UI Semibold", 8.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(255, 49, 49);
+            label2.Location = new Point(138, 215);
+            label2.Name = "label2";
+            label2.Size = new Size(131, 19);
+            label2.TabIndex = 48;
+            label2.Text = "E-mail não reconhecido*";
             // 
             // EsqueciSenha
             // 
@@ -183,18 +172,17 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 23, 34);
             ClientSize = new Size(582, 386);
-            Controls.Add(btnMinimizar);
-            Controls.Add(btnFechar);
-            Controls.Add(label4);
+            Controls.Add(bntFechar);
             Controls.Add(label3);
             Controls.Add(btnEnviar);
             Controls.Add(txtEmailRecuperacao);
             Controls.Add(label1);
             Controls.Add(guna2Button1);
+            Controls.Add(guna2ShadowPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "EsqueciSenha";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "EsqueciSenha";
+            Text = " ";
             MouseDown += EsqueciSenha_MouseDown;
             ResumeLayout(false);
             PerformLayout();
@@ -207,8 +195,8 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btnEnviar;
         private Label label3;
-        private Label label4;
-        private Guna.UI2.WinForms.Guna2Button btnMinimizar;
-        private Guna.UI2.WinForms.Guna2Button btnFechar;
+        private Guna.UI2.WinForms.Guna2Button bntFechar;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        private Label label2;
     }
 }

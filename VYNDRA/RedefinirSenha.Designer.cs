@@ -40,12 +40,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnEntrar = new Guna.UI2.WinForms.Guna2Button();
-            label1 = new Label();
-            btnMinimizar = new Guna.UI2.WinForms.Guna2Button();
-            btnFechar = new Guna.UI2.WinForms.Guna2Button();
             btnOcultarSenha = new Guna.UI2.WinForms.Guna2Button();
             txtSenha = new TextBox();
             guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
@@ -54,85 +49,39 @@
             txtConfirmarSenha = new TextBox();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             label3 = new Label();
+            guna2ShadowPanel1 = new Guna.UI2.WinForms.Guna2ShadowPanel();
+            label1 = new Label();
+            label10 = new Label();
+            btnFechar = new Guna.UI2.WinForms.Guna2Button();
+            textBox1 = new TextBox();
+            txtNomeExibicao = new TextBox();
+            guna2ShadowPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // btnEntrar
             // 
             btnEntrar.BackColor = Color.Transparent;
             btnEntrar.BorderRadius = 15;
+            btnEntrar.BorderStyle = System.Drawing.Drawing2D.DashStyle.Dash;
             btnEntrar.CustomizableEdges = customizableEdges1;
             btnEntrar.DisabledState.BorderColor = Color.DarkGray;
             btnEntrar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEntrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnEntrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnEntrar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnEntrar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEntrar.ForeColor = Color.White;
-            btnEntrar.Location = new Point(210, 278);
+            btnEntrar.Location = new Point(207, 259);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnEntrar.Size = new Size(134, 36);
             btnEntrar.TabIndex = 34;
-            btnEntrar.Text = "Enviar";
+            btnEntrar.Text = "Salvar";
             btnEntrar.Click += btnEntrar_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label1.Font = new Font("Bahnschrift", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(166, 27);
-            label1.Name = "label1";
-            label1.Size = new Size(231, 25);
-            label1.TabIndex = 32;
-            label1.Text = "Defina sua Nova Senha";
-            // 
-            // btnMinimizar
-            // 
-            btnMinimizar.BackColor = Color.Transparent;
-            btnMinimizar.BorderColor = Color.Transparent;
-            btnMinimizar.CustomizableEdges = customizableEdges3;
-            btnMinimizar.DisabledState.BorderColor = Color.DarkGray;
-            btnMinimizar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnMinimizar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnMinimizar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnMinimizar.FillColor = Color.Transparent;
-            btnMinimizar.Font = new Font("Segoe UI", 9F);
-            btnMinimizar.ForeColor = Color.White;
-            btnMinimizar.Image = Properties.Resources.minimizar;
-            btnMinimizar.ImageSize = new Size(11, 11);
-            btnMinimizar.Location = new Point(519, 2);
-            btnMinimizar.Name = "btnMinimizar";
-            btnMinimizar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnMinimizar.Size = new Size(20, 20);
-            btnMinimizar.TabIndex = 30;
-            btnMinimizar.Click += btnMinimizar_Click;
-            // 
-            // btnFechar
-            // 
-            btnFechar.BackColor = Color.Transparent;
-            btnFechar.BorderColor = Color.Transparent;
-            btnFechar.CustomizableEdges = customizableEdges5;
-            btnFechar.DisabledState.BorderColor = Color.DarkGray;
-            btnFechar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnFechar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnFechar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnFechar.FillColor = Color.Transparent;
-            btnFechar.Font = new Font("Segoe UI", 9F);
-            btnFechar.ForeColor = Color.White;
-            btnFechar.Image = Properties.Resources.xCorreto;
-            btnFechar.ImageSize = new Size(11, 11);
-            btnFechar.Location = new Point(545, 2);
-            btnFechar.Name = "btnFechar";
-            btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnFechar.Size = new Size(20, 20);
-            btnFechar.TabIndex = 29;
-            btnFechar.Click += btnFechar_Click;
             // 
             // btnOcultarSenha
             // 
             btnOcultarSenha.BackColor = Color.FromArgb(80, 80, 80);
-            btnOcultarSenha.CustomizableEdges = customizableEdges7;
+            btnOcultarSenha.CustomizableEdges = customizableEdges3;
             btnOcultarSenha.DisabledState.BorderColor = Color.DarkGray;
             btnOcultarSenha.DisabledState.CustomBorderColor = Color.DarkGray;
             btnOcultarSenha.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -141,9 +90,9 @@
             btnOcultarSenha.Font = new Font("Segoe UI", 9F);
             btnOcultarSenha.ForeColor = Color.White;
             btnOcultarSenha.Image = Properties.Resources.eye_slash;
-            btnOcultarSenha.Location = new Point(386, 115);
+            btnOcultarSenha.Location = new Point(383, 96);
             btnOcultarSenha.Name = "btnOcultarSenha";
-            btnOcultarSenha.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnOcultarSenha.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnOcultarSenha.Size = new Size(25, 18);
             btnOcultarSenha.TabIndex = 38;
             btnOcultarSenha.Click += btnOcultarSenha_Click;
@@ -154,7 +103,7 @@
             txtSenha.BorderStyle = BorderStyle.None;
             txtSenha.Font = new Font("Segoe UI", 10F);
             txtSenha.ForeColor = Color.White;
-            txtSenha.Location = new Point(142, 115);
+            txtSenha.Location = new Point(139, 96);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(269, 18);
             txtSenha.TabIndex = 36;
@@ -163,8 +112,8 @@
             // guna2Button5
             // 
             guna2Button5.BackColor = Color.Transparent;
-            guna2Button5.BorderRadius = 20;
-            guna2Button5.CustomizableEdges = customizableEdges9;
+            guna2Button5.BorderRadius = 5;
+            guna2Button5.CustomizableEdges = customizableEdges5;
             guna2Button5.DisabledState.BorderColor = Color.DarkGray;
             guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -176,11 +125,11 @@
             guna2Button5.HoverState.CustomBorderColor = Color.FromArgb(80, 80, 80);
             guna2Button5.HoverState.FillColor = Color.FromArgb(80, 80, 80);
             guna2Button5.HoverState.ForeColor = Color.FromArgb(80, 80, 80);
-            guna2Button5.Location = new Point(131, 101);
+            guna2Button5.Location = new Point(128, 82);
             guna2Button5.Name = "guna2Button5";
             guna2Button5.PressedColor = Color.FromArgb(80, 80, 80);
             guna2Button5.PressedDepth = 0;
-            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button5.Size = new Size(292, 45);
             guna2Button5.TabIndex = 37;
             // 
@@ -188,18 +137,18 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label2.Font = new Font("Bahnschrift", 11F, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(133, 80);
+            label2.Location = new Point(130, 61);
             label2.Name = "label2";
-            label2.Size = new Size(52, 18);
+            label2.Size = new Size(95, 20);
             label2.TabIndex = 35;
-            label2.Text = "Senha:";
+            label2.Text = "Nova senha:";
             // 
             // btnOcultarSenha1
             // 
             btnOcultarSenha1.BackColor = Color.FromArgb(80, 80, 80);
-            btnOcultarSenha1.CustomizableEdges = customizableEdges11;
+            btnOcultarSenha1.CustomizableEdges = customizableEdges7;
             btnOcultarSenha1.DisabledState.BorderColor = Color.DarkGray;
             btnOcultarSenha1.DisabledState.CustomBorderColor = Color.DarkGray;
             btnOcultarSenha1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -208,9 +157,9 @@
             btnOcultarSenha1.Font = new Font("Segoe UI", 9F);
             btnOcultarSenha1.ForeColor = Color.White;
             btnOcultarSenha1.Image = Properties.Resources.eye_slash;
-            btnOcultarSenha1.Location = new Point(386, 210);
+            btnOcultarSenha1.Location = new Point(383, 191);
             btnOcultarSenha1.Name = "btnOcultarSenha1";
-            btnOcultarSenha1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnOcultarSenha1.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnOcultarSenha1.Size = new Size(25, 18);
             btnOcultarSenha1.TabIndex = 42;
             btnOcultarSenha1.Click += btnOcultarSenha1_Click;
@@ -221,7 +170,7 @@
             txtConfirmarSenha.BorderStyle = BorderStyle.None;
             txtConfirmarSenha.Font = new Font("Segoe UI", 10F);
             txtConfirmarSenha.ForeColor = Color.White;
-            txtConfirmarSenha.Location = new Point(142, 210);
+            txtConfirmarSenha.Location = new Point(139, 191);
             txtConfirmarSenha.Name = "txtConfirmarSenha";
             txtConfirmarSenha.Size = new Size(269, 18);
             txtConfirmarSenha.TabIndex = 40;
@@ -230,8 +179,8 @@
             // guna2Button2
             // 
             guna2Button2.BackColor = Color.Transparent;
-            guna2Button2.BorderRadius = 20;
-            guna2Button2.CustomizableEdges = customizableEdges13;
+            guna2Button2.BorderRadius = 5;
+            guna2Button2.CustomizableEdges = customizableEdges9;
             guna2Button2.DisabledState.BorderColor = Color.DarkGray;
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -243,11 +192,11 @@
             guna2Button2.HoverState.CustomBorderColor = Color.FromArgb(80, 80, 80);
             guna2Button2.HoverState.FillColor = Color.FromArgb(80, 80, 80);
             guna2Button2.HoverState.ForeColor = Color.FromArgb(80, 80, 80);
-            guna2Button2.Location = new Point(131, 196);
+            guna2Button2.Location = new Point(128, 177);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.PressedColor = Color.FromArgb(80, 80, 80);
             guna2Button2.PressedDepth = 0;
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges10;
             guna2Button2.Size = new Size(292, 45);
             guna2Button2.TabIndex = 41;
             // 
@@ -255,47 +204,129 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label3.Font = new Font("Bahnschrift", 11F, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(133, 175);
+            label3.Location = new Point(130, 156);
             label3.Name = "label3";
-            label3.Size = new Size(123, 18);
+            label3.Size = new Size(167, 20);
             label3.TabIndex = 39;
-            label3.Text = "Confirmar Senha:";
+            label3.Text = "Confirmar nova senha:";
+            // 
+            // guna2ShadowPanel1
+            // 
+            guna2ShadowPanel1.BackColor = Color.FromArgb(39, 38, 38);
+            guna2ShadowPanel1.Controls.Add(label1);
+            guna2ShadowPanel1.Controls.Add(label10);
+            guna2ShadowPanel1.Controls.Add(btnFechar);
+            guna2ShadowPanel1.Controls.Add(textBox1);
+            guna2ShadowPanel1.Controls.Add(txtNomeExibicao);
+            guna2ShadowPanel1.Controls.Add(btnEntrar);
+            guna2ShadowPanel1.Controls.Add(label2);
+            guna2ShadowPanel1.Controls.Add(guna2Button5);
+            guna2ShadowPanel1.Controls.Add(txtSenha);
+            guna2ShadowPanel1.Controls.Add(btnOcultarSenha);
+            guna2ShadowPanel1.Controls.Add(label3);
+            guna2ShadowPanel1.Controls.Add(guna2Button2);
+            guna2ShadowPanel1.Controls.Add(txtConfirmarSenha);
+            guna2ShadowPanel1.Controls.Add(btnOcultarSenha1);
+            guna2ShadowPanel1.Dock = DockStyle.Fill;
+            guna2ShadowPanel1.FillColor = Color.FromArgb(39, 38, 38);
+            guna2ShadowPanel1.Location = new Point(0, 0);
+            guna2ShadowPanel1.Name = "guna2ShadowPanel1";
+            guna2ShadowPanel1.Radius = 15;
+            guna2ShadowPanel1.ShadowColor = Color.Black;
+            guna2ShadowPanel1.ShadowStyle = Guna.UI2.WinForms.Guna2ShadowPanel.ShadowMode.Dropped;
+            guna2ShadowPanel1.Size = new Size(566, 347);
+            guna2ShadowPanel1.TabIndex = 43;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(0, 4, 40, 242);
+            label1.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.FromArgb(255, 49, 49);
+            label1.Location = new Point(130, 225);
+            label1.Name = "label1";
+            label1.Size = new Size(93, 13);
+            label1.TabIndex = 47;
+            label1.Text = "Senha desigual*\r\n";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.BackColor = Color.FromArgb(0, 4, 40, 242);
+            label10.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label10.ForeColor = Color.FromArgb(255, 49, 49);
+            label10.Location = new Point(130, 130);
+            label10.Name = "label10";
+            label10.Size = new Size(227, 13);
+            label10.TabIndex = 46;
+            label10.Text = "A senha deve conter 6 ou mais caracteres*\r\n";
+            // 
+            // btnFechar
+            // 
+            btnFechar.BackColor = Color.Transparent;
+            btnFechar.CustomizableEdges = customizableEdges11;
+            btnFechar.DisabledState.BorderColor = Color.DarkGray;
+            btnFechar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnFechar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnFechar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnFechar.FillColor = Color.Transparent;
+            btnFechar.Font = new Font("Segoe UI", 9F);
+            btnFechar.ForeColor = Color.FromArgb(0, 4, 40, 242);
+            btnFechar.Image = Properties.Resources.Inserir_um_título__1_;
+            btnFechar.ImageSize = new Size(30, 30);
+            btnFechar.Location = new Point(6, 6);
+            btnFechar.Name = "btnFechar";
+            btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            btnFechar.Size = new Size(39, 39);
+            btnFechar.TabIndex = 45;
+            btnFechar.TextAlign = HorizontalAlignment.Right;
+            // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(80, 80, 80);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            textBox1.ForeColor = Color.White;
+            textBox1.Location = new Point(139, 191);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(269, 18);
+            textBox1.TabIndex = 44;
+            textBox1.TextChanged += textBox1_TextChanged;
+            // 
+            // txtNomeExibicao
+            // 
+            txtNomeExibicao.BackColor = Color.FromArgb(80, 80, 80);
+            txtNomeExibicao.BorderStyle = BorderStyle.None;
+            txtNomeExibicao.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtNomeExibicao.ForeColor = Color.White;
+            txtNomeExibicao.Location = new Point(139, 96);
+            txtNomeExibicao.Name = "txtNomeExibicao";
+            txtNomeExibicao.Size = new Size(269, 18);
+            txtNomeExibicao.TabIndex = 43;
+            txtNomeExibicao.TextChanged += txtNomeExibicao_TextChanged;
             // 
             // RedefinirSenha
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(17, 23, 34);
+            BackColor = Color.DimGray;
             ClientSize = new Size(566, 347);
-            Controls.Add(btnOcultarSenha1);
-            Controls.Add(txtConfirmarSenha);
-            Controls.Add(guna2Button2);
-            Controls.Add(label3);
-            Controls.Add(btnOcultarSenha);
-            Controls.Add(txtSenha);
-            Controls.Add(guna2Button5);
-            Controls.Add(label2);
-            Controls.Add(btnEntrar);
-            Controls.Add(label1);
-            Controls.Add(btnMinimizar);
-            Controls.Add(btnFechar);
+            Controls.Add(guna2ShadowPanel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "RedefinirSenha";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RedefinirSenha";
             MouseDown += RedefinirSenha_MouseDown;
+            guna2ShadowPanel1.ResumeLayout(false);
+            guna2ShadowPanel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
         private Guna.UI2.WinForms.Guna2Button btnEntrar;
-        private Label label1;
-        private Guna.UI2.WinForms.Guna2Button btnMinimizar;
-        private Guna.UI2.WinForms.Guna2Button btnFechar;
         private Guna.UI2.WinForms.Guna2Button btnOcultarSenha;
         private TextBox txtSenha;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
@@ -304,5 +335,11 @@
         private TextBox txtConfirmarSenha;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Label label3;
+        private Guna.UI2.WinForms.Guna2ShadowPanel guna2ShadowPanel1;
+        private TextBox textBox1;
+        private TextBox txtNomeExibicao;
+        private Guna.UI2.WinForms.Guna2Button btnFechar;
+        private Label label1;
+        private Label label10;
     }
 }

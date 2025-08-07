@@ -45,6 +45,7 @@ namespace VYNDRA
 
         }
 
+<<<<<<< HEAD
         public void CarregarCardsDeChat()
         {
             var listaAmigos = Users.CarregarChats();
@@ -102,6 +103,16 @@ namespace VYNDRA
         private void contatos_layout_DoubleClick(object sender, EventArgs e)
         {
             CarregarCardsDeChat();
+=======
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Button6_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> 13f7adbbca1df4a99c3f2065578f22ef31759b92
         }
     }
 }

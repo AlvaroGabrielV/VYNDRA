@@ -52,18 +52,13 @@ namespace VYNDRA
             relatorios.Show();
             this.Close();
         }
-        private void btnAlterarSenha_Click(object sender, EventArgs e)
-        {
-            EsqueciSenha esqueci = new EsqueciSenha();
-            esqueci.ShowDialog();
-        }
+
 
         private void Perfil_Load(object sender, EventArgs e)
         {
             txtEmail.Text = Sessao.Email;
             txtNomeExibicao.Text = Sessao.NomeExibicao;
             txtUsuario.Text = Sessao.UsuarioLogin;
-            lblDataDeNascimento.Text = Sessao.DataNascimento.ToString("dd/MM/yyyy");
 
             Users usuario = Users.CarregarRedesSociaiseFotodePerfil(this.IdUsuario);
 
@@ -150,6 +145,27 @@ namespace VYNDRA
         }
 
         private void txtInstagram_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button5_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }

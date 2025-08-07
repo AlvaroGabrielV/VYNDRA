@@ -30,6 +30,7 @@ namespace VYNDRA.Cards
                 fotocontato_box.Tag = value;
             }
         }
+<<<<<<< HEAD
         public string NomeContato
         {
             get { return nomeContato; }
@@ -57,5 +58,12 @@ namespace VYNDRA.Cards
         }
 
 
+=======
+
+        private void lb_mensagem_Click(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> 13f7adbbca1df4a99c3f2065578f22ef31759b92
     }
 }
