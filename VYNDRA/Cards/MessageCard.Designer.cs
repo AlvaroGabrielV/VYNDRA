@@ -87,9 +87,13 @@
             // lblUser
             // 
             lblUser.BackColor = Color.Transparent;
+<<<<<<< HEAD
             lblUser.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUser.ForeColor = Color.White;
             lblUser.Location = new Point(88, 9);
+=======
+            lblUser.Location = new Point(88, 7);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             lblUser.Margin = new Padding(2);
             lblUser.Name = "lblUser";
             lblUser.Size = new Size(45, 17);
@@ -114,7 +118,11 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSize = true;
+<<<<<<< HEAD
             BackColor = Color.FromArgb(22, 39, 50);
+=======
+            BackColor = Color.Transparent;
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             Controls.Add(guna2Panel1);
             Margin = new Padding(2);
             Name = "MessageCard";

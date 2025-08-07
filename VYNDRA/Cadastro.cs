@@ -42,13 +42,16 @@ namespace VYNDRA
         {
             try
             {
-
-                if (String.IsNullOrWhiteSpace(txtEmail.Text) || String.IsNullOrWhiteSpace(txtNomeExibicao.Text) || String.IsNullOrWhiteSpace(txtSenha.Text) || String.IsNullOrWhiteSpace(txtUsuario.Text))
+                if (string.IsNullOrWhiteSpace(txtEmail.Text) ||
+                    string.IsNullOrWhiteSpace(txtNomeExibicao.Text) ||
+                    string.IsNullOrWhiteSpace(txtSenha.Text) ||
+                    string.IsNullOrWhiteSpace(txtUsuario.Text))
                 {
-                    MessageBox.Show("Preencha os campos corretamente!", "Erro - Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblErrorDataNascimento.Text = "Preencha todos os campos obrigatórios!*";
                     return;
                 }
 
+<<<<<<< HEAD
 
                 Users usuario = new Users();
                 usuario.NomeExibicao = txtNomeExibicao.Text;
@@ -56,19 +59,38 @@ namespace VYNDRA
                 usuario.Usuario = txtUsuario.Text;
                 usuario.DefinirSenha(txtSenha.Text);
                 DateTime dataNascimento = Convert.ToDateTime(DataNascimento.Text);
+=======
+                DateTime dataNascimento = DataNascimentoPicker.Value.Date;
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
                 DateTime hoje = DateTime.Today;
                 DateTime dataMinima = hoje.AddYears(-18);
 
                 if (dataNascimento > dataMinima)
                 {
-                    MessageBox.Show("Você deve ter pelo menos 18 anos para se cadastrar.", "Erro - Idade inválida", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblErrorDataNascimento.Text = "Você deve ter pelo menos 18 anos para se cadastrar.";
                     return;
                 }
-                else
+
+                Users usuario = new Users();
+                usuario.NomeExibicao = txtNomeExibicao.Text;
+                usuario.Email = txtEmail.Text;
+                usuario.Usuario = txtUsuario.Text;
+                usuario.DefinirSenha(txtSenha.Text); 
+                usuario.DataNascimento = dataNascimento;
+
+                usuario.verificarUsuario(usuario.Usuario); 
+
+                if (!usuario.verificarEmail(usuario.Email))
                 {
+<<<<<<< HEAD
                     usuario.DataNascimento = Convert.ToDateTime(DataNascimento.Text);
+=======
+                    lblErrorEmail.Text = "Email incorreto!*";
+                    return;
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
                 }
 
+                // Tenta cadastrar
                 if (usuario.CadastrarUsuario())
                 {
                     MessageBox.Show("Cadastro realizado com sucesso!", "Sucesso - Cadastrar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -78,13 +100,14 @@ namespace VYNDRA
                     login.Show();
                     this.Close();
                 }
-
+                else
+                {
+                    MessageBox.Show("Erro ao cadastrar usuário. Tente novamente.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Não foi possível realizar cadastro" + ex.Message, "Erro - Cadastrar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LimparCampos();
-
+                MessageBox.Show("Não foi possível realizar o cadastro: " + ex.Message, "Erro - Cadastrar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         public void LimparCampos()
@@ -117,14 +140,25 @@ namespace VYNDRA
             SendMessage(this.Handle, WM_NCLBUTTONDOWN, HTCAPTION, 0);
         }
 
+<<<<<<< HEAD
         private void guna2Button2_Click(object sender, EventArgs e)
         {
 
         }
 
+=======
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
         private void Cadastro_Load(object sender, EventArgs e)
         {
 
         }
+<<<<<<< HEAD
+=======
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
     }
 }

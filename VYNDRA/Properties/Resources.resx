@@ -189,7 +189,11 @@
 =======
   <data name="do-utilizador (1)2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\do-utilizador (1)2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+<<<<<<< HEAD
 >>>>>>> 13f7adbbca1df4a99c3f2065578f22ef31759b92
+=======
+>>>>>>> origin/atualizado-2.2
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
   </data>
   <data name="whatsapp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\whatsapp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -260,11 +264,21 @@
   <data name="message1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\message1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+<<<<<<< HEAD
   <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 =======
   <data name="casa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\casa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+<<<<<<< HEAD
+  <data name="search" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+=======
+  <data name="editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> origin/atualizado-2.2
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
   </data>
   <data name="message1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\message1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -301,11 +315,17 @@
   <data name="danger" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\danger.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 =======
+<<<<<<< HEAD
   <data name="do-utilizador (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\do-utilizador (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="balao-de-fala-com-linhas-de-texto" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\balao-de-fala-com-linhas-de-texto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
 >>>>>>> 13f7adbbca1df4a99c3f2065578f22ef31759b92
+=======
+  <data name="dragao" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dragao.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+>>>>>>> origin/atualizado-2.2
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
   </data>
 </root>

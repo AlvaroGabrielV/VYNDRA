@@ -178,6 +178,28 @@
             setting_btn.TabIndex = 3;
             setting_btn.UseTransparentBackground = true;
             // 
+<<<<<<< HEAD
+=======
+            // btnHome
+            // 
+            btnHome.CustomizableEdges = customizableEdges22;
+            btnHome.DisabledState.BorderColor = Color.DarkGray;
+            btnHome.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnHome.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnHome.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnHome.FillColor = Color.FromArgb(31, 45, 71);
+            btnHome.Font = new Font("Segoe UI", 9F);
+            btnHome.ForeColor = Color.White;
+            btnHome.Image = Properties.Resources.botao_de_inicio;
+            btnHome.ImageSize = new Size(35, 35);
+            btnHome.Location = new Point(12, 12);
+            btnHome.Name = "btnHome";
+            btnHome.ShadowDecoration.CustomizableEdges = customizableEdges23;
+            btnHome.Size = new Size(50, 50);
+            btnHome.TabIndex = 2;
+            btnHome.Click += btnHome_Click;
+            // 
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             // guna2CirclePictureBox1
             // 
             guna2CirclePictureBox1.BackColor = Color.FromArgb(29, 52, 66);

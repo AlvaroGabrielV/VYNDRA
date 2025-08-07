@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+<<<<<<< HEAD
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -50,6 +51,30 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+=======
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges37 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges38 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges39 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges40 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges41 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges42 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges43 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges44 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -68,15 +93,21 @@
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             txtNomeExibicao = new TextBox();
             guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
-            guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
             btnOcultarSenha = new Guna.UI2.WinForms.Guna2Button();
             PanelTopo = new Guna.UI2.WinForms.Guna2Panel();
+<<<<<<< HEAD
             DataNascimento = new MaskedTextBox();
             label7 = new Label();
             label8 = new Label();
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
+=======
+            DataNascimentoPicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            lblErrorDataNascimento = new Label();
+            lblErrorUsuario = new Label();
+            lblErrorEmail = new Label();
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             SuspendLayout();
             // 
             // label1
@@ -97,7 +128,11 @@
             label2.BackColor = Color.FromArgb(0, 4, 40, 242);
             label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
+<<<<<<< HEAD
             label2.Location = new Point(114, 111);
+=======
+            label2.Location = new Point(114, 100);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             label2.Name = "label2";
             label2.Size = new Size(57, 20);
             label2.TabIndex = 7;
@@ -109,7 +144,11 @@
             label3.BackColor = Color.FromArgb(0, 4, 40, 242);
             label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
+<<<<<<< HEAD
             label3.Location = new Point(114, 192);
+=======
+            label3.Location = new Point(114, 183);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             label3.Name = "label3";
             label3.Size = new Size(67, 20);
             label3.TabIndex = 8;
@@ -121,7 +160,11 @@
             label4.BackColor = Color.FromArgb(0, 4, 40, 242);
             label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
+<<<<<<< HEAD
             label4.Location = new Point(114, 275);
+=======
+            label4.Location = new Point(114, 270);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             label4.Name = "label4";
             label4.Size = new Size(138, 20);
             label4.TabIndex = 9;
@@ -133,7 +176,11 @@
             label5.BackColor = Color.FromArgb(0, 4, 40, 242);
             label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
+<<<<<<< HEAD
             label5.Location = new Point(114, 359);
+=======
+            label5.Location = new Point(114, 358);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             label5.Name = "label5";
             label5.Size = new Size(55, 20);
             label5.TabIndex = 10;
@@ -145,7 +192,11 @@
             label6.BackColor = Color.FromArgb(0, 4, 40, 242);
             label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
+<<<<<<< HEAD
             label6.Location = new Point(114, 443);
+=======
+            label6.Location = new Point(114, 431);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             label6.Name = "label6";
             label6.Size = new Size(152, 20);
             label6.TabIndex = 11;
@@ -155,16 +206,20 @@
             // 
             btnCadastrar.BackColor = Color.Transparent;
             btnCadastrar.BorderRadius = 15;
-            btnCadastrar.CustomizableEdges = customizableEdges1;
+            btnCadastrar.CustomizableEdges = customizableEdges23;
             btnCadastrar.DisabledState.BorderColor = Color.DarkGray;
             btnCadastrar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCadastrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnCadastrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnCadastrar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
+<<<<<<< HEAD
             btnCadastrar.Location = new Point(180, 530);
+=======
+            btnCadastrar.Location = new Point(172, 540);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             btnCadastrar.Name = "btnCadastrar";
-            btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges24;
             btnCadastrar.Size = new Size(161, 37);
             btnCadastrar.TabIndex = 12;
             btnCadastrar.Text = "Cadastrar";
@@ -173,7 +228,7 @@
             // guna2Button3
             // 
             guna2Button3.BackColor = Color.Transparent;
-            guna2Button3.CustomizableEdges = customizableEdges3;
+            guna2Button3.CustomizableEdges = customizableEdges25;
             guna2Button3.DisabledState.BorderColor = Color.DarkGray;
             guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -185,7 +240,7 @@
             guna2Button3.ImageSize = new Size(30, 30);
             guna2Button3.Location = new Point(65, 76);
             guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges26;
             guna2Button3.Size = new Size(39, 39);
             guna2Button3.TabIndex = 13;
             guna2Button3.TextAlign = HorizontalAlignment.Right;
@@ -195,7 +250,7 @@
             // 
             btnFechar.BackColor = Color.Transparent;
             btnFechar.BorderColor = Color.Transparent;
-            btnFechar.CustomizableEdges = customizableEdges5;
+            btnFechar.CustomizableEdges = customizableEdges27;
             btnFechar.DisabledState.BorderColor = Color.DarkGray;
             btnFechar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFechar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -207,8 +262,13 @@
             btnFechar.ImageSize = new Size(11, 11);
             btnFechar.Location = new Point(1099, 0);
             btnFechar.Name = "btnFechar";
+<<<<<<< HEAD
             btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnFechar.Size = new Size(17, 20);
+=======
+            btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges28;
+            btnFechar.Size = new Size(20, 20);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             btnFechar.TabIndex = 14;
             btnFechar.Click += btnFechar_Click;
             // 
@@ -216,7 +276,7 @@
             // 
             btnMinimizar.BackColor = Color.Transparent;
             btnMinimizar.BorderColor = Color.Transparent;
-            btnMinimizar.CustomizableEdges = customizableEdges7;
+            btnMinimizar.CustomizableEdges = customizableEdges29;
             btnMinimizar.DisabledState.BorderColor = Color.DarkGray;
             btnMinimizar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnMinimizar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -228,7 +288,7 @@
             btnMinimizar.ImageSize = new Size(11, 11);
             btnMinimizar.Location = new Point(1071, 0);
             btnMinimizar.Name = "btnMinimizar";
-            btnMinimizar.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnMinimizar.ShadowDecoration.CustomizableEdges = customizableEdges30;
             btnMinimizar.Size = new Size(20, 20);
             btnMinimizar.TabIndex = 15;
             btnMinimizar.Click += btnMinimizar_Click;
@@ -239,7 +299,11 @@
             txtEmail.BorderStyle = BorderStyle.None;
             txtEmail.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtEmail.ForeColor = Color.White;
+<<<<<<< HEAD
             txtEmail.Location = new Point(124, 145);
+=======
+            txtEmail.Location = new Point(124, 134);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             txtEmail.Name = "txtEmail";
             txtEmail.Size = new Size(269, 18);
             txtEmail.TabIndex = 1;
@@ -248,7 +312,7 @@
             // 
             guna2Button1.BackColor = Color.Transparent;
             guna2Button1.BorderRadius = 5;
-            guna2Button1.CustomizableEdges = customizableEdges9;
+            guna2Button1.CustomizableEdges = customizableEdges31;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -260,11 +324,15 @@
             guna2Button1.HoverState.CustomBorderColor = Color.FromArgb(80, 80, 80);
             guna2Button1.HoverState.FillColor = Color.FromArgb(80, 80, 80);
             guna2Button1.HoverState.ForeColor = Color.FromArgb(80, 80, 80);
+<<<<<<< HEAD
             guna2Button1.Location = new Point(114, 131);
+=======
+            guna2Button1.Location = new Point(114, 120);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             guna2Button1.Name = "guna2Button1";
             guna2Button1.PressedColor = Color.FromArgb(80, 80, 80);
             guna2Button1.PressedDepth = 0;
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges32;
             guna2Button1.Size = new Size(292, 45);
             guna2Button1.TabIndex = 17;
             // 
@@ -274,7 +342,11 @@
             txtUsuario.BorderStyle = BorderStyle.None;
             txtUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtUsuario.ForeColor = Color.White;
+<<<<<<< HEAD
             txtUsuario.Location = new Point(124, 228);
+=======
+            txtUsuario.Location = new Point(124, 218);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(269, 18);
             txtUsuario.TabIndex = 18;
@@ -283,7 +355,7 @@
             // 
             guna2Button2.BackColor = Color.Transparent;
             guna2Button2.BorderRadius = 5;
-            guna2Button2.CustomizableEdges = customizableEdges11;
+            guna2Button2.CustomizableEdges = customizableEdges33;
             guna2Button2.DisabledState.BorderColor = Color.DarkGray;
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -295,11 +367,15 @@
             guna2Button2.HoverState.CustomBorderColor = Color.FromArgb(80, 80, 80);
             guna2Button2.HoverState.FillColor = Color.FromArgb(80, 80, 80);
             guna2Button2.HoverState.ForeColor = Color.FromArgb(80, 80, 80);
+<<<<<<< HEAD
             guna2Button2.Location = new Point(114, 215);
+=======
+            guna2Button2.Location = new Point(114, 204);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             guna2Button2.Name = "guna2Button2";
             guna2Button2.PressedColor = Color.FromArgb(80, 80, 80);
             guna2Button2.PressedDepth = 0;
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges34;
             guna2Button2.Size = new Size(292, 45);
             guna2Button2.TabIndex = 19;
             guna2Button2.Click += guna2Button2_Click;
@@ -310,7 +386,11 @@
             txtSenha.BorderStyle = BorderStyle.None;
             txtSenha.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSenha.ForeColor = Color.White;
+<<<<<<< HEAD
             txtSenha.Location = new Point(124, 396);
+=======
+            txtSenha.Location = new Point(124, 395);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(269, 18);
             txtSenha.TabIndex = 20;
@@ -320,7 +400,7 @@
             // 
             guna2Button4.BackColor = Color.Transparent;
             guna2Button4.BorderRadius = 5;
-            guna2Button4.CustomizableEdges = customizableEdges13;
+            guna2Button4.CustomizableEdges = customizableEdges35;
             guna2Button4.DisabledState.BorderColor = Color.DarkGray;
             guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button4.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -332,11 +412,15 @@
             guna2Button4.HoverState.CustomBorderColor = Color.FromArgb(80, 80, 80);
             guna2Button4.HoverState.FillColor = Color.FromArgb(80, 80, 80);
             guna2Button4.HoverState.ForeColor = Color.FromArgb(80, 80, 80);
+<<<<<<< HEAD
             guna2Button4.Location = new Point(114, 382);
+=======
+            guna2Button4.Location = new Point(114, 381);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             guna2Button4.Name = "guna2Button4";
             guna2Button4.PressedColor = Color.FromArgb(80, 80, 80);
             guna2Button4.PressedDepth = 0;
-            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            guna2Button4.ShadowDecoration.CustomizableEdges = customizableEdges36;
             guna2Button4.Size = new Size(292, 45);
             guna2Button4.TabIndex = 21;
             // 
@@ -346,7 +430,11 @@
             txtNomeExibicao.BorderStyle = BorderStyle.None;
             txtNomeExibicao.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtNomeExibicao.ForeColor = Color.White;
+<<<<<<< HEAD
             txtNomeExibicao.Location = new Point(124, 312);
+=======
+            txtNomeExibicao.Location = new Point(124, 306);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             txtNomeExibicao.Name = "txtNomeExibicao";
             txtNomeExibicao.Size = new Size(269, 18);
             txtNomeExibicao.TabIndex = 22;
@@ -355,7 +443,7 @@
             // 
             guna2Button5.BackColor = Color.Transparent;
             guna2Button5.BorderRadius = 5;
-            guna2Button5.CustomizableEdges = customizableEdges15;
+            guna2Button5.CustomizableEdges = customizableEdges37;
             guna2Button5.DisabledState.BorderColor = Color.DarkGray;
             guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button5.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -367,14 +455,19 @@
             guna2Button5.HoverState.CustomBorderColor = Color.FromArgb(80, 80, 80);
             guna2Button5.HoverState.FillColor = Color.FromArgb(80, 80, 80);
             guna2Button5.HoverState.ForeColor = Color.FromArgb(80, 80, 80);
+<<<<<<< HEAD
             guna2Button5.Location = new Point(114, 298);
+=======
+            guna2Button5.Location = new Point(114, 292);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             guna2Button5.Name = "guna2Button5";
             guna2Button5.PressedColor = Color.FromArgb(80, 80, 80);
             guna2Button5.PressedDepth = 0;
-            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2Button5.ShadowDecoration.CustomizableEdges = customizableEdges38;
             guna2Button5.Size = new Size(292, 45);
             guna2Button5.TabIndex = 23;
             // 
+<<<<<<< HEAD
             // guna2Button6
             // 
             guna2Button6.BackColor = Color.Transparent;
@@ -399,10 +492,12 @@
             guna2Button6.Size = new Size(292, 45);
             guna2Button6.TabIndex = 24;
             // 
+=======
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             // btnOcultarSenha
             // 
             btnOcultarSenha.BackColor = Color.FromArgb(80, 80, 80);
-            btnOcultarSenha.CustomizableEdges = customizableEdges19;
+            btnOcultarSenha.CustomizableEdges = customizableEdges39;
             btnOcultarSenha.DisabledState.BorderColor = Color.DarkGray;
             btnOcultarSenha.DisabledState.CustomBorderColor = Color.DarkGray;
             btnOcultarSenha.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -413,7 +508,7 @@
             btnOcultarSenha.Image = Properties.Resources.eye_slash;
             btnOcultarSenha.Location = new Point(368, 395);
             btnOcultarSenha.Name = "btnOcultarSenha";
-            btnOcultarSenha.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            btnOcultarSenha.ShadowDecoration.CustomizableEdges = customizableEdges40;
             btnOcultarSenha.Size = new Size(25, 18);
             btnOcultarSenha.TabIndex = 25;
             btnOcultarSenha.Click += btnOcultarSenha_Click;
@@ -421,17 +516,18 @@
             // PanelTopo
             // 
             PanelTopo.BackColor = Color.Transparent;
-            PanelTopo.CustomizableEdges = customizableEdges21;
+            PanelTopo.CustomizableEdges = customizableEdges41;
             PanelTopo.Dock = DockStyle.Top;
             PanelTopo.Location = new Point(0, 0);
             PanelTopo.Name = "PanelTopo";
-            PanelTopo.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            PanelTopo.ShadowDecoration.CustomizableEdges = customizableEdges42;
             PanelTopo.Size = new Size(1119, 20);
             PanelTopo.TabIndex = 28;
             PanelTopo.MouseDown += PanelTopo_MouseDown;
             // 
             // DataNascimento
             // 
+<<<<<<< HEAD
             DataNascimento.BackColor = Color.FromArgb(80, 80, 80);
             DataNascimento.BorderStyle = BorderStyle.None;
             DataNascimento.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -501,6 +597,59 @@
             label11.Size = new Size(168, 13);
             label11.TabIndex = 34;
             label11.Text = "Você deve ter mais de 18 anos*";
+=======
+            DataNascimentoPicker.BackColor = Color.Transparent;
+            DataNascimentoPicker.BorderRadius = 10;
+            DataNascimentoPicker.Checked = true;
+            DataNascimentoPicker.CustomizableEdges = customizableEdges43;
+            DataNascimentoPicker.FillColor = Color.FromArgb(80, 80, 80);
+            DataNascimentoPicker.FocusedColor = Color.FromArgb(80, 80, 80);
+            DataNascimentoPicker.Font = new Font("Segoe UI", 9F);
+            DataNascimentoPicker.Format = DateTimePickerFormat.Short;
+            DataNascimentoPicker.Location = new Point(114, 456);
+            DataNascimentoPicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            DataNascimentoPicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            DataNascimentoPicker.Name = "DataNascimentoPicker";
+            DataNascimentoPicker.ShadowDecoration.CustomizableEdges = customizableEdges44;
+            DataNascimentoPicker.Size = new Size(288, 41);
+            DataNascimentoPicker.TabIndex = 16;
+            DataNascimentoPicker.TextRenderingHint = System.Drawing.Text.TextRenderingHint.AntiAlias;
+            DataNascimentoPicker.Value = new DateTime(2025, 7, 8, 18, 4, 26, 836);
+            // 
+            // lblErrorDataNascimento
+            // 
+            lblErrorDataNascimento.AutoSize = true;
+            lblErrorDataNascimento.BackColor = Color.FromArgb(0, 4, 40, 242);
+            lblErrorDataNascimento.Font = new Font("Bahnschrift", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblErrorDataNascimento.ForeColor = Color.Red;
+            lblErrorDataNascimento.Location = new Point(114, 500);
+            lblErrorDataNascimento.Name = "lblErrorDataNascimento";
+            lblErrorDataNascimento.Size = new Size(0, 13);
+            lblErrorDataNascimento.TabIndex = 29;
+            lblErrorDataNascimento.Click += label7_Click;
+            // 
+            // lblErrorUsuario
+            // 
+            lblErrorUsuario.AutoSize = true;
+            lblErrorUsuario.BackColor = Color.FromArgb(0, 4, 40, 242);
+            lblErrorUsuario.Font = new Font("Bahnschrift", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblErrorUsuario.ForeColor = Color.Red;
+            lblErrorUsuario.Location = new Point(114, 252);
+            lblErrorUsuario.Name = "lblErrorUsuario";
+            lblErrorUsuario.Size = new Size(0, 13);
+            lblErrorUsuario.TabIndex = 31;
+            // 
+            // lblErrorEmail
+            // 
+            lblErrorEmail.AutoSize = true;
+            lblErrorEmail.BackColor = Color.FromArgb(0, 4, 40, 242);
+            lblErrorEmail.Font = new Font("Bahnschrift", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblErrorEmail.ForeColor = Color.Red;
+            lblErrorEmail.Location = new Point(114, 168);
+            lblErrorEmail.Name = "lblErrorEmail";
+            lblErrorEmail.Size = new Size(0, 13);
+            lblErrorEmail.TabIndex = 32;
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             // 
             // Cadastro
             // 
@@ -509,12 +658,18 @@
             BackgroundImage = Properties.Resources.fundo_vyndra__3_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 654);
+<<<<<<< HEAD
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(DataNascimento);
+=======
+            Controls.Add(lblErrorEmail);
+            Controls.Add(lblErrorUsuario);
+            Controls.Add(lblErrorDataNascimento);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             Controls.Add(btnOcultarSenha);
             Controls.Add(txtNomeExibicao);
             Controls.Add(guna2Button5);
@@ -534,7 +689,6 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(guna2Button1);
-            Controls.Add(guna2Button6);
             Controls.Add(PanelTopo);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
@@ -564,9 +718,9 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button4;
         private TextBox txtNomeExibicao;
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
-        private Guna.UI2.WinForms.Guna2Button guna2Button6;
         private Guna.UI2.WinForms.Guna2Button btnOcultarSenha;
         private Guna.UI2.WinForms.Guna2Panel PanelTopo;
+<<<<<<< HEAD
         private Guna.UI2.WinForms.Guna2DateTimePicker DataNascimentoPicker1;
         private TextBox DataNascimentoPicker;
         private MaskedTextBox DataNascimento;
@@ -575,5 +729,11 @@
         private Label label9;
         private Label label10;
         private Label label11;
+=======
+        private Guna.UI2.WinForms.Guna2DateTimePicker DataNascimentoPicker;
+        private Label lblErrorDataNascimento;
+        private Label lblErrorUsuario;
+        private Label lblErrorEmail;
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
     }
 }

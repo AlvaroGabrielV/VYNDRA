@@ -84,6 +84,7 @@
             // 
             // chat_scroll
             // 
+<<<<<<< HEAD
             chat_scroll.BindingContainer = chat_layout;
             chat_scroll.BorderRadius = 8;
             chat_scroll.InUpdate = false;
@@ -94,6 +95,20 @@
             chat_scroll.Size = new Size(10, 578);
             chat_scroll.TabIndex = 0;
             chat_scroll.ThumbSize = 3F;
+=======
+            chat_scroll.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            chat_scroll.BindingContainer = chat_layout;
+            chat_scroll.BorderRadius = 6;
+            chat_scroll.FillColor = Color.Transparent;
+            chat_scroll.InUpdate = false;
+            chat_scroll.LargeChange = 10;
+            chat_scroll.Location = new Point(954, 69);
+            chat_scroll.Name = "chat_scroll";
+            chat_scroll.RightToLeft = RightToLeft.No;
+            chat_scroll.ScrollbarSize = 12;
+            chat_scroll.Size = new Size(12, 578);
+            chat_scroll.TabIndex = 0;
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             chat_scroll.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
             // 
             // chat_layout
@@ -222,7 +237,11 @@
             send_btn.Name = "send_btn";
             send_btn.ShadowDecoration.CustomizableEdges = customizableEdges7;
             send_btn.Size = new Size(35, 39);
+<<<<<<< HEAD
             send_btn.TabIndex = 5;
+=======
+            send_btn.TabIndex = 2;
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             send_btn.UseTransparentBackground = true;
             send_btn.Click += send_btn_Click;
             // 
@@ -271,7 +290,10 @@
             messageBox.Size = new Size(946, 39);
             messageBox.TabIndex = 4;
             messageBox.TextOffset = new Point(33, 0);
+<<<<<<< HEAD
             messageBox.KeyPress += messageBox_KeyPress;
+=======
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             // 
             // Chat
             // 
@@ -302,7 +324,12 @@
         private Guna.UI2.WinForms.Guna2Panel chatcard_panel;
         private Guna.UI2.WinForms.Guna2TextBox messageBox;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+<<<<<<< HEAD
         private Guna.UI2.WinForms.Guna2VScrollBar chat_scroll;
         private Guna.UI2.WinForms.Guna2Button send_btn;
+=======
+        private Guna.UI2.WinForms.Guna2Button send_btn;
+        private Guna.UI2.WinForms.Guna2VScrollBar chat_scroll;
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
     }
 }

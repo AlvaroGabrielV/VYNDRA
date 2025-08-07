@@ -57,8 +57,12 @@
             guna2Button5 = new Guna.UI2.WinForms.Guna2Button();
             btnOcultarSenha = new Guna.UI2.WinForms.Guna2Button();
             PanelTopo = new Guna.UI2.WinForms.Guna2Panel();
+<<<<<<< HEAD
             label5 = new Label();
             PanelTopo.SuspendLayout();
+=======
+            lblError = new Label();
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             SuspendLayout();
             // 
             // label1
@@ -99,6 +103,7 @@
             // 
             // linkLabel1
             // 
+            linkLabel1.ActiveLinkColor = Color.MidnightBlue;
             linkLabel1.AutoSize = true;
             linkLabel1.BackColor = Color.FromArgb(0, 4, 40, 242);
             linkLabel1.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -113,6 +118,7 @@
             // 
             // linkLabel2
             // 
+            linkLabel2.ActiveLinkColor = Color.MidnightBlue;
             linkLabel2.AutoSize = true;
             linkLabel2.BackColor = Color.FromArgb(0, 4, 40, 242);
             linkLabel2.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -148,7 +154,11 @@
             btnEntrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnEntrar.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEntrar.ForeColor = Color.White;
+<<<<<<< HEAD
             btnEntrar.Location = new Point(497, 422);
+=======
+            btnEntrar.Location = new Point(497, 435);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             btnEntrar.Name = "btnEntrar";
             btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnEntrar.Size = new Size(134, 36);
@@ -212,7 +222,11 @@
             // guna2Button4
             // 
             guna2Button4.BackColor = Color.Transparent;
+<<<<<<< HEAD
             guna2Button4.BorderRadius = 5;
+=======
+            guna2Button4.BorderRadius = 20;
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             guna2Button4.CustomizableEdges = customizableEdges7;
             guna2Button4.DisabledState.BorderColor = Color.DarkGray;
             guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -248,7 +262,11 @@
             // guna2Button5
             // 
             guna2Button5.BackColor = Color.Transparent;
+<<<<<<< HEAD
             guna2Button5.BorderRadius = 5;
+=======
+            guna2Button5.BorderRadius = 20;
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             guna2Button5.CustomizableEdges = customizableEdges9;
             guna2Button5.DisabledState.BorderColor = Color.DarkGray;
             guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -291,7 +309,10 @@
             // PanelTopo
             // 
             PanelTopo.BackColor = Color.Transparent;
+<<<<<<< HEAD
             PanelTopo.Controls.Add(btnMinimizar);
+=======
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             PanelTopo.CustomizableEdges = customizableEdges13;
             PanelTopo.Dock = DockStyle.Top;
             PanelTopo.Location = new Point(0, 0);
@@ -301,6 +322,7 @@
             PanelTopo.TabIndex = 27;
             PanelTopo.MouseDown += PanelTopo_MouseDown;
             // 
+<<<<<<< HEAD
             // label5
             // 
             label5.AutoSize = true;
@@ -312,6 +334,18 @@
             label5.Size = new Size(144, 13);
             label5.TabIndex = 28;
             label5.Text = "Usuário ou senha invalidos*";
+=======
+            // lblError
+            // 
+            lblError.AutoSize = true;
+            lblError.BackColor = Color.FromArgb(0, 4, 40, 242);
+            lblError.Font = new Font("Bahnschrift", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblError.ForeColor = Color.Red;
+            lblError.Location = new Point(410, 394);
+            lblError.Name = "lblError";
+            lblError.Size = new Size(0, 13);
+            lblError.TabIndex = 28;
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             // 
             // Login
             // 
@@ -321,7 +355,11 @@
             BackgroundImage = Properties.Resources.fundo_vyndra__2_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1119, 654);
+<<<<<<< HEAD
             Controls.Add(label5);
+=======
+            Controls.Add(lblError);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             Controls.Add(btnOcultarSenha);
             Controls.Add(txtSenha);
             Controls.Add(guna2Button5);
@@ -362,6 +400,10 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button5;
         private Guna.UI2.WinForms.Guna2Button btnOcultarSenha;
         private Guna.UI2.WinForms.Guna2Panel PanelTopo;
+<<<<<<< HEAD
         private Label label5;
+=======
+        private Label lblError;
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
     }
 }

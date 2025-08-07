@@ -51,9 +51,38 @@
             btnAdicionar.Location = new Point(0, 0);
             btnAdicionar.Name = "btnAdicionar";
             btnAdicionar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+<<<<<<< HEAD
             btnAdicionar.Size = new Size(284, 220);
             btnAdicionar.TabIndex = 7;
             // 
+=======
+            btnAdicionar.Size = new Size(242, 160);
+            btnAdicionar.TabIndex = 7;
+            // 
+            // guna2Panel3
+            // 
+            guna2Panel3.CustomizableEdges = customizableEdges3;
+            guna2Panel3.FillColor = Color.FromArgb(75, 75, 75);
+            guna2Panel3.Location = new Point(0, 0);
+            guna2Panel3.Name = "guna2Panel3";
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            guna2Panel3.Size = new Size(372, 31);
+            guna2Panel3.TabIndex = 6;
+            // 
+            // guna2Panel2
+            // 
+            guna2Panel2.BorderRadius = 20;
+            guna2Panel2.Controls.Add(guna2Panel3);
+            guna2Panel2.CustomizableEdges = customizableEdges5;
+            guna2Panel2.Dock = DockStyle.Bottom;
+            guna2Panel2.FillColor = Color.FromArgb(75, 75, 75);
+            guna2Panel2.Location = new Point(0, 160);
+            guna2Panel2.Name = "guna2Panel2";
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            guna2Panel2.Size = new Size(242, 52);
+            guna2Panel2.TabIndex = 5;
+            // 
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             // CardAdicionarTarefa
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -61,7 +90,12 @@
             BackColor = Color.Transparent;
             Controls.Add(btnAdicionar);
             Name = "CardAdicionarTarefa";
+<<<<<<< HEAD
             Size = new Size(284, 220);
+=======
+            Size = new Size(242, 212);
+            guna2Panel2.ResumeLayout(false);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             ResumeLayout(false);
         }
 

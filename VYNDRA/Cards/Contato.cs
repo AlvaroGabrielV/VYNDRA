@@ -31,6 +31,7 @@ namespace VYNDRA.Cards
             }
         }
 <<<<<<< HEAD
+<<<<<<< HEAD
         public string NomeContato
         {
             get { return nomeContato; }
@@ -59,11 +60,16 @@ namespace VYNDRA.Cards
 
 
 =======
+=======
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
 
         private void lb_mensagem_Click(object sender, EventArgs e)
         {
 
         }
+<<<<<<< HEAD
 >>>>>>> 13f7adbbca1df4a99c3f2065578f22ef31759b92
+=======
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
     }
 }

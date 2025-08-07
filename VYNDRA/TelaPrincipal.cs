@@ -100,6 +100,7 @@ namespace VYNDRA
             chat_panel.Controls.Add(chat);
         }
 
+<<<<<<< HEAD
         private void contatos_layout_DoubleClick(object sender, EventArgs e)
         {
             CarregarCardsDeChat();
@@ -113,6 +114,13 @@ namespace VYNDRA
         {
 
 >>>>>>> 13f7adbbca1df4a99c3f2065578f22ef31759b92
+=======
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu(Sessao.IdUsuario);
+            menu.Show();
+            this.Close();
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
         }
     }
 }

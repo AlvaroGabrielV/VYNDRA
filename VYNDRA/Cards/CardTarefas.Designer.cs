@@ -43,9 +43,9 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            btnEditar = new Guna.UI2.WinForms.Guna2Button();
             TxtTitulo = new Guna.UI2.WinForms.Guna2TextBox();
             btnExcluir = new Guna.UI2.WinForms.Guna2Button();
-            btnEditar = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             lblDataCriacao = new Label();
             LblData = new Label();
@@ -59,22 +59,40 @@
             // 
             // guna2Panel3
             // 
+            guna2Panel3.Controls.Add(btnEditar);
             guna2Panel3.Controls.Add(TxtTitulo);
             guna2Panel3.Controls.Add(btnExcluir);
-            guna2Panel3.Controls.Add(btnEditar);
             guna2Panel3.CustomizableEdges = customizableEdges7;
             guna2Panel3.FillColor = Color.FromArgb(29, 52, 66);
             guna2Panel3.Location = new Point(0, 160);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            guna2Panel3.Size = new Size(372, 31);
+            guna2Panel3.Size = new Size(242, 31);
             guna2Panel3.TabIndex = 3;
+            // 
+            // btnEditar
+            // 
+            btnEditar.CustomizableEdges = customizableEdges1;
+            btnEditar.DisabledState.BorderColor = Color.DarkGray;
+            btnEditar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnEditar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnEditar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEditar.FillColor = Color.Transparent;
+            btnEditar.Font = new Font("Segoe UI", 9F);
+            btnEditar.ForeColor = Color.White;
+            btnEditar.Image = Properties.Resources.editar;
+            btnEditar.Location = new Point(171, 0);
+            btnEditar.Name = "btnEditar";
+            btnEditar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnEditar.Size = new Size(30, 30);
+            btnEditar.TabIndex = 1;
+            btnEditar.Click += btnEditar_Click;
             // 
             // TxtTitulo
             // 
             TxtTitulo.BorderColor = Color.FromArgb(75, 75, 75);
             TxtTitulo.BorderThickness = 0;
-            TxtTitulo.CustomizableEdges = customizableEdges1;
+            TxtTitulo.CustomizableEdges = customizableEdges3;
             TxtTitulo.DefaultText = "Titulo";
             TxtTitulo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             TxtTitulo.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -91,8 +109,13 @@
             TxtTitulo.PlaceholderText = "";
             TxtTitulo.ReadOnly = true;
             TxtTitulo.SelectedText = "";
+<<<<<<< HEAD
             TxtTitulo.ShadowDecoration.CustomizableEdges = customizableEdges2;
             TxtTitulo.Size = new Size(72, 26);
+=======
+            TxtTitulo.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            TxtTitulo.Size = new Size(168, 23);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             TxtTitulo.TabIndex = 4;
             TxtTitulo.TextChanged += TxtTitulo_TextChanged;
             TxtTitulo.DoubleClick += TxtTitulo_DoubleClick;
@@ -100,7 +123,7 @@
             // 
             // btnExcluir
             // 
-            btnExcluir.CustomizableEdges = customizableEdges3;
+            btnExcluir.CustomizableEdges = customizableEdges5;
             btnExcluir.DisabledState.BorderColor = Color.DarkGray;
             btnExcluir.DisabledState.CustomBorderColor = Color.DarkGray;
             btnExcluir.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -109,13 +132,18 @@
             btnExcluir.Font = new Font("Segoe UI", 9F);
             btnExcluir.ForeColor = Color.White;
             btnExcluir.Image = Properties.Resources.excluir;
+<<<<<<< HEAD
             btnExcluir.Location = new Point(249, 2);
+=======
+            btnExcluir.Location = new Point(207, 1);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             btnExcluir.Name = "btnExcluir";
-            btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnExcluir.Size = new Size(30, 30);
             btnExcluir.TabIndex = 2;
             btnExcluir.Click += btnExcluir_Click;
             // 
+<<<<<<< HEAD
             // btnEditar
             // 
             btnEditar.CustomizableEdges = customizableEdges5;
@@ -134,6 +162,8 @@
             btnEditar.TabIndex = 1;
             btnEditar.Click += btnEditar_Click;
             // 
+=======
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             // guna2Panel2
             // 
             guna2Panel2.BorderRadius = 20;
@@ -142,11 +172,16 @@
             guna2Panel2.Controls.Add(label2);
             guna2Panel2.CustomizableEdges = customizableEdges9;
             guna2Panel2.Dock = DockStyle.Bottom;
+<<<<<<< HEAD
             guna2Panel2.FillColor = Color.FromArgb(29, 52, 66);
             guna2Panel2.Location = new Point(0, 168);
+=======
+            guna2Panel2.FillColor = Color.FromArgb(75, 75, 75);
+            guna2Panel2.Location = new Point(0, 160);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel2.Size = new Size(284, 52);
+            guna2Panel2.Size = new Size(242, 52);
             guna2Panel2.TabIndex = 2;
             // 
             // lblDataCriacao
@@ -154,7 +189,11 @@
             lblDataCriacao.AutoSize = true;
             lblDataCriacao.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblDataCriacao.ForeColor = Color.White;
+<<<<<<< HEAD
             lblDataCriacao.Location = new Point(69, 28);
+=======
+            lblDataCriacao.Location = new Point(62, 31);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             lblDataCriacao.Name = "lblDataCriacao";
             lblDataCriacao.Size = new Size(42, 13);
             lblDataCriacao.TabIndex = 6;
@@ -175,7 +214,11 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
+<<<<<<< HEAD
             label2.Location = new Point(13, 28);
+=======
+            label2.Location = new Point(13, 31);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             label2.Name = "label2";
             label2.Size = new Size(50, 13);
             label2.TabIndex = 4;
@@ -204,7 +247,11 @@
             txtDescricao.ReadOnly = true;
             txtDescricao.SelectedText = "";
             txtDescricao.ShadowDecoration.CustomizableEdges = customizableEdges12;
+<<<<<<< HEAD
             txtDescricao.Size = new Size(254, 151);
+=======
+            txtDescricao.Size = new Size(239, 126);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             txtDescricao.TabIndex = 5;
             txtDescricao.DoubleClick += txtDescricao_DoubleClick;
             txtDescricao.Leave += txtDescricao_Leave;
@@ -223,7 +270,7 @@
             panelFundo.Location = new Point(0, 0);
             panelFundo.Name = "panelFundo";
             panelFundo.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            panelFundo.Size = new Size(284, 220);
+            panelFundo.Size = new Size(242, 212);
             panelFundo.TabIndex = 1;
             // 
             // CardTarefas
@@ -234,7 +281,7 @@
             BackColor = Color.Transparent;
             Controls.Add(panelFundo);
             Name = "CardTarefas";
-            Size = new Size(284, 220);
+            Size = new Size(242, 212);
             guna2Panel3.ResumeLayout(false);
             guna2Panel2.ResumeLayout(false);
             guna2Panel2.PerformLayout();

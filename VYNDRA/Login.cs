@@ -43,7 +43,7 @@ namespace VYNDRA
             {
                 if (String.IsNullOrWhiteSpace(txtLogin.Text) || String.IsNullOrWhiteSpace(txtSenha.Text))
                 {
-                    MessageBox.Show("Preencha os campos corretamente!", "Erro - Campos em branco", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    lblError.Text = "Preencha os campos corretamente!*";
                     return;
                 }
 
@@ -54,7 +54,6 @@ namespace VYNDRA
 
                 if (usuarioLogado != null)
                 {
-                    MessageBox.Show("Login realizado com sucesso!", "Sucesso - Login", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     Sessao.IdUsuario = usuarioLogado.Id;
                     Sessao.NomeExibicao = usuarioLogado.NomeExibicao;
@@ -76,21 +75,14 @@ namespace VYNDRA
 
                 else
                 {
-                    MessageBox.Show("Usuário ou senha inválidos!", "Erro - Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    LimparCampos();
+                    lblError.Text = "Usuário ou senha incorretos!*";
                 }
 
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Não foi possível realizar cadastro" + ex.Message, "Erro - Cadastrar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                LimparCampos();
             }
-        }
-        public void LimparCampos()
-        {
-            txtLogin.Clear();
-            txtSenha.Clear();
         }
 
         private void btnOcultarSenha_Click(object sender, EventArgs e)

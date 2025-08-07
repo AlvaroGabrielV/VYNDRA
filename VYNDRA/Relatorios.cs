@@ -13,20 +13,37 @@ namespace VYNDRA
 {
     public partial class Relatorios : Form
     {
-        private int IdUsuario;
         public Relatorios(int IdUsuario)
         {
             InitializeComponent();
-            this.IdUsuario = IdUsuario;
+            Sessao.IdUsuario = IdUsuario;
         }
 
         private void Relatorios_Load(object sender, EventArgs e)
         {
+            miniFotoPerfil.SizeMode = PictureBoxSizeMode.Zoom;
+
+            Users usuario = new Users();
+
+            if (usuario.CarregarRedesSociais(Sessao.IdUsuario) && Sessao.FotoPerfil != null && Sessao.FotoPerfil.Length > 0)
+{
+                using (MemoryStream ms = new MemoryStream(Sessao.FotoPerfil))
+                {
+                    miniFotoPerfil.Image = Image.FromStream(ms);
+                }
+            }
+            else
+            {
+                miniFotoPerfil.Image = null;
+            }
+
+            FlowPanelConteudo.Controls.Clear();
             CardAdicionarTarefa botaoAdicionar = new CardAdicionarTarefa();
             botaoAdicionar.BotaoClicado += BotaoAdicionar_Click;
             FlowPanelConteudo.Controls.Add(botaoAdicionar);
 
-            List<RelatoriosClasse> relatorios = RelatoriosClasse.ListarPorUsuario(IdUsuario);
+
+            List<RelatoriosClasse> relatorios = RelatoriosClasse.ListarPorUsuario(Sessao.IdUsuario);
 
             foreach (var rel in relatorios)
             {
@@ -52,45 +69,69 @@ namespace VYNDRA
                 MessageBox.Show("O espaço máximo de anotações foi atingido.", "Limite atingido", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            CardTarefas novaTarefa = new CardTarefas();
-            novaTarefa.Titulo = "Nova Tarefa";
-            novaTarefa.Descricao = "Digite a descrição..";
-            novaTarefa.DataCriacao = DateTime.Now;
-            novaTarefa.ExlcuirTarefasClicado += NovaTarefa_ExlcuirTarefasClicado;
-            novaTarefa.EditarTarefaClicada += NovaTarefa_EditarTarefaClicada;
 
-            RelatoriosClasse novoRelatorio = new RelatoriosClasse
+            BlocodeNotas bloco = new BlocodeNotas();
+            bloco.ShowDialog();
+
+            if (bloco.SalvoComSucesso)
             {
-                IdUsuario = IdUsuario,
-                Titulo = novaTarefa.Titulo,
-                Descricao = novaTarefa.Descricao,
-                DataCriacao = novaTarefa.DataCriacao
-            };
-            novoRelatorio.Inserir();
+                RelatoriosClasse novoRelatorio = new RelatoriosClasse
+                {
+                    IdUsuario = Sessao.IdUsuario,
+                    Titulo = bloco.Titulo,
+                    Descricao = bloco.Descricao,
+                    DataCriacao = DateTime.Now
+                };
+                novoRelatorio.Inserir();
 
-            int indexBotaoMais = FlowPanelConteudo.Controls.IndexOf((Control)sender);
-            FlowPanelConteudo.Controls.Add(novaTarefa);
-            FlowPanelConteudo.Controls.SetChildIndex(novaTarefa, indexBotaoMais);
+                CardTarefas novaTarefa = new CardTarefas
+                {
+                    Titulo = bloco.Titulo,
+                    Descricao = bloco.Descricao,
+                    DataCriacao = DateTime.Now
+                };
+
+                
+
+                novaTarefa.ExlcuirTarefasClicado += NovaTarefa_ExlcuirTarefasClicado;
+                novaTarefa.EditarTarefaClicada += NovaTarefa_EditarTarefaClicada;
+
+                int indexBotaoMais = FlowPanelConteudo.Controls.IndexOf((Control)sender);
+                FlowPanelConteudo.Controls.Add(novaTarefa);
+                FlowPanelConteudo.Controls.SetChildIndex(novaTarefa, indexBotaoMais);
+            }
         }
+
         private void NovaTarefa_EditarTarefaClicada(object? sender, EventArgs e)
         {
-            CardTarefas card = sender as CardTarefas;
+            CardTarefas tarefaSelecionada = sender as CardTarefas;
 
-            RelatoriosClasse relatorioAtualizado = new RelatoriosClasse
+            if (tarefaSelecionada == null)
+                return;
+
+            BlocodeNotas bloco = new BlocodeNotas
             {
-                IdRelatorio = card.IdRelatorio,
-                Titulo = card.Titulo,
-                Descricao = card.Descricao,
-                IdUsuario = IdUsuario
+                Titulo = tarefaSelecionada.Titulo,
+                Descricao = tarefaSelecionada.Descricao
             };
 
-            if (relatorioAtualizado.Atualizar())
+            bloco.ShowDialog();
+
+            if (bloco.SalvoComSucesso)
             {
-                MessageBox.Show("Tarefa atualizada com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("Erro ao atualizar tarefa!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                tarefaSelecionada.Titulo = bloco.Titulo;
+                tarefaSelecionada.Descricao = bloco.Descricao;;
+
+                RelatoriosClasse atualizar = new RelatoriosClasse
+                {
+                    IdRelatorio = tarefaSelecionada.IdRelatorio,
+                    Titulo = bloco.Titulo,
+                    Descricao = bloco.Descricao,
+                    DataCriacao = tarefaSelecionada.DataCriacao,
+                    IdUsuario = Sessao.IdUsuario
+                };
+
+                atualizar.Atualizar();
             }
         }
 
@@ -100,12 +141,13 @@ namespace VYNDRA
             try
             {
                 RelatoriosClasse relatorios = new RelatoriosClasse();
-                relatorios.IdUsuario = IdUsuario;
+                relatorios.IdUsuario = Sessao.IdUsuario;
 
                 if (relatorios.Excluir(e))
                 {
                     FlowPanelConteudo.Controls.Remove((CardTarefas)sender);
                     MessageBox.Show("Relatório excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Relatorios_Load();
                 }
             }
             catch (Exception ex)
@@ -126,11 +168,16 @@ namespace VYNDRA
 
         private void btnHome_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             Menu menu = new Menu(IdUsuario);
+=======
+            Menu menu = new Menu(Sessao.IdUsuario);
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             menu.Show();
             this.Close();
         }
 
+<<<<<<< HEAD
         private void guna2Panel1_Paint(object sender, PaintEventArgs e)
         {
 
@@ -139,6 +186,13 @@ namespace VYNDRA
         private void guna2CirclePictureBox3_Click(object sender, EventArgs e)
         {
 
+=======
+        private void miniFotoPerfil_Click(object sender, EventArgs e)
+        {
+            Perfil perfil = new Perfil(Sessao.IdUsuario);
+            perfil.Show();
+            this.Close();
+>>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
         }
     }
 }
