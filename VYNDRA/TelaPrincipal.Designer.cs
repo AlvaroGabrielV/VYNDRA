@@ -84,23 +84,17 @@
             cor_status = new Guna.UI2.WinForms.Guna2Button();
             contato_status = new Guna.UI2.WinForms.Guna2HtmlLabel();
             contato_nome = new Guna.UI2.WinForms.Guna2HtmlLabel();
-<<<<<<< HEAD
             foto_usuario = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             chat_layout = new FlowLayoutPanel();
-=======
             guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
->>>>>>> 13f7adbbca1df4a99c3f2065578f22ef31759b92
             chatcard_panel = new Guna.UI2.WinForms.Guna2Panel();
             messageBox = new Guna.UI2.WinForms.Guna2TextBox();
             send_btn = new Guna.UI2.WinForms.Guna2Button();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-<<<<<<< HEAD
             contatos_panel = new Guna.UI2.WinForms.Guna2Panel();
             contatos_layout = new FlowLayoutPanel();
-=======
             message_box = new Guna.UI2.WinForms.Guna2TextBox();
             chat_layout = new FlowLayoutPanel();
->>>>>>> 13f7adbbca1df4a99c3f2065578f22ef31759b92
             top_panel = new Guna.UI2.WinForms.Guna2Panel();
             guna2Button4 = new Guna.UI2.WinForms.Guna2Button();
             guna2Button6 = new Guna.UI2.WinForms.Guna2Button();
@@ -132,11 +126,8 @@
             // 
             // sidebar_panel
             // 
-<<<<<<< HEAD
             sidebar_panel.BackColor = Color.Transparent;
-=======
             sidebar_panel.BackColor = Color.FromArgb(11, 23, 34);
->>>>>>> 13f7adbbca1df4a99c3f2065578f22ef31759b92
             sidebar_panel.BorderRadius = 30;
             sidebar_panel.Controls.Add(guna2CirclePictureBox3);
             sidebar_panel.Controls.Add(guna2Button2);
@@ -178,8 +169,6 @@
             setting_btn.TabIndex = 3;
             setting_btn.UseTransparentBackground = true;
             // 
-<<<<<<< HEAD
-=======
             // btnHome
             // 
             btnHome.CustomizableEdges = customizableEdges22;
@@ -199,7 +188,6 @@
             btnHome.TabIndex = 2;
             btnHome.Click += btnHome_Click;
             // 
->>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
             // guna2CirclePictureBox1
             // 
             guna2CirclePictureBox1.BackColor = Color.FromArgb(29, 52, 66);

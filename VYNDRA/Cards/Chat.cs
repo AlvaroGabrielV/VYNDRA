@@ -1,15 +1,12 @@
-<<<<<<< HEAD
 ﻿using Microsoft.AspNetCore.SignalR.Client;
 using System;
 using System.Collections.Generic;
-=======
 ﻿using Google.Protobuf.WellKnownTypes;
 using Microsoft.AspNetCore.SignalR.Client;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
->>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
@@ -73,7 +70,6 @@ namespace VYNDRA.Cards
             var usuario = Users.BuscarPorId(contatoId);
             if (usuario == null)
             {
-<<<<<<< HEAD
                 MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
@@ -101,7 +97,7 @@ namespace VYNDRA.Cards
             ScrollUltimaMensagem();
         }
 
-        private async void send_btn_Click(object sender, EventArgs e)
+        /* private async void send_btn_Click(object sender, EventArgs e)
         {
             try
             {
@@ -116,7 +112,7 @@ namespace VYNDRA.Cards
             {
                 Debug.WriteLine("Erro ao enviar mensagem: " + ex.Message);
             }
-        }
+        }*/
 
         private void OnMensagemRecebida(int remetenteId, int destinatarioId, string mensagem, DateTime dataHora)
         {
@@ -154,47 +150,7 @@ namespace VYNDRA.Cards
             }));
         }
 
-        private void AdicionarMensagemNaTela(int remetenteId, string texto, DateTime data)
-        {
-            var mensagemcard = new MessageCard
-            {
-                Mensagem = texto,
-                Horario = data.ToLocalTime()
-            };
-
-            if (remetenteId == Sessao.IdUsuario)
-            {
-                var usuario = Users.BuscarPorId(Sessao.IdUsuario);
-                mensagemcard.Imagem = usuario?.FotoPerfil != null
-                    ? Bitmap.FromStream(new MemoryStream(usuario.FotoPerfil))
-                    : null;
-
-                mensagemcard.Usuario = Sessao.NomeExibicao;
-=======
-                IdContato = usuario.Id;
-                contato_nome.Text = usuario.NomeExibicao;
-                foto_usuario.Image = usuario.FotoPerfil != null ? Bitmap.FromStream(new MemoryStream(usuario.FotoPerfil)) : null;
-
-                chat_layout.Controls.Clear();
-
-                var dao = new ChatDAO();
-                var mensagens = dao.ObterMensagensEntre(Sessao.IdUsuario, idContato);
-
-                foreach (var msg in mensagens)
-                {
-                    AdicionarMensagemNaTela(msg.RemetenteId, msg.Texto, msg.Data);
-                }
->>>>>>> c490c4d4b3909b8118fbe60009dfe57956049685
-            }
-            else
-            {
-                mensagemcard.Imagem = FotoContato;
-                mensagemcard.Usuario = NomeContato;
-            }
-
-            chat_layout.Controls.Add(mensagemcard);
-            Debug.WriteLine("[Chat] Mensagem adicionada na tela.");
-        }
+        
 
         private void ScrollUltimaMensagem()
         {
@@ -246,12 +202,6 @@ namespace VYNDRA.Cards
             {
                 Debug.WriteLine("Erro ao enviar mensagem: " + ex);
             }
-        }
-
-
-        private void Chat_Load(object sender, EventArgs e)
-        {
-            SignalRService.MensagemRecebidaPrivada += OnMensagemRecebida;
         }
 
         private void OnMensagemRecebida(int remetenteId, string mensagem, DateTime dataHora)
