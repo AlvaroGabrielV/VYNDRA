@@ -99,5 +99,11 @@ namespace VYNDRA
             chat_panel.Controls.Add(chat);
         }
 
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu(Sessao.IdUsuario);
+            menu.Show();
+            this.Close();
+        }
     }
 }

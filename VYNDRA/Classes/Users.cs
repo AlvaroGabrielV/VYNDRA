@@ -25,13 +25,15 @@ namespace VYNDRA.Classes
         private string instagram;
         private string linkedin;
         private byte[] fotoperfil;
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/atualizado-2.2
         public byte[] FotoPerfil
         {
             get { return fotoperfil; }
             set { fotoperfil = value; }
         }
-
         public string Telefone
         {
             get { return telefone; }
@@ -55,12 +57,8 @@ namespace VYNDRA.Classes
         public string Email
         {
             get { return email; }
-            set
-            {
-                if (!verificarEmail(value))
-                    throw new Exception("Email inválido");
-                email = value;
-            }
+            set { email = value; }
+      
         }
         public string SenhaHash
         {
@@ -88,8 +86,13 @@ namespace VYNDRA.Classes
         {
             using (MySqlConnection conexao = new ConexaoBD().Conectar())
             {
+<<<<<<< HEAD
                 string query = "SELECT id_usuario,nomeexibicao, telefone, datanascimento, email, usuario, senha FROM usuarios WHERE email = @Login OR usuario = @Login";
                 MySqlCommand cmd = new MySqlCommand(query, conexao);
+=======
+                string select = "SELECT id_usuario,nomeexibicao, telefone, datanascimento, email, usuario, senha FROM usuarios WHERE email = @Login OR usuario = @Login";
+                MySqlCommand cmd = new MySqlCommand(select, conexao);
+>>>>>>> origin/atualizado-2.2
                 cmd.Parameters.AddWithValue("@Login", Login);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
@@ -152,13 +155,13 @@ namespace VYNDRA.Classes
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------//
-
-        public void CarregarFotodePerfil(byte[] fotoemBytes)
+        public bool InserirLinkedin()
         {
             try
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
+<<<<<<< HEAD
                     string query = "UPDATE usuarios SET fotoperfil = @fotoperfil WHERE id_usuario = @id";
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
 
@@ -261,6 +264,13 @@ namespace VYNDRA.Classes
 
                     cmd.Parameters.AddWithValue("@instagram", Instagram);
                     cmd.Parameters.AddWithValue("@id", Id);
+=======
+                    string update = "UPDATE usuarios SET linkedin = @linkedin WHERE id_usuario = @id_usuario";
+                    MySqlCommand cmd = new MySqlCommand(update, conexao);
+
+                    cmd.Parameters.AddWithValue("@id_usuario", Id);
+                    cmd.Parameters.AddWithValue("@linkedin", Linkedin);
+>>>>>>> origin/atualizado-2.2
 
                     int resultado = cmd.ExecuteNonQuery();
 
@@ -276,30 +286,202 @@ namespace VYNDRA.Classes
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Não foi possível adicionar a foto -> Método" + ex.Message, "Erro - Adicionar Foto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Não foi possível realizar cadastro -> Método" + ex.Message, "Erro - Cadastrar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
         }
-        //-------------------------------------------------------------------------------------------------------------------------------------------------//
 
-        public void InserirWhatsapp(string telefone)
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
+        public bool InserirInstagram()
         {
             try
             {
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
+<<<<<<< HEAD
                     string query = "UPDATE usuarios set telefone = @telefone WHERE id_usuario = @id";
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
+=======
+                    string update = "UPDATE usuarios SET instagram = @instagram WHERE id_usuario = @id_usuario";
+                    MySqlCommand cmd = new MySqlCommand(update, conexao);
+>>>>>>> origin/atualizado-2.2
 
-                    cmd.Parameters.AddWithValue("@telefone", telefone);
-                    cmd.Parameters.AddWithValue("@id", Id);
+                    cmd.Parameters.AddWithValue("@id_usuario", this.Id);
+                    cmd.Parameters.AddWithValue("@instagram", Instagram);
 
-                    cmd.ExecuteNonQuery();
+                    int resultado = cmd.ExecuteNonQuery();
+
+                    if (resultado > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Não foi possível adicionar a foto -> Método" + ex.Message, "Erro - Adicionar Foto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Não foi possível realizar cadastro -> Método" + ex.Message, "Erro - Cadastrar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
+
+        public bool InserirTelefone()
+        {
+            try
+            {
+                using (MySqlConnection conexao = new ConexaoBD().Conectar())
+                {
+                    string update = "UPDATE usuarios SET telefone = @telefone WHERE id_usuario = @id_usuario";
+                    MySqlCommand cmd = new MySqlCommand(update, conexao);
+
+                    cmd.Parameters.AddWithValue("@id_usuario", this.Id);
+                    cmd.Parameters.AddWithValue("@telefone", Telefone);
+
+                    int resultado = cmd.ExecuteNonQuery();
+
+                    if (resultado > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível realizar cadastro -> Método" + ex.Message, "Erro - Cadastrar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
+
+        public bool CarregarRedesSociais(int IdUsuario)
+        {
+            try
+            {
+                using (MySqlConnection conexao = new ConexaoBD().Conectar())
+                {
+                    string query = "SELECT instagram, linkedin, telefone, fotoperfil FROM usuarios WHERE id_usuario = @id_usuario";
+                    MySqlCommand cmd = new MySqlCommand(query, conexao);
+                    cmd.Parameters.AddWithValue("@id_usuario", IdUsuario);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            this.Instagram = reader["instagram"].ToString();
+                            this.Linkedin = reader["linkedin"].ToString();
+                            this.Telefone = reader["telefone"].ToString();
+
+                            if (reader["fotoperfil"] != DBNull.Value)
+                            {
+                                this.FotoPerfil = (byte[])reader["fotoperfil"];
+                            }
+                            else
+                            {
+                                this.FotoPerfil = null;
+                            }
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar a foto e as redes sociais. Motivo: " + ex.Message, "Erro - Método", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return false;
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
+        public bool SalvarFotoPerfil()
+        {
+            try
+            {
+                using (MySqlConnection conexao = new ConexaoBD().Conectar())
+                {
+                    string query = "UPDATE usuarios SET fotoperfil = @fotoperfil WHERE id_usuario = @id_usuario";
+                    MySqlCommand cmd = new MySqlCommand(query, conexao);
+                    cmd.Parameters.Add("@fotoperfil", MySqlDbType.Blob).Value = FotoPerfil;
+                    cmd.Parameters.AddWithValue("@id_usuario", Id);
+
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
+        public bool AtualizarNomeExibicao()
+        {
+            try
+            {
+                using (MySqlConnection conexao = new ConexaoBD().Conectar())
+                {
+                    string update = "UPDATE usuarios SET nomeexibicao = @nomeexibicao WHERE id_usuario = @id_usuario";
+                    MySqlCommand cmd = new MySqlCommand(update, conexao);
+
+                    cmd.Parameters.AddWithValue("@id_usuario", this.Id);
+                    cmd.Parameters.AddWithValue("@nomeexibicao", NomeExibicao);
+
+                    int resultado = cmd.ExecuteNonQuery();
+
+                    if (resultado > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível realizar cadastro -> Método" + ex.Message, "Erro - Cadastrar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+        }
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
+        public bool AtualizarUsuario()
+        {
+            try
+            {
+                using (MySqlConnection conexao = new ConexaoBD().Conectar())
+                {
+                    string update = "UPDATE usuarios SET usuario = @usuario WHERE id_usuario = @id_usuario";
+                    MySqlCommand cmd = new MySqlCommand(update, conexao);
+
+                    cmd.Parameters.AddWithValue("@id_usuario", this.Id);
+                    cmd.Parameters.AddWithValue("@usuario", Usuario);
+
+                    int resultado = cmd.ExecuteNonQuery();
+
+                    if (resultado > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possível realizar cadastro -> Método" + ex.Message, "Erro - Cadastrar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
         }
         //-------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -309,7 +491,7 @@ namespace VYNDRA.Classes
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------//
-        public static bool verificarEmail(string email)
+        public bool verificarEmail(string email)
         {
             string emailValido = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
             Regex regex = new Regex(emailValido);
@@ -331,6 +513,7 @@ namespace VYNDRA.Classes
                 }
             }
         }
+<<<<<<< HEAD
 
         public static Users BuscarPorLogin(string login)
         {
@@ -492,5 +675,7 @@ namespace VYNDRA.Classes
             return amigos;
         }
 
+=======
+>>>>>>> origin/atualizado-2.2
     }
 }

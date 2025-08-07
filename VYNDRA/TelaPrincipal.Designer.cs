@@ -171,6 +171,7 @@
             btnHome.ShadowDecoration.CustomizableEdges = customizableEdges23;
             btnHome.Size = new Size(50, 50);
             btnHome.TabIndex = 2;
+            btnHome.Click += btnHome_Click;
             // 
             // guna2CirclePictureBox1
             // 

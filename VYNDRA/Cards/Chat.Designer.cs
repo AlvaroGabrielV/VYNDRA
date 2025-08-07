@@ -44,16 +44,17 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             chat_panel = new Guna.UI2.WinForms.Guna2Panel();
+            chat_scroll = new Guna.UI2.WinForms.Guna2VScrollBar();
+            chat_layout = new FlowLayoutPanel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             cor_status = new Guna.UI2.WinForms.Guna2Button();
             contato_status = new Guna.UI2.WinForms.Guna2HtmlLabel();
             contato_nome = new Guna.UI2.WinForms.Guna2HtmlLabel();
             foto_usuario = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            chat_layout = new FlowLayoutPanel();
             chatcard_panel = new Guna.UI2.WinForms.Guna2Panel();
-            messageBox = new Guna.UI2.WinForms.Guna2TextBox();
             send_btn = new Guna.UI2.WinForms.Guna2Button();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            messageBox = new Guna.UI2.WinForms.Guna2TextBox();
             chat_panel.SuspendLayout();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)foto_usuario).BeginInit();
@@ -64,8 +65,9 @@
             // 
             chat_panel.BackColor = Color.Transparent;
             chat_panel.BorderRadius = 25;
-            chat_panel.Controls.Add(guna2Panel1);
+            chat_panel.Controls.Add(chat_scroll);
             chat_panel.Controls.Add(chat_layout);
+            chat_panel.Controls.Add(guna2Panel1);
             chat_panel.Controls.Add(chatcard_panel);
             customizableEdges14.BottomLeft = false;
             customizableEdges14.TopLeft = false;
@@ -79,6 +81,32 @@
             chat_panel.Size = new Size(966, 706);
             chat_panel.TabIndex = 2;
             chat_panel.UseTransparentBackground = true;
+            // 
+            // chat_scroll
+            // 
+            chat_scroll.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            chat_scroll.BindingContainer = chat_layout;
+            chat_scroll.BorderRadius = 6;
+            chat_scroll.FillColor = Color.Transparent;
+            chat_scroll.InUpdate = false;
+            chat_scroll.LargeChange = 10;
+            chat_scroll.Location = new Point(954, 69);
+            chat_scroll.Name = "chat_scroll";
+            chat_scroll.RightToLeft = RightToLeft.No;
+            chat_scroll.ScrollbarSize = 12;
+            chat_scroll.Size = new Size(12, 578);
+            chat_scroll.TabIndex = 0;
+            chat_scroll.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
+            // 
+            // chat_layout
+            // 
+            chat_layout.AutoScroll = true;
+            chat_layout.BackColor = Color.FromArgb(17, 23, 34);
+            chat_layout.Dock = DockStyle.Fill;
+            chat_layout.Location = new Point(0, 69);
+            chat_layout.Name = "chat_layout";
+            chat_layout.Size = new Size(966, 578);
+            chat_layout.TabIndex = 2;
             // 
             // guna2Panel1
             // 
@@ -157,23 +185,14 @@
             foto_usuario.TabIndex = 0;
             foto_usuario.TabStop = false;
             // 
-            // chat_layout
-            // 
-            chat_layout.BackColor = Color.FromArgb(17, 23, 34);
-            chat_layout.Dock = DockStyle.Fill;
-            chat_layout.Location = new Point(0, 0);
-            chat_layout.Name = "chat_layout";
-            chat_layout.Size = new Size(966, 647);
-            chat_layout.TabIndex = 2;
-            // 
             // chatcard_panel
             // 
             chatcard_panel.BackColor = Color.Transparent;
             chatcard_panel.BorderColor = Color.Transparent;
             chatcard_panel.BorderRadius = 20;
-            chatcard_panel.Controls.Add(messageBox);
             chatcard_panel.Controls.Add(send_btn);
             chatcard_panel.Controls.Add(guna2Button1);
+            chatcard_panel.Controls.Add(messageBox);
             customizableEdges12.TopLeft = false;
             customizableEdges12.TopRight = false;
             chatcard_panel.CustomizableEdges = customizableEdges12;
@@ -187,11 +206,53 @@
             chatcard_panel.Size = new Size(966, 59);
             chatcard_panel.TabIndex = 1;
             // 
+            // send_btn
+            // 
+            send_btn.BackColor = Color.Transparent;
+            send_btn.CustomizableEdges = customizableEdges6;
+            send_btn.DisabledState.BorderColor = Color.DarkGray;
+            send_btn.DisabledState.CustomBorderColor = Color.DarkGray;
+            send_btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            send_btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            send_btn.Dock = DockStyle.Right;
+            send_btn.FillColor = Color.Transparent;
+            send_btn.Font = new Font("Segoe UI", 9F);
+            send_btn.ForeColor = Color.White;
+            send_btn.Image = Properties.Resources.message1;
+            send_btn.ImageSize = new Size(25, 25);
+            send_btn.Location = new Point(921, 10);
+            send_btn.Name = "send_btn";
+            send_btn.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            send_btn.Size = new Size(35, 39);
+            send_btn.TabIndex = 2;
+            send_btn.UseTransparentBackground = true;
+            send_btn.Click += send_btn_Click;
+            // 
+            // guna2Button1
+            // 
+            guna2Button1.BackColor = Color.Transparent;
+            guna2Button1.CustomizableEdges = customizableEdges8;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.Transparent;
+            guna2Button1.Font = new Font("Segoe UI", 9F);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Image = Properties.Resources.plus;
+            guna2Button1.ImageSize = new Size(25, 25);
+            guna2Button1.Location = new Point(16, 11);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            guna2Button1.Size = new Size(35, 35);
+            guna2Button1.TabIndex = 2;
+            guna2Button1.UseTransparentBackground = true;
+            // 
             // messageBox
             // 
             messageBox.AutoSizeMode = AutoSizeMode.GrowAndShrink;
             messageBox.BorderRadius = 20;
-            messageBox.CustomizableEdges = customizableEdges6;
+            messageBox.CustomizableEdges = customizableEdges10;
             messageBox.DefaultText = "";
             messageBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             messageBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -208,51 +269,10 @@
             messageBox.PlaceholderForeColor = Color.Black;
             messageBox.PlaceholderText = "Digite sua mensagem...";
             messageBox.SelectedText = "";
-            messageBox.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            messageBox.ShadowDecoration.CustomizableEdges = customizableEdges11;
             messageBox.Size = new Size(946, 39);
             messageBox.TabIndex = 4;
             messageBox.TextOffset = new Point(33, 0);
-            // 
-            // send_btn
-            // 
-            send_btn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
-            send_btn.BackColor = Color.Transparent;
-            send_btn.CustomizableEdges = customizableEdges8;
-            send_btn.DisabledState.BorderColor = Color.DarkGray;
-            send_btn.DisabledState.CustomBorderColor = Color.DarkGray;
-            send_btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            send_btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            send_btn.FillColor = Color.Transparent;
-            send_btn.Font = new Font("Segoe UI", 9F);
-            send_btn.ForeColor = Color.White;
-            send_btn.Image = Properties.Resources.message1;
-            send_btn.ImageSize = new Size(25, 25);
-            send_btn.Location = new Point(1649, 23);
-            send_btn.Name = "send_btn";
-            send_btn.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            send_btn.Size = new Size(35, 0);
-            send_btn.TabIndex = 3;
-            send_btn.UseTransparentBackground = true;
-            // 
-            // guna2Button1
-            // 
-            guna2Button1.BackColor = Color.Transparent;
-            guna2Button1.CustomizableEdges = customizableEdges10;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.FillColor = Color.Transparent;
-            guna2Button1.Font = new Font("Segoe UI", 9F);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Image = Properties.Resources.plus;
-            guna2Button1.ImageSize = new Size(25, 25);
-            guna2Button1.Location = new Point(16, 11);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            guna2Button1.Size = new Size(35, 35);
-            guna2Button1.TabIndex = 2;
-            guna2Button1.UseTransparentBackground = true;
             // 
             // Chat
             // 
@@ -262,6 +282,7 @@
             Controls.Add(chat_panel);
             Name = "Chat";
             Size = new Size(966, 706);
+            Load += Chat_Load;
             chat_panel.ResumeLayout(false);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
@@ -281,7 +302,8 @@
         private FlowLayoutPanel chat_layout;
         private Guna.UI2.WinForms.Guna2Panel chatcard_panel;
         private Guna.UI2.WinForms.Guna2TextBox messageBox;
-        private Guna.UI2.WinForms.Guna2Button send_btn;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button send_btn;
+        private Guna.UI2.WinForms.Guna2VScrollBar chat_scroll;
     }
 }

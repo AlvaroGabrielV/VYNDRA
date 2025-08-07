@@ -18,11 +18,11 @@ namespace VYNDRA
         public CardAdicionarTarefa()
         {
             InitializeComponent();
-            btnAdicionar.Click += btnAdicionar_Click;   
+            btnAdicionar.Click += btnAdicionar_Click;
         }
         private void btnAdicionar_Click(object sender, EventArgs e)
         {
-            BotaoClicado?.Invoke(this, EventArgs.Empty);    
+            BotaoClicado?.Invoke(this, EventArgs.Empty);
         }
     }
 }

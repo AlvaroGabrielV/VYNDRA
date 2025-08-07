@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNetCore.SignalR.Client;
 using System.Diagnostics;
 using VYNDRA;
+using VYNDRA.Cards;
 
 public static class SignalRService
 {
     public static HubConnection Connection { get; private set; }
     private static int _idUsuario;
     private static bool _iniciado = false;
+    private static int _idContatoAtivo;
 
     public static async Task IniciarAsync(int idUsuario)
     {
@@ -17,17 +19,23 @@ public static class SignalRService
         _iniciado = true;
     }
 
+    public static event Action<int, string, DateTime> MensagemRecebidaPrivada;
+
     public static void ConfigurarListeners()
     {
         Connection.On<string>("ReceberSolicitacaoAmizade", (deIdUsuario) =>
         {
-            
             MessageBox.Show($"Nova solicitação de amizade de {deIdUsuario}");
-
-            
             PedidosDeAmizade.NovaSolicitacaoRecebida?.Invoke(null, deIdUsuario);
         });
+
+        Connection.On<int, string, DateTime>("ReceberMensagemPrivada", (remetenteId, texto, data) =>
+        {
+            
+            MensagemRecebidaPrivada?.Invoke(remetenteId, texto, data);
+        });
     }
+
 
 
     public static async Task CriarNovaConexaoAsync()
@@ -73,5 +81,11 @@ public static class SignalRService
         {
             Debug.WriteLine($"[SignalR] Estado OK: {Connection.State}");
         }
+    }
+
+    // Adicione um método para definir o Id do contato ativo
+    public static void DefinirIdContatoAtivo(int idContato)
+    {
+        _idContatoAtivo = idContato;
     }
 }
