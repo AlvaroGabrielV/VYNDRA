@@ -9,6 +9,11 @@ using BCrypt.Net;
 using MySql.Data.MySqlClient;
 using System.CodeDom;
 using System.Data;
+using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading.Tasks;
+
 
 namespace VYNDRA.Classes
 {
@@ -17,7 +22,7 @@ namespace VYNDRA.Classes
         private int id;
         private string email;
         private string senha;
-        private string usuario;
+        private string usuario_field;
         private string nomeexibicao;
         private DateTime datanascimento;
         private string telefone;
@@ -62,8 +67,8 @@ namespace VYNDRA.Classes
         }
         public string Usuario
         {
-            get { return usuario; }
-            set { usuario = value; }
+            get { return usuario_field; }
+            set { usuario_field = value; }
         }
         public string NomeExibicao
         {
@@ -393,5 +398,165 @@ namespace VYNDRA.Classes
                 }
             }
         }
+        public static Users BuscarPorLogin(string login)
+        {
+            using (MySqlConnection conn = new ConexaoBD().Conectar())
+            {
+                string query = "SELECT * FROM usuarios WHERE usuario = @login";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@login", login);
+
+                MySqlDataReader reader = cmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    return new Users
+                    {
+                        Id = Convert.ToInt32(reader["id_usuario"]),
+                        Usuario = reader["usuario"].ToString(),
+                        NomeExibicao = reader["nomeexibicao"].ToString()
+
+                    };
+                }
+            }
+
+            return null;
+        }
+
+        public static Users BuscarPorId(int id)
+        {
+            using (MySqlConnection conn = new ConexaoBD().Conectar())
+            {
+                string query = "SELECT * FROM usuarios WHERE id_usuario = @id";
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                try
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+
+                            string usuario = reader["usuario"].ToString();
+                            UsuarioSession.AdicionarUsuario(id, usuario);
+
+
+                            byte[] fotoPerfil = null;
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("fotoperfil")))
+                            {
+
+                                using (var stream = reader.GetStream("fotoperfil"))
+                                {
+                                    using (var ms = new MemoryStream())
+                                    {
+                                        stream.CopyTo(ms);
+                                        fotoPerfil = ms.ToArray();
+                                    }
+                                }
+                            }
+
+                            return new Users
+                            {
+                                Id = Convert.ToInt32(reader["id_usuario"]),
+                                Usuario = usuario,
+                                NomeExibicao = reader["nomeexibicao"].ToString(),
+                                FotoPerfil = fotoPerfil
+                            };
+
+                        }
+                        else
+                        {
+                            Debug.WriteLine($"[BuscarPorId] Nenhum usuário encontrado para o ID: {id}");
+                        }
+                    }
+                }
+
+                catch (Exception ex)
+                {
+                    Debug.WriteLine($"[BuscarPorId] Erro ao buscar usuário: {ex.Message}");
+                }
+            }
+
+            return null;
+        }
+
+        public static void SincronizarAmizadesAceitas()
+        {
+            using (var conexao = new ConexaoBD().Conectar())
+            {
+                var cmd = conexao.CreateCommand();
+                cmd.CommandText = @"
+            INSERT INTO Amigos (Usuario1, Usuario2)
+            SELECT 
+                CASE 
+                    WHEN DeUsuario < ParaUsuario THEN DeUsuario 
+                    ELSE ParaUsuario 
+                END AS Usuario1,
+                CASE 
+                    WHEN DeUsuario > ParaUsuario THEN DeUsuario 
+                    ELSE ParaUsuario 
+                END AS Usuario2
+            FROM PedidosAmizade
+            WHERE Status = 'aceito'
+            AND NOT EXISTS (
+                SELECT 1 FROM Amigos a
+                WHERE 
+                    (a.Usuario1 = CASE WHEN DeUsuario < ParaUsuario THEN DeUsuario ELSE ParaUsuario END AND
+                     a.Usuario2 = CASE WHEN DeUsuario > ParaUsuario THEN DeUsuario ELSE ParaUsuario END)
+            );
+        ";
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public static List<(int Id, string Nome, byte[] FotoPerfil)> CarregarChats()
+        {
+            var amigos = new List<(int, string, byte[])>();
+
+            using (var conexao = new ConexaoBD().Conectar())
+            {
+                string sql = @"
+            SELECT u.id_usuario, u.nomeexibicao, u.fotoperfil
+            FROM Amigos a
+            JOIN usuarios u ON 
+                (u.id_usuario = a.Usuario1 AND a.Usuario2 = @idUsuario) OR
+                (u.id_usuario = a.Usuario2 AND a.Usuario1 = @idUsuario)
+            ";
+
+                using (var cmd = new MySqlCommand(sql, conexao))
+                {
+                    cmd.Parameters.AddWithValue("@idUsuario", Sessao.IdUsuario);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32("id_usuario");
+                            string nome = reader.GetString("nomeexibicao");
+
+                            byte[] fotoPerfil = null;
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("fotoperfil")))
+                            {
+                                using (var stream = reader.GetStream("fotoperfil"))
+                                using (var ms = new MemoryStream())
+                                {
+                                    stream.CopyTo(ms);
+                                    fotoPerfil = ms.ToArray();
+                                }
+                            }
+
+                            amigos.Add((id, nome, fotoPerfil));
+                        }
+                    }
+                }
+            }
+
+            return amigos;
+        }
+
     }
 }
