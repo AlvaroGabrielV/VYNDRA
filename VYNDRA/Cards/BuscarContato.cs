@@ -17,16 +17,16 @@ namespace VYNDRA.Cards
             InitializeComponent();
         }
 
-        private void guna2CircleButton1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void add_btn_Click(object sender, EventArgs e)
         {
             PedidosDeAmizade pedidosDeAmizade = new PedidosDeAmizade();
             pedidosDeAmizade.Show();
             pedidosDeAmizade.BringToFront();
+        }
+
+        private void search_btn_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

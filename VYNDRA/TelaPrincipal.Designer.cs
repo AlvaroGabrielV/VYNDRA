@@ -462,6 +462,7 @@
             contatos_layout.Size = new Size(290, 696);
             contatos_layout.TabIndex = 0;
             contatos_layout.VisibleChanged += contatos_layout_VisibleChanged;
+            contatos_layout.DoubleClick += contatos_layout_DoubleClick;
             // 
             // top_panel
             // 

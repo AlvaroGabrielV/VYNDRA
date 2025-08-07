@@ -45,7 +45,7 @@ namespace VYNDRA
 
         }
 
-        private void CarregarCardsDeChat()
+        public void CarregarCardsDeChat()
         {
             var listaAmigos = Users.CarregarChats();
 
@@ -99,5 +99,9 @@ namespace VYNDRA
             chat_panel.Controls.Add(chat);
         }
 
+        private void contatos_layout_DoubleClick(object sender, EventArgs e)
+        {
+            CarregarCardsDeChat();
+        }
     }
 }

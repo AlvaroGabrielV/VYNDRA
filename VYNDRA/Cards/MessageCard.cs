@@ -18,13 +18,37 @@ namespace VYNDRA
             InitializeComponent();
         }
 
-        public void SetDados(string Imagem,String Usuario, String Mensagem)
+        public string Usuario
         {
-            user_picture.ImageLocation = Imagem;
-            
-            lblUser.Text = Usuario;
-            lblMessage.Text = Mensagem;
-            lblHoras.Text = DateTime.Now.ToShortTimeString();
-        }        
+            get { return lblUser.Text; }
+            set { lblUser.Text = value; }
+        }
+
+        public string Mensagem
+        {
+            get { return lblMessage.Text; }
+            set { lblMessage.Text = value; }
+        }
+
+        public DateTime Horario
+        {
+            get
+            {
+                DateTime dt;
+                if (DateTime.TryParse(lblHoras.Text, out dt))
+                    return dt;
+                return DateTime.MinValue;
+            }
+            set
+            {
+                lblHoras.Text = value.ToString("HH:mm");
+            }
+        }
+
+        public Image Imagem
+        {
+            get { return user_picture.Image; }
+            set { user_picture.Image = value; }
+        }       
     }
 }

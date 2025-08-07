@@ -73,7 +73,7 @@
             search_btn.Size = new Size(30, 30);
             search_btn.TabIndex = 1;
             search_btn.UseTransparentBackground = true;
-            search_btn.Click += guna2CircleButton1_Click;
+            search_btn.Click += search_btn_Click;
             // 
             // guna2TextBox1
             // 
