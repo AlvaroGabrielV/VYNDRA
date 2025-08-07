@@ -60,6 +60,10 @@ namespace VYNDRA
 
         private void Perfil_Load(object sender, EventArgs e)
         {
+            CarregarDados();
+        }
+        public void CarregarDados()
+        {
             txtEmail.Text = Sessao.Email;
             txtNomeExibicao.Text = Sessao.NomeExibicao;
             txtUsuario.Text = Sessao.UsuarioLogin;

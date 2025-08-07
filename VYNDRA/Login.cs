@@ -61,6 +61,9 @@ namespace VYNDRA
                     Sessao.DataNascimento = usuarioLogado.DataNascimento;
 
                     Menu menu = new Menu(Sessao.IdUsuario);
+                    Perfil perfil = new Perfil(Sessao.IdUsuario);
+                    perfil.CarregarDados();
+                    
                     menu.Show();
                     this.Hide();
 

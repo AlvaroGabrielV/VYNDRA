@@ -26,7 +26,7 @@ namespace VYNDRA
             Users usuario = new Users();
 
             if (usuario.CarregarRedesSociais(Sessao.IdUsuario) && Sessao.FotoPerfil != null && Sessao.FotoPerfil.Length > 0)
-{
+            {
                 using (MemoryStream ms = new MemoryStream(Sessao.FotoPerfil))
                 {
                     miniFotoPerfil.Image = Image.FromStream(ms);
@@ -37,12 +37,18 @@ namespace VYNDRA
                 miniFotoPerfil.Image = null;
             }
 
+            CarregarCards();
+        }
+        private void CarregarCards()
+        {
             FlowPanelConteudo.Controls.Clear();
+
+            // Botão de adicionar tarefa
             CardAdicionarTarefa botaoAdicionar = new CardAdicionarTarefa();
             botaoAdicionar.BotaoClicado += BotaoAdicionar_Click;
             FlowPanelConteudo.Controls.Add(botaoAdicionar);
 
-
+            // Carregar as tarefas do usuário
             List<RelatoriosClasse> relatorios = RelatoriosClasse.ListarPorUsuario(Sessao.IdUsuario);
 
             foreach (var rel in relatorios)
@@ -99,6 +105,7 @@ namespace VYNDRA
                 int indexBotaoMais = FlowPanelConteudo.Controls.IndexOf((Control)sender);
                 FlowPanelConteudo.Controls.Add(novaTarefa);
                 FlowPanelConteudo.Controls.SetChildIndex(novaTarefa, indexBotaoMais);
+                CarregarCards();
             }
         }
 
@@ -147,7 +154,7 @@ namespace VYNDRA
                 {
                     FlowPanelConteudo.Controls.Remove((CardTarefas)sender);
                     MessageBox.Show("Relatório excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Relatorios_Load()
+                    CarregarCards();
                 }
             }
             catch (Exception ex)
