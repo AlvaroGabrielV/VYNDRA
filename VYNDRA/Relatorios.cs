@@ -97,7 +97,7 @@ namespace VYNDRA
                     DataCriacao = DateTime.Now
                 };
 
-                
+
 
                 novaTarefa.ExlcuirTarefasClicado += NovaTarefa_ExlcuirTarefasClicado;
                 novaTarefa.EditarTarefaClicada += NovaTarefa_EditarTarefaClicada;
@@ -127,7 +127,7 @@ namespace VYNDRA
             if (bloco.SalvoComSucesso)
             {
                 tarefaSelecionada.Titulo = bloco.Titulo;
-                tarefaSelecionada.Descricao = bloco.Descricao;;
+                tarefaSelecionada.Descricao = bloco.Descricao; ;
 
                 RelatoriosClasse atualizar = new RelatoriosClasse
                 {
@@ -184,6 +184,13 @@ namespace VYNDRA
         {
             Perfil perfil = new Perfil(Sessao.IdUsuario);
             perfil.Show();
+            this.Close();
+        }
+
+        private void btnMenssagem_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu(Sessao.IdUsuario);
+            menu.Show();
             this.Close();
         }
     }

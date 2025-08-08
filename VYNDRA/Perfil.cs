@@ -72,27 +72,21 @@ namespace VYNDRA
             Users usuario = new Users();
 
             if (usuario.CarregarRedesSociais(Sessao.IdUsuario))
-            {
-                txtInstagram.Text = usuario.Instagram;
-                txtLinkedin.Text = usuario.Linkedin;
-                txtWhatsapp.Text = usuario.Telefone;
 
-                if (usuario.FotoPerfil != null && usuario.FotoPerfil.Length > 0)
+                if (usuario != null)
                 {
-                    Sessao.FotoPerfil = usuario.FotoPerfil;
+                    txtInstagram.Text = usuario.Instagram;
+                    txtLinkedin.Text = usuario.Linkedin;
+                    txtWhatsapp.Text = usuario.Telefone;
 
-                    using (MemoryStream ms = new MemoryStream(usuario.FotoPerfil))
+                    if (usuario.FotoPerfil != null)
                     {
-                        CpFotodePerfil.Image = Image.FromStream(ms);
-                        miniFotoPerfil.Image = Image.FromStream(ms);
+                        using (MemoryStream ms = new MemoryStream(usuario.FotoPerfil))
+                        {
+                            CpFotodePerfil.Image = Image.FromStream(ms);
+                        }
                     }
                 }
-                else
-                {
-                    CpFotodePerfil.Image = null;
-                    Sessao.FotoPerfil = null;
-                }
-            }
         }
 
         private void btnRelatorios_Click(object sender, EventArgs e)
@@ -191,6 +185,13 @@ namespace VYNDRA
             alteraruser.ShowDialog();
 
             Perfil_Load(this, EventArgs.Empty);
+        }
+
+        private void btnMenssagem_Click(object sender, EventArgs e)
+        {
+            TelaPrincipal conversas = new TelaPrincipal(Sessao.IdUsuario);
+            conversas.Show();
+            this.Close();
         }
     }
 }

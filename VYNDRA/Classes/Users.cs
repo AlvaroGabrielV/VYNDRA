@@ -1,6 +1,11 @@
-﻿using Org.BouncyCastle.Crypto.Generators;
+﻿using BCrypt.Net;
+using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Crypto.Generators;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -14,10 +19,9 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading.Tasks;
 
-
 namespace VYNDRA.Classes
 {
-    class Users
+    public class Users
     {
         private int id;
         private string email;
@@ -29,6 +33,7 @@ namespace VYNDRA.Classes
         private string instagram;
         private string linkedin;
         private byte[] fotoperfil;
+
         public byte[] FotoPerfil
         {
             get { return fotoperfil; }
@@ -88,7 +93,7 @@ namespace VYNDRA.Classes
             {
                 string select = "SELECT id_usuario,nomeexibicao, telefone, datanascimento, email, usuario, senha FROM usuarios WHERE email = @Login OR usuario = @Login";
                 MySqlCommand cmd = new MySqlCommand(select, conexao);
-                cmd.Parameters.AddWithValue("@Login", Login);
+                string query = "SELECT id_usuario,nomeexibicao, telefone, datanascimento, email, usuario, senha FROM usuarios WHERE email = @Login OR usuario = @Login";
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -147,6 +152,46 @@ namespace VYNDRA.Classes
                 MessageBox.Show("Não foi possível realizar cadastro -> Método" + ex.Message, "Erro - Cadastrar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------------------------//
+        public bool CarregarRedesSociais(int IdUsuario)
+        {
+            try
+            {
+                using (MySqlConnection conexao = new ConexaoBD().Conectar())
+                {
+                    string query = "SELECT instagram, linkedin, telefone, fotoperfil FROM usuarios WHERE id_usuario = @id_usuario";
+                    MySqlCommand cmd = new MySqlCommand(query, conexao);
+                    cmd.Parameters.AddWithValue("@id_usuario", IdUsuario);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            this.Instagram = reader["instagram"].ToString();
+                            this.Linkedin = reader["linkedin"].ToString();
+                            this.Telefone = reader["telefone"].ToString();
+
+                            if (reader["fotoperfil"] != DBNull.Value)
+                            {
+                                this.FotoPerfil = (byte[])reader["fotoperfil"];
+                            }
+                            else
+                            {
+                                this.FotoPerfil = null;
+                            }
+                            return true;
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao carregar a foto e as redes sociais. Motivo: " + ex.Message, "Erro - Método", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            return false;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -214,7 +259,6 @@ namespace VYNDRA.Classes
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------//
-
         public bool InserirTelefone()
         {
             try
@@ -244,46 +288,6 @@ namespace VYNDRA.Classes
                 MessageBox.Show("Não foi possível realizar cadastro -> Método" + ex.Message, "Erro - Cadastrar Usuário", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-        }
-        //-------------------------------------------------------------------------------------------------------------------------------------------------//
-
-        public bool CarregarRedesSociais(int IdUsuario)
-        {
-            try
-            {
-                using (MySqlConnection conexao = new ConexaoBD().Conectar())
-                {
-                    string query = "SELECT instagram, linkedin, telefone, fotoperfil FROM usuarios WHERE id_usuario = @id_usuario";
-                    MySqlCommand cmd = new MySqlCommand(query, conexao);
-                    cmd.Parameters.AddWithValue("@id_usuario", IdUsuario);
-
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        if (reader.Read())
-                        {
-                            this.Instagram = reader["instagram"].ToString();
-                            this.Linkedin = reader["linkedin"].ToString();
-                            this.Telefone = reader["telefone"].ToString();
-
-                            if (reader["fotoperfil"] != DBNull.Value)
-                            {
-                                this.FotoPerfil = (byte[])reader["fotoperfil"];
-                            }
-                            else
-                            {
-                                this.FotoPerfil = null;
-                            }
-                            return true;
-                        }
-                    }
-                }
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Erro ao carregar a foto e as redes sociais. Motivo: " + ex.Message, "Erro - Método", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-            return false;
         }
 
         //-------------------------------------------------------------------------------------------------------------------------------------------------//
@@ -398,6 +402,7 @@ namespace VYNDRA.Classes
                 }
             }
         }
+
         public static Users BuscarPorLogin(string login)
         {
             using (MySqlConnection conn = new ConexaoBD().Conectar())
@@ -446,13 +451,17 @@ namespace VYNDRA.Classes
 
                             if (!reader.IsDBNull(reader.GetOrdinal("fotoperfil")))
                             {
-
                                 using (var stream = reader.GetStream("fotoperfil"))
                                 {
                                     using (var ms = new MemoryStream())
                                     {
+
                                         stream.CopyTo(ms);
                                         fotoPerfil = ms.ToArray();
+
+                                        stream.CopyTo(ms); 
+                                        fotoPerfil = ms.ToArray();  
+
                                     }
                                 }
                             }

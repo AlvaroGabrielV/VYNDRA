@@ -13,7 +13,7 @@ namespace VYNDRA
 {
     public partial class MessageCard : UserControl
     {
-        public MessageCard()
+       /* public MessageCard()
         {
             InitializeComponent();
         }
@@ -48,7 +48,8 @@ namespace VYNDRA
         public Image Imagem
         {
             get { return user_picture.Image; }
-            set { user_picture.Image = value; }
-        }       
+            set { user_picture.Image = value; } 
+        }       */
+   
     }
 }

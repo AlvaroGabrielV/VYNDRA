@@ -68,6 +68,8 @@ namespace VYNDRA
                     menu.Show();
                     this.Hide();
 
+                    await SignalRService.IniciarAsync(Sessao.IdUsuario);
+                    Users.SincronizarAmizadesAceitas();
                 }
 
                 else

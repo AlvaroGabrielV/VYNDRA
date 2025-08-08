@@ -15,9 +15,10 @@ namespace VYNDRA
 {
     public partial class TelaPrincipal : Form
     {
-        public TelaPrincipal()
+        public TelaPrincipal(int IdUsuario)
         {
             InitializeComponent();
+            IdUsuario = Sessao.IdUsuario;
         }
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
@@ -38,11 +39,6 @@ namespace VYNDRA
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Minimized;
-        }
-
-        private void chat_panel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         public void CarregarCardsDeChat()

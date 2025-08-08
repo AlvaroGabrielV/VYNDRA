@@ -14,17 +14,15 @@ namespace VYNDRA
 {
     public partial class Menu : Form
     {
-        private int idUsuario;
         public Menu(int idUsuario)
         {
             InitializeComponent();
-            this.idUsuario = idUsuario;
+             idUsuario = Sessao.IdUsuario;
         }
 
         private void btnRelatorios_Click(object sender, EventArgs e)
         {
-            Sessao.IdUsuario = idUsuario;
-            Relatorios rel = new Relatorios(idUsuario);
+            Relatorios rel = new Relatorios(Sessao.IdUsuario);
             rel.Show();
             this.Close();
         }
@@ -41,7 +39,7 @@ namespace VYNDRA
 
         private void btnPerfil_Click(object sender, EventArgs e)
         {
-            Perfil perfil = new Perfil(idUsuario);
+            Perfil perfil = new Perfil(Sessao.IdUsuario);
             perfil.Show();
             this.Close();
         }
@@ -49,7 +47,7 @@ namespace VYNDRA
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             
-            TelaPrincipal telaPrincipal = new TelaPrincipal();
+            TelaPrincipal telaPrincipal = new TelaPrincipal(Sessao.IdUsuario);
             telaPrincipal.Show();
             this.Close();
             

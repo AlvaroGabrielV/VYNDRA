@@ -11,185 +11,185 @@ namespace VYNDRA.Cards
 {
     public partial class Chat : UserControl
     {
-        public Chat()
-        {
-            InitializeComponent();
-            SignalRService.MensagemRecebidaPrivada -= OnMensagemRecebida;
-            SignalRService.MensagemRecebidaPrivada += OnMensagemRecebida;
-        }
+         public Chat()
+         {
+             InitializeComponent();
+             SignalRService.MensagemRecebidaPrivada -= OnMensagemRecebida;
+             SignalRService.MensagemRecebidaPrivada += OnMensagemRecebida;
+         }
 
-        private int idContato;
-        private string nomeContato;
-        private Image fotoContato;
+         private int idContato;
+         private string nomeContato;
+         private Image fotoContato;
 
-        public int IdContato
-        {
-            get { return idContato; }
-            set
-            {
-                idContato = value;
-                foto_usuario.Tag = value;
-            }
-        }
+         public int IdContato
+         {
+             get { return idContato; }
+             set
+             {
+                 idContato = value;
+                 foto_usuario.Tag = value;
+             }
+         }
 
-        public string NomeContato
-        {
-            get { return nomeContato; }
-            set
-            {
-                nomeContato = value;
-                contato_nome.Text = value;
-            }
-        }
+         public string NomeContato
+         {
+             get { return nomeContato; }
+             set
+             {
+                 nomeContato = value;
+                 contato_nome.Text = value;
+             }
+         }
 
-        public Image FotoContato
-        {
-            get { return fotoContato; }
-            set
-            {
-                fotoContato = value;
-                foto_usuario.Image = value;
-            }
-        }
+         public Image FotoContato
+         {
+             get { return fotoContato; }
+             set
+             {
+                 fotoContato = value;
+                 foto_usuario.Image = value;
+             }
+         }
 
-        private void Chat_Load(object sender, EventArgs e)
-        {
-            CarregarConversa(idContato);
-        }
-
-
-        public async void CarregarConversa(int contatoId)
-        {
-            var usuario = Users.BuscarPorId(contatoId);
-            if (usuario == null)
-            {
-                MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-
-            IdContato = usuario.Id;
-            NomeContato = usuario.NomeExibicao;
-            FotoContato = usuario.FotoPerfil != null
-                ? Bitmap.FromStream(new MemoryStream(usuario.FotoPerfil))
-                : null;
-
-            chat_layout.Controls.Clear();
-
-            SignalRService.MensagensCarregadas += OnMensagensCarregadas;
-
-            try
-            {
-                await SignalRService.Connection.InvokeAsync("CarregarMensagensPrivadas", Sessao.IdUsuario, IdContato);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show($"Erro ao carregar mensagens: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                Debug.WriteLine("Erro ao carregar mensagens: " + ex);
-            }
-
-            ScrollUltimaMensagem();
-        }
-
-        private async void send_btn_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                string texto = messageBox.Text.Trim();
-                if (string.IsNullOrWhiteSpace(texto)) return;
-
-                await SignalRService.Connection.InvokeAsync("EnviarMensagemPrivada", Sessao.IdUsuario, IdContato, texto);
-
-                messageBox.Clear();
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine("Erro ao enviar mensagem: " + ex.Message);
-            }
-        }
-
-        private void OnMensagemRecebida(int remetenteId, int destinatarioId, string mensagem, DateTime dataHora)
-        {
-            if ((remetenteId == IdContato && destinatarioId == Sessao.IdUsuario) ||
-                (remetenteId == Sessao.IdUsuario && destinatarioId == IdContato))
-            {
-                Invoke(new Action(() =>
-                {
-                    AdicionarMensagemNaTela(remetenteId, mensagem, dataHora);
-                    Debug.WriteLine($"Mensagem recebida no Chat.cs de {remetenteId} para {destinatarioId}: {mensagem}");
-
-                    ScrollUltimaMensagem();
-                }));
-            }
-        }
+         private void Chat_Load(object sender, EventArgs e)
+         {
+             CarregarConversa(idContato);
+         }
 
 
-        private void OnMensagensCarregadas(List<Mensagem> mensagens)
-        {
-            SignalRService.MensagensCarregadas -= OnMensagensCarregadas;
+         public async void CarregarConversa(int contatoId)
+         {
+             var usuario = Users.BuscarPorId(contatoId);
+             if (usuario == null)
+             {
+                 MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 return;
+             }
 
-            Debug.WriteLine($"[Chat] Carregando {mensagens.Count} mensagens.");
+             IdContato = usuario.Id;
+             NomeContato = usuario.NomeExibicao;
+             FotoContato = usuario.FotoPerfil != null
+                 ? Bitmap.FromStream(new MemoryStream(usuario.FotoPerfil))
+                 : null;
 
-            Invoke(new Action(() =>
-            {
-                chat_layout.Controls.Clear();
+             chat_layout.Controls.Clear();
 
-                foreach (var msg in mensagens)
-                {
-                    Debug.WriteLine($"[Chat] Adicionando mensagem: {msg.Texto} de {msg.RemetenteId}");
-                    AdicionarMensagemNaTela(msg.RemetenteId, msg.Texto, msg.Data);
-                }
+             SignalRService.MensagensCarregadas += OnMensagensCarregadas;
 
-                ScrollUltimaMensagem();
-            }));
-        }
+             try
+             {
+                 await SignalRService.Connection.InvokeAsync("CarregarMensagensPrivadas", Sessao.IdUsuario, IdContato);
+             }
+             catch (Exception ex)
+             {
+                 MessageBox.Show($"Erro ao carregar mensagens: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 Debug.WriteLine("Erro ao carregar mensagens: " + ex);
+             }
 
-        private void AdicionarMensagemNaTela(int remetenteId, string texto, DateTime data)
-        {
-            var mensagemcard = new MessageCard
-            {
-                Mensagem = texto,
-                Horario = data.ToLocalTime()
-            };
+             ScrollUltimaMensagem();
+         }
 
-            if (remetenteId == Sessao.IdUsuario)
-            {
-                var usuario = Users.BuscarPorId(Sessao.IdUsuario);
-                mensagemcard.Imagem = usuario?.FotoPerfil != null
-                    ? Bitmap.FromStream(new MemoryStream(usuario.FotoPerfil))
-                    : null;
+         private async void send_btn_Click(object sender, EventArgs e)
+         {
+             try
+             {
+                 string texto = messageBox.Text.Trim();
+                 if (string.IsNullOrWhiteSpace(texto)) return;
 
-                mensagemcard.Usuario = Sessao.NomeExibicao;
-            }
-            else
-            {
-                mensagemcard.Imagem = FotoContato;
-                mensagemcard.Usuario = NomeContato;
-            }
+                 await SignalRService.Connection.InvokeAsync("EnviarMensagemPrivada", Sessao.IdUsuario, IdContato, texto);
 
-            chat_layout.Controls.Add(mensagemcard);
-            Debug.WriteLine("[Chat] Mensagem adicionada na tela.");
-        }
+                 messageBox.Clear();
+             }
+             catch (Exception ex)
+             {
+                 Debug.WriteLine("Erro ao enviar mensagem: " + ex.Message);
+             }
+         }
 
-        private void ScrollUltimaMensagem()
-        {
-            if (chat_layout.Controls.Count > 0)
-            {
-                var lastControl = chat_layout.Controls[chat_layout.Controls.Count - 1];
-                chat_scroll.ScrollControlIntoView(lastControl);
-            }
-        }
+         private void OnMensagemRecebida(int remetenteId, int destinatarioId, string mensagem, DateTime dataHora)
+         {
+             if ((remetenteId == IdContato && destinatarioId == Sessao.IdUsuario) ||
+                 (remetenteId == Sessao.IdUsuario && destinatarioId == IdContato))
+             {
+                 Invoke(new Action(() =>
+                 {
+                     AdicionarMensagemNaTela(remetenteId, mensagem, dataHora);
+                     Debug.WriteLine($"Mensagem recebida no Chat.cs de {remetenteId} para {destinatarioId}: {mensagem}");
 
-        private void messageBox_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                e.Handled = true;
-                send_btn.PerformClick();
-            }
-            else if (e.KeyChar == (char)Keys.Escape)
-            {
-                messageBox.Clear();
-            }
-        }
+                     ScrollUltimaMensagem();
+                 }));
+             }
+         }
+
+
+         private void OnMensagensCarregadas(List<Mensagem> mensagens)
+         {
+             SignalRService.MensagensCarregadas -= OnMensagensCarregadas;
+
+             Debug.WriteLine($"[Chat] Carregando {mensagens.Count} mensagens.");
+
+             Invoke(new Action(() =>
+             {
+                 chat_layout.Controls.Clear();
+
+                 foreach (var msg in mensagens)
+                 {
+                     Debug.WriteLine($"[Chat] Adicionando mensagem: {msg.Texto} de {msg.RemetenteId}");
+                     AdicionarMensagemNaTela(msg.RemetenteId, msg.Texto, msg.Data);
+                 }
+
+                 ScrollUltimaMensagem();
+             }));
+         }
+
+         private void AdicionarMensagemNaTela(int remetenteId, string texto, DateTime data)
+         {
+             var mensagemcard = new MessageCard
+             {
+                 Mensagem = texto,
+                 Horario = data.ToLocalTime()
+             };
+
+             if (remetenteId == Sessao.IdUsuario)
+             {
+                 var usuario = Users.BuscarPorId(Sessao.IdUsuario);
+                 mensagemcard.Imagem = usuario?.FotoPerfil != null
+                     ? Bitmap.FromStream(new MemoryStream(usuario.FotoPerfil))
+                     : null;
+
+                 mensagemcard.Usuario = Sessao.NomeExibicao;
+             }
+             else
+             {
+                 mensagemcard.Imagem = FotoContato;
+                 mensagemcard.Usuario = NomeContato;
+             }
+
+             chat_layout.Controls.Add(mensagemcard);
+             Debug.WriteLine("[Chat] Mensagem adicionada na tela.");
+         }
+
+         private void ScrollUltimaMensagem()
+         {
+             if (chat_layout.Controls.Count > 0)
+             {
+                 var lastControl = chat_layout.Controls[chat_layout.Controls.Count - 1];
+                 chat_scroll.ScrollControlIntoView(lastControl);
+             }
+         }
+
+         private void messageBox_KeyPress(object sender, KeyPressEventArgs e)
+         {
+             if (e.KeyChar == (char)Keys.Enter)
+             {
+                 e.Handled = true;
+                 send_btn.PerformClick();
+             }
+             else if (e.KeyChar == (char)Keys.Escape)
+             {
+                 messageBox.Clear();
+             }
+         }
     }
 }
