@@ -9,10 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using VYNDRA.Classes;
+using Microsoft.AspNetCore.SignalR.Client;
 
 namespace VYNDRA
 {
-    public partial class Login : Form
+    public partial class Login : Form   
     {
         public Login()
         {
@@ -36,7 +37,7 @@ namespace VYNDRA
             this.Hide();
         }
 
-        private void btnEntrar_Click(object sender, EventArgs e)
+        private async void btnEntrar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -66,9 +67,6 @@ namespace VYNDRA
                     
                     menu.Show();
                     this.Hide();
-
-                    await SignalRService.IniciarAsync(Sessao.IdUsuario);
-                    Users.SincronizarAmizadesAceitas();
 
                 }
 
