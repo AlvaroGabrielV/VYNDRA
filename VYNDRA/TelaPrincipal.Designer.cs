@@ -68,7 +68,7 @@
             guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             sidebar_panel = new Guna.UI2.WinForms.Guna2Panel();
             btnHome = new Guna.UI2.WinForms.Guna2Button();
-            guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            miniFotoPerfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             contatos_btn = new Guna.UI2.WinForms.Guna2Button();
             guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             all_panel = new Guna.UI2.WinForms.Guna2Panel();
@@ -90,7 +90,7 @@
             btnFechar = new Guna.UI2.WinForms.Guna2Button();
             side_panel = new Guna.UI2.WinForms.Guna2Panel();
             sidebar_panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)miniFotoPerfil).BeginInit();
             all_panel.SuspendLayout();
             chat_panel.SuspendLayout();
             guna2Panel1.SuspendLayout();
@@ -112,7 +112,7 @@
             sidebar_panel.BackColor = Color.Transparent;
             sidebar_panel.BorderRadius = 30;
             sidebar_panel.Controls.Add(btnHome);
-            sidebar_panel.Controls.Add(guna2CirclePictureBox1);
+            sidebar_panel.Controls.Add(miniFotoPerfil);
             sidebar_panel.Controls.Add(contatos_btn);
             sidebar_panel.Controls.Add(guna2Button2);
             customizableEdges27.BottomLeft = false;
@@ -147,19 +147,21 @@
             btnHome.ShadowDecoration.CustomizableEdges = customizableEdges21;
             btnHome.Size = new Size(71, 83);
             btnHome.TabIndex = 2;
+            btnHome.Click += btnHome_Click;
             // 
-            // guna2CirclePictureBox1
+            // miniFotoPerfil
             // 
-            guna2CirclePictureBox1.BackColor = Color.FromArgb(31, 45, 71);
-            guna2CirclePictureBox1.ImageRotate = 0F;
-            guna2CirclePictureBox1.Location = new Point(17, 132);
-            guna2CirclePictureBox1.Margin = new Padding(4, 5, 4, 5);
-            guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges22;
-            guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox1.Size = new Size(71, 83);
-            guna2CirclePictureBox1.TabIndex = 0;
-            guna2CirclePictureBox1.TabStop = false;
+            miniFotoPerfil.BackColor = Color.FromArgb(31, 45, 71);
+            miniFotoPerfil.ImageRotate = 0F;
+            miniFotoPerfil.Location = new Point(17, 132);
+            miniFotoPerfil.Margin = new Padding(4, 5, 4, 5);
+            miniFotoPerfil.Name = "miniFotoPerfil";
+            miniFotoPerfil.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            miniFotoPerfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            miniFotoPerfil.Size = new Size(71, 83);
+            miniFotoPerfil.TabIndex = 0;
+            miniFotoPerfil.TabStop = false;
+            miniFotoPerfil.Click += miniFotoPerfil_Click;
             // 
             // contatos_btn
             // 
@@ -199,6 +201,7 @@
             guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges26;
             guna2Button2.Size = new Size(71, 83);
             guna2Button2.TabIndex = 0;
+            guna2Button2.Click += guna2Button2_Click;
             // 
             // all_panel
             // 
@@ -540,7 +543,7 @@
             Text = "TelaPrincipal";
             Load += TelaPrincipal_Load;
             sidebar_panel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)miniFotoPerfil).EndInit();
             all_panel.ResumeLayout(false);
             chat_panel.ResumeLayout(false);
             guna2Panel1.ResumeLayout(false);
@@ -559,7 +562,7 @@
         private Guna.UI2.WinForms.Guna2Panel top_panel;
         private Guna.UI2.WinForms.Guna2Panel sidebar_panel;
         private Guna.UI2.WinForms.Guna2Button btnHome;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox miniFotoPerfil;
         private Guna.UI2.WinForms.Guna2Button guna2Button2;
         private Guna.UI2.WinForms.Guna2Panel all_panel;
         private Guna.UI2.WinForms.Guna2Panel contatos_panel;

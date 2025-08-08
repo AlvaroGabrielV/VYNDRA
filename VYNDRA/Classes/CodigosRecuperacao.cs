@@ -60,13 +60,12 @@ namespace VYNDRA.Classes
 
         public static int BuscarIdPorEmail(string email)
         {
-            using (MySqlConnection conn = new MySqlConnection(bd_location))
+            using (MySqlConnection conn = new ConexaoBD().Conectar())
             {
-                conn.Open();
-                string query = "SELECT id_usuario FROM usuarios WHERE email = @Email";
+                string query = "SELECT id_usuario FROM usuarios WHERE email = @email";
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@email", email);
                     object result = cmd.ExecuteScalar();
                     return result != null ? Convert.ToInt32(result) : -1;
                 }
@@ -75,9 +74,8 @@ namespace VYNDRA.Classes
 
         public static void SalvarNoBanco(int idUsuario, string codigo)
         {
-            using (MySqlConnection conn = new MySqlConnection(bd_location))
+            using (MySqlConnection conn = new ConexaoBD().Conectar())
             {
-                conn.Open();
                 string query = @"INSERT INTO codigos_recuperacao (id_usuario, codigo, expiracao)
                              VALUES (@id_usuario, @codigo, DATE_ADD(NOW(), INTERVAL 3 MINUTE))";
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
@@ -114,9 +112,8 @@ namespace VYNDRA.Classes
 
         public static bool VerificarCodigo(int idUsuario, string codigo)
         {
-            using (MySqlConnection conn = new MySqlConnection(bd_location))
+            using (MySqlConnection conn = new ConexaoBD().Conectar())
             {
-                conn.Open();
                 string query = @"SELECT COUNT(*) FROM codigos_recuperacao 
                          WHERE id_usuario = @id AND codigo = @codigo 
                          AND expiracao >= NOW()";
@@ -131,9 +128,8 @@ namespace VYNDRA.Classes
         }
         public static bool AtualizarSenha(int idUsuario, string novaSenha)
         {
-            using (MySqlConnection conn = new MySqlConnection(bd_location))
+            using (MySqlConnection conn = new ConexaoBD().Conectar())
             {
-                conn.Open();
                 string query = "UPDATE usuarios SET senha = @senha WHERE id_usuario = @id";
                 using (MySqlCommand cmd = new MySqlCommand(query, conn))
                 {

@@ -23,7 +23,21 @@ namespace VYNDRA
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
+            miniFotoPerfil.SizeMode = PictureBoxSizeMode.Zoom;
 
+            Users usuario = new Users();
+
+            if (usuario.CarregarRedesSociais(Sessao.IdUsuario) && Sessao.FotoPerfil != null && Sessao.FotoPerfil.Length > 0)
+            {
+                using (MemoryStream ms = new MemoryStream(Sessao.FotoPerfil))
+                {
+                    miniFotoPerfil.Image = Image.FromStream(ms);
+                }
+            }
+            else
+            {
+                miniFotoPerfil.Image = null;
+            }
         }
 
         private void contatos_btn_Click(object sender, EventArgs e)
@@ -98,6 +112,27 @@ namespace VYNDRA
         private void contatos_layout_DoubleClick(object sender, EventArgs e)
         {
             CarregarCardsDeChat();
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+            Menu menu = new Menu(Sessao.IdUsuario);
+            menu.Show();
+            this.Close();
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            Relatorios relatorio = new Relatorios(Sessao.IdUsuario);
+            relatorio.Show();
+            this.Close();
+        }
+
+        private void miniFotoPerfil_Click(object sender, EventArgs e)
+        {
+            Perfil perfil = new Perfil(Sessao.IdUsuario);
+            perfil.Show();
+            this.Close();
         }
     }
 }
