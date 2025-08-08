@@ -93,7 +93,7 @@ namespace VYNDRA.Classes
             {
                 string select = "SELECT id_usuario,nomeexibicao, telefone, datanascimento, email, usuario, senha FROM usuarios WHERE email = @Login OR usuario = @Login";
                 MySqlCommand cmd = new MySqlCommand(select, conexao);
-                string query = "SELECT id_usuario,nomeexibicao, telefone, datanascimento, email, usuario, senha FROM usuarios WHERE email = @Login OR usuario = @Login";
+                cmd.Parameters.AddWithValue("@Login", Login);
 
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {

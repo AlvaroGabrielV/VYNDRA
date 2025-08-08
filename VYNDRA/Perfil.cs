@@ -36,7 +36,7 @@ namespace VYNDRA
 
                     // Exibe no PictureBox
                     CpFotodePerfil.Image = Image.FromFile(caminho);
-                    miniFotoPerfil.Image = Image.FromFile(caminho);
+                    miniFotoPerfil1.Image = Image.FromFile(caminho);
 
                     // Converte imagem em byte[]
                     byte[] imagemBytes = File.ReadAllBytes(caminho);
