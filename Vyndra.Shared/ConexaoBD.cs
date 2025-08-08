@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace VYNDRA.Classes
 {
-    class ConexaoBD
+    public class ConexaoBD
     {
         private string conexaoBanco = "server=localhost; database=tcc; uid=root; pwd=''";//" server=bd-vyndra.clay4aqaqt45.sa-east-1.rds.amazonaws.com; database=vyndra_bd; uid=admin_vyndra; pwd='vyndrabd'";
 

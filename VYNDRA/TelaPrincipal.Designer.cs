@@ -77,27 +77,27 @@
             all_panel = new Guna.UI2.WinForms.Guna2Panel();
             chat_panel = new Guna.UI2.WinForms.Guna2Panel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
+            cor_status = new Guna.UI2.WinForms.Guna2Button();
             contato_status = new Guna.UI2.WinForms.Guna2HtmlLabel();
             contato_nome = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            foto_usuario = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             chat_layout = new FlowLayoutPanel();
             chatcard_panel = new Guna.UI2.WinForms.Guna2Panel();
+            messageBox = new Guna.UI2.WinForms.Guna2TextBox();
             send_btn = new Guna.UI2.WinForms.Guna2Button();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
-            message_box = new Guna.UI2.WinForms.Guna2TextBox();
             contatos_panel = new Guna.UI2.WinForms.Guna2Panel();
+            contatos_layout = new FlowLayoutPanel();
             top_panel = new Guna.UI2.WinForms.Guna2Panel();
             btnMinimizar = new Guna.UI2.WinForms.Guna2Button();
             btnFechar = new Guna.UI2.WinForms.Guna2Button();
-            flowLayoutPanel1 = new FlowLayoutPanel();
             side_panel = new Guna.UI2.WinForms.Guna2Panel();
             sidebar_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             all_panel.SuspendLayout();
             chat_panel.SuspendLayout();
             guna2Panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)foto_usuario).BeginInit();
             chatcard_panel.SuspendLayout();
             contatos_panel.SuspendLayout();
             top_panel.SuspendLayout();
@@ -112,6 +112,7 @@
             // 
             // sidebar_panel
             // 
+            sidebar_panel.BackColor = Color.Transparent;
             sidebar_panel.BorderRadius = 30;
             sidebar_panel.Controls.Add(setting_btn);
             sidebar_panel.Controls.Add(btnHome);
@@ -129,6 +130,7 @@
             sidebar_panel.ShadowDecoration.CustomizableEdges = customizableEdges30;
             sidebar_panel.Size = new Size(73, 726);
             sidebar_panel.TabIndex = 1;
+            sidebar_panel.UseTransparentBackground = true;
             // 
             // setting_btn
             // 
@@ -223,8 +225,11 @@
             // 
             all_panel.Controls.Add(chat_panel);
             all_panel.Controls.Add(contatos_panel);
+            customizableEdges18.BottomLeft = false;
+            customizableEdges18.TopLeft = false;
             all_panel.CustomizableEdges = customizableEdges18;
             all_panel.Dock = DockStyle.Fill;
+            all_panel.FillColor = Color.FromArgb(17, 23, 34);
             all_panel.Location = new Point(76, 23);
             all_panel.Margin = new Padding(0);
             all_panel.Name = "all_panel";
@@ -235,60 +240,64 @@
             // 
             // chat_panel
             // 
-            chat_panel.BorderRadius = 30;
+            chat_panel.BackColor = Color.Transparent;
+            chat_panel.BorderRadius = 25;
             chat_panel.Controls.Add(guna2Panel1);
             chat_panel.Controls.Add(chat_layout);
             chat_panel.Controls.Add(chatcard_panel);
+            customizableEdges14.BottomLeft = false;
+            customizableEdges14.TopLeft = false;
             chat_panel.CustomizableEdges = customizableEdges14;
             chat_panel.Dock = DockStyle.Fill;
             chat_panel.FillColor = Color.FromArgb(22, 39, 50);
-            chat_panel.Location = new Point(176, 10);
+            chat_panel.Location = new Point(310, 10);
             chat_panel.Margin = new Padding(0);
             chat_panel.Name = "chat_panel";
-            chat_panel.Padding = new Padding(10, 15, 15, 15);
+            chat_panel.Padding = new Padding(2, 15, 15, 15);
             chat_panel.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            chat_panel.Size = new Size(1100, 706);
-            chat_panel.TabIndex = 1;
+            chat_panel.Size = new Size(966, 706);
+            chat_panel.TabIndex = 3;
+            chat_panel.UseTransparentBackground = true;
             // 
             // guna2Panel1
             // 
             guna2Panel1.BackColor = Color.Transparent;
             guna2Panel1.BorderRadius = 20;
-            guna2Panel1.Controls.Add(guna2Button3);
+            guna2Panel1.Controls.Add(cor_status);
             guna2Panel1.Controls.Add(contato_status);
             guna2Panel1.Controls.Add(contato_nome);
-            guna2Panel1.Controls.Add(guna2CirclePictureBox2);
+            guna2Panel1.Controls.Add(foto_usuario);
             customizableEdges4.BottomLeft = false;
             customizableEdges4.BottomRight = false;
             guna2Panel1.CustomizableEdges = customizableEdges4;
             guna2Panel1.Dock = DockStyle.Top;
             guna2Panel1.FillColor = Color.FromArgb(23, 31, 46);
-            guna2Panel1.Location = new Point(10, 15);
+            guna2Panel1.Location = new Point(2, 15);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            guna2Panel1.Size = new Size(1075, 69);
+            guna2Panel1.Size = new Size(949, 69);
             guna2Panel1.TabIndex = 3;
             // 
-            // guna2Button3
+            // cor_status
             // 
-            guna2Button3.BorderColor = Color.BlanchedAlmond;
-            guna2Button3.BorderRadius = 5;
-            guna2Button3.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
-            guna2Button3.CustomizableEdges = customizableEdges1;
-            guna2Button3.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button3.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button3.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button3.Enabled = false;
-            guna2Button3.FillColor = Color.FromArgb(192, 192, 0);
-            guna2Button3.Font = new Font("Segoe UI", 9F);
-            guna2Button3.ForeColor = Color.White;
-            guna2Button3.Location = new Point(69, 47);
-            guna2Button3.Name = "guna2Button3";
-            guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Button3.Size = new Size(14, 14);
-            guna2Button3.TabIndex = 3;
-            guna2Button3.TabStop = false;
+            cor_status.BorderColor = Color.BlanchedAlmond;
+            cor_status.BorderRadius = 5;
+            cor_status.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
+            cor_status.CustomizableEdges = customizableEdges1;
+            cor_status.DisabledState.BorderColor = Color.DarkGray;
+            cor_status.DisabledState.CustomBorderColor = Color.DarkGray;
+            cor_status.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            cor_status.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            cor_status.Enabled = false;
+            cor_status.FillColor = Color.FromArgb(192, 192, 0);
+            cor_status.Font = new Font("Segoe UI", 9F);
+            cor_status.ForeColor = Color.White;
+            cor_status.Location = new Point(69, 47);
+            cor_status.Name = "cor_status";
+            cor_status.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            cor_status.Size = new Size(14, 14);
+            cor_status.TabIndex = 3;
+            cor_status.TabStop = false;
             // 
             // contato_status
             // 
@@ -305,35 +314,34 @@
             // 
             // contato_nome
             // 
-            contato_nome.AutoSize = false;
-            contato_nome.AutoSizeHeightOnly = true;
             contato_nome.BackColor = Color.Transparent;
             contato_nome.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             contato_nome.ForeColor = Color.White;
             contato_nome.IsSelectionEnabled = false;
             contato_nome.Location = new Point(69, 10);
             contato_nome.Name = "contato_nome";
-            contato_nome.Size = new Size(119, 31);
+            contato_nome.Size = new Size(146, 32);
             contato_nome.TabIndex = 1;
-            contato_nome.Text = "Rafael Silas";
+            contato_nome.Text = "Nome Contato";
             // 
-            // guna2CirclePictureBox2
+            // foto_usuario
             // 
-            guna2CirclePictureBox2.ImageRotate = 0F;
-            guna2CirclePictureBox2.Location = new Point(8, 6);
-            guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            guna2CirclePictureBox2.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            guna2CirclePictureBox2.Size = new Size(55, 55);
-            guna2CirclePictureBox2.TabIndex = 0;
-            guna2CirclePictureBox2.TabStop = false;
+            foto_usuario.ImageRotate = 0F;
+            foto_usuario.Location = new Point(8, 6);
+            foto_usuario.Name = "foto_usuario";
+            foto_usuario.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            foto_usuario.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            foto_usuario.Size = new Size(55, 55);
+            foto_usuario.TabIndex = 0;
+            foto_usuario.TabStop = false;
             // 
             // chat_layout
             // 
+            chat_layout.BackColor = Color.FromArgb(17, 23, 34);
             chat_layout.Dock = DockStyle.Fill;
-            chat_layout.Location = new Point(10, 15);
+            chat_layout.Location = new Point(2, 15);
             chat_layout.Name = "chat_layout";
-            chat_layout.Size = new Size(1075, 617);
+            chat_layout.Size = new Size(949, 617);
             chat_layout.TabIndex = 2;
             // 
             // chatcard_panel
@@ -341,27 +349,53 @@
             chatcard_panel.BackColor = Color.Transparent;
             chatcard_panel.BorderColor = Color.Transparent;
             chatcard_panel.BorderRadius = 20;
+            chatcard_panel.Controls.Add(messageBox);
             chatcard_panel.Controls.Add(send_btn);
             chatcard_panel.Controls.Add(guna2Button1);
-            chatcard_panel.Controls.Add(message_box);
             customizableEdges12.TopLeft = false;
             customizableEdges12.TopRight = false;
             chatcard_panel.CustomizableEdges = customizableEdges12;
             chatcard_panel.Dock = DockStyle.Bottom;
             chatcard_panel.FillColor = Color.FromArgb(25, 34, 50);
-            chatcard_panel.Location = new Point(10, 632);
+            chatcard_panel.Location = new Point(2, 632);
             chatcard_panel.Margin = new Padding(15);
             chatcard_panel.Name = "chatcard_panel";
             chatcard_panel.Padding = new Padding(10);
             chatcard_panel.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            chatcard_panel.Size = new Size(1075, 59);
+            chatcard_panel.Size = new Size(949, 59);
             chatcard_panel.TabIndex = 1;
+            // 
+            // messageBox
+            // 
+            messageBox.AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            messageBox.BorderRadius = 20;
+            messageBox.CustomizableEdges = customizableEdges6;
+            messageBox.DefaultText = "";
+            messageBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            messageBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            messageBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            messageBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            messageBox.Dock = DockStyle.Fill;
+            messageBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            messageBox.Font = new Font("Segoe UI", 9F);
+            messageBox.ForeColor = Color.Black;
+            messageBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            messageBox.Location = new Point(10, 10);
+            messageBox.Margin = new Padding(0);
+            messageBox.Name = "messageBox";
+            messageBox.PlaceholderForeColor = Color.Black;
+            messageBox.PlaceholderText = "Digite sua mensagem...";
+            messageBox.SelectedText = "";
+            messageBox.ShadowDecoration.CustomizableEdges = customizableEdges7;
+            messageBox.Size = new Size(929, 39);
+            messageBox.TabIndex = 4;
+            messageBox.TextOffset = new Point(33, 0);
             // 
             // send_btn
             // 
             send_btn.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Right;
             send_btn.BackColor = Color.Transparent;
-            send_btn.CustomizableEdges = customizableEdges6;
+            send_btn.CustomizableEdges = customizableEdges8;
             send_btn.DisabledState.BorderColor = Color.DarkGray;
             send_btn.DisabledState.CustomBorderColor = Color.DarkGray;
             send_btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -371,17 +405,17 @@
             send_btn.ForeColor = Color.White;
             send_btn.Image = Properties.Resources.message1;
             send_btn.ImageSize = new Size(25, 25);
-            send_btn.Location = new Point(1027, 13);
+            send_btn.Location = new Point(2363, 33);
             send_btn.Name = "send_btn";
-            send_btn.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            send_btn.Size = new Size(35, 35);
+            send_btn.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            send_btn.Size = new Size(35, 0);
             send_btn.TabIndex = 3;
             send_btn.UseTransparentBackground = true;
             // 
             // guna2Button1
             // 
             guna2Button1.BackColor = Color.Transparent;
-            guna2Button1.CustomizableEdges = customizableEdges8;
+            guna2Button1.CustomizableEdges = customizableEdges10;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -393,41 +427,16 @@
             guna2Button1.ImageSize = new Size(25, 25);
             guna2Button1.Location = new Point(16, 11);
             guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges11;
             guna2Button1.Size = new Size(35, 35);
             guna2Button1.TabIndex = 2;
             guna2Button1.UseTransparentBackground = true;
             // 
-            // message_box
-            // 
-            message_box.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            message_box.BorderRadius = 20;
-            message_box.CustomizableEdges = customizableEdges10;
-            message_box.DefaultText = "";
-            message_box.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            message_box.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            message_box.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            message_box.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            message_box.Dock = DockStyle.Fill;
-            message_box.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            message_box.Font = new Font("Segoe UI", 9F);
-            message_box.ForeColor = Color.Black;
-            message_box.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            message_box.Location = new Point(10, 10);
-            message_box.Margin = new Padding(0);
-            message_box.Name = "message_box";
-            message_box.PlaceholderForeColor = Color.Black;
-            message_box.PlaceholderText = "Digite sua mensagem...";
-            message_box.SelectedText = "";
-            message_box.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            message_box.Size = new Size(1055, 39);
-            message_box.TabIndex = 0;
-            message_box.TextOffset = new Point(33, 0);
-            // 
             // contatos_panel
             // 
-            contatos_panel.BorderRadius = 30;
-            contatos_panel.Controls.Add(flowLayoutPanel1);
+            contatos_panel.BackColor = Color.Transparent;
+            contatos_panel.BorderRadius = 25;
+            contatos_panel.Controls.Add(contatos_layout);
             customizableEdges16.BottomRight = false;
             customizableEdges16.TopRight = false;
             contatos_panel.CustomizableEdges = customizableEdges16;
@@ -438,16 +447,31 @@
             contatos_panel.Name = "contatos_panel";
             contatos_panel.Padding = new Padding(5);
             contatos_panel.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            contatos_panel.Size = new Size(166, 706);
+            contatos_panel.Size = new Size(300, 706);
             contatos_panel.TabIndex = 0;
+            contatos_panel.UseTransparentBackground = true;
             contatos_panel.Visible = false;
+            // 
+            // contatos_layout
+            // 
+            contatos_layout.Dock = DockStyle.Fill;
+            contatos_layout.FlowDirection = FlowDirection.TopDown;
+            contatos_layout.Location = new Point(5, 5);
+            contatos_layout.Name = "contatos_layout";
+            contatos_layout.Padding = new Padding(10);
+            contatos_layout.Size = new Size(290, 696);
+            contatos_layout.TabIndex = 0;
+            contatos_layout.VisibleChanged += contatos_layout_VisibleChanged;
+            contatos_layout.DoubleClick += contatos_layout_DoubleClick;
             // 
             // top_panel
             // 
+            top_panel.BackColor = Color.FromArgb(1, 17, 23, 34);
             top_panel.Controls.Add(btnMinimizar);
             top_panel.Controls.Add(btnFechar);
             top_panel.CustomizableEdges = customizableEdges37;
             top_panel.Dock = DockStyle.Top;
+            top_panel.FillColor = Color.FromArgb(17, 23, 34);
             top_panel.ImeMode = ImeMode.NoControl;
             top_panel.Location = new Point(0, 0);
             top_panel.Name = "top_panel";
@@ -497,14 +521,6 @@
             btnFechar.TabIndex = 18;
             btnFechar.Click += btnFechar_Click;
             // 
-            // flowLayoutPanel1
-            // 
-            flowLayoutPanel1.Dock = DockStyle.Fill;
-            flowLayoutPanel1.Location = new Point(5, 5);
-            flowLayoutPanel1.Name = "flowLayoutPanel1";
-            flowLayoutPanel1.Size = new Size(156, 696);
-            flowLayoutPanel1.TabIndex = 0;
-            // 
             // side_panel
             // 
             side_panel.Controls.Add(sidebar_panel);
@@ -520,7 +536,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(25, 34, 50);
+            BackColor = Color.FromArgb(17, 23, 34);
             ClientSize = new Size(1362, 749);
             Controls.Add(all_panel);
             Controls.Add(side_panel);
@@ -536,7 +552,7 @@
             chat_panel.ResumeLayout(false);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)foto_usuario).EndInit();
             chatcard_panel.ResumeLayout(false);
             contatos_panel.ResumeLayout(false);
             top_panel.ResumeLayout(false);
@@ -555,21 +571,21 @@
         private Guna.UI2.WinForms.Guna2Panel all_panel;
         private Guna.UI2.WinForms.Guna2Panel contatos_panel;
         private Guna.UI2.WinForms.Guna2Button setting_btn;
-        private Guna.UI2.WinForms.Guna2Panel chat_panel;
-        private Guna.UI2.WinForms.Guna2TextBox message_box;
-        private Guna.UI2.WinForms.Guna2Panel chatcard_panel;
-        private Guna.UI2.WinForms.Guna2Button send_btn;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private FlowLayoutPanel chat_layout;
         private Guna.UI2.WinForms.Guna2Button contatos_btn;
         private Guna.UI2.WinForms.Guna2Button btnMinimizar;
         private Guna.UI2.WinForms.Guna2Button btnFechar;
+        private Guna.UI2.WinForms.Guna2Panel side_panel;
+        private FlowLayoutPanel contatos_layout;
+        private Guna.UI2.WinForms.Guna2Panel chat_panel;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Button cor_status;
         private Guna.UI2.WinForms.Guna2HtmlLabel contato_status;
         private Guna.UI2.WinForms.Guna2HtmlLabel contato_nome;
-        private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox2;
-        private Guna.UI2.WinForms.Guna2Button guna2Button3;
-        private Guna.UI2.WinForms.Guna2Panel side_panel;
-        private FlowLayoutPanel flowLayoutPanel1;
+        private Guna.UI2.WinForms.Guna2CirclePictureBox foto_usuario;
+        private FlowLayoutPanel chat_layout;
+        private Guna.UI2.WinForms.Guna2Panel chatcard_panel;
+        private Guna.UI2.WinForms.Guna2TextBox messageBox;
+        private Guna.UI2.WinForms.Guna2Button send_btn;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
     }
 }
