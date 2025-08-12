@@ -25,7 +25,7 @@ namespace VYNDRA.Classes
 
                 using (MySqlConnection conexao = new ConexaoBD().Conectar())
                 {
-                    string query = "INSERT INTO relatorios (id_usuario, titulo, descricao, datacriacao) VALUES (@id_usuario, @titulo, @descricao, @datacriacao)";
+                    string query = "INSERT INTO relatorios (id_usuario, titulo, descricao, data_criacao) VALUES (@id_usuario, @titulo, @descricao, @datacriacao)";
                     MySqlCommand cmd = new MySqlCommand(query, conexao);
 
                     cmd.Parameters.AddWithValue("@id_usuario", IdUsuario);
@@ -63,7 +63,7 @@ namespace VYNDRA.Classes
                             IdUsuario = reader.GetInt32("id_usuario"),
                             Titulo = reader.GetString("titulo"),
                             Descricao = reader.GetString("descricao"),
-                            DataCriacao = reader.GetDateTime("datacriacao")
+                            DataCriacao = reader.GetDateTime("data_criacao")
 
                         });
 

@@ -149,9 +149,9 @@
             txtCodigo.ForeColor = Color.White;
             txtCodigo.Location = new Point(137, 135);
             txtCodigo.Name = "txtCodigo";
+            txtCodigo.PlaceholderText = "Ex: 123456";
             txtCodigo.Size = new Size(269, 22);
             txtCodigo.TabIndex = 25;
-            txtCodigo.Text = "Ex: 123456";
             // 
             // CodigoEmail
             // 

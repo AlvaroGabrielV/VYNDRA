@@ -39,7 +39,7 @@ namespace VYNDRA
 
             CarregarCards();
         }
-        private void CarregarCards()
+        public void CarregarCards()
         {
             FlowPanelConteudo.Controls.Clear();
 
@@ -66,7 +66,7 @@ namespace VYNDRA
             }
         }
 
-        private void BotaoAdicionar_Click(object sender, EventArgs e)
+        public void BotaoAdicionar_Click(object sender, EventArgs e)
         {
             int totalTarefas = FlowPanelConteudo.Controls.OfType<CardTarefas>().Count();
 

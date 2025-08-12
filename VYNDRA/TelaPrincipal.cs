@@ -23,6 +23,8 @@ namespace VYNDRA
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
+
+            CarregarCards();
             miniFotoPerfil.SizeMode = PictureBoxSizeMode.Zoom;
 
             Users usuario = new Users();
@@ -38,11 +40,18 @@ namespace VYNDRA
             {
                 miniFotoPerfil.Image = null;
             }
+
         }
 
         private void contatos_btn_Click(object sender, EventArgs e)
         {
             contatos_panel.Visible = !contatos_panel.Visible;
+
+            if (contatos_panel.Visible)
+            {
+                contatos_panel.Size = new Size(300, 706);
+            }
+
         }
 
         private void btnFechar_Click(object sender, EventArgs e)
@@ -134,5 +143,25 @@ namespace VYNDRA
             perfil.Show();
             this.Close();
         }
+
+        private void CarregarCards()
+        {
+            relatorios_flow.Controls.Clear();
+
+            List<RelatoriosClasse> relatorios = RelatoriosClasse.ListarPorUsuario(Sessao.IdUsuario);
+
+            foreach (var rel in relatorios)
+            {
+                CardTarefas card = new CardTarefas();
+                card.IdRelatorio = rel.IdRelatorio;
+                card.Titulo = rel.Titulo;
+                card.Descricao = rel.Descricao;
+                card.DataCriacao = rel.DataCriacao;
+
+                relatorios_flow.Controls.Add(card);
+                relatorios_flow.Controls.SetChildIndex(card, relatorios_flow.Controls.Count - 1);
+            }
+        }
     }
 }
+
