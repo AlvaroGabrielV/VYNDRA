@@ -73,9 +73,9 @@
             ativos_panel = new Guna.UI2.WinForms.Guna2Panel();
             ativos_flow = new FlowLayoutPanel();
             guna2HtmlLabel3 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             anotacoes_panel = new Guna.UI2.WinForms.Guna2Panel();
             relatorios_flow = new FlowLayoutPanel();
+            guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             guna2HtmlLabel2 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             bemvindo_lbl = new Guna.UI2.WinForms.Guna2HtmlLabel();
             chat_panel = new Guna.UI2.WinForms.Guna2Panel();
@@ -120,9 +120,10 @@
             sidebar_panel.Dock = DockStyle.Left;
             sidebar_panel.FillColor = Color.FromArgb(29, 52, 66);
             sidebar_panel.Location = new Point(0, 0);
+            sidebar_panel.Margin = new Padding(4, 5, 4, 5);
             sidebar_panel.Name = "sidebar_panel";
             sidebar_panel.ShadowDecoration.CustomizableEdges = customizableEdges23;
-            sidebar_panel.Size = new Size(73, 726);
+            sidebar_panel.Size = new Size(104, 762);
             sidebar_panel.TabIndex = 1;
             sidebar_panel.UseTransparentBackground = true;
             // 
@@ -138,10 +139,11 @@
             btnHome.ForeColor = Color.White;
             btnHome.Image = Properties.Resources.botao_de_inicio;
             btnHome.ImageSize = new Size(35, 35);
-            btnHome.Location = new Point(12, 12);
+            btnHome.Location = new Point(17, 20);
+            btnHome.Margin = new Padding(4, 5, 4, 5);
             btnHome.Name = "btnHome";
             btnHome.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            btnHome.Size = new Size(50, 50);
+            btnHome.Size = new Size(71, 83);
             btnHome.TabIndex = 2;
             btnHome.Click += btnHome_Click;
             // 
@@ -149,11 +151,12 @@
             // 
             miniFotoPerfil.BackColor = Color.FromArgb(29, 52, 66);
             miniFotoPerfil.ImageRotate = 0F;
-            miniFotoPerfil.Location = new Point(12, 653);
+            miniFotoPerfil.Location = new Point(17, 673);
+            miniFotoPerfil.Margin = new Padding(4, 5, 4, 5);
             miniFotoPerfil.Name = "miniFotoPerfil";
             miniFotoPerfil.ShadowDecoration.CustomizableEdges = customizableEdges17;
             miniFotoPerfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            miniFotoPerfil.Size = new Size(50, 50);
+            miniFotoPerfil.Size = new Size(71, 77);
             miniFotoPerfil.SizeMode = PictureBoxSizeMode.Zoom;
             miniFotoPerfil.TabIndex = 0;
             miniFotoPerfil.TabStop = false;
@@ -171,10 +174,11 @@
             contatos_btn.ForeColor = Color.White;
             contatos_btn.Image = Properties.Resources.do_utilizador;
             contatos_btn.ImageSize = new Size(35, 35);
-            contatos_btn.Location = new Point(12, 133);
+            contatos_btn.Location = new Point(17, 180);
+            contatos_btn.Margin = new Padding(4, 5, 4, 5);
             contatos_btn.Name = "contatos_btn";
             contatos_btn.ShadowDecoration.CustomizableEdges = customizableEdges19;
-            contatos_btn.Size = new Size(50, 50);
+            contatos_btn.Size = new Size(71, 83);
             contatos_btn.TabIndex = 0;
             contatos_btn.Click += contatos_btn_Click;
             // 
@@ -190,10 +194,11 @@
             btnRelatorios.ForeColor = Color.White;
             btnRelatorios.Image = Properties.Resources.bloco_de_anotacoes;
             btnRelatorios.ImageSize = new Size(35, 35);
-            btnRelatorios.Location = new Point(12, 77);
+            btnRelatorios.Location = new Point(17, 103);
+            btnRelatorios.Margin = new Padding(4, 5, 4, 5);
             btnRelatorios.Name = "btnRelatorios";
             btnRelatorios.ShadowDecoration.CustomizableEdges = customizableEdges21;
-            btnRelatorios.Size = new Size(50, 50);
+            btnRelatorios.Size = new Size(71, 83);
             btnRelatorios.TabIndex = 0;
             btnRelatorios.Click += guna2Button2_Click;
             // 
@@ -207,12 +212,12 @@
             all_panel.CustomizableEdges = customizableEdges13;
             all_panel.Dock = DockStyle.Fill;
             all_panel.FillColor = Color.FromArgb(17, 23, 34);
-            all_panel.Location = new Point(76, 23);
+            all_panel.Location = new Point(109, 38);
             all_panel.Margin = new Padding(0);
             all_panel.Name = "all_panel";
-            all_panel.Padding = new Padding(10);
+            all_panel.Padding = new Padding(14, 17, 14, 17);
             all_panel.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            all_panel.Size = new Size(1186, 726);
+            all_panel.Size = new Size(1394, 762);
             all_panel.TabIndex = 1;
             // 
             // principal_panel
@@ -220,11 +225,12 @@
             principal_panel.Controls.Add(princi_panel);
             principal_panel.CustomizableEdges = customizableEdges7;
             principal_panel.Dock = DockStyle.Fill;
-            principal_panel.Location = new Point(27, 10);
+            principal_panel.Location = new Point(38, 17);
+            principal_panel.Margin = new Padding(4, 5, 4, 5);
             principal_panel.Name = "principal_panel";
-            principal_panel.Padding = new Padding(8);
+            principal_panel.Padding = new Padding(11, 13, 11, 13);
             principal_panel.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            principal_panel.Size = new Size(1071, 706);
+            principal_panel.Size = new Size(1231, 728);
             principal_panel.TabIndex = 4;
             // 
             // princi_panel
@@ -232,16 +238,16 @@
             princi_panel.BorderRadius = 20;
             princi_panel.Controls.Add(ativos_panel);
             princi_panel.Controls.Add(guna2HtmlLabel3);
-            princi_panel.Controls.Add(guna2HtmlLabel1);
             princi_panel.Controls.Add(anotacoes_panel);
             princi_panel.CustomizableEdges = customizableEdges5;
             princi_panel.Dock = DockStyle.Fill;
             princi_panel.FillColor = Color.FromArgb(29, 52, 66);
-            princi_panel.Location = new Point(8, 8);
+            princi_panel.Location = new Point(11, 13);
+            princi_panel.Margin = new Padding(4, 5, 4, 5);
             princi_panel.Name = "princi_panel";
-            princi_panel.Padding = new Padding(12);
+            princi_panel.Padding = new Padding(17, 20, 17, 20);
             princi_panel.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            princi_panel.Size = new Size(1055, 690);
+            princi_panel.Size = new Size(1209, 702);
             princi_panel.TabIndex = 0;
             // 
             // ativos_panel
@@ -250,10 +256,11 @@
             ativos_panel.Controls.Add(ativos_flow);
             ativos_panel.CustomizableEdges = customizableEdges1;
             ativos_panel.Dock = DockStyle.Bottom;
-            ativos_panel.Location = new Point(12, 398);
+            ativos_panel.Location = new Point(17, 397);
+            ativos_panel.Margin = new Padding(4, 5, 4, 5);
             ativos_panel.Name = "ativos_panel";
             ativos_panel.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            ativos_panel.Size = new Size(1031, 280);
+            ativos_panel.Size = new Size(1175, 285);
             ativos_panel.TabIndex = 3;
             // 
             // ativos_flow
@@ -261,8 +268,9 @@
             ativos_flow.BackColor = Color.FromArgb(29, 52, 66);
             ativos_flow.Dock = DockStyle.Fill;
             ativos_flow.Location = new Point(0, 0);
+            ativos_flow.Margin = new Padding(4, 5, 4, 5);
             ativos_flow.Name = "ativos_flow";
-            ativos_flow.Size = new Size(1031, 280);
+            ativos_flow.Size = new Size(1175, 285);
             ativos_flow.TabIndex = 0;
             // 
             // guna2HtmlLabel3
@@ -270,54 +278,62 @@
             guna2HtmlLabel3.BackColor = Color.Transparent;
             guna2HtmlLabel3.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel3.ForeColor = Color.White;
-            guna2HtmlLabel3.Location = new Point(24, 363);
+            guna2HtmlLabel3.Location = new Point(21, 340);
+            guna2HtmlLabel3.Margin = new Padding(4, 5, 4, 5);
             guna2HtmlLabel3.Name = "guna2HtmlLabel3";
-            guna2HtmlLabel3.Size = new Size(165, 32);
+            guna2HtmlLabel3.Size = new Size(250, 47);
             guna2HtmlLabel3.TabIndex = 2;
             guna2HtmlLabel3.Text = "Contatos Ativos:";
-            // 
-            // guna2HtmlLabel1
-            // 
-            guna2HtmlLabel1.BackColor = Color.Transparent;
-            guna2HtmlLabel1.Location = new Point(15, 62);
-            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            guna2HtmlLabel1.Size = new Size(3, 2);
-            guna2HtmlLabel1.TabIndex = 2;
-            guna2HtmlLabel1.Text = null;
             // 
             // anotacoes_panel
             // 
             anotacoes_panel.BackColor = Color.FromArgb(29, 52, 66);
             anotacoes_panel.BorderRadius = 15;
             anotacoes_panel.Controls.Add(relatorios_flow);
+            anotacoes_panel.Controls.Add(guna2HtmlLabel1);
             anotacoes_panel.Controls.Add(guna2HtmlLabel2);
             anotacoes_panel.Controls.Add(bemvindo_lbl);
             anotacoes_panel.CustomizableEdges = customizableEdges3;
             anotacoes_panel.Dock = DockStyle.Top;
             anotacoes_panel.FillColor = Color.FromArgb(29, 52, 66);
-            anotacoes_panel.Location = new Point(12, 12);
+            anotacoes_panel.Location = new Point(17, 20);
+            anotacoes_panel.Margin = new Padding(4, 5, 4, 5);
             anotacoes_panel.Name = "anotacoes_panel";
             anotacoes_panel.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            anotacoes_panel.Size = new Size(1031, 339);
+            anotacoes_panel.Size = new Size(1175, 310);
             anotacoes_panel.TabIndex = 1;
             // 
             // relatorios_flow
             // 
             relatorios_flow.BackColor = Color.FromArgb(29, 52, 66);
-            relatorios_flow.Dock = DockStyle.Bottom;
-            relatorios_flow.Location = new Point(0, 119);
+            relatorios_flow.Dock = DockStyle.Fill;
+            relatorios_flow.Location = new Point(0, 53);
+            relatorios_flow.Margin = new Padding(4, 5, 4, 5);
             relatorios_flow.Name = "relatorios_flow";
-            relatorios_flow.Size = new Size(1031, 220);
+            relatorios_flow.Size = new Size(1175, 257);
             relatorios_flow.TabIndex = 0;
+            // 
+            // guna2HtmlLabel1
+            // 
+            guna2HtmlLabel1.BackColor = Color.Transparent;
+            guna2HtmlLabel1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            guna2HtmlLabel1.ForeColor = Color.White;
+            guna2HtmlLabel1.Location = new Point(0, -4);
+            guna2HtmlLabel1.Margin = new Padding(4, 5, 4, 5);
+            guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            guna2HtmlLabel1.Size = new Size(269, 47);
+            guna2HtmlLabel1.TabIndex = 2;
+            guna2HtmlLabel1.Text = "Projetos Recentes";
             // 
             // guna2HtmlLabel2
             // 
             guna2HtmlLabel2.BackColor = Color.Transparent;
             guna2HtmlLabel2.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             guna2HtmlLabel2.ForeColor = Color.White;
-            guna2HtmlLabel2.Location = new Point(12, 80);
+            guna2HtmlLabel2.Location = new Point(15, 73);
+            guna2HtmlLabel2.Margin = new Padding(4, 5, 4, 5);
             guna2HtmlLabel2.Name = "guna2HtmlLabel2";
-            guna2HtmlLabel2.Size = new Size(183, 32);
+            guna2HtmlLabel2.Size = new Size(278, 47);
             guna2HtmlLabel2.TabIndex = 2;
             guna2HtmlLabel2.Text = "Projetos Recentes:";
             // 
@@ -329,8 +345,9 @@
             bemvindo_lbl.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             bemvindo_lbl.ForeColor = Color.White;
             bemvindo_lbl.Location = new Point(0, 0);
+            bemvindo_lbl.Margin = new Padding(4, 5, 4, 5);
             bemvindo_lbl.Name = "bemvindo_lbl";
-            bemvindo_lbl.Size = new Size(1031, 32);
+            bemvindo_lbl.Size = new Size(1175, 53);
             bemvindo_lbl.TabIndex = 0;
             bemvindo_lbl.Text = "Seja Bem-Vindo(a) Usuario!";
             bemvindo_lbl.TextAlignment = ContentAlignment.MiddleCenter;
@@ -345,12 +362,12 @@
             chat_panel.CustomizableEdges = customizableEdges9;
             chat_panel.Dock = DockStyle.Right;
             chat_panel.FillColor = Color.FromArgb(22, 39, 50);
-            chat_panel.Location = new Point(1098, 10);
+            chat_panel.Location = new Point(1269, 17);
             chat_panel.Margin = new Padding(0);
             chat_panel.Name = "chat_panel";
-            chat_panel.Padding = new Padding(15);
+            chat_panel.Padding = new Padding(21, 25, 21, 25);
             chat_panel.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            chat_panel.Size = new Size(78, 706);
+            chat_panel.Size = new Size(111, 728);
             chat_panel.TabIndex = 3;
             chat_panel.UseTransparentBackground = true;
             chat_panel.Visible = false;
@@ -359,9 +376,10 @@
             // 
             chat_layout.BackColor = Color.FromArgb(17, 23, 34);
             chat_layout.Dock = DockStyle.Fill;
-            chat_layout.Location = new Point(15, 15);
+            chat_layout.Location = new Point(21, 25);
+            chat_layout.Margin = new Padding(4, 5, 4, 5);
             chat_layout.Name = "chat_layout";
-            chat_layout.Size = new Size(48, 676);
+            chat_layout.Size = new Size(69, 678);
             chat_layout.TabIndex = 2;
             // 
             // contatos_panel
@@ -374,12 +392,12 @@
             contatos_panel.CustomizableEdges = customizableEdges11;
             contatos_panel.Dock = DockStyle.Left;
             contatos_panel.FillColor = Color.FromArgb(22, 39, 50);
-            contatos_panel.Location = new Point(10, 10);
+            contatos_panel.Location = new Point(14, 17);
             contatos_panel.Margin = new Padding(0);
             contatos_panel.Name = "contatos_panel";
-            contatos_panel.Padding = new Padding(5);
+            contatos_panel.Padding = new Padding(7, 8, 7, 8);
             contatos_panel.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            contatos_panel.Size = new Size(17, 706);
+            contatos_panel.Size = new Size(24, 728);
             contatos_panel.TabIndex = 0;
             contatos_panel.UseTransparentBackground = true;
             contatos_panel.Visible = false;
@@ -388,10 +406,11 @@
             // 
             contatos_layout.Dock = DockStyle.Fill;
             contatos_layout.FlowDirection = FlowDirection.TopDown;
-            contatos_layout.Location = new Point(5, 5);
+            contatos_layout.Location = new Point(7, 8);
+            contatos_layout.Margin = new Padding(4, 5, 4, 5);
             contatos_layout.Name = "contatos_layout";
-            contatos_layout.Padding = new Padding(10);
-            contatos_layout.Size = new Size(7, 696);
+            contatos_layout.Padding = new Padding(14, 17, 14, 17);
+            contatos_layout.Size = new Size(10, 712);
             contatos_layout.TabIndex = 0;
             contatos_layout.VisibleChanged += contatos_layout_VisibleChanged;
             contatos_layout.DoubleClick += contatos_layout_DoubleClick;
@@ -406,9 +425,10 @@
             top_panel.FillColor = Color.FromArgb(17, 23, 34);
             top_panel.ImeMode = ImeMode.NoControl;
             top_panel.Location = new Point(0, 0);
+            top_panel.Margin = new Padding(4, 5, 4, 5);
             top_panel.Name = "top_panel";
             top_panel.ShadowDecoration.CustomizableEdges = customizableEdges31;
-            top_panel.Size = new Size(1262, 23);
+            top_panel.Size = new Size(1503, 38);
             top_panel.TabIndex = 4;
             // 
             // btnMinimizar
@@ -425,10 +445,11 @@
             btnMinimizar.ForeColor = Color.White;
             btnMinimizar.Image = Properties.Resources.minimizar;
             btnMinimizar.ImageSize = new Size(11, 11);
-            btnMinimizar.Location = new Point(1219, 3);
+            btnMinimizar.Location = new Point(1741, 5);
+            btnMinimizar.Margin = new Padding(4, 5, 4, 5);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.ShadowDecoration.CustomizableEdges = customizableEdges27;
-            btnMinimizar.Size = new Size(20, 20);
+            btnMinimizar.Size = new Size(29, 33);
             btnMinimizar.TabIndex = 19;
             btnMinimizar.Click += btnMinimizar_Click;
             // 
@@ -446,10 +467,11 @@
             btnFechar.ForeColor = Color.White;
             btnFechar.Image = Properties.Resources.xCorreto;
             btnFechar.ImageSize = new Size(11, 11);
-            btnFechar.Location = new Point(1245, 3);
+            btnFechar.Location = new Point(1779, 5);
+            btnFechar.Margin = new Padding(4, 5, 4, 5);
             btnFechar.Name = "btnFechar";
             btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges29;
-            btnFechar.Size = new Size(20, 20);
+            btnFechar.Size = new Size(29, 33);
             btnFechar.TabIndex = 18;
             btnFechar.Click += btnFechar_Click;
             // 
@@ -458,23 +480,25 @@
             side_panel.Controls.Add(sidebar_panel);
             side_panel.CustomizableEdges = customizableEdges24;
             side_panel.Dock = DockStyle.Left;
-            side_panel.Location = new Point(0, 23);
+            side_panel.Location = new Point(0, 38);
+            side_panel.Margin = new Padding(4, 5, 4, 5);
             side_panel.Name = "side_panel";
             side_panel.ShadowDecoration.CustomizableEdges = customizableEdges25;
-            side_panel.Size = new Size(76, 726);
+            side_panel.Size = new Size(109, 762);
             side_panel.TabIndex = 20;
             // 
             // TelaPrincipal
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 23, 34);
-            ClientSize = new Size(1262, 749);
+            ClientSize = new Size(1503, 800);
             Controls.Add(all_panel);
             Controls.Add(side_panel);
             Controls.Add(top_panel);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 5, 4, 5);
             Name = "TelaPrincipal";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "TelaPrincipal";
@@ -520,9 +544,9 @@
         private Guna.UI2.WinForms.Guna2Panel anotacoes_panel;
         private FlowLayoutPanel relatorios_flow;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel2;
-        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel3;
         private Guna.UI2.WinForms.Guna2Panel ativos_panel;
         private FlowLayoutPanel ativos_flow;
+        private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
     }
 }

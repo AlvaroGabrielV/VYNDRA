@@ -87,7 +87,7 @@ public static class SignalRService
         }
 
         Connection = new HubConnectionBuilder()
-            .WithUrl("http://localhost:5000/chatHub")
+            .WithUrl("http://18.228.153.48:5000/chatHub")
             .WithAutomaticReconnect()
             .Build();
 

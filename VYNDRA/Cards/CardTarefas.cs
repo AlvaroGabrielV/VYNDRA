@@ -86,12 +86,17 @@ namespace VYNDRA
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-           ExlcuirTarefasClicado?.Invoke(this, IdRelatorio);
+            ExlcuirTarefasClicado?.Invoke(this, IdRelatorio);
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             EditarTarefaClicada?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
