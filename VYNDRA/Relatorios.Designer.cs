@@ -187,7 +187,7 @@
             miniFotoPerfil.ShadowDecoration.CustomizableEdges = customizableEdges7;
             miniFotoPerfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             miniFotoPerfil.Size = new Size(71, 69);
-            miniFotoPerfil.SizeMode = PictureBoxSizeMode.Zoom;
+            miniFotoPerfil.SizeMode = PictureBoxSizeMode.StretchImage;
             miniFotoPerfil.TabIndex = 0;
             miniFotoPerfil.TabStop = false;
             miniFotoPerfil.Click += miniFotoPerfil_Click;

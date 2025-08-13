@@ -67,6 +67,10 @@ namespace VYNDRA
 
         public void CarregarCardsDeChat()
         {
+            contatos_layout.Controls.Clear();
+            BuscarContato buscarContato = new BuscarContato();
+            contatos_layout.Controls.Add(buscarContato);
+
             var listaAmigos = Users.CarregarChats();
 
             foreach (var amigo in listaAmigos)

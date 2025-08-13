@@ -30,17 +30,17 @@
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Perfil));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Perfil));
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -59,27 +59,27 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            btnSalvarRedesSociais = new Guna.UI2.WinForms.Guna2Button();
-            txtWhatsapp = new MaskedTextBox();
-            txtInstagram = new TextBox();
-            txtLinkedin = new TextBox();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox1 = new PictureBox();
-            txtEmail = new TextBox();
-            label4 = new Label();
-            label3 = new Label();
-            btnAlterarUsuario = new Guna.UI2.WinForms.Guna2Button();
-            txtNomeExibicao = new TextBox();
-            guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            txtUsuario = new TextBox();
-            label1 = new Label();
-            lblDataDeNascimento = new Label();
-            txtSenha = new TextBox();
-            btnAlterarSenha = new Guna.UI2.WinForms.Guna2Button();
-            lblSenha = new Label();
             BtnMudarFoto = new Guna.UI2.WinForms.Guna2CircleButton();
             CpFotodePerfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
+            btnSalvarRedesSociais = new Guna.UI2.WinForms.Guna2Button();
+            txtUsuario = new TextBox();
+            btnAlterarUsuario = new Guna.UI2.WinForms.Guna2Button();
+            txtWhatsapp = new MaskedTextBox();
+            label4 = new Label();
+            label1 = new Label();
+            label3 = new Label();
+            txtInstagram = new TextBox();
+            lblDataDeNascimento = new Label();
+            txtNomeExibicao = new TextBox();
+            txtLinkedin = new TextBox();
+            txtSenha = new TextBox();
+            pictureBox3 = new PictureBox();
+            btnAlterarSenha = new Guna.UI2.WinForms.Guna2Button();
+            pictureBox2 = new PictureBox();
+            pictureBox1 = new PictureBox();
+            lblSenha = new Label();
+            txtEmail = new TextBox();
             sidebar_panel = new Guna.UI2.WinForms.Guna2Panel();
             btnHome = new Guna.UI2.WinForms.Guna2Button();
             miniFotoPerfil = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -90,11 +90,11 @@
             btnMinimizar = new Guna.UI2.WinForms.Guna2Button();
             btnFechar = new Guna.UI2.WinForms.Guna2Button();
             guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)CpFotodePerfil).BeginInit();
+            guna2Panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            guna2Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)CpFotodePerfil).BeginInit();
             sidebar_panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)miniFotoPerfil).BeginInit();
             perfil_panel.SuspendLayout();
@@ -120,295 +120,6 @@
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2Panel2.Size = new Size(1377, 736);
             guna2Panel2.TabIndex = 2;
-            // 
-            // btnSalvarRedesSociais
-            // 
-            btnSalvarRedesSociais.BackColor = Color.FromArgb(11, 17, 30);
-            btnSalvarRedesSociais.BorderRadius = 15;
-            btnSalvarRedesSociais.CustomizableEdges = customizableEdges3;
-            btnSalvarRedesSociais.DisabledState.BorderColor = Color.DarkGray;
-            btnSalvarRedesSociais.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnSalvarRedesSociais.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnSalvarRedesSociais.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnSalvarRedesSociais.FillColor = Color.FromArgb(37, 118, 210);
-            btnSalvarRedesSociais.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnSalvarRedesSociais.ForeColor = Color.White;
-            btnSalvarRedesSociais.Location = new Point(919, 352);
-            btnSalvarRedesSociais.Margin = new Padding(4, 5, 4, 5);
-            btnSalvarRedesSociais.Name = "btnSalvarRedesSociais";
-            btnSalvarRedesSociais.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnSalvarRedesSociais.Size = new Size(191, 60);
-            btnSalvarRedesSociais.TabIndex = 57;
-            btnSalvarRedesSociais.Text = "Salvar";
-            btnSalvarRedesSociais.Click += btnSalvarRedesSociais_Click;
-            // 
-            // txtWhatsapp
-            // 
-            txtWhatsapp.BackColor = Color.FromArgb(11, 17, 30);
-            txtWhatsapp.BorderStyle = BorderStyle.None;
-            txtWhatsapp.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtWhatsapp.ForeColor = Color.White;
-            txtWhatsapp.Location = new Point(954, 287);
-            txtWhatsapp.Margin = new Padding(4, 5, 4, 5);
-            txtWhatsapp.Mask = "(00)00000-0000";
-            txtWhatsapp.Name = "txtWhatsapp";
-            txtWhatsapp.Size = new Size(257, 24);
-            txtWhatsapp.TabIndex = 56;
-            // 
-            // txtInstagram
-            // 
-            txtInstagram.BackColor = Color.FromArgb(11, 17, 30);
-            txtInstagram.BorderStyle = BorderStyle.None;
-            txtInstagram.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtInstagram.ForeColor = Color.White;
-            txtInstagram.Location = new Point(954, 193);
-            txtInstagram.Margin = new Padding(4, 5, 4, 5);
-            txtInstagram.Name = "txtInstagram";
-            txtInstagram.Size = new Size(257, 30);
-            txtInstagram.TabIndex = 54;
-            txtInstagram.Text = "Digite aqui....";
-            // 
-            // txtLinkedin
-            // 
-            txtLinkedin.BackColor = Color.FromArgb(11, 17, 30);
-            txtLinkedin.BorderStyle = BorderStyle.None;
-            txtLinkedin.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtLinkedin.ForeColor = Color.White;
-            txtLinkedin.Location = new Point(954, 102);
-            txtLinkedin.Margin = new Padding(4, 5, 4, 5);
-            txtLinkedin.Name = "txtLinkedin";
-            txtLinkedin.Size = new Size(257, 30);
-            txtLinkedin.TabIndex = 53;
-            txtLinkedin.Text = "Digite aqui....";
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.BackColor = Color.FromArgb(23, 23, 34);
-            pictureBox3.Image = Properties.Resources.instagram;
-            pictureBox3.Location = new Point(883, 178);
-            pictureBox3.Margin = new Padding(4, 5, 4, 5);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(61, 60);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 52;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.BackColor = Color.FromArgb(23, 23, 34);
-            pictureBox2.Image = Properties.Resources.whatsapp;
-            pictureBox2.Location = new Point(883, 272);
-            pictureBox2.Margin = new Padding(4, 5, 4, 5);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(61, 60);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 51;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.FromArgb(23, 23, 34);
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(883, 87);
-            pictureBox1.Margin = new Padding(4, 5, 4, 5);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(61, 60);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 49;
-            pictureBox1.TabStop = false;
-            // 
-            // txtEmail
-            // 
-            txtEmail.BackColor = Color.FromArgb(11, 17, 30);
-            txtEmail.BorderStyle = BorderStyle.None;
-            txtEmail.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtEmail.ForeColor = Color.White;
-            txtEmail.Location = new Point(47, 318);
-            txtEmail.Margin = new Padding(4, 5, 4, 5);
-            txtEmail.Name = "txtEmail";
-            txtEmail.ReadOnly = true;
-            txtEmail.Size = new Size(319, 26);
-            txtEmail.TabIndex = 60;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.BackColor = Color.FromArgb(11, 17, 30);
-            label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(47, 178);
-            label4.Margin = new Padding(4, 0, 4, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(213, 31);
-            label4.TabIndex = 29;
-            label4.Text = "Nome de Exibição:";
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.BackColor = Color.FromArgb(11, 17, 30);
-            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.ForeColor = Color.White;
-            label3.Location = new Point(47, 78);
-            label3.Margin = new Padding(4, 0, 4, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(103, 31);
-            label3.TabIndex = 28;
-            label3.Text = "Usuário:";
-            // 
-            // btnAlterarUsuario
-            // 
-            btnAlterarUsuario.BackColor = Color.FromArgb(11, 17, 30);
-            btnAlterarUsuario.BorderRadius = 15;
-            btnAlterarUsuario.CustomizableEdges = customizableEdges5;
-            btnAlterarUsuario.DisabledState.BorderColor = Color.DarkGray;
-            btnAlterarUsuario.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAlterarUsuario.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAlterarUsuario.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAlterarUsuario.FillColor = Color.FromArgb(37, 118, 210);
-            btnAlterarUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAlterarUsuario.ForeColor = Color.White;
-            btnAlterarUsuario.Location = new Point(47, 328);
-            btnAlterarUsuario.Margin = new Padding(4, 5, 4, 5);
-            btnAlterarUsuario.Name = "btnAlterarUsuario";
-            btnAlterarUsuario.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnAlterarUsuario.Size = new Size(236, 68);
-            btnAlterarUsuario.TabIndex = 32;
-            btnAlterarUsuario.Text = "Alterar";
-            btnAlterarUsuario.Click += btnAlterarUsuario_Click;
-            // 
-            // txtNomeExibicao
-            // 
-            txtNomeExibicao.BackColor = Color.FromArgb(11, 17, 30);
-            txtNomeExibicao.BorderStyle = BorderStyle.None;
-            txtNomeExibicao.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtNomeExibicao.ForeColor = Color.White;
-            txtNomeExibicao.Location = new Point(54, 214);
-            txtNomeExibicao.Margin = new Padding(4, 5, 4, 5);
-            txtNomeExibicao.Name = "txtNomeExibicao";
-            txtNomeExibicao.Size = new Size(319, 26);
-            txtNomeExibicao.TabIndex = 39;
-            txtNomeExibicao.Text = "Digite aqui...";
-            // 
-            // guna2Panel4
-            // 
-            guna2Panel4.BackColor = Color.FromArgb(29, 52, 66);
-            guna2Panel4.BorderRadius = 20;
-            guna2Panel4.Controls.Add(btnSalvarRedesSociais);
-            guna2Panel4.Controls.Add(txtUsuario);
-            guna2Panel4.Controls.Add(btnAlterarUsuario);
-            guna2Panel4.Controls.Add(txtWhatsapp);
-            guna2Panel4.Controls.Add(label4);
-            guna2Panel4.Controls.Add(label1);
-            guna2Panel4.Controls.Add(label3);
-            guna2Panel4.Controls.Add(txtInstagram);
-            guna2Panel4.Controls.Add(lblDataDeNascimento);
-            guna2Panel4.Controls.Add(txtNomeExibicao);
-            guna2Panel4.Controls.Add(txtLinkedin);
-            guna2Panel4.Controls.Add(txtSenha);
-            guna2Panel4.Controls.Add(pictureBox3);
-            guna2Panel4.Controls.Add(btnAlterarSenha);
-            guna2Panel4.Controls.Add(pictureBox2);
-            guna2Panel4.Controls.Add(pictureBox1);
-            guna2Panel4.Controls.Add(lblSenha);
-            guna2Panel4.Controls.Add(txtEmail);
-            guna2Panel4.CustomizableEdges = customizableEdges9;
-            guna2Panel4.FillColor = Color.FromArgb(11, 17, 30);
-            guna2Panel4.Location = new Point(135, 282);
-            guna2Panel4.Margin = new Padding(4, 5, 4, 5);
-            guna2Panel4.Name = "guna2Panel4";
-            guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel4.Size = new Size(1253, 433);
-            guna2Panel4.TabIndex = 66;
-            // 
-            // txtUsuario
-            // 
-            txtUsuario.BackColor = Color.FromArgb(11, 17, 30);
-            txtUsuario.BorderStyle = BorderStyle.None;
-            txtUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtUsuario.ForeColor = Color.White;
-            txtUsuario.Location = new Point(54, 114);
-            txtUsuario.Margin = new Padding(4, 5, 4, 5);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(319, 26);
-            txtUsuario.TabIndex = 35;
-            txtUsuario.Text = "Digite aqui...";
-            txtUsuario.TextChanged += txtUsuario_TextChanged;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.FromArgb(11, 17, 30);
-            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.White;
-            label1.Location = new Point(488, 72);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(236, 31);
-            label1.TabIndex = 61;
-            label1.Text = "Data de Nascimento:";
-            // 
-            // lblDataDeNascimento
-            // 
-            lblDataDeNascimento.AutoSize = true;
-            lblDataDeNascimento.BackColor = Color.FromArgb(11, 17, 30);
-            lblDataDeNascimento.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblDataDeNascimento.ForeColor = Color.White;
-            lblDataDeNascimento.Location = new Point(488, 116);
-            lblDataDeNascimento.Margin = new Padding(4, 0, 4, 0);
-            lblDataDeNascimento.Name = "lblDataDeNascimento";
-            lblDataDeNascimento.Size = new Size(64, 31);
-            lblDataDeNascimento.TabIndex = 62;
-            lblDataDeNascimento.Text = "Data";
-            // 
-            // txtSenha
-            // 
-            txtSenha.BackColor = Color.FromArgb(11, 17, 30);
-            txtSenha.BorderStyle = BorderStyle.None;
-            txtSenha.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            txtSenha.ForeColor = Color.White;
-            txtSenha.Location = new Point(496, 212);
-            txtSenha.Margin = new Padding(4, 5, 4, 5);
-            txtSenha.Name = "txtSenha";
-            txtSenha.ReadOnly = true;
-            txtSenha.Size = new Size(293, 26);
-            txtSenha.TabIndex = 64;
-            txtSenha.Text = "asdadasd";
-            txtSenha.UseSystemPasswordChar = true;
-            // 
-            // btnAlterarSenha
-            // 
-            btnAlterarSenha.BackColor = Color.FromArgb(11, 17, 30);
-            btnAlterarSenha.BorderRadius = 15;
-            btnAlterarSenha.CustomizableEdges = customizableEdges7;
-            btnAlterarSenha.DisabledState.BorderColor = Color.DarkGray;
-            btnAlterarSenha.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnAlterarSenha.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnAlterarSenha.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnAlterarSenha.FillColor = Color.FromArgb(37, 118, 210);
-            btnAlterarSenha.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAlterarSenha.ForeColor = Color.White;
-            btnAlterarSenha.Location = new Point(488, 249);
-            btnAlterarSenha.Margin = new Padding(4, 5, 4, 5);
-            btnAlterarSenha.Name = "btnAlterarSenha";
-            btnAlterarSenha.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            btnAlterarSenha.Size = new Size(230, 62);
-            btnAlterarSenha.TabIndex = 65;
-            btnAlterarSenha.Text = "Alterar Senha";
-            btnAlterarSenha.Click += btnAlterarSenha_Click;
-            // 
-            // lblSenha
-            // 
-            lblSenha.AutoSize = true;
-            lblSenha.BackColor = Color.FromArgb(11, 17, 30);
-            lblSenha.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblSenha.ForeColor = Color.White;
-            lblSenha.Location = new Point(488, 178);
-            lblSenha.Margin = new Padding(4, 0, 4, 0);
-            lblSenha.Name = "lblSenha";
-            lblSenha.Size = new Size(85, 31);
-            lblSenha.TabIndex = 63;
-            lblSenha.Text = "Senha:";
             // 
             // BtnMudarFoto
             // 
@@ -444,6 +155,295 @@
             CpFotodePerfil.SizeMode = PictureBoxSizeMode.StretchImage;
             CpFotodePerfil.TabIndex = 4;
             CpFotodePerfil.TabStop = false;
+            // 
+            // guna2Panel4
+            // 
+            guna2Panel4.BackColor = Color.FromArgb(29, 52, 66);
+            guna2Panel4.BorderRadius = 20;
+            guna2Panel4.Controls.Add(btnSalvarRedesSociais);
+            guna2Panel4.Controls.Add(txtUsuario);
+            guna2Panel4.Controls.Add(btnAlterarUsuario);
+            guna2Panel4.Controls.Add(txtWhatsapp);
+            guna2Panel4.Controls.Add(label4);
+            guna2Panel4.Controls.Add(label1);
+            guna2Panel4.Controls.Add(label3);
+            guna2Panel4.Controls.Add(txtInstagram);
+            guna2Panel4.Controls.Add(lblDataDeNascimento);
+            guna2Panel4.Controls.Add(txtNomeExibicao);
+            guna2Panel4.Controls.Add(txtLinkedin);
+            guna2Panel4.Controls.Add(txtSenha);
+            guna2Panel4.Controls.Add(pictureBox3);
+            guna2Panel4.Controls.Add(btnAlterarSenha);
+            guna2Panel4.Controls.Add(pictureBox2);
+            guna2Panel4.Controls.Add(pictureBox1);
+            guna2Panel4.Controls.Add(lblSenha);
+            guna2Panel4.Controls.Add(txtEmail);
+            guna2Panel4.CustomizableEdges = customizableEdges9;
+            guna2Panel4.FillColor = Color.FromArgb(11, 17, 30);
+            guna2Panel4.Location = new Point(135, 282);
+            guna2Panel4.Margin = new Padding(4, 5, 4, 5);
+            guna2Panel4.Name = "guna2Panel4";
+            guna2Panel4.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            guna2Panel4.Size = new Size(1253, 433);
+            guna2Panel4.TabIndex = 66;
+            // 
+            // btnSalvarRedesSociais
+            // 
+            btnSalvarRedesSociais.BackColor = Color.FromArgb(11, 17, 30);
+            btnSalvarRedesSociais.BorderRadius = 15;
+            btnSalvarRedesSociais.CustomizableEdges = customizableEdges3;
+            btnSalvarRedesSociais.DisabledState.BorderColor = Color.DarkGray;
+            btnSalvarRedesSociais.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnSalvarRedesSociais.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnSalvarRedesSociais.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnSalvarRedesSociais.FillColor = Color.FromArgb(37, 118, 210);
+            btnSalvarRedesSociais.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSalvarRedesSociais.ForeColor = Color.White;
+            btnSalvarRedesSociais.Location = new Point(919, 352);
+            btnSalvarRedesSociais.Margin = new Padding(4, 5, 4, 5);
+            btnSalvarRedesSociais.Name = "btnSalvarRedesSociais";
+            btnSalvarRedesSociais.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            btnSalvarRedesSociais.Size = new Size(191, 60);
+            btnSalvarRedesSociais.TabIndex = 57;
+            btnSalvarRedesSociais.Text = "Salvar";
+            btnSalvarRedesSociais.Click += btnSalvarRedesSociais_Click;
+            // 
+            // txtUsuario
+            // 
+            txtUsuario.BackColor = Color.FromArgb(11, 17, 30);
+            txtUsuario.BorderStyle = BorderStyle.None;
+            txtUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtUsuario.ForeColor = Color.White;
+            txtUsuario.Location = new Point(54, 114);
+            txtUsuario.Margin = new Padding(4, 5, 4, 5);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(319, 26);
+            txtUsuario.TabIndex = 35;
+            txtUsuario.Text = "Digite aqui...";
+            txtUsuario.TextChanged += txtUsuario_TextChanged;
+            // 
+            // btnAlterarUsuario
+            // 
+            btnAlterarUsuario.BackColor = Color.FromArgb(11, 17, 30);
+            btnAlterarUsuario.BorderRadius = 15;
+            btnAlterarUsuario.CustomizableEdges = customizableEdges5;
+            btnAlterarUsuario.DisabledState.BorderColor = Color.DarkGray;
+            btnAlterarUsuario.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAlterarUsuario.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAlterarUsuario.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAlterarUsuario.FillColor = Color.FromArgb(37, 118, 210);
+            btnAlterarUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAlterarUsuario.ForeColor = Color.White;
+            btnAlterarUsuario.Location = new Point(47, 328);
+            btnAlterarUsuario.Margin = new Padding(4, 5, 4, 5);
+            btnAlterarUsuario.Name = "btnAlterarUsuario";
+            btnAlterarUsuario.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnAlterarUsuario.Size = new Size(236, 68);
+            btnAlterarUsuario.TabIndex = 32;
+            btnAlterarUsuario.Text = "Alterar";
+            btnAlterarUsuario.Click += btnAlterarUsuario_Click;
+            // 
+            // txtWhatsapp
+            // 
+            txtWhatsapp.BackColor = Color.FromArgb(11, 17, 30);
+            txtWhatsapp.BorderStyle = BorderStyle.None;
+            txtWhatsapp.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtWhatsapp.ForeColor = Color.White;
+            txtWhatsapp.Location = new Point(954, 287);
+            txtWhatsapp.Margin = new Padding(4, 5, 4, 5);
+            txtWhatsapp.Mask = "(00)00000-0000";
+            txtWhatsapp.Name = "txtWhatsapp";
+            txtWhatsapp.Size = new Size(257, 24);
+            txtWhatsapp.TabIndex = 56;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.BackColor = Color.FromArgb(11, 17, 30);
+            label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.White;
+            label4.Location = new Point(47, 178);
+            label4.Margin = new Padding(4, 0, 4, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(213, 31);
+            label4.TabIndex = 29;
+            label4.Text = "Nome de Exibição:";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.FromArgb(11, 17, 30);
+            label1.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(488, 72);
+            label1.Margin = new Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(236, 31);
+            label1.TabIndex = 61;
+            label1.Text = "Data de Nascimento:";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.FromArgb(11, 17, 30);
+            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.White;
+            label3.Location = new Point(47, 78);
+            label3.Margin = new Padding(4, 0, 4, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(103, 31);
+            label3.TabIndex = 28;
+            label3.Text = "Usuário:";
+            // 
+            // txtInstagram
+            // 
+            txtInstagram.BackColor = Color.FromArgb(11, 17, 30);
+            txtInstagram.BorderStyle = BorderStyle.None;
+            txtInstagram.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtInstagram.ForeColor = Color.White;
+            txtInstagram.Location = new Point(954, 193);
+            txtInstagram.Margin = new Padding(4, 5, 4, 5);
+            txtInstagram.Name = "txtInstagram";
+            txtInstagram.Size = new Size(257, 30);
+            txtInstagram.TabIndex = 54;
+            txtInstagram.Text = "Digite aqui....";
+            // 
+            // lblDataDeNascimento
+            // 
+            lblDataDeNascimento.AutoSize = true;
+            lblDataDeNascimento.BackColor = Color.FromArgb(11, 17, 30);
+            lblDataDeNascimento.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblDataDeNascimento.ForeColor = Color.White;
+            lblDataDeNascimento.Location = new Point(488, 116);
+            lblDataDeNascimento.Margin = new Padding(4, 0, 4, 0);
+            lblDataDeNascimento.Name = "lblDataDeNascimento";
+            lblDataDeNascimento.Size = new Size(64, 31);
+            lblDataDeNascimento.TabIndex = 62;
+            lblDataDeNascimento.Text = "Data";
+            // 
+            // txtNomeExibicao
+            // 
+            txtNomeExibicao.BackColor = Color.FromArgb(11, 17, 30);
+            txtNomeExibicao.BorderStyle = BorderStyle.None;
+            txtNomeExibicao.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtNomeExibicao.ForeColor = Color.White;
+            txtNomeExibicao.Location = new Point(54, 214);
+            txtNomeExibicao.Margin = new Padding(4, 5, 4, 5);
+            txtNomeExibicao.Name = "txtNomeExibicao";
+            txtNomeExibicao.Size = new Size(319, 26);
+            txtNomeExibicao.TabIndex = 39;
+            txtNomeExibicao.Text = "Digite aqui...";
+            // 
+            // txtLinkedin
+            // 
+            txtLinkedin.BackColor = Color.FromArgb(11, 17, 30);
+            txtLinkedin.BorderStyle = BorderStyle.None;
+            txtLinkedin.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtLinkedin.ForeColor = Color.White;
+            txtLinkedin.Location = new Point(954, 102);
+            txtLinkedin.Margin = new Padding(4, 5, 4, 5);
+            txtLinkedin.Name = "txtLinkedin";
+            txtLinkedin.Size = new Size(257, 30);
+            txtLinkedin.TabIndex = 53;
+            txtLinkedin.Text = "Digite aqui....";
+            // 
+            // txtSenha
+            // 
+            txtSenha.BackColor = Color.FromArgb(11, 17, 30);
+            txtSenha.BorderStyle = BorderStyle.None;
+            txtSenha.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtSenha.ForeColor = Color.White;
+            txtSenha.Location = new Point(496, 212);
+            txtSenha.Margin = new Padding(4, 5, 4, 5);
+            txtSenha.Name = "txtSenha";
+            txtSenha.ReadOnly = true;
+            txtSenha.Size = new Size(293, 26);
+            txtSenha.TabIndex = 64;
+            txtSenha.Text = "asdadasd";
+            txtSenha.UseSystemPasswordChar = true;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.FromArgb(23, 23, 34);
+            pictureBox3.Image = Properties.Resources.instagram;
+            pictureBox3.Location = new Point(883, 178);
+            pictureBox3.Margin = new Padding(4, 5, 4, 5);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(61, 60);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 52;
+            pictureBox3.TabStop = false;
+            // 
+            // btnAlterarSenha
+            // 
+            btnAlterarSenha.BackColor = Color.FromArgb(11, 17, 30);
+            btnAlterarSenha.BorderRadius = 15;
+            btnAlterarSenha.CustomizableEdges = customizableEdges7;
+            btnAlterarSenha.DisabledState.BorderColor = Color.DarkGray;
+            btnAlterarSenha.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnAlterarSenha.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnAlterarSenha.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnAlterarSenha.FillColor = Color.FromArgb(37, 118, 210);
+            btnAlterarSenha.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAlterarSenha.ForeColor = Color.White;
+            btnAlterarSenha.Location = new Point(488, 249);
+            btnAlterarSenha.Margin = new Padding(4, 5, 4, 5);
+            btnAlterarSenha.Name = "btnAlterarSenha";
+            btnAlterarSenha.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnAlterarSenha.Size = new Size(230, 62);
+            btnAlterarSenha.TabIndex = 65;
+            btnAlterarSenha.Text = "Alterar Senha";
+            btnAlterarSenha.Click += btnAlterarSenha_Click;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.BackColor = Color.FromArgb(23, 23, 34);
+            pictureBox2.Image = Properties.Resources.whatsapp;
+            pictureBox2.Location = new Point(883, 272);
+            pictureBox2.Margin = new Padding(4, 5, 4, 5);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(61, 60);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 51;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.FromArgb(23, 23, 34);
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(883, 87);
+            pictureBox1.Margin = new Padding(4, 5, 4, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(61, 60);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 49;
+            pictureBox1.TabStop = false;
+            // 
+            // lblSenha
+            // 
+            lblSenha.AutoSize = true;
+            lblSenha.BackColor = Color.FromArgb(11, 17, 30);
+            lblSenha.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblSenha.ForeColor = Color.White;
+            lblSenha.Location = new Point(488, 178);
+            lblSenha.Margin = new Padding(4, 0, 4, 0);
+            lblSenha.Name = "lblSenha";
+            lblSenha.Size = new Size(85, 31);
+            lblSenha.TabIndex = 63;
+            lblSenha.Text = "Senha:";
+            // 
+            // txtEmail
+            // 
+            txtEmail.BackColor = Color.FromArgb(11, 17, 30);
+            txtEmail.BorderStyle = BorderStyle.None;
+            txtEmail.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            txtEmail.ForeColor = Color.White;
+            txtEmail.Location = new Point(47, 318);
+            txtEmail.Margin = new Padding(4, 5, 4, 5);
+            txtEmail.Name = "txtEmail";
+            txtEmail.ReadOnly = true;
+            txtEmail.Size = new Size(319, 26);
+            txtEmail.TabIndex = 60;
             // 
             // sidebar_panel
             // 
@@ -497,7 +497,7 @@
             miniFotoPerfil.ShadowDecoration.CustomizableEdges = customizableEdges15;
             miniFotoPerfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             miniFotoPerfil.Size = new Size(71, 73);
-            miniFotoPerfil.SizeMode = PictureBoxSizeMode.Zoom;
+            miniFotoPerfil.SizeMode = PictureBoxSizeMode.StretchImage;
             miniFotoPerfil.TabIndex = 0;
             miniFotoPerfil.TabStop = false;
             // 
@@ -632,12 +632,12 @@
             Text = "Perfil";
             Load += Perfil_Load;
             guna2Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)CpFotodePerfil).EndInit();
+            guna2Panel4.ResumeLayout(false);
+            guna2Panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            guna2Panel4.ResumeLayout(false);
-            guna2Panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)CpFotodePerfil).EndInit();
             sidebar_panel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)miniFotoPerfil).EndInit();
             perfil_panel.ResumeLayout(false);
