@@ -23,15 +23,15 @@ namespace VYNDRA
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
-
+            CarregarCardsDeChat();
             CarregarCards();
             miniFotoPerfil.SizeMode = PictureBoxSizeMode.Zoom;
 
-            Users usuario = new Users();
+            var usuario = Users.BuscarPorId(Sessao.IdUsuario);
 
-            if (usuario.CarregarRedesSociais(Sessao.IdUsuario) && Sessao.FotoPerfil != null && Sessao.FotoPerfil.Length > 0)
+            if (usuario != null && usuario.FotoPerfil != null && usuario.FotoPerfil.Length > 0)
             {
-                using (MemoryStream ms = new MemoryStream(Sessao.FotoPerfil))
+                using (MemoryStream ms = new MemoryStream(usuario.FotoPerfil))
                 {
                     miniFotoPerfil.Image = Image.FromStream(ms);
                 }
@@ -40,8 +40,8 @@ namespace VYNDRA
             {
                 miniFotoPerfil.Image = null;
             }
-
         }
+
 
         private void contatos_btn_Click(object sender, EventArgs e)
         {
@@ -84,12 +84,105 @@ namespace VYNDRA
                     }
                 }
 
-                card.ContatoSelecionado += ContatoSelecionado;
+                bool estaOnline = StatusUsuarios.EstaOnline(amigo.Id);
+                card.AtualizarStatusOnline(estaOnline);
 
-                Debug.WriteLine("Adicionando card de contato: " + amigo.Nome);
-                contatos_layout.Controls.Add(card);
+                if (estaOnline)
+                {
+                    if (ativos_flow.InvokeRequired)
+                    {
+                        ativos_flow.Invoke(new Action(() =>
+                        {
+                            if (!ativos_flow.Controls.Contains(card))
+                                ativos_flow.Controls.Add(card);
+                        }));
+                    }
+                    else
+                    {
+                        if (!ativos_flow.Controls.Contains(card))
+                            ativos_flow.Controls.Add(card);
+                    }
+                }
+                else
+                {
+
+                    if (contatos_layout.InvokeRequired)
+                    {
+                        contatos_layout.Invoke(new Action(() =>
+                        {
+                            if (!contatos_layout.Controls.Contains(card))
+                                contatos_layout.Controls.Add(card);
+                        }));
+                    }
+                    else
+                    {
+                        if (!contatos_layout.Controls.Contains(card))
+                            contatos_layout.Controls.Add(card);
+                    }
+                }
+
+                StatusUsuarios.UsuarioFicouOnline += (id) =>
+                {
+                    if (id == amigo.Id)
+                    {
+                        if (ativos_flow.InvokeRequired)
+                        {
+                            ativos_flow.Invoke(new Action(() =>
+                            {
+                                card.AtualizarStatusOnline(true);
+                                if (!ativos_flow.Controls.Contains(card))
+                                    ativos_flow.Controls.Add(card);
+
+                                if (contatos_layout.Controls.Contains(card))
+                                    contatos_layout.Controls.Remove(card);
+                            }));
+                        }
+                        else
+                        {
+                            card.AtualizarStatusOnline(true);
+                            if (!ativos_flow.Controls.Contains(card))
+                                ativos_flow.Controls.Add(card);
+
+                            if (contatos_layout.Controls.Contains(card))
+                                contatos_layout.Controls.Remove(card);
+                        }
+                    }
+                };
+
+                StatusUsuarios.UsuarioFicouOffline += (id) =>
+                {
+                    if (id == amigo.Id)
+                    {
+                        if (contatos_layout.InvokeRequired)
+                        {
+                            contatos_layout.Invoke(new Action(() =>
+                            {
+                                card.AtualizarStatusOnline(false);
+                                if (!contatos_layout.Controls.Contains(card))
+                                    contatos_layout.Controls.Add(card);
+
+                                if (ativos_flow.Controls.Contains(card))
+                                    ativos_flow.Controls.Add(card);
+                            }));
+                        }
+                        else
+                        {
+                            card.AtualizarStatusOnline(false);
+                            if (!contatos_layout.Controls.Contains(card))
+                                contatos_layout.Controls.Add(card);
+
+                            if (ativos_flow.Controls.Contains(card))
+                                ativos_flow.Controls.Remove(card);
+                        }
+                    }
+                };
+
+                card.ContatoSelecionado += ContatoSelecionado;
             }
         }
+
+
+
 
 
         private void contatos_layout_VisibleChanged(object sender, EventArgs e)
@@ -107,16 +200,21 @@ namespace VYNDRA
 
         private void ContatoSelecionado(object sender, int idContato)
         {
-
             chat_panel.Controls.Clear();
 
+            principal_panel.Visible = false;
+            chat_panel.Visible = true;
+            chat_panel.Dock = DockStyle.Fill;
+
             var chat = new Chat();
-            chat.Dock = DockStyle.Fill;
             chat.CarregarConversa(idContato);
-            Debug.WriteLine("Carregando conversa para o contato com ID: " + idContato);
+
+            Debug.WriteLine($"Carregando conversa para o contato com ID: {idContato}");
 
             chat_panel.Controls.Add(chat);
+            chat.Focus();
         }
+
 
         private void contatos_layout_DoubleClick(object sender, EventArgs e)
         {
@@ -125,8 +223,8 @@ namespace VYNDRA
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu(Sessao.IdUsuario);
-            menu.Show();
+            TelaPrincipal telaPrincipal = new TelaPrincipal(Sessao.IdUsuario);
+            telaPrincipal.Show();
             this.Close();
         }
 

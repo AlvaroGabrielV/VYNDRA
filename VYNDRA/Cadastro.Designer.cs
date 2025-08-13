@@ -31,6 +31,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cadastro));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -80,11 +81,11 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label1.Font = new Font("Bahnschrift", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
             label1.Location = new Point(196, 76);
             label1.Name = "label1";
-            label1.Size = new Size(122, 25);
+            label1.Size = new Size(130, 30);
             label1.TabIndex = 6;
             label1.Text = "Bem-Vindo!";
             // 
@@ -92,11 +93,11 @@
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label2.Font = new Font("Bahnschrift", 11F, FontStyle.Bold);
+            label2.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
             label2.Location = new Point(114, 100);
             label2.Name = "label2";
-            label2.Size = new Size(56, 18);
+            label2.Size = new Size(57, 20);
             label2.TabIndex = 7;
             label2.Text = "E-mail:";
             // 
@@ -104,11 +105,11 @@
             // 
             label3.AutoSize = true;
             label3.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label3.Font = new Font("Bahnschrift", 11F, FontStyle.Bold);
+            label3.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
             label3.Location = new Point(114, 183);
             label3.Name = "label3";
-            label3.Size = new Size(63, 18);
+            label3.Size = new Size(67, 20);
             label3.TabIndex = 8;
             label3.Text = "Usuário:";
             // 
@@ -116,11 +117,11 @@
             // 
             label4.AutoSize = true;
             label4.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label4.Font = new Font("Bahnschrift", 11F, FontStyle.Bold);
+            label4.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label4.ForeColor = Color.White;
             label4.Location = new Point(114, 270);
             label4.Name = "label4";
-            label4.Size = new Size(131, 18);
+            label4.Size = new Size(138, 20);
             label4.TabIndex = 9;
             label4.Text = "Nome de Exibição:";
             // 
@@ -128,11 +129,11 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label5.Font = new Font("Bahnschrift", 11F, FontStyle.Bold);
+            label5.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label5.ForeColor = Color.White;
-            label5.Location = new Point(114, 358);
+            label5.Location = new Point(114, 354);
             label5.Name = "label5";
-            label5.Size = new Size(52, 18);
+            label5.Size = new Size(55, 20);
             label5.TabIndex = 10;
             label5.Text = "Senha:";
             // 
@@ -140,11 +141,11 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label6.Font = new Font("Bahnschrift", 11F, FontStyle.Bold);
+            label6.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label6.ForeColor = Color.White;
-            label6.Location = new Point(114, 431);
+            label6.Location = new Point(114, 438);
             label6.Name = "label6";
-            label6.Size = new Size(143, 18);
+            label6.Size = new Size(152, 20);
             label6.TabIndex = 11;
             label6.Text = "Data de nascimento:";
             // 
@@ -157,9 +158,10 @@
             btnCadastrar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnCadastrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnCadastrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnCadastrar.FillColor = Color.FromArgb(37, 118, 210);
             btnCadastrar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnCadastrar.ForeColor = Color.White;
-            btnCadastrar.Location = new Point(172, 540);
+            btnCadastrar.Location = new Point(172, 529);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.ShadowDecoration.CustomizableEdges = customizableEdges24;
             btnCadastrar.Size = new Size(161, 37);
@@ -178,8 +180,7 @@
             guna2Button3.FillColor = Color.Transparent;
             guna2Button3.Font = new Font("Segoe UI", 9F);
             guna2Button3.ForeColor = Color.FromArgb(0, 4, 40, 242);
-            guna2Button3.Image = Properties.Resources.Inserir_um_título__1_;
-            guna2Button3.ImageSize = new Size(30, 30);
+            guna2Button3.Image = (Image)resources.GetObject("guna2Button3.Image");
             guna2Button3.Location = new Point(65, 76);
             guna2Button3.Name = "guna2Button3";
             guna2Button3.ShadowDecoration.CustomizableEdges = customizableEdges26;
@@ -234,7 +235,7 @@
             // 
             txtEmail.BackColor = Color.FromArgb(80, 80, 80);
             txtEmail.BorderStyle = BorderStyle.None;
-            txtEmail.Font = new Font("Segoe UI", 10F);
+            txtEmail.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtEmail.ForeColor = Color.White;
             txtEmail.Location = new Point(124, 134);
             txtEmail.Name = "txtEmail";
@@ -269,7 +270,7 @@
             // 
             txtUsuario.BackColor = Color.FromArgb(80, 80, 80);
             txtUsuario.BorderStyle = BorderStyle.None;
-            txtUsuario.Font = new Font("Segoe UI", 10F);
+            txtUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtUsuario.ForeColor = Color.White;
             txtUsuario.Location = new Point(124, 218);
             txtUsuario.Name = "txtUsuario";
@@ -304,9 +305,9 @@
             // 
             txtSenha.BackColor = Color.FromArgb(80, 80, 80);
             txtSenha.BorderStyle = BorderStyle.None;
-            txtSenha.Font = new Font("Segoe UI", 10F);
+            txtSenha.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSenha.ForeColor = Color.White;
-            txtSenha.Location = new Point(124, 395);
+            txtSenha.Location = new Point(124, 391);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(269, 18);
             txtSenha.TabIndex = 20;
@@ -328,7 +329,7 @@
             guna2Button4.HoverState.CustomBorderColor = Color.FromArgb(80, 80, 80);
             guna2Button4.HoverState.FillColor = Color.FromArgb(80, 80, 80);
             guna2Button4.HoverState.ForeColor = Color.FromArgb(80, 80, 80);
-            guna2Button4.Location = new Point(114, 381);
+            guna2Button4.Location = new Point(114, 377);
             guna2Button4.Name = "guna2Button4";
             guna2Button4.PressedColor = Color.FromArgb(80, 80, 80);
             guna2Button4.PressedDepth = 0;
@@ -340,7 +341,7 @@
             // 
             txtNomeExibicao.BackColor = Color.FromArgb(80, 80, 80);
             txtNomeExibicao.BorderStyle = BorderStyle.None;
-            txtNomeExibicao.Font = new Font("Segoe UI", 10F);
+            txtNomeExibicao.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtNomeExibicao.ForeColor = Color.White;
             txtNomeExibicao.Location = new Point(124, 306);
             txtNomeExibicao.Name = "txtNomeExibicao";
@@ -383,7 +384,7 @@
             btnOcultarSenha.Font = new Font("Segoe UI", 9F);
             btnOcultarSenha.ForeColor = Color.White;
             btnOcultarSenha.Image = Properties.Resources.eye_slash;
-            btnOcultarSenha.Location = new Point(368, 386);
+            btnOcultarSenha.Location = new Point(368, 391);
             btnOcultarSenha.Name = "btnOcultarSenha";
             btnOcultarSenha.ShadowDecoration.CustomizableEdges = customizableEdges40;
             btnOcultarSenha.Size = new Size(25, 18);
@@ -405,14 +406,14 @@
             // DataNascimentoPicker
             // 
             DataNascimentoPicker.BackColor = Color.Transparent;
-            DataNascimentoPicker.BorderRadius = 10;
+            DataNascimentoPicker.BorderRadius = 5;
             DataNascimentoPicker.Checked = true;
             DataNascimentoPicker.CustomizableEdges = customizableEdges43;
             DataNascimentoPicker.FillColor = Color.FromArgb(80, 80, 80);
             DataNascimentoPicker.FocusedColor = Color.FromArgb(80, 80, 80);
             DataNascimentoPicker.Font = new Font("Segoe UI", 9F);
             DataNascimentoPicker.Format = DateTimePickerFormat.Short;
-            DataNascimentoPicker.Location = new Point(114, 456);
+            DataNascimentoPicker.Location = new Point(114, 463);
             DataNascimentoPicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             DataNascimentoPicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             DataNascimentoPicker.Name = "DataNascimentoPicker";
@@ -428,7 +429,7 @@
             lblErrorDataNascimento.BackColor = Color.FromArgb(0, 4, 40, 242);
             lblErrorDataNascimento.Font = new Font("Bahnschrift", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblErrorDataNascimento.ForeColor = Color.Red;
-            lblErrorDataNascimento.Location = new Point(114, 500);
+            lblErrorDataNascimento.Location = new Point(114, 512);
             lblErrorDataNascimento.Name = "lblErrorDataNascimento";
             lblErrorDataNascimento.Size = new Size(0, 13);
             lblErrorDataNascimento.TabIndex = 29;
@@ -489,7 +490,9 @@
             Controls.Add(PanelTopo);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Cadastro";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = " ";
             Load += Cadastro_Load;
             ResumeLayout(false);

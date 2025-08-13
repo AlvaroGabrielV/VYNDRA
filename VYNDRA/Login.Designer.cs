@@ -42,6 +42,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -149,7 +150,7 @@
             btnEntrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnEntrar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEntrar.ForeColor = Color.White;
-            btnEntrar.Location = new Point(497, 435);
+            btnEntrar.Location = new Point(497, 412);
             btnEntrar.Name = "btnEntrar";
             btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnEntrar.Size = new Size(134, 36);
@@ -203,7 +204,7 @@
             // 
             txtLogin.BackColor = Color.FromArgb(80, 80, 80);
             txtLogin.BorderStyle = BorderStyle.None;
-            txtLogin.Font = new Font("Segoe UI", 10F);
+            txtLogin.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtLogin.ForeColor = Color.White;
             txtLogin.Location = new Point(419, 230);
             txtLogin.Name = "txtLogin";
@@ -213,7 +214,7 @@
             // guna2Button4
             // 
             guna2Button4.BackColor = Color.Transparent;
-            guna2Button4.BorderRadius = 20;
+            guna2Button4.BorderRadius = 5;
             guna2Button4.CustomizableEdges = customizableEdges7;
             guna2Button4.DisabledState.BorderColor = Color.DarkGray;
             guna2Button4.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -238,7 +239,7 @@
             // 
             txtSenha.BackColor = Color.FromArgb(80, 80, 80);
             txtSenha.BorderStyle = BorderStyle.None;
-            txtSenha.Font = new Font("Segoe UI", 10F);
+            txtSenha.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtSenha.ForeColor = Color.White;
             txtSenha.Location = new Point(419, 327);
             txtSenha.Name = "txtSenha";
@@ -249,7 +250,7 @@
             // guna2Button5
             // 
             guna2Button5.BackColor = Color.Transparent;
-            guna2Button5.BorderRadius = 20;
+            guna2Button5.BorderRadius = 5;
             guna2Button5.CustomizableEdges = customizableEdges9;
             guna2Button5.DisabledState.BorderColor = Color.DarkGray;
             guna2Button5.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -307,7 +308,7 @@
             lblError.BackColor = Color.FromArgb(0, 4, 40, 242);
             lblError.Font = new Font("Bahnschrift", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblError.ForeColor = Color.Red;
-            lblError.Location = new Point(410, 394);
+            lblError.Location = new Point(446, 385);
             lblError.Name = "lblError";
             lblError.Size = new Size(0, 13);
             lblError.TabIndex = 28;
@@ -338,6 +339,7 @@
             Controls.Add(PanelTopo);
             DoubleBuffered = true;
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";

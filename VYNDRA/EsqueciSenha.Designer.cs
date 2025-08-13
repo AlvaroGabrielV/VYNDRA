@@ -41,7 +41,6 @@
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             btnEnviar = new Guna.UI2.WinForms.Guna2Button();
             label3 = new Label();
-            label4 = new Label();
             btnMinimizar = new Guna.UI2.WinForms.Guna2Button();
             btnFechar = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
@@ -50,30 +49,30 @@
             // 
             txtEmailRecuperacao.BackColor = Color.FromArgb(80, 80, 80);
             txtEmailRecuperacao.BorderStyle = BorderStyle.None;
-            txtEmailRecuperacao.Font = new Font("Segoe UI", 10F);
+            txtEmailRecuperacao.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtEmailRecuperacao.ForeColor = Color.White;
-            txtEmailRecuperacao.Location = new Point(148, 181);
+            txtEmailRecuperacao.Location = new Point(89, 142);
             txtEmailRecuperacao.Name = "txtEmailRecuperacao";
+            txtEmailRecuperacao.PlaceholderText = "Ex: seuemail@exemplo.com";
             txtEmailRecuperacao.Size = new Size(269, 18);
             txtEmailRecuperacao.TabIndex = 18;
-            txtEmailRecuperacao.Text = "Ex: seuemail@exemplo.com";
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label1.Font = new Font("Bahnschrift", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(22, 22);
+            label1.Location = new Point(52, 37);
             label1.Name = "label1";
-            label1.Size = new Size(296, 25);
+            label1.Size = new Size(335, 25);
             label1.TabIndex = 19;
-            label1.Text = "Digite o Email de Recuperação";
+            label1.Text = "Informe o seu email de recuperação:\r\n";
             // 
             // guna2Button1
             // 
             guna2Button1.BackColor = Color.Transparent;
-            guna2Button1.BorderRadius = 20;
+            guna2Button1.BorderRadius = 5;
             guna2Button1.CustomizableEdges = customizableEdges1;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
@@ -86,7 +85,7 @@
             guna2Button1.HoverState.CustomBorderColor = Color.FromArgb(80, 80, 80);
             guna2Button1.HoverState.FillColor = Color.FromArgb(80, 80, 80);
             guna2Button1.HoverState.ForeColor = Color.FromArgb(80, 80, 80);
-            guna2Button1.Location = new Point(138, 167);
+            guna2Button1.Location = new Point(78, 128);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.PressedColor = Color.FromArgb(80, 80, 80);
             guna2Button1.PressedDepth = 0;
@@ -105,7 +104,7 @@
             btnEnviar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
             btnEnviar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEnviar.ForeColor = Color.White;
-            btnEnviar.Location = new Point(213, 236);
+            btnEnviar.Location = new Point(158, 202);
             btnEnviar.Name = "btnEnviar";
             btnEnviar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnEnviar.Size = new Size(134, 36);
@@ -116,24 +115,13 @@
             // label3
             // 
             label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 10F);
+            label3.Font = new Font("Segoe UI", 8.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.White;
-            label3.Location = new Point(42, 70);
+            label3.Location = new Point(52, 72);
             label3.Name = "label3";
-            label3.Size = new Size(599, 19);
+            label3.Size = new Size(345, 30);
             label3.TabIndex = 23;
-            label3.Text = "Informe o e-mail que você usou ao se cadastrar. Enviaremos um código para ";
-            // 
-            // label4
-            // 
-            label4.BackColor = Color.Transparent;
-            label4.Font = new Font("Segoe UI", 10F);
-            label4.ForeColor = Color.White;
-            label4.Location = new Point(42, 89);
-            label4.Name = "label4";
-            label4.Size = new Size(599, 19);
-            label4.TabIndex = 24;
-            label4.Text = "redefinir sua senha.";
+            label3.Text = "Informe o e-mail que você usou ao se cadastrar. Enviaremos um\r\ncódigo para redefinir sua senha.\r\n";
             // 
             // btnMinimizar
             // 
@@ -149,7 +137,7 @@
             btnMinimizar.ForeColor = Color.White;
             btnMinimizar.Image = Properties.Resources.minimizar;
             btnMinimizar.ImageSize = new Size(11, 11);
-            btnMinimizar.Location = new Point(536, 1);
+            btnMinimizar.Location = new Point(397, 12);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnMinimizar.Size = new Size(20, 20);
@@ -170,7 +158,7 @@
             btnFechar.ForeColor = Color.White;
             btnFechar.Image = Properties.Resources.xCorreto;
             btnFechar.ImageSize = new Size(11, 11);
-            btnFechar.Location = new Point(562, 1);
+            btnFechar.Location = new Point(423, 12);
             btnFechar.Name = "btnFechar";
             btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnFechar.Size = new Size(20, 20);
@@ -181,11 +169,10 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(17, 23, 34);
-            ClientSize = new Size(582, 386);
+            BackColor = Color.FromArgb(39, 38, 38);
+            ClientSize = new Size(450, 300);
             Controls.Add(btnMinimizar);
             Controls.Add(btnFechar);
-            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(btnEnviar);
             Controls.Add(txtEmailRecuperacao);
@@ -207,7 +194,6 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2Button btnEnviar;
         private Label label3;
-        private Label label4;
         private Guna.UI2.WinForms.Guna2Button btnMinimizar;
         private Guna.UI2.WinForms.Guna2Button btnFechar;
     }

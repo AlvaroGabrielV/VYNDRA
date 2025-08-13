@@ -29,16 +29,20 @@
         private void InitializeComponent()
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             lb_nomedocontato = new Guna.UI2.WinForms.Guna2HtmlLabel();
             fotocontato_box = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            picStatus = new Guna.UI2.WinForms.Guna2PictureBox();
             clicar_contato = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)fotocontato_box).BeginInit();
             guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)picStatus).BeginInit();
             SuspendLayout();
             // 
             // lb_nomedocontato
@@ -70,21 +74,39 @@
             // 
             guna2Panel1.BackColor = Color.Transparent;
             guna2Panel1.BorderRadius = 15;
+            guna2Panel1.Controls.Add(picStatus);
             guna2Panel1.Controls.Add(clicar_contato);
             guna2Panel1.Controls.Add(lb_nomedocontato);
             guna2Panel1.Controls.Add(fotocontato_box);
-            guna2Panel1.CustomizableEdges = customizableEdges4;
-            guna2Panel1.FillColor = Color.FromArgb(17, 23, 34);
+            guna2Panel1.CustomizableEdges = customizableEdges6;
+            guna2Panel1.FillColor = Color.FromArgb(29, 52, 66);
             guna2Panel1.Location = new Point(3, 3);
             guna2Panel1.Name = "guna2Panel1";
-            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges7;
             guna2Panel1.Size = new Size(264, 60);
             guna2Panel1.TabIndex = 2;
             guna2Panel1.UseTransparentBackground = true;
             // 
+            // picStatus
+            // 
+            picStatus.CustomizableEdges = customizableEdges2;
+            picStatus.ErrorImage = Properties.Resources.offline_status;
+            picStatus.Image = Properties.Resources.online_status;
+            picStatus.ImageRotate = 0F;
+            picStatus.InitialImage = null;
+            picStatus.Location = new Point(37, 39);
+            picStatus.Name = "picStatus";
+            picStatus.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            picStatus.Size = new Size(16, 16);
+            picStatus.SizeMode = PictureBoxSizeMode.StretchImage;
+            picStatus.TabIndex = 3;
+            picStatus.TabStop = false;
+            picStatus.UseTransparentBackground = true;
+            // 
             // clicar_contato
             // 
-            clicar_contato.CustomizableEdges = customizableEdges2;
+            clicar_contato.BackColor = Color.Transparent;
+            clicar_contato.CustomizableEdges = customizableEdges4;
             clicar_contato.DisabledState.BorderColor = Color.DarkGray;
             clicar_contato.DisabledState.CustomBorderColor = Color.DarkGray;
             clicar_contato.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -94,7 +116,7 @@
             clicar_contato.ForeColor = Color.White;
             clicar_contato.Location = new Point(-3, 0);
             clicar_contato.Name = "clicar_contato";
-            clicar_contato.ShadowDecoration.CustomizableEdges = customizableEdges3;
+            clicar_contato.ShadowDecoration.CustomizableEdges = customizableEdges5;
             clicar_contato.Size = new Size(267, 60);
             clicar_contato.TabIndex = 2;
             clicar_contato.UseTransparentBackground = true;
@@ -108,9 +130,11 @@
             Controls.Add(guna2Panel1);
             Name = "Contato";
             Size = new Size(270, 66);
+            Load += Contato_Load;
             ((System.ComponentModel.ISupportInitialize)fotocontato_box).EndInit();
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)picStatus).EndInit();
             ResumeLayout(false);
         }
 
@@ -119,5 +143,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lb_nomedocontato;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Button clicar_contato;
+        private Guna.UI2.WinForms.Guna2PictureBox picStatus;
     }
 }

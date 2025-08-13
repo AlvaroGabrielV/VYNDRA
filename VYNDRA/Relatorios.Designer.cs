@@ -47,6 +47,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Relatorios));
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             FlowPanelConteudo = new FlowLayoutPanel();
             label1 = new Label();
@@ -68,39 +69,41 @@
             // 
             // guna2Panel2
             // 
+            guna2Panel2.BackColor = Color.FromArgb(17, 23, 34);
             guna2Panel2.BorderRadius = 30;
             guna2Panel2.Controls.Add(FlowPanelConteudo);
             guna2Panel2.Controls.Add(label1);
             guna2Panel2.CustomizableEdges = customizableEdges1;
-            guna2Panel2.Dock = DockStyle.Fill;
-            guna2Panel2.FillColor = Color.FromArgb(32, 56, 73);
-            guna2Panel2.Location = new Point(5, 5);
+            guna2Panel2.FillColor = Color.FromArgb(29, 52, 66);
+            guna2Panel2.Location = new Point(8, 0);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel2.Size = new Size(1179, 716);
+            guna2Panel2.Size = new Size(1173, 725);
             guna2Panel2.TabIndex = 1;
             // 
             // FlowPanelConteudo
             // 
-            FlowPanelConteudo.BackColor = Color.FromArgb(32, 56, 73);
-            FlowPanelConteudo.Location = new Point(0, 57);
+            FlowPanelConteudo.BackColor = Color.FromArgb(29, 52, 66);
+            FlowPanelConteudo.Location = new Point(3, 57);
             FlowPanelConteudo.Name = "FlowPanelConteudo";
-            FlowPanelConteudo.Size = new Size(1175, 656);
+            FlowPanelConteudo.Size = new Size(1166, 646);
             FlowPanelConteudo.TabIndex = 1;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Bahnschrift Light SemiCondensed", 27.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(28, 9);
+            label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
+            label1.Location = new Point(17, 15);
             label1.Name = "label1";
-            label1.Size = new Size(169, 45);
+            label1.Size = new Size(134, 32);
             label1.TabIndex = 0;
             label1.Text = "Anotações";
             // 
             // panel_relatoiros
             // 
+            panel_relatoiros.BackColor = Color.FromArgb(17, 23, 34);
             panel_relatoiros.Controls.Add(guna2Panel2);
             panel_relatoiros.CustomizableEdges = customizableEdges3;
             panel_relatoiros.Dock = DockStyle.Fill;
@@ -114,7 +117,7 @@
             // 
             // sidebar_panel
             // 
-            sidebar_panel.BackColor = Color.Transparent;
+            sidebar_panel.BackColor = Color.FromArgb(17, 23, 34);
             sidebar_panel.BorderRadius = 30;
             sidebar_panel.Controls.Add(btnHome);
             sidebar_panel.Controls.Add(miniFotoPerfil);
@@ -125,13 +128,12 @@
             customizableEdges12.TopLeft = false;
             sidebar_panel.CustomizableEdges = customizableEdges12;
             sidebar_panel.Dock = DockStyle.Left;
-            sidebar_panel.FillColor = Color.FromArgb(31, 45, 71);
+            sidebar_panel.FillColor = Color.FromArgb(29, 52, 66);
             sidebar_panel.Location = new Point(0, 23);
             sidebar_panel.Name = "sidebar_panel";
             sidebar_panel.ShadowDecoration.CustomizableEdges = customizableEdges13;
             sidebar_panel.Size = new Size(73, 726);
             sidebar_panel.TabIndex = 2;
-            sidebar_panel.UseTransparentBackground = true;
             // 
             // btnHome
             // 
@@ -140,7 +142,7 @@
             btnHome.DisabledState.CustomBorderColor = Color.DarkGray;
             btnHome.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnHome.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnHome.FillColor = Color.FromArgb(31, 45, 71);
+            btnHome.FillColor = Color.FromArgb(29, 52, 66);
             btnHome.Font = new Font("Segoe UI", 9F);
             btnHome.ForeColor = Color.White;
             btnHome.Image = Properties.Resources.botao_de_inicio;
@@ -154,7 +156,7 @@
             // 
             // miniFotoPerfil
             // 
-            miniFotoPerfil.BackColor = Color.FromArgb(31, 45, 71);
+            miniFotoPerfil.BackColor = Color.FromArgb(29, 52, 66);
             miniFotoPerfil.ImageRotate = 0F;
             miniFotoPerfil.Location = new Point(12, 653);
             miniFotoPerfil.Name = "miniFotoPerfil";
@@ -172,7 +174,7 @@
             contatos_btn.DisabledState.CustomBorderColor = Color.DarkGray;
             contatos_btn.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             contatos_btn.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            contatos_btn.FillColor = Color.FromArgb(31, 45, 71);
+            contatos_btn.FillColor = Color.FromArgb(29, 52, 66);
             contatos_btn.Font = new Font("Segoe UI", 9F);
             contatos_btn.ForeColor = Color.White;
             contatos_btn.Image = Properties.Resources.do_utilizador;
@@ -191,7 +193,7 @@
             btnRelatorios.DisabledState.CustomBorderColor = Color.DarkGray;
             btnRelatorios.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnRelatorios.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnRelatorios.FillColor = Color.FromArgb(31, 45, 71);
+            btnRelatorios.FillColor = Color.FromArgb(29, 52, 66);
             btnRelatorios.Font = new Font("Segoe UI", 9F);
             btnRelatorios.ForeColor = Color.White;
             btnRelatorios.Image = Properties.Resources.bloco_de_anotacoes;
@@ -269,6 +271,7 @@
             Controls.Add(sidebar_panel);
             Controls.Add(top_panel);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Relatorios";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Relatórios";

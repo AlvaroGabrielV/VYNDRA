@@ -24,5 +24,15 @@ namespace VYNDRA
         {
             BotaoClicado?.Invoke(this, EventArgs.Empty);
         }
+
+        private void guna2Panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

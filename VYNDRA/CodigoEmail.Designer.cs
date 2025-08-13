@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CodigoEmail));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -36,40 +37,19 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            btnMinimizar = new Guna.UI2.WinForms.Guna2Button();
             btnFechar = new Guna.UI2.WinForms.Guna2Button();
             btnEntrar = new Guna.UI2.WinForms.Guna2Button();
             label1 = new Label();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             txtCodigo = new TextBox();
+            btnMinimizar = new Guna.UI2.WinForms.Guna2Button();
             SuspendLayout();
-            // 
-            // btnMinimizar
-            // 
-            btnMinimizar.BackColor = Color.Transparent;
-            btnMinimizar.BorderColor = Color.Transparent;
-            btnMinimizar.CustomizableEdges = customizableEdges1;
-            btnMinimizar.DisabledState.BorderColor = Color.DarkGray;
-            btnMinimizar.DisabledState.CustomBorderColor = Color.DarkGray;
-            btnMinimizar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            btnMinimizar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            btnMinimizar.FillColor = Color.Transparent;
-            btnMinimizar.Font = new Font("Segoe UI", 9F);
-            btnMinimizar.ForeColor = Color.White;
-            btnMinimizar.Image = Properties.Resources.minimizar;
-            btnMinimizar.ImageSize = new Size(11, 11);
-            btnMinimizar.Location = new Point(521, -1);
-            btnMinimizar.Name = "btnMinimizar";
-            btnMinimizar.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            btnMinimizar.Size = new Size(20, 20);
-            btnMinimizar.TabIndex = 17;
-            btnMinimizar.Click += btnMinimizar_Click;
             // 
             // btnFechar
             // 
             btnFechar.BackColor = Color.Transparent;
             btnFechar.BorderColor = Color.Transparent;
-            btnFechar.CustomizableEdges = customizableEdges3;
+            btnFechar.CustomizableEdges = customizableEdges1;
             btnFechar.DisabledState.BorderColor = Color.DarkGray;
             btnFechar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFechar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -77,51 +57,54 @@
             btnFechar.FillColor = Color.Transparent;
             btnFechar.Font = new Font("Segoe UI", 9F);
             btnFechar.ForeColor = Color.White;
-            btnFechar.Image = Properties.Resources.xCorreto;
-            btnFechar.ImageSize = new Size(11, 11);
-            btnFechar.Location = new Point(547, -1);
+            btnFechar.Image = (Image)resources.GetObject("btnFechar.Image");
+            btnFechar.ImageSize = new Size(18, 18);
+            btnFechar.Location = new Point(50, 17);
             btnFechar.Name = "btnFechar";
-            btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            btnFechar.Size = new Size(20, 20);
+            btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            btnFechar.Size = new Size(79, 20);
             btnFechar.TabIndex = 16;
+            btnFechar.Text = "Cancelar";
             btnFechar.Click += btnFechar_Click;
             // 
             // btnEntrar
             // 
             btnEntrar.BackColor = Color.Transparent;
             btnEntrar.BorderRadius = 15;
-            btnEntrar.CustomizableEdges = customizableEdges5;
+            btnEntrar.CustomizableEdges = customizableEdges3;
             btnEntrar.DisabledState.BorderColor = Color.DarkGray;
             btnEntrar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEntrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnEntrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEntrar.FillColor = Color.FromArgb(25, 118, 210);
             btnEntrar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEntrar.ForeColor = Color.White;
-            btnEntrar.Location = new Point(198, 218);
+            btnEntrar.Location = new Point(163, 197);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges4;
             btnEntrar.Size = new Size(134, 36);
             btnEntrar.TabIndex = 28;
-            btnEntrar.Text = "Enviar";
+            btnEntrar.Text = "Confirmar";
             btnEntrar.Click += btnEntrar_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label1.Font = new Font("Bahnschrift", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(117, 20);
+            label1.Location = new Point(76, 72);
             label1.Name = "label1";
-            label1.Size = new Size(305, 25);
+            label1.Size = new Size(301, 21);
             label1.TabIndex = 26;
-            label1.Text = "Digite o Código de Recuperação";
+            label1.Text = "Informe o  seu código de recuperação:";
+            label1.Click += label1_Click;
             // 
             // guna2Button1
             // 
             guna2Button1.BackColor = Color.Transparent;
-            guna2Button1.BorderRadius = 20;
-            guna2Button1.CustomizableEdges = customizableEdges7;
+            guna2Button1.BorderRadius = 5;
+            guna2Button1.CustomizableEdges = customizableEdges5;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -133,11 +116,11 @@
             guna2Button1.HoverState.CustomBorderColor = Color.FromArgb(80, 80, 80);
             guna2Button1.HoverState.FillColor = Color.FromArgb(80, 80, 80);
             guna2Button1.HoverState.ForeColor = Color.FromArgb(80, 80, 80);
-            guna2Button1.Location = new Point(127, 123);
+            guna2Button1.Location = new Point(79, 122);
             guna2Button1.Name = "guna2Button1";
             guna2Button1.PressedColor = Color.FromArgb(80, 80, 80);
             guna2Button1.PressedDepth = 0;
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges6;
             guna2Button1.Size = new Size(292, 45);
             guna2Button1.TabIndex = 27;
             // 
@@ -145,20 +128,42 @@
             // 
             txtCodigo.BackColor = Color.FromArgb(80, 80, 80);
             txtCodigo.BorderStyle = BorderStyle.None;
-            txtCodigo.Font = new Font("Segoe UI", 12F);
+            txtCodigo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtCodigo.ForeColor = Color.White;
-            txtCodigo.Location = new Point(137, 135);
+            txtCodigo.Location = new Point(91, 132);
+            txtCodigo.Multiline = true;
             txtCodigo.Name = "txtCodigo";
             txtCodigo.PlaceholderText = "Ex: 123456";
-            txtCodigo.Size = new Size(269, 22);
+            txtCodigo.Size = new Size(269, 23);
             txtCodigo.TabIndex = 25;
+            // 
+            // btnMinimizar
+            // 
+            btnMinimizar.BackColor = Color.Transparent;
+            btnMinimizar.BorderColor = Color.Transparent;
+            btnMinimizar.CustomizableEdges = customizableEdges7;
+            btnMinimizar.DisabledState.BorderColor = Color.DarkGray;
+            btnMinimizar.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnMinimizar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnMinimizar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnMinimizar.FillColor = Color.Transparent;
+            btnMinimizar.Font = new Font("Segoe UI", 9F);
+            btnMinimizar.ForeColor = Color.White;
+            btnMinimizar.Image = (Image)resources.GetObject("btnMinimizar.Image");
+            btnMinimizar.ImageSize = new Size(22, 22);
+            btnMinimizar.Location = new Point(12, 11);
+            btnMinimizar.Name = "btnMinimizar";
+            btnMinimizar.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            btnMinimizar.Size = new Size(30, 30);
+            btnMinimizar.TabIndex = 17;
+            btnMinimizar.Click += btnMinimizar_Click;
             // 
             // CodigoEmail
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(17, 23, 34);
-            ClientSize = new Size(566, 347);
+            BackColor = Color.FromArgb(39, 38, 38);
+            ClientSize = new Size(450, 300);
             Controls.Add(btnEntrar);
             Controls.Add(txtCodigo);
             Controls.Add(label1);
@@ -166,6 +171,7 @@
             Controls.Add(btnMinimizar);
             Controls.Add(btnFechar);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "CodigoEmail";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "CodigoEmail";
@@ -175,12 +181,11 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2Button btnMinimizar;
         private Guna.UI2.WinForms.Guna2Button btnFechar;
         private Guna.UI2.WinForms.Guna2Button btnEntrar;
         private Label label1;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private TextBox txtCodigo;
+        private Guna.UI2.WinForms.Guna2Button btnMinimizar;
     }
 }

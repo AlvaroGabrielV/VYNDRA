@@ -17,6 +17,7 @@ namespace VYNDRA
 {
     public partial class Perfil : Form
     {
+
         public Perfil(int IdUsuario)
         {
             InitializeComponent();
@@ -34,11 +35,9 @@ namespace VYNDRA
                 {
                     string caminho = ofd.FileName;
 
-                    // Exibe no PictureBox
                     CpFotodePerfil.Image = Image.FromFile(caminho);
                     miniFotoPerfil.Image = Image.FromFile(caminho);
 
-                    // Converte imagem em byte[]
                     byte[] imagemBytes = File.ReadAllBytes(caminho);
 
                     Users usuario = new Users();
@@ -64,31 +63,34 @@ namespace VYNDRA
         }
         public void CarregarDados()
         {
-            txtEmail.Text = Sessao.Email;
-            txtNomeExibicao.Text = Sessao.NomeExibicao;
-            txtUsuario.Text = Sessao.UsuarioLogin;
-            lblDataDeNascimento.Text = Sessao.DataNascimento.ToString("dd/MM/yyyy");
+            var usuario = Users.BuscarPorId(Sessao.IdUsuario);
 
-            Users usuario = new Users();
+            if (usuario == null)
+            {
+                MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            txtEmail.Text = usuario.Email;
+            txtNomeExibicao.Text = usuario.NomeExibicao;
+            txtUsuario.Text = usuario.Usuario;
+            lblDataDeNascimento.Text = usuario.DataNascimento.ToString("dd/MM/yyyy");
 
             if (usuario.CarregarRedesSociais(Sessao.IdUsuario))
+            {
+                txtInstagram.Text = usuario.Instagram;
+                txtLinkedin.Text = usuario.Linkedin;
+                txtWhatsapp.Text = usuario.Telefone;
 
-                if (usuario != null)
+                if (usuario.FotoPerfil != null)
                 {
-                    txtInstagram.Text = usuario.Instagram;
-                    txtLinkedin.Text = usuario.Linkedin;
-                    txtWhatsapp.Text = usuario.Telefone;
-
-                    if (usuario.FotoPerfil != null)
+                    using (MemoryStream ms = new MemoryStream(usuario.FotoPerfil))
                     {
-                        Sessao.FotoPerfil = usuario.FotoPerfil;     
-                        using (MemoryStream ms = new MemoryStream(usuario.FotoPerfil))
-                        {
-                            CpFotodePerfil.Image = Image.FromStream(ms);
-                            miniFotoPerfil.Image = Image.FromStream(ms);
-                        }
+                        CpFotodePerfil.Image = Image.FromStream(ms);
+                        miniFotoPerfil.Image = Image.FromStream(ms);
                     }
                 }
+            }
         }
 
         private void btnRelatorios_Click(object sender, EventArgs e)
@@ -99,8 +101,8 @@ namespace VYNDRA
         }
         private void btnHome_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu(Sessao.IdUsuario);
-            menu.Show();
+            TelaPrincipal telaPrincipal = new TelaPrincipal(Sessao.IdUsuario);
+            telaPrincipal.Show();
             this.Close();
         }
 
@@ -194,6 +196,16 @@ namespace VYNDRA
             TelaPrincipal conversas = new TelaPrincipal(Sessao.IdUsuario);
             conversas.Show();
             this.Close();
+        }
+
+        private void btnPanel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtUsuario_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

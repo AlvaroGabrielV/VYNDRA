@@ -28,14 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlterarUsuario));
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             btnEntrar = new Guna.UI2.WinForms.Guna2Button();
             txtNovoUsuario = new TextBox();
             label1 = new Label();
@@ -52,26 +53,27 @@
             // 
             btnEntrar.BackColor = Color.Transparent;
             btnEntrar.BorderRadius = 15;
-            btnEntrar.CustomizableEdges = customizableEdges9;
+            btnEntrar.CustomizableEdges = customizableEdges1;
             btnEntrar.DisabledState.BorderColor = Color.DarkGray;
             btnEntrar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEntrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnEntrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEntrar.FillColor = Color.FromArgb(37, 118, 210);
             btnEntrar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEntrar.ForeColor = Color.White;
-            btnEntrar.Location = new Point(155, 290);
+            btnEntrar.Location = new Point(166, 243);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges10;
+            btnEntrar.ShadowDecoration.CustomizableEdges = customizableEdges2;
             btnEntrar.Size = new Size(134, 36);
             btnEntrar.TabIndex = 34;
-            btnEntrar.Text = "Alterar";
+            btnEntrar.Text = "Salvar";
             btnEntrar.Click += btnEntrar_Click;
             // 
             // txtNovoUsuario
             // 
             txtNovoUsuario.BackColor = Color.FromArgb(80, 80, 80);
             txtNovoUsuario.BorderStyle = BorderStyle.None;
-            txtNovoUsuario.Font = new Font("Segoe UI", 12F);
+            txtNovoUsuario.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtNovoUsuario.ForeColor = Color.White;
             txtNovoUsuario.Location = new Point(98, 115);
             txtNovoUsuario.MaxLength = 15;
@@ -83,19 +85,19 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = Color.FromArgb(0, 4, 40, 242);
-            label1.Font = new Font("Bahnschrift", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(64, 26);
+            label1.Location = new Point(91, 44);
             label1.Name = "label1";
-            label1.Size = new Size(347, 25);
+            label1.Size = new Size(276, 21);
             label1.TabIndex = 32;
-            label1.Text = "Alterar Usuário e Nome de Exibição";
+            label1.Text = "Alterar usuário e nome de exibição";
             // 
             // guna2Button1
             // 
             guna2Button1.BackColor = Color.Transparent;
-            guna2Button1.BorderRadius = 20;
-            guna2Button1.CustomizableEdges = customizableEdges11;
+            guna2Button1.BorderRadius = 5;
+            guna2Button1.CustomizableEdges = customizableEdges3;
             guna2Button1.DisabledState.BorderColor = Color.DarkGray;
             guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -111,7 +113,7 @@
             guna2Button1.Name = "guna2Button1";
             guna2Button1.PressedColor = Color.FromArgb(80, 80, 80);
             guna2Button1.PressedDepth = 0;
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges4;
             guna2Button1.Size = new Size(292, 45);
             guna2Button1.TabIndex = 33;
             // 
@@ -119,7 +121,7 @@
             // 
             btnFechar.BackColor = Color.Transparent;
             btnFechar.BorderColor = Color.Transparent;
-            btnFechar.CustomizableEdges = customizableEdges13;
+            btnFechar.CustomizableEdges = customizableEdges5;
             btnFechar.DisabledState.BorderColor = Color.DarkGray;
             btnFechar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnFechar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -127,11 +129,11 @@
             btnFechar.FillColor = Color.Transparent;
             btnFechar.Font = new Font("Segoe UI", 9F);
             btnFechar.ForeColor = Color.White;
-            btnFechar.Image = Properties.Resources.xCorreto;
-            btnFechar.ImageSize = new Size(11, 11);
-            btnFechar.Location = new Point(446, 0);
+            btnFechar.Image = (Image)resources.GetObject("btnFechar.Image");
+            btnFechar.ImageSize = new Size(15, 15);
+            btnFechar.Location = new Point(443, 3);
             btnFechar.Name = "btnFechar";
-            btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnFechar.Size = new Size(20, 20);
             btnFechar.TabIndex = 29;
             btnFechar.Click += btnFechar_Click;
@@ -139,24 +141,24 @@
             // lblUsuario
             // 
             lblUsuario.AutoSize = true;
-            lblUsuario.BackColor = Color.FromArgb(17, 23, 34);
-            lblUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblUsuario.BackColor = Color.FromArgb(39, 38, 38);
+            lblUsuario.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblUsuario.ForeColor = Color.White;
             lblUsuario.Location = new Point(86, 80);
             lblUsuario.Name = "lblUsuario";
-            lblUsuario.Size = new Size(92, 17);
+            lblUsuario.Size = new Size(96, 17);
             lblUsuario.TabIndex = 35;
             lblUsuario.Text = "Novo Usuário:";
             // 
             // lblNovoNomeExibicao
             // 
             lblNovoNomeExibicao.AutoSize = true;
-            lblNovoNomeExibicao.BackColor = Color.FromArgb(17, 23, 34);
-            lblNovoNomeExibicao.Font = new Font("Segoe UI", 9.75F);
+            lblNovoNomeExibicao.BackColor = Color.FromArgb(39, 38, 38);
+            lblNovoNomeExibicao.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblNovoNomeExibicao.ForeColor = Color.White;
-            lblNovoNomeExibicao.Location = new Point(86, 177);
+            lblNovoNomeExibicao.Location = new Point(86, 156);
             lblNovoNomeExibicao.Name = "lblNovoNomeExibicao";
-            lblNovoNomeExibicao.Size = new Size(154, 17);
+            lblNovoNomeExibicao.Size = new Size(160, 17);
             lblNovoNomeExibicao.TabIndex = 38;
             lblNovoNomeExibicao.Text = "Novo Nome de Exibição:";
             // 
@@ -164,9 +166,9 @@
             // 
             txtNovoNomeExibicao.BackColor = Color.FromArgb(80, 80, 80);
             txtNovoNomeExibicao.BorderStyle = BorderStyle.None;
-            txtNovoNomeExibicao.Font = new Font("Segoe UI", 12F);
+            txtNovoNomeExibicao.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             txtNovoNomeExibicao.ForeColor = Color.White;
-            txtNovoNomeExibicao.Location = new Point(98, 212);
+            txtNovoNomeExibicao.Location = new Point(98, 191);
             txtNovoNomeExibicao.MaxLength = 20;
             txtNovoNomeExibicao.Name = "txtNovoNomeExibicao";
             txtNovoNomeExibicao.Size = new Size(269, 22);
@@ -175,8 +177,8 @@
             // guna2Button2
             // 
             guna2Button2.BackColor = Color.Transparent;
-            guna2Button2.BorderRadius = 20;
-            guna2Button2.CustomizableEdges = customizableEdges15;
+            guna2Button2.BorderRadius = 5;
+            guna2Button2.CustomizableEdges = customizableEdges7;
             guna2Button2.DisabledState.BorderColor = Color.DarkGray;
             guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
             guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
@@ -188,11 +190,11 @@
             guna2Button2.HoverState.CustomBorderColor = Color.FromArgb(80, 80, 80);
             guna2Button2.HoverState.FillColor = Color.FromArgb(80, 80, 80);
             guna2Button2.HoverState.ForeColor = Color.FromArgb(80, 80, 80);
-            guna2Button2.Location = new Point(86, 200);
+            guna2Button2.Location = new Point(86, 179);
             guna2Button2.Name = "guna2Button2";
             guna2Button2.PressedColor = Color.FromArgb(80, 80, 80);
             guna2Button2.PressedDepth = 0;
-            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges8;
             guna2Button2.Size = new Size(292, 45);
             guna2Button2.TabIndex = 37;
             // 
@@ -211,7 +213,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(17, 23, 34);
+            BackColor = Color.FromArgb(39, 38, 38);
             ClientSize = new Size(466, 338);
             Controls.Add(lblError);
             Controls.Add(lblNovoNomeExibicao);
@@ -224,6 +226,7 @@
             Controls.Add(guna2Button1);
             Controls.Add(btnFechar);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "AlterarUsuario";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "AlterarUsuario";

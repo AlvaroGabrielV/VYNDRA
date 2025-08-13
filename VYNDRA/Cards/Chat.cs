@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using VYNDRA.Classes;
+using VYNDRA.Properties;
 
 namespace VYNDRA.Cards
 {
@@ -16,7 +17,10 @@ namespace VYNDRA.Cards
              InitializeComponent();
              SignalRService.MensagemRecebidaPrivada -= OnMensagemRecebida;
              SignalRService.MensagemRecebidaPrivada += OnMensagemRecebida;
-         }
+
+            StatusUsuarios.UsuarioFicouOnline += OnUsuarioOnline;
+            StatusUsuarios.UsuarioFicouOffline += OnUsuarioOffline;
+        }
 
          private int idContato;
          private string nomeContato;
@@ -58,39 +62,79 @@ namespace VYNDRA.Cards
          }
 
 
-         public async void CarregarConversa(int contatoId)
-         {
-             var usuario = Users.BuscarPorId(contatoId);
-             if (usuario == null)
-             {
-                 MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 return;
-             }
 
-             IdContato = usuario.Id;
-             NomeContato = usuario.NomeExibicao;
-             FotoContato = usuario.FotoPerfil != null
-                 ? Bitmap.FromStream(new MemoryStream(usuario.FotoPerfil))
-                 : null;
+        public async void CarregarConversa(int contatoId)
+        {
+            var usuario = Users.BuscarPorId(contatoId);
+            if (usuario == null)
+            {
+                MessageBox.Show("Usuário não encontrado.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
-             chat_layout.Controls.Clear();
+            IdContato = usuario.Id;
+            NomeContato = usuario.NomeExibicao;
+            FotoContato = usuario.FotoPerfil != null
+                ? Bitmap.FromStream(new MemoryStream(usuario.FotoPerfil))
+                : null;
 
-             SignalRService.MensagensCarregadas += OnMensagensCarregadas;
+            AtualizarStatusOnline(StatusUsuarios.EstaOnline(IdContato));
 
-             try
-             {
-                 await SignalRService.Connection.InvokeAsync("CarregarMensagensPrivadas", Sessao.IdUsuario, IdContato);
-             }
-             catch (Exception ex)
-             {
-                 MessageBox.Show($"Erro ao carregar mensagens: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                 Debug.WriteLine("Erro ao carregar mensagens: " + ex);
-             }
+            chat_layout.Controls.Clear();
 
-             ScrollUltimaMensagem();
-         }
+            SignalRService.MensagensCarregadas += OnMensagensCarregadas;
 
-         private async void send_btn_Click(object sender, EventArgs e)
+            try
+            {
+                await SignalRService.Connection.InvokeAsync("CarregarMensagensPrivadas", Sessao.IdUsuario, IdContato);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar mensagens: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Debug.WriteLine("Erro ao carregar mensagens: " + ex);
+            }
+
+            ScrollUltimaMensagem();
+        }
+
+        private void AtualizarStatusOnline(bool online)
+        {
+            if (InvokeRequired)
+            {
+                Invoke(new Action(() => AtualizarStatusOnline(online)));
+                return;
+            }
+
+            if (online)
+            {
+                cor_status.Image = Resources.online_status;
+                contato_status.Text = "Online";
+                contato_status.ForeColor = Color.LightGreen;
+            }
+            else
+            {
+                cor_status.Image = Resources.offline_status;
+                contato_status.Text = "Offline";
+                contato_status.ForeColor = Color.Gray;
+            }
+        }
+            private void OnUsuarioOnline(int usuarioId)
+            {
+                if (usuarioId == IdContato)
+                {
+                    AtualizarStatusOnline(true);
+                }
+            }
+    
+            private void OnUsuarioOffline(int usuarioId)
+            {
+                if (usuarioId == IdContato)
+                {
+                    AtualizarStatusOnline(false);
+                }
+        }
+
+        private async void send_btn_Click(object sender, EventArgs e)
          {
              try
              {
@@ -191,5 +235,10 @@ namespace VYNDRA.Cards
                  messageBox.Clear();
              }
          }
+
+        private void abrirPefil_btn_Click(object sender, EventArgs e)
+        { 
+
+        }
     }
 }

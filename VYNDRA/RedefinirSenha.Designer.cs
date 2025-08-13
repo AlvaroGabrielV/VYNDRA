@@ -40,6 +40,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RedefinirSenha));
             btnEntrar = new Guna.UI2.WinForms.Guna2Button();
             label2 = new Label();
             btnFechar = new Guna.UI2.WinForms.Guna2Button();
@@ -62,6 +63,7 @@
             btnEntrar.DisabledState.CustomBorderColor = Color.DarkGray;
             btnEntrar.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             btnEntrar.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnEntrar.FillColor = Color.FromArgb(25, 118, 210);
             btnEntrar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnEntrar.ForeColor = Color.White;
             btnEntrar.Location = new Point(207, 255);
@@ -227,7 +229,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(17, 23, 34);
+            BackColor = Color.FromArgb(39, 38, 38);
             ClientSize = new Size(566, 347);
             Controls.Add(btnEntrar);
             Controls.Add(label2);
@@ -240,6 +242,7 @@
             Controls.Add(txtConfirmarSenha);
             Controls.Add(guna2Button2);
             FormBorderStyle = FormBorderStyle.None;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "RedefinirSenha";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "RedefinirSenha";

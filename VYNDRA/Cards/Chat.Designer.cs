@@ -43,11 +43,13 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             chat_panel = new Guna.UI2.WinForms.Guna2Panel();
             chat_scroll = new Guna.UI2.WinForms.Guna2VScrollBar();
             chat_layout = new FlowLayoutPanel();
             guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            cor_status = new Guna.UI2.WinForms.Guna2Button();
+            cor_status = new Guna.UI2.WinForms.Guna2PictureBox();
             contato_status = new Guna.UI2.WinForms.Guna2HtmlLabel();
             contato_nome = new Guna.UI2.WinForms.Guna2HtmlLabel();
             foto_usuario = new Guna.UI2.WinForms.Guna2CirclePictureBox();
@@ -55,8 +57,10 @@
             send_btn = new Guna.UI2.WinForms.Guna2Button();
             guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             messageBox = new Guna.UI2.WinForms.Guna2TextBox();
+            perfil_panel = new Guna.UI2.WinForms.Guna2Panel();
             chat_panel.SuspendLayout();
             guna2Panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)cor_status).BeginInit();
             ((System.ComponentModel.ISupportInitialize)foto_usuario).BeginInit();
             chatcard_panel.SuspendLayout();
             SuspendLayout();
@@ -88,10 +92,10 @@
             chat_scroll.BorderRadius = 8;
             chat_scroll.InUpdate = false;
             chat_scroll.LargeChange = 10;
-            chat_scroll.Location = new Point(956, 69);
+            chat_scroll.Location = new Point(948, 69);
             chat_scroll.Name = "chat_scroll";
-            chat_scroll.ScrollbarSize = 10;
-            chat_scroll.Size = new Size(10, 578);
+            chat_scroll.ScrollbarSize = 18;
+            chat_scroll.Size = new Size(18, 578);
             chat_scroll.TabIndex = 0;
             chat_scroll.ThumbSize = 3F;
             chat_scroll.ThumbStyle = Guna.UI2.WinForms.Enums.ThumbStyle.Inset;
@@ -127,22 +131,15 @@
             // 
             // cor_status
             // 
-            cor_status.BorderColor = Color.BlanchedAlmond;
             cor_status.BorderRadius = 5;
-            cor_status.BorderStyle = System.Drawing.Drawing2D.DashStyle.Custom;
             cor_status.CustomizableEdges = customizableEdges1;
-            cor_status.DisabledState.BorderColor = Color.DarkGray;
-            cor_status.DisabledState.CustomBorderColor = Color.DarkGray;
-            cor_status.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            cor_status.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            cor_status.Enabled = false;
-            cor_status.FillColor = Color.FromArgb(192, 192, 0);
-            cor_status.Font = new Font("Segoe UI", 9F);
-            cor_status.ForeColor = Color.White;
-            cor_status.Location = new Point(69, 47);
+            cor_status.FillColor = Color.Transparent;
+            cor_status.ImageRotate = 0F;
+            cor_status.Location = new Point(69, 46);
             cor_status.Name = "cor_status";
             cor_status.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            cor_status.Size = new Size(14, 14);
+            cor_status.Size = new Size(16, 16);
+            cor_status.SizeMode = PictureBoxSizeMode.StretchImage;
             cor_status.TabIndex = 3;
             cor_status.TabStop = false;
             // 
@@ -150,26 +147,27 @@
             // 
             contato_status.BackColor = Color.Transparent;
             contato_status.Enabled = false;
-            contato_status.ForeColor = Color.FromArgb(192, 192, 0);
+            contato_status.ForeColor = Color.FromArgb(0, 217, 255);
             contato_status.Location = new Point(85, 46);
             contato_status.Name = "contato_status";
-            contato_status.Size = new Size(45, 17);
+            contato_status.Size = new Size(38, 17);
             contato_status.TabIndex = 2;
             contato_status.TabStop = false;
-            contato_status.Text = "ONLINE";
+            contato_status.Text = "Online";
             contato_status.TextAlignment = ContentAlignment.MiddleRight;
             // 
             // contato_nome
             // 
             contato_nome.BackColor = Color.Transparent;
-            contato_nome.Font = new Font("Segoe UI Semibold", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            contato_nome.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             contato_nome.ForeColor = Color.White;
             contato_nome.IsSelectionEnabled = false;
             contato_nome.Location = new Point(69, 10);
             contato_nome.Name = "contato_nome";
-            contato_nome.Size = new Size(146, 32);
+            contato_nome.Size = new Size(148, 32);
             contato_nome.TabIndex = 1;
             contato_nome.Text = "Nome Contato";
+            contato_nome.Click += abrirPefil_btn_Click;
             // 
             // foto_usuario
             // 
@@ -182,6 +180,7 @@
             foto_usuario.SizeMode = PictureBoxSizeMode.Zoom;
             foto_usuario.TabIndex = 0;
             foto_usuario.TabStop = false;
+            foto_usuario.Click += abrirPefil_btn_Click;
             // 
             // chatcard_panel
             // 
@@ -273,18 +272,31 @@
             messageBox.TextOffset = new Point(33, 0);
             messageBox.KeyPress += messageBox_KeyPress;
             // 
+            // perfil_panel
+            // 
+            perfil_panel.CustomizableEdges = customizableEdges16;
+            perfil_panel.Dock = DockStyle.Fill;
+            perfil_panel.Location = new Point(0, 0);
+            perfil_panel.Name = "perfil_panel";
+            perfil_panel.ShadowDecoration.CustomizableEdges = customizableEdges17;
+            perfil_panel.Size = new Size(966, 706);
+            perfil_panel.TabIndex = 0;
+            perfil_panel.Visible = false;
+            // 
             // Chat
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(17, 23, 34);
             Controls.Add(chat_panel);
+            Controls.Add(perfil_panel);
             Name = "Chat";
             Size = new Size(966, 706);
             Load += Chat_Load;
             chat_panel.ResumeLayout(false);
             guna2Panel1.ResumeLayout(false);
             guna2Panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)cor_status).EndInit();
             ((System.ComponentModel.ISupportInitialize)foto_usuario).EndInit();
             chatcard_panel.ResumeLayout(false);
             ResumeLayout(false);
@@ -294,7 +306,6 @@
 
         private Guna.UI2.WinForms.Guna2Panel chat_panel;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
-        private Guna.UI2.WinForms.Guna2Button cor_status;
         private Guna.UI2.WinForms.Guna2HtmlLabel contato_status;
         private Guna.UI2.WinForms.Guna2HtmlLabel contato_nome;
         private Guna.UI2.WinForms.Guna2CirclePictureBox foto_usuario;
@@ -304,5 +315,7 @@
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
         private Guna.UI2.WinForms.Guna2VScrollBar chat_scroll;
         private Guna.UI2.WinForms.Guna2Button send_btn;
+        private Guna.UI2.WinForms.Guna2PictureBox cor_status;
+        private Guna.UI2.WinForms.Guna2Panel perfil_panel;
     }
 }

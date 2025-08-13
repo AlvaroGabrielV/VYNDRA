@@ -61,36 +61,38 @@
             // 
             guna2Panel3.Controls.Add(TxtTitulo);
             guna2Panel3.CustomizableEdges = customizableEdges3;
-            guna2Panel3.FillColor = Color.FromArgb(75, 75, 75);
-            guna2Panel3.Location = new Point(0, 160);
+            guna2Panel3.FillColor = Color.FromArgb(29, 52, 66);
+            guna2Panel3.Location = new Point(3, 160);
             guna2Panel3.Name = "guna2Panel3";
             guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2Panel3.Size = new Size(242, 31);
+            guna2Panel3.Size = new Size(239, 31);
             guna2Panel3.TabIndex = 3;
             // 
             // TxtTitulo
             // 
+            TxtTitulo.AutoSize = true;
             TxtTitulo.BorderColor = Color.FromArgb(75, 75, 75);
             TxtTitulo.BorderThickness = 0;
             TxtTitulo.CustomizableEdges = customizableEdges1;
             TxtTitulo.DefaultText = "Titulo";
-            TxtTitulo.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            TxtTitulo.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            TxtTitulo.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            TxtTitulo.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            TxtTitulo.FillColor = Color.FromArgb(75, 75, 75);
+            TxtTitulo.DisabledState.BorderColor = Color.FromArgb(75, 75, 75);
+            TxtTitulo.DisabledState.FillColor = Color.FromArgb(29, 52, 66);
+            TxtTitulo.DisabledState.ForeColor = Color.White;
+            TxtTitulo.DisabledState.PlaceholderForeColor = Color.White;
+            TxtTitulo.Enabled = false;
+            TxtTitulo.FillColor = Color.FromArgb(29, 51, 64);
             TxtTitulo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             TxtTitulo.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             TxtTitulo.ForeColor = Color.White;
             TxtTitulo.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            TxtTitulo.Location = new Point(4, 3);
+            TxtTitulo.Location = new Point(-3, 1);
             TxtTitulo.Margin = new Padding(4, 5, 4, 5);
             TxtTitulo.Name = "TxtTitulo";
             TxtTitulo.PlaceholderText = "";
             TxtTitulo.ReadOnly = true;
             TxtTitulo.SelectedText = "";
             TxtTitulo.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            TxtTitulo.Size = new Size(234, 23);
+            TxtTitulo.Size = new Size(243, 27);
             TxtTitulo.TabIndex = 4;
             TxtTitulo.TextChanged += TxtTitulo_TextChanged;
             TxtTitulo.DoubleClick += TxtTitulo_DoubleClick;
@@ -107,7 +109,7 @@
             btnEditar.Font = new Font("Segoe UI", 9F);
             btnEditar.ForeColor = Color.White;
             btnEditar.Image = Properties.Resources.editar;
-            btnEditar.Location = new Point(177, 131);
+            btnEditar.Location = new Point(177, 123);
             btnEditar.Name = "btnEditar";
             btnEditar.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnEditar.Size = new Size(30, 30);
@@ -125,7 +127,7 @@
             btnExcluir.Font = new Font("Segoe UI", 9F);
             btnExcluir.ForeColor = Color.White;
             btnExcluir.Image = Properties.Resources.excluir;
-            btnExcluir.Location = new Point(213, 131);
+            btnExcluir.Location = new Point(213, 125);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnExcluir.Size = new Size(30, 30);
@@ -134,18 +136,20 @@
             // 
             // guna2Panel2
             // 
-            guna2Panel2.BorderRadius = 20;
+            guna2Panel2.BorderColor = Color.Black;
+            guna2Panel2.BorderRadius = 3;
+            guna2Panel2.BorderThickness = 1;
             guna2Panel2.Controls.Add(lblDataCriacao);
             guna2Panel2.Controls.Add(LblData);
             guna2Panel2.Controls.Add(label2);
             guna2Panel2.CustomizableEdges = customizableEdges9;
-            guna2Panel2.Dock = DockStyle.Bottom;
-            guna2Panel2.FillColor = Color.FromArgb(75, 75, 75);
+            guna2Panel2.FillColor = Color.FromArgb(29, 52, 66);
             guna2Panel2.Location = new Point(0, 160);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges10;
-            guna2Panel2.Size = new Size(242, 52);
+            guna2Panel2.Size = new Size(245, 52);
             guna2Panel2.TabIndex = 2;
+            guna2Panel2.UseTransparentBackground = true;
             // 
             // lblDataCriacao
             // 
@@ -185,16 +189,17 @@
             txtDescricao.BorderThickness = 0;
             txtDescricao.CustomizableEdges = customizableEdges11;
             txtDescricao.DefaultText = "Descrição";
-            txtDescricao.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtDescricao.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtDescricao.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtDescricao.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtDescricao.DisabledState.BorderColor = Color.FromArgb(75, 75, 75);
+            txtDescricao.DisabledState.FillColor = Color.FromArgb(11, 17, 30);
+            txtDescricao.DisabledState.ForeColor = Color.White;
+            txtDescricao.DisabledState.PlaceholderForeColor = Color.White;
+            txtDescricao.Enabled = false;
             txtDescricao.FillColor = Color.FromArgb(11, 17, 30);
             txtDescricao.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtDescricao.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtDescricao.ForeColor = Color.White;
             txtDescricao.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDescricao.Location = new Point(1, 0);
+            txtDescricao.Location = new Point(4, 20);
             txtDescricao.Margin = new Padding(3, 5, 3, 5);
             txtDescricao.Multiline = true;
             txtDescricao.Name = "txtDescricao";
@@ -202,28 +207,28 @@
             txtDescricao.ReadOnly = true;
             txtDescricao.SelectedText = "";
             txtDescricao.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            txtDescricao.Size = new Size(239, 126);
+            txtDescricao.Size = new Size(234, 129);
             txtDescricao.TabIndex = 5;
             txtDescricao.DoubleClick += txtDescricao_DoubleClick;
             txtDescricao.Leave += txtDescricao_Leave;
             // 
             // panelFundo
             // 
-            panelFundo.AutoSize = true;
             panelFundo.BackColor = Color.Transparent;
-            panelFundo.BorderRadius = 20;
-            panelFundo.Controls.Add(guna2Panel3);
+            panelFundo.BorderColor = Color.Black;
+            panelFundo.BorderRadius = 25;
+            panelFundo.BorderThickness = 1;
             panelFundo.Controls.Add(btnEditar);
-            panelFundo.Controls.Add(txtDescricao);
             panelFundo.Controls.Add(btnExcluir);
+            panelFundo.Controls.Add(guna2Panel3);
+            panelFundo.Controls.Add(txtDescricao);
             panelFundo.Controls.Add(guna2Panel2);
             panelFundo.CustomizableEdges = customizableEdges13;
-            panelFundo.Dock = DockStyle.Fill;
             panelFundo.FillColor = Color.FromArgb(11, 17, 30);
             panelFundo.Location = new Point(0, 0);
             panelFundo.Name = "panelFundo";
             panelFundo.ShadowDecoration.CustomizableEdges = customizableEdges14;
-            panelFundo.Size = new Size(242, 212);
+            panelFundo.Size = new Size(245, 212);
             panelFundo.TabIndex = 1;
             // 
             // CardTarefas
@@ -234,13 +239,13 @@
             BackColor = Color.Transparent;
             Controls.Add(panelFundo);
             Name = "CardTarefas";
-            Size = new Size(242, 212);
+            Size = new Size(245, 212);
             guna2Panel3.ResumeLayout(false);
+            guna2Panel3.PerformLayout();
             guna2Panel2.ResumeLayout(false);
             guna2Panel2.PerformLayout();
             panelFundo.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion

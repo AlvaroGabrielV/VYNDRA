@@ -21,13 +21,11 @@ namespace VYNDRA
 
         private void Relatorios_Load(object sender, EventArgs e)
         {
-            miniFotoPerfil.SizeMode = PictureBoxSizeMode.Zoom;
+            var usuario = Users.BuscarPorId(Sessao.IdUsuario); // Buscar usuário com dados completos
 
-            Users usuario = new Users();
-
-            if (usuario.CarregarRedesSociais(Sessao.IdUsuario) && Sessao.FotoPerfil != null && Sessao.FotoPerfil.Length > 0)
+            if (usuario != null && usuario.FotoPerfil != null && usuario.FotoPerfil.Length > 0)
             {
-                using (MemoryStream ms = new MemoryStream(Sessao.FotoPerfil))
+                using (MemoryStream ms = new MemoryStream(usuario.FotoPerfil))
                 {
                     miniFotoPerfil.Image = Image.FromStream(ms);
                 }
@@ -175,8 +173,8 @@ namespace VYNDRA
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu(Sessao.IdUsuario);
-            menu.Show();
+            TelaPrincipal telaPrincipal = new TelaPrincipal(Sessao.IdUsuario);
+            telaPrincipal.Show();
             this.Close();
         }
 
@@ -189,8 +187,8 @@ namespace VYNDRA
 
         private void btnMenssagem_Click(object sender, EventArgs e)
         {
-            Menu menu = new Menu(Sessao.IdUsuario);
-            menu.Show();
+            TelaPrincipal telaPrincipal = new TelaPrincipal(Sessao.IdUsuario);
+            telaPrincipal.Show();
             this.Close();
         }
 

@@ -25,18 +25,19 @@ public static class SignalRService
     }
 
     public static event Action<List<Mensagem>> MensagensCarregadas;
-    // Atualizado para 4 parâmetros (id remetente, id destinatário, mensagem, data)
+
     public static event Action<int, int, string, DateTime> MensagemRecebidaPrivada;
 
     public static void ConfigurarListeners()
     {
+        // Recebe solicitações de amizade
         Connection.On<string>("ReceberSolicitacaoAmizade", (deIdUsuario) =>
         {
             MessageBox.Show($"Nova solicitação de amizade de {deIdUsuario}");
             PedidosDeAmizade.NovaSolicitacaoRecebida?.Invoke(null, deIdUsuario);
         });
 
-        // Ajuste aqui: receber 4 parâmetros e chamar o evento com os mesmos
+        // Recebe mensagens privadas
         Connection.On<int, int, string, DateTime>("ReceberMensagemPrivada", (remetenteId, destinatarioId, mensagem, horario) =>
         {
             if (destinatarioId == _idUsuario || remetenteId == _idUsuario)
@@ -46,12 +47,36 @@ public static class SignalRService
             }
         });
 
+
         Connection.On<List<Mensagem>>("MensagensCarregadas", (mensagens) =>
         {
             Debug.WriteLine($"[SignalRService] Mensagens carregadas recebidas: {mensagens.Count} mensagens.");
             MensagensCarregadas?.Invoke(mensagens);
         });
+
+        Connection.On<int>("UsuarioConectado", (idUsuario) =>
+        {
+            StatusUsuarios.SetOnline(idUsuario);
+            Debug.WriteLine($"[SignalR] Usuário online: {idUsuario}");
+        });
+
+        Connection.On<int>("UsuarioDesconectado", (idUsuario) =>
+        {
+            StatusUsuarios.SetOffline(idUsuario);
+            Debug.WriteLine($"[SignalR] Usuário offline: {idUsuario}");
+        });
+
+        Connection.On<List<int>>("ListaUsuariosOnline", (idsUsuarios) =>
+        {
+            foreach (var id in idsUsuarios)
+            {
+                StatusUsuarios.SetOnline(id);
+                Debug.WriteLine($"[SignalR] Usuário já estava online: {id}");
+            }
+        });
+
     }
+
 
     public static async Task CriarNovaConexaoAsync()
     {

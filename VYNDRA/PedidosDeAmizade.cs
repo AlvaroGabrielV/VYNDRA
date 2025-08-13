@@ -194,6 +194,17 @@ namespace VYNDRA
                     lista_layout.Controls.Remove(cartao);
 
                     MessageBox.Show("Solicitação aceita!");
+
+                    var telaPrincipal = Application.OpenForms.OfType<TelaPrincipal>().FirstOrDefault();
+                    if (telaPrincipal != null)
+                    {
+                        telaPrincipal.CarregarCardsDeChat();
+                    }
+                    else
+                    {
+                        MessageBox.Show("TelaPrincipal não está aberta.");
+                    }
+
                 }
                 catch (Exception ex)
                 {
