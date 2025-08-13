@@ -23,6 +23,7 @@ namespace VYNDRA
 
         private void TelaPrincipal_Load(object sender, EventArgs e)
         {
+            bemvindo_lbl.Text = $"Bem-vindo, {Sessao.NomeExibicao}!";
             CarregarCardsDeChat();
             CarregarCards();
             miniFotoPerfil.SizeMode = PictureBoxSizeMode.Zoom;
@@ -132,6 +133,7 @@ namespace VYNDRA
                                 card.AtualizarStatusOnline(true);
                                 if (!ativos_flow.Controls.Contains(card))
                                     ativos_flow.Controls.Add(card);
+                                    contatos_layout.Controls.Add(card);
 
                                 if (contatos_layout.Controls.Contains(card))
                                     contatos_layout.Controls.Remove(card);
@@ -142,6 +144,7 @@ namespace VYNDRA
                             card.AtualizarStatusOnline(true);
                             if (!ativos_flow.Controls.Contains(card))
                                 ativos_flow.Controls.Add(card);
+                                contatos_layout.Controls.Add(card);
 
                             if (contatos_layout.Controls.Contains(card))
                                 contatos_layout.Controls.Remove(card);
@@ -159,10 +162,13 @@ namespace VYNDRA
                             {
                                 card.AtualizarStatusOnline(false);
                                 if (!contatos_layout.Controls.Contains(card))
+                                    contatos_layout.Controls.Clear();
                                     contatos_layout.Controls.Add(card);
 
                                 if (ativos_flow.Controls.Contains(card))
+                                    contatos_layout.Controls.Clear();
                                     ativos_flow.Controls.Add(card);
+
                             }));
                         }
                         else
@@ -190,6 +196,7 @@ namespace VYNDRA
             if (contatos_panel.Visible)
             {
                 BuscarContato buscarContato = new BuscarContato();
+                contatos_layout.Size = contatos_layout.MaximumSize;
                 contatos_layout.Controls.Clear();
                 contatos_layout.Controls.Add(buscarContato);
 

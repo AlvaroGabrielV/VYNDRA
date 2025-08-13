@@ -225,12 +225,12 @@
             principal_panel.Controls.Add(princi_panel);
             principal_panel.CustomizableEdges = customizableEdges7;
             principal_panel.Dock = DockStyle.Fill;
-            principal_panel.Location = new Point(38, 17);
+            principal_panel.Location = new Point(409, 17);
             principal_panel.Margin = new Padding(4, 5, 4, 5);
             principal_panel.Name = "principal_panel";
             principal_panel.Padding = new Padding(11, 13, 11, 13);
             principal_panel.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            principal_panel.Size = new Size(1231, 728);
+            principal_panel.Size = new Size(860, 728);
             principal_panel.TabIndex = 4;
             // 
             // princi_panel
@@ -247,7 +247,7 @@
             princi_panel.Name = "princi_panel";
             princi_panel.Padding = new Padding(17, 20, 17, 20);
             princi_panel.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            princi_panel.Size = new Size(1209, 702);
+            princi_panel.Size = new Size(838, 702);
             princi_panel.TabIndex = 0;
             // 
             // ativos_panel
@@ -260,7 +260,7 @@
             ativos_panel.Margin = new Padding(4, 5, 4, 5);
             ativos_panel.Name = "ativos_panel";
             ativos_panel.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            ativos_panel.Size = new Size(1175, 285);
+            ativos_panel.Size = new Size(804, 285);
             ativos_panel.TabIndex = 3;
             // 
             // ativos_flow
@@ -270,7 +270,7 @@
             ativos_flow.Location = new Point(0, 0);
             ativos_flow.Margin = new Padding(4, 5, 4, 5);
             ativos_flow.Name = "ativos_flow";
-            ativos_flow.Size = new Size(1175, 285);
+            ativos_flow.Size = new Size(804, 285);
             ativos_flow.TabIndex = 0;
             // 
             // guna2HtmlLabel3
@@ -300,7 +300,7 @@
             anotacoes_panel.Margin = new Padding(4, 5, 4, 5);
             anotacoes_panel.Name = "anotacoes_panel";
             anotacoes_panel.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            anotacoes_panel.Size = new Size(1175, 310);
+            anotacoes_panel.Size = new Size(804, 310);
             anotacoes_panel.TabIndex = 1;
             // 
             // relatorios_flow
@@ -310,7 +310,7 @@
             relatorios_flow.Location = new Point(0, 53);
             relatorios_flow.Margin = new Padding(4, 5, 4, 5);
             relatorios_flow.Name = "relatorios_flow";
-            relatorios_flow.Size = new Size(1175, 257);
+            relatorios_flow.Size = new Size(804, 257);
             relatorios_flow.TabIndex = 0;
             // 
             // guna2HtmlLabel1
@@ -347,7 +347,7 @@
             bemvindo_lbl.Location = new Point(0, 0);
             bemvindo_lbl.Margin = new Padding(4, 5, 4, 5);
             bemvindo_lbl.Name = "bemvindo_lbl";
-            bemvindo_lbl.Size = new Size(1175, 53);
+            bemvindo_lbl.Size = new Size(804, 53);
             bemvindo_lbl.TabIndex = 0;
             bemvindo_lbl.Text = "Seja Bem-Vindo(a) Usuario!";
             bemvindo_lbl.TextAlignment = ContentAlignment.MiddleCenter;
@@ -394,10 +394,12 @@
             contatos_panel.FillColor = Color.FromArgb(22, 39, 50);
             contatos_panel.Location = new Point(14, 17);
             contatos_panel.Margin = new Padding(0);
+            contatos_panel.MaximumSize = new Size(395, 728);
+            contatos_panel.MinimumSize = new Size(395, 728);
             contatos_panel.Name = "contatos_panel";
             contatos_panel.Padding = new Padding(7, 8, 7, 8);
             contatos_panel.ShadowDecoration.CustomizableEdges = customizableEdges12;
-            contatos_panel.Size = new Size(24, 728);
+            contatos_panel.Size = new Size(395, 728);
             contatos_panel.TabIndex = 0;
             contatos_panel.UseTransparentBackground = true;
             contatos_panel.Visible = false;
@@ -410,7 +412,7 @@
             contatos_layout.Margin = new Padding(4, 5, 4, 5);
             contatos_layout.Name = "contatos_layout";
             contatos_layout.Padding = new Padding(14, 17, 14, 17);
-            contatos_layout.Size = new Size(10, 712);
+            contatos_layout.Size = new Size(381, 712);
             contatos_layout.TabIndex = 0;
             contatos_layout.VisibleChanged += contatos_layout_VisibleChanged;
             contatos_layout.DoubleClick += contatos_layout_DoubleClick;
@@ -445,7 +447,7 @@
             btnMinimizar.ForeColor = Color.White;
             btnMinimizar.Image = Properties.Resources.minimizar;
             btnMinimizar.ImageSize = new Size(11, 11);
-            btnMinimizar.Location = new Point(1741, 5);
+            btnMinimizar.Location = new Point(1441, 3);
             btnMinimizar.Margin = new Padding(4, 5, 4, 5);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.ShadowDecoration.CustomizableEdges = customizableEdges27;
@@ -467,7 +469,7 @@
             btnFechar.ForeColor = Color.White;
             btnFechar.Image = Properties.Resources.xCorreto;
             btnFechar.ImageSize = new Size(11, 11);
-            btnFechar.Location = new Point(1779, 5);
+            btnFechar.Location = new Point(1471, 4);
             btnFechar.Margin = new Padding(4, 5, 4, 5);
             btnFechar.Name = "btnFechar";
             btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges29;

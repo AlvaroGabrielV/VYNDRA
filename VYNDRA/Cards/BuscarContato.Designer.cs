@@ -47,11 +47,12 @@
             busca_panel.Controls.Add(search_btn);
             busca_panel.Controls.Add(guna2TextBox1);
             busca_panel.CustomizableEdges = customizableEdges4;
-            busca_panel.Location = new Point(3, 3);
+            busca_panel.Location = new Point(4, 5);
+            busca_panel.Margin = new Padding(4, 5, 4, 5);
             busca_panel.Name = "busca_panel";
-            busca_panel.Padding = new Padding(8);
+            busca_panel.Padding = new Padding(11, 13, 11, 13);
             busca_panel.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            busca_panel.Size = new Size(230, 60);
+            busca_panel.Size = new Size(327, 77);
             busca_panel.TabIndex = 0;
             busca_panel.UseTransparentBackground = true;
             // 
@@ -66,11 +67,12 @@
             search_btn.Font = new Font("Segoe UI", 9F);
             search_btn.ForeColor = Color.White;
             search_btn.Image = Properties.Resources.search;
-            search_btn.Location = new Point(180, 16);
+            search_btn.Location = new Point(269, 14);
+            search_btn.Margin = new Padding(4, 5, 4, 5);
             search_btn.Name = "search_btn";
             search_btn.ShadowDecoration.CustomizableEdges = customizableEdges1;
             search_btn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            search_btn.Size = new Size(30, 30);
+            search_btn.Size = new Size(43, 50);
             search_btn.TabIndex = 1;
             search_btn.UseTransparentBackground = true;
             search_btn.Click += search_btn_Click;
@@ -89,13 +91,14 @@
             guna2TextBox1.Font = new Font("Segoe UI", 9F);
             guna2TextBox1.ForeColor = Color.Black;
             guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(8, 8);
+            guna2TextBox1.Location = new Point(11, 13);
+            guna2TextBox1.Margin = new Padding(6, 8, 6, 8);
             guna2TextBox1.Name = "guna2TextBox1";
             guna2TextBox1.PlaceholderForeColor = Color.Gray;
             guna2TextBox1.PlaceholderText = "Buscar usuario";
             guna2TextBox1.SelectedText = "";
             guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            guna2TextBox1.Size = new Size(214, 44);
+            guna2TextBox1.Size = new Size(305, 51);
             guna2TextBox1.TabIndex = 0;
             // 
             // add_btn
@@ -110,23 +113,25 @@
             add_btn.ForeColor = Color.White;
             add_btn.Image = Properties.Resources.add_user;
             add_btn.ImageSize = new Size(25, 25);
-            add_btn.Location = new Point(236, 21);
+            add_btn.Location = new Point(323, 19);
+            add_btn.Margin = new Padding(4, 5, 4, 5);
             add_btn.Name = "add_btn";
             add_btn.ShadowDecoration.CustomizableEdges = customizableEdges6;
             add_btn.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            add_btn.Size = new Size(28, 30);
+            add_btn.Size = new Size(40, 50);
             add_btn.TabIndex = 2;
             add_btn.UseTransparentBackground = true;
             add_btn.Click += add_btn_Click;
             // 
             // BuscarContato
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(add_btn);
             Controls.Add(busca_panel);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "BuscarContato";
-            Size = new Size(270, 66);
+            Size = new Size(367, 83);
             busca_panel.ResumeLayout(false);
             ResumeLayout(false);
         }

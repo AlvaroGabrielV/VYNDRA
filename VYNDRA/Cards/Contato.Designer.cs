@@ -50,9 +50,10 @@
             lb_nomedocontato.BackColor = Color.Transparent;
             lb_nomedocontato.Font = new Font("Segoe UI Semibold", 12F, FontStyle.Bold);
             lb_nomedocontato.ForeColor = Color.DarkGray;
-            lb_nomedocontato.Location = new Point(59, 3);
+            lb_nomedocontato.Location = new Point(84, 5);
+            lb_nomedocontato.Margin = new Padding(4, 5, 4, 5);
             lb_nomedocontato.Name = "lb_nomedocontato";
-            lb_nomedocontato.Size = new Size(45, 23);
+            lb_nomedocontato.Size = new Size(65, 34);
             lb_nomedocontato.TabIndex = 1;
             lb_nomedocontato.Text = "nome";
             // 
@@ -61,11 +62,12 @@
             fotocontato_box.BackColor = Color.Transparent;
             fotocontato_box.FillColor = Color.LightGray;
             fotocontato_box.ImageRotate = 0F;
-            fotocontato_box.Location = new Point(3, 5);
+            fotocontato_box.Location = new Point(4, 8);
+            fotocontato_box.Margin = new Padding(4, 5, 4, 5);
             fotocontato_box.Name = "fotocontato_box";
             fotocontato_box.ShadowDecoration.CustomizableEdges = customizableEdges1;
             fotocontato_box.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            fotocontato_box.Size = new Size(50, 50);
+            fotocontato_box.Size = new Size(72, 70);
             fotocontato_box.SizeMode = PictureBoxSizeMode.Zoom;
             fotocontato_box.TabIndex = 0;
             fotocontato_box.TabStop = false;
@@ -79,11 +81,13 @@
             guna2Panel1.Controls.Add(lb_nomedocontato);
             guna2Panel1.Controls.Add(fotocontato_box);
             guna2Panel1.CustomizableEdges = customizableEdges6;
+            guna2Panel1.Dock = DockStyle.Fill;
             guna2Panel1.FillColor = Color.FromArgb(29, 52, 66);
-            guna2Panel1.Location = new Point(3, 3);
+            guna2Panel1.Location = new Point(0, 0);
+            guna2Panel1.Margin = new Padding(4, 5, 4, 5);
             guna2Panel1.Name = "guna2Panel1";
             guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            guna2Panel1.Size = new Size(264, 60);
+            guna2Panel1.Size = new Size(367, 83);
             guna2Panel1.TabIndex = 2;
             guna2Panel1.UseTransparentBackground = true;
             // 
@@ -94,10 +98,11 @@
             picStatus.Image = Properties.Resources.online_status;
             picStatus.ImageRotate = 0F;
             picStatus.InitialImage = null;
-            picStatus.Location = new Point(37, 39);
+            picStatus.Location = new Point(53, 51);
+            picStatus.Margin = new Padding(4, 5, 4, 5);
             picStatus.Name = "picStatus";
             picStatus.ShadowDecoration.CustomizableEdges = customizableEdges3;
-            picStatus.Size = new Size(16, 16);
+            picStatus.Size = new Size(23, 27);
             picStatus.SizeMode = PictureBoxSizeMode.StretchImage;
             picStatus.TabIndex = 3;
             picStatus.TabStop = false;
@@ -111,25 +116,28 @@
             clicar_contato.DisabledState.CustomBorderColor = Color.DarkGray;
             clicar_contato.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
             clicar_contato.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            clicar_contato.Dock = DockStyle.Fill;
             clicar_contato.FillColor = Color.Empty;
             clicar_contato.Font = new Font("Segoe UI", 9F);
             clicar_contato.ForeColor = Color.White;
-            clicar_contato.Location = new Point(-3, 0);
+            clicar_contato.Location = new Point(0, 0);
+            clicar_contato.Margin = new Padding(4, 5, 4, 5);
             clicar_contato.Name = "clicar_contato";
             clicar_contato.ShadowDecoration.CustomizableEdges = customizableEdges5;
-            clicar_contato.Size = new Size(267, 60);
+            clicar_contato.Size = new Size(367, 83);
             clicar_contato.TabIndex = 2;
             clicar_contato.UseTransparentBackground = true;
             clicar_contato.Click += clicar_contato_Click;
             // 
             // Contato
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(22, 39, 50);
             Controls.Add(guna2Panel1);
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Contato";
-            Size = new Size(270, 66);
+            Size = new Size(367, 83);
             Load += Contato_Load;
             ((System.ComponentModel.ISupportInitialize)fotocontato_box).EndInit();
             guna2Panel1.ResumeLayout(false);

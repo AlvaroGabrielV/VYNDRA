@@ -49,6 +49,7 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Relatorios));
             guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2vScrollBar1 = new Guna.UI2.WinForms.Guna2VScrollBar();
             FlowPanelConteudo = new FlowLayoutPanel();
             label1 = new Label();
             panel_relatoiros = new Guna.UI2.WinForms.Guna2Panel();
@@ -71,22 +72,41 @@
             // 
             guna2Panel2.BackColor = Color.FromArgb(17, 23, 34);
             guna2Panel2.BorderRadius = 30;
+            guna2Panel2.Controls.Add(guna2vScrollBar1);
             guna2Panel2.Controls.Add(FlowPanelConteudo);
             guna2Panel2.Controls.Add(label1);
             guna2Panel2.CustomizableEdges = customizableEdges1;
             guna2Panel2.FillColor = Color.FromArgb(29, 52, 66);
-            guna2Panel2.Location = new Point(8, 0);
+            guna2Panel2.Location = new Point(11, 0);
+            guna2Panel2.Margin = new Padding(4, 5, 4, 5);
             guna2Panel2.Name = "guna2Panel2";
             guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2Panel2.Size = new Size(1173, 725);
+            guna2Panel2.Size = new Size(1676, 1208);
             guna2Panel2.TabIndex = 1;
+            // 
+            // guna2vScrollBar1
+            // 
+            guna2vScrollBar1.BackColor = Color.Transparent;
+            guna2vScrollBar1.BindingContainer = FlowPanelConteudo;
+            guna2vScrollBar1.BorderRadius = 5;
+            guna2vScrollBar1.FillOffset = new Padding(3);
+            guna2vScrollBar1.InUpdate = false;
+            guna2vScrollBar1.LargeChange = 10;
+            guna2vScrollBar1.Location = new Point(1357, 78);
+            guna2vScrollBar1.Name = "guna2vScrollBar1";
+            guna2vScrollBar1.Padding = new Padding(3);
+            guna2vScrollBar1.ScrollbarSize = 12;
+            guna2vScrollBar1.Size = new Size(18, 671);
+            guna2vScrollBar1.TabIndex = 0;
             // 
             // FlowPanelConteudo
             // 
+            FlowPanelConteudo.AutoScroll = true;
             FlowPanelConteudo.BackColor = Color.FromArgb(29, 52, 66);
-            FlowPanelConteudo.Location = new Point(3, 57);
+            FlowPanelConteudo.Location = new Point(15, 78);
+            FlowPanelConteudo.Margin = new Padding(4, 5, 4, 5);
             FlowPanelConteudo.Name = "FlowPanelConteudo";
-            FlowPanelConteudo.Size = new Size(1166, 646);
+            FlowPanelConteudo.Size = new Size(1362, 671);
             FlowPanelConteudo.TabIndex = 1;
             // 
             // label1
@@ -95,9 +115,10 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(17, 15);
+            label1.Location = new Point(24, 25);
+            label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(134, 32);
+            label1.Size = new Size(196, 48);
             label1.TabIndex = 0;
             label1.Text = "Anotações";
             // 
@@ -107,12 +128,12 @@
             panel_relatoiros.Controls.Add(guna2Panel2);
             panel_relatoiros.CustomizableEdges = customizableEdges3;
             panel_relatoiros.Dock = DockStyle.Fill;
-            panel_relatoiros.Location = new Point(73, 23);
-            panel_relatoiros.Margin = new Padding(8);
+            panel_relatoiros.Location = new Point(104, 38);
+            panel_relatoiros.Margin = new Padding(11, 13, 11, 13);
             panel_relatoiros.Name = "panel_relatoiros";
-            panel_relatoiros.Padding = new Padding(5);
+            panel_relatoiros.Padding = new Padding(7, 8, 7, 8);
             panel_relatoiros.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            panel_relatoiros.Size = new Size(1189, 726);
+            panel_relatoiros.Size = new Size(1399, 762);
             panel_relatoiros.TabIndex = 24;
             // 
             // sidebar_panel
@@ -129,10 +150,11 @@
             sidebar_panel.CustomizableEdges = customizableEdges12;
             sidebar_panel.Dock = DockStyle.Left;
             sidebar_panel.FillColor = Color.FromArgb(29, 52, 66);
-            sidebar_panel.Location = new Point(0, 23);
+            sidebar_panel.Location = new Point(0, 38);
+            sidebar_panel.Margin = new Padding(4, 5, 4, 5);
             sidebar_panel.Name = "sidebar_panel";
             sidebar_panel.ShadowDecoration.CustomizableEdges = customizableEdges13;
-            sidebar_panel.Size = new Size(73, 726);
+            sidebar_panel.Size = new Size(104, 762);
             sidebar_panel.TabIndex = 2;
             // 
             // btnHome
@@ -147,10 +169,11 @@
             btnHome.ForeColor = Color.White;
             btnHome.Image = Properties.Resources.botao_de_inicio;
             btnHome.ImageSize = new Size(35, 35);
-            btnHome.Location = new Point(12, 12);
+            btnHome.Location = new Point(17, 20);
+            btnHome.Margin = new Padding(4, 5, 4, 5);
             btnHome.Name = "btnHome";
             btnHome.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            btnHome.Size = new Size(50, 50);
+            btnHome.Size = new Size(71, 83);
             btnHome.TabIndex = 2;
             btnHome.Click += btnHome_Click;
             // 
@@ -158,14 +181,16 @@
             // 
             miniFotoPerfil.BackColor = Color.FromArgb(29, 52, 66);
             miniFotoPerfil.ImageRotate = 0F;
-            miniFotoPerfil.Location = new Point(12, 653);
+            miniFotoPerfil.Location = new Point(17, 679);
+            miniFotoPerfil.Margin = new Padding(4, 5, 4, 5);
             miniFotoPerfil.Name = "miniFotoPerfil";
             miniFotoPerfil.ShadowDecoration.CustomizableEdges = customizableEdges7;
             miniFotoPerfil.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            miniFotoPerfil.Size = new Size(50, 50);
+            miniFotoPerfil.Size = new Size(71, 69);
             miniFotoPerfil.SizeMode = PictureBoxSizeMode.Zoom;
             miniFotoPerfil.TabIndex = 0;
             miniFotoPerfil.TabStop = false;
+            miniFotoPerfil.Click += miniFotoPerfil_Click;
             // 
             // contatos_btn
             // 
@@ -179,10 +204,11 @@
             contatos_btn.ForeColor = Color.White;
             contatos_btn.Image = Properties.Resources.do_utilizador;
             contatos_btn.ImageSize = new Size(35, 35);
-            contatos_btn.Location = new Point(12, 133);
+            contatos_btn.Location = new Point(17, 178);
+            contatos_btn.Margin = new Padding(4, 5, 4, 5);
             contatos_btn.Name = "contatos_btn";
             contatos_btn.ShadowDecoration.CustomizableEdges = customizableEdges9;
-            contatos_btn.Size = new Size(50, 50);
+            contatos_btn.Size = new Size(71, 83);
             contatos_btn.TabIndex = 0;
             contatos_btn.Click += btnMenssagem_Click;
             // 
@@ -198,10 +224,11 @@
             btnRelatorios.ForeColor = Color.White;
             btnRelatorios.Image = Properties.Resources.bloco_de_anotacoes;
             btnRelatorios.ImageSize = new Size(35, 35);
-            btnRelatorios.Location = new Point(12, 77);
+            btnRelatorios.Location = new Point(17, 99);
+            btnRelatorios.Margin = new Padding(4, 5, 4, 5);
             btnRelatorios.Name = "btnRelatorios";
             btnRelatorios.ShadowDecoration.CustomizableEdges = customizableEdges11;
-            btnRelatorios.Size = new Size(50, 50);
+            btnRelatorios.Size = new Size(71, 83);
             btnRelatorios.TabIndex = 0;
             // 
             // top_panel
@@ -214,9 +241,10 @@
             top_panel.FillColor = Color.FromArgb(17, 23, 34);
             top_panel.ImeMode = ImeMode.NoControl;
             top_panel.Location = new Point(0, 0);
+            top_panel.Margin = new Padding(4, 5, 4, 5);
             top_panel.Name = "top_panel";
             top_panel.ShadowDecoration.CustomizableEdges = customizableEdges19;
-            top_panel.Size = new Size(1262, 23);
+            top_panel.Size = new Size(1503, 38);
             top_panel.TabIndex = 5;
             // 
             // btnMinimizar
@@ -233,10 +261,11 @@
             btnMinimizar.ForeColor = Color.White;
             btnMinimizar.Image = Properties.Resources.minimizar;
             btnMinimizar.ImageSize = new Size(11, 11);
-            btnMinimizar.Location = new Point(1219, 3);
+            btnMinimizar.Location = new Point(1440, 4);
+            btnMinimizar.Margin = new Padding(4, 5, 4, 5);
             btnMinimizar.Name = "btnMinimizar";
             btnMinimizar.ShadowDecoration.CustomizableEdges = customizableEdges15;
-            btnMinimizar.Size = new Size(20, 20);
+            btnMinimizar.Size = new Size(29, 33);
             btnMinimizar.TabIndex = 19;
             btnMinimizar.Click += btnMinimizar_Click;
             // 
@@ -254,24 +283,26 @@
             btnFechar.ForeColor = Color.White;
             btnFechar.Image = Properties.Resources.xCorreto;
             btnFechar.ImageSize = new Size(11, 11);
-            btnFechar.Location = new Point(1245, 3);
+            btnFechar.Location = new Point(1472, 4);
+            btnFechar.Margin = new Padding(4, 5, 4, 5);
             btnFechar.Name = "btnFechar";
             btnFechar.ShadowDecoration.CustomizableEdges = customizableEdges17;
-            btnFechar.Size = new Size(20, 20);
+            btnFechar.Size = new Size(29, 33);
             btnFechar.TabIndex = 18;
             btnFechar.Click += btnFechar_Click;
             // 
             // Relatorios
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(25, 34, 50);
-            ClientSize = new Size(1262, 749);
+            ClientSize = new Size(1503, 800);
             Controls.Add(panel_relatoiros);
             Controls.Add(sidebar_panel);
             Controls.Add(top_panel);
             FormBorderStyle = FormBorderStyle.None;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            Margin = new Padding(4, 5, 4, 5);
             Name = "Relatorios";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Relatórios";
@@ -299,5 +330,6 @@
         private Guna.UI2.WinForms.Guna2Button btnRelatorios;
         private Guna.UI2.WinForms.Guna2Panel top_panel;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2VScrollBar guna2vScrollBar1;
     }
 }
